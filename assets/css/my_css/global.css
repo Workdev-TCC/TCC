@@ -1,0 +1,19 @@
+@import url(vars.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar-nav {
+  margin: auto;
+}
+
+.profile-img {
+  width: 40px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: invert(1);
+}
