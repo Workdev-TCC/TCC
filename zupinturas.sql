@@ -1,4 +1,4 @@
--- Criação do banco
+
 CREATE DATABASE IF NOT EXISTS zupinturas;
 USE zupinturas;
 
