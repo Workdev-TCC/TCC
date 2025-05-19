@@ -1,6 +1,6 @@
 <?php 
     // BANCO DE DADOS
-    define("DB_NAME","sistema_pintor");
+    define("DB_NAME","zupinturas");
     define("DB_HOST","localhost");
     define("DB_USER","root");
     define("DB_PASS","");
@@ -21,6 +21,7 @@
    
 	define('HEADER_TEMPLATE', ABSOLUTE_PATH . 'inc/header.php');
 	define('FOOTER_TEMPLATE', ABSOLUTE_PATH . 'inc/footer.php');
+	define('UTEIS', ABSOLUTE_PATH . 'inc/uteis.php');
    
 
 ?>
