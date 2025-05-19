@@ -14,7 +14,7 @@ CREATE TABLE usuarios (
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 INSERT INTO usuarios (nome, email, senha, foto, telefone, tipo)
-VALUES ('João Silva', 'joao@example.com', 'senha123', 'teste2.jpg', '11999998888', 'user','teste.jpg');
+VALUES ('João Silva', 'joao@example.com', 'senha123', 'teste2.jpg', '11999998888', 'user');
 
 
 INSERT INTO usuarios (nome, email, senha, foto, telefone, tipo)

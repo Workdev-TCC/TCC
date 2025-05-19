@@ -13,12 +13,12 @@
 
             <!-- Corpo do modal -->
             <div class="modal-body p-5">
-                <form method="post" action="#" enctype="multipart/form-data">
+                <form method="post" action="processa_cadas.php" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="nome" class="form-label">
                             <i class="fas fa-user me-2"></i>Nome
                         </label>
-                        <input type="text" class="form-control form-control-lg rounded-3" id="nome" name="nome"
+                        <input type="text" class="form-control form-control-lg rounded-3" id="nome" name="usuario[name]"
                             required>
                     </div>
 
@@ -27,7 +27,7 @@
                             <i class="fas fa-envelope me-2"></i>E-mail
                         </label>
                         <input type="email" class="form-control form-control-lg rounded-3" id="emailCadastro"
-                            name="email" required>
+                            name="usuario[email]" required>
                     </div>
 
                     <div class="mb-4">
@@ -35,20 +35,20 @@
                             <i class="fas fa-lock me-2"></i>Senha
                         </label>
                         <input type="password" class="form-control form-control-lg rounded-3" id="senhaCadastro"
-                            name="senha" required>
+                            name="usuario[senha]" required>
                     </div>
                     <div class="mb-4">
                         <label for="telefone" class="form-label">
                             <i class="fas fa-phone me-2"></i>Telefone
                         </label>
-                        <input type="text" class="form-control form-control-lg rounded-3" id="telefone" name="telefone"
+                        <input type="text" class="form-control form-control-lg rounded-3" id="telefone" name="usuario[telefone]"
                             required>
                     </div>
                     <div class="mb-4">
                         <label for="telefone" class="form-label">
                             <i class="fas fa-image me-2"></i>Foto
                         </label>
-                        <input type="file" class="form-control form-control-lg rounded-3" id="telefone" name="telefone">
+                        <input type="file" class="form-control form-control-lg rounded-3" id="foto" name="foto">
                     </div>
 
                     <div class="d-grid gap-2 mt-4">
