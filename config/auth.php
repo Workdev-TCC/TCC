@@ -1,8 +1,7 @@
 <?php 
     include "../config.php";
     include DBAPI;
-    include HEADER_TEMPLATE;
-
+   
     if(!empty($_POST["email"]) || !empty($_POST["senha"])){
         $bd= open_db();
         $email=$_POST["email"];

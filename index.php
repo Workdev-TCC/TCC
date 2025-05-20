@@ -11,10 +11,7 @@
 </div>
 <?php clear_messages(); ?>
 <?php endif; ?>
-<?php 
-        include('config/modal_login.php');
-        include('config/modal_cadas.php');
-    ?>
+
 <?php 
     include FOOTER_TEMPLATE;
 ?>

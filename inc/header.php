@@ -82,9 +82,16 @@
                             $image=RAIZ_PROJETO."assets/img/login.png";
                         }
                     ?>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <a href="<?php 
+                            if (empty($_SESSION['user'])) {
+                                echo RAIZ_PROJETO . 'config/login.php';
+                            } else {
+                                echo '#';
+                            }
+                        ?>">
                         <img src="<?php echo $image; ?>" alt="Perfil" class="profile-img">
                     </a>
+
                 </div>
             </div>
         </div>
