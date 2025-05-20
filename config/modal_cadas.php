@@ -13,7 +13,7 @@
 
             <!-- Corpo do modal -->
             <div class="modal-body p-5">
-                <form method="post" action="processa_cadas.php" enctype="multipart/form-data">
+                <form method="post" action="config/processa_cadas.php" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="nome" class="form-label">
                             <i class="fas fa-user me-2"></i>Nome
