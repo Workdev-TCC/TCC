@@ -76,10 +76,10 @@
                 <!-- Ícone de login à direita -->
                 <div class="d-flex">
                     <?php 
-                        if(isset($_SESSION['user'])){
-                            // exibe foto
+                        if(isset($_SESSION['foto'])){
+                           $image= RAIZ_PROJETO."usuarios/img/".$_SESSION['foto'];
                         }else{
-                            $image=RAIZ_PROJETO."assets/img/login.png";
+                            $image= RAIZ_PROJETO."assets/img/login.png";
                         }
                     ?>
                     <a href="<?php 
@@ -89,7 +89,7 @@
                                 echo '#';
                             }
                         ?>">
-                        <img src="<?php echo $image; ?>" alt="Perfil" class="profile-img">
+                        <img src="<?php echo $image;?>" alt="erro" class="rounded-circle profile-img">
                     </a>
 
                 </div>

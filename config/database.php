@@ -1,5 +1,4 @@
 <?php 
-    include(UTEIS);
     function open_db(){
         try{
             $conn= new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8",DB_USER, DB_PASS);
@@ -21,10 +20,9 @@
 
     function save($table, $array) {
         $db = open_db();
-
-        
-
-        
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $columns = implode(", ", array_keys($array));
 
         
@@ -42,9 +40,13 @@
             $stmt->execute();
             $_SESSION['message'] = 'Registro cadastrado com sucesso.';
             $_SESSION['type'] = 'success';
+            return true;
+              
         } catch (Exception $e) {
             $_SESSION['message'] = $e->getMessage();
             $_SESSION['type'] = 'danger';
+            return false;
+           
         }
         close_db($db);
     }
