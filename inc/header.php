@@ -30,7 +30,7 @@
                 <!-- Links centralizados -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sobre</a>
@@ -57,7 +57,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Consultar Usuarios</a></li>
                             <li><a class="dropdown-item" href="#">Consultar Pedidos </a></li>
-                            <li><a class="dropdown-item" href="#">Calculadora de Orçamento </a></li>
+                            <li><a class="dropdown-item" href="orçamento.php">Calculadora de Orçamento </a></li>
                         </ul>
                     </li>
                     <?php endif;?>
@@ -81,6 +81,7 @@
                         }else{
                             $image= RAIZ_PROJETO."assets/img/login.png";
                         }
+
                     ?>
                     <a href="<?php 
                             if (empty($_SESSION['user'])) {
