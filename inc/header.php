@@ -58,6 +58,7 @@
                             <li><a class="dropdown-item" href="#">Consultar Usuarios</a></li>
                             <li><a class="dropdown-item" href="#">Consultar Pedidos </a></li>
                             <li><a class="dropdown-item" href="orçamento.php">Calculadora de Orçamento </a></li>
+                            <li><a class="dropdown-item" href="listar.php">Listar orçamentos </a></li>
                         </ul>
                     </li>
                     <?php endif;?>

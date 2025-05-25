@@ -54,6 +54,9 @@
 </form>
 
 <div id="resultado"></div>
+
+<button type="button" id="salvar" style="display: none;">Salvar Orçamento</button>
+
   </div>
 
   <?php  include FOOTER_TEMPLATE;?>

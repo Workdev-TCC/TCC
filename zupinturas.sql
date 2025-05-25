@@ -13,6 +13,25 @@ CREATE TABLE usuarios (
     tipo ENUM('user', 'admin') DEFAULT 'user',
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE orcamentos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  area DECIMAL(10,2),
+  demao INT,
+  rendimento DECIMAL(10,2),
+  preco_tinta DECIMAL(10,2),
+  mao_obra DECIMAL(10,2),
+  extras DECIMAL(10,2),
+  litros_necessarios DECIMAL(10,2),
+  gasto_material DECIMAL(10,2),
+  gasto_mao_obra DECIMAL(10,2),
+  total_extras DECIMAL(10,2),
+  lucro_aplicado DECIMAL(10,2),
+  valor_sem_lucro DECIMAL(10,2),
+  valor_final DECIMAL(10,2),
+  data_orcamento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO usuarios (nome, email, senha, foto, telefone, tipo)
 VALUES ('João Silva', 'joao@example.com', 'senha123', 'teste2.jpg', '11999998888', 'user');
 

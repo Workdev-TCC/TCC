@@ -1,3 +1,24 @@
+// Função auxiliar para calcular latas necessárias
+function calcularLatas(litros) {
+  const tamanhos = [18, 5, 3.6, 2.5, 0.9];
+  const latas = [];
+
+  for (let i = 0; i < tamanhos.length; i++) {
+    const qtd = Math.floor(litros / tamanhos[i]);
+    if (qtd > 0) {
+      latas.push(`${qtd} lata(s) de ${tamanhos[i]}L`);
+      litros -= qtd * tamanhos[i];
+    }
+  }
+
+  // Se ainda restar tinta necessária, usa a menor lata
+  if (litros > 0) {
+    latas.push(`1 lata de 0.9L`);
+  }
+
+  return latas.join(', ');
+}
+
 $(document).ready(function () {
   $('#calcular').click(function () {
     const area = parseFloat($('#area').val());
@@ -5,72 +26,50 @@ $(document).ready(function () {
     const rendimento = parseFloat($('#rendimento').val());
     const precoTinta = parseFloat($('#precoTinta').val());
     const maoObra = parseFloat($('#maoObra').val());
-    const extras = parseFloat($('#extras').val()) || 0;
-
-    if (
-      isNaN(area) || isNaN(demao) || isNaN(rendimento) ||
-      isNaN(precoTinta) || isNaN(maoObra)
-    ) {
-      alert("Por favor, preencha todos os campos corretamente.");
-      return;
-    }
+    const extras = parseFloat($('#extras').val() || 0);
 
     const litrosNecessarios = (area * demao) / rendimento;
-
-    // Latas disponíveis no mercado
-    const latasDisponiveis = [18, 3.6, 2.5, 0.9];
-
-    // Cálculo ideal de latas
-    function calcularLatas(litros) {
-      const resultado = {};
-      let restante = litros;
-
-      for (let i = 0; i < latasDisponiveis.length; i++) {
-        const tamanho = latasDisponiveis[i];
-        const qtd = Math.floor(restante / tamanho);
-        if (qtd > 0) {
-          resultado[tamanho] = qtd;
-          restante -= qtd * tamanho;
-        }
-      }
-
-      // Se ainda sobrou tinta, pega a menor lata possível
-      if (restante > 0) {
-        const menor = latasDisponiveis[latasDisponiveis.length - 1];
-        resultado[menor] = (resultado[menor] || 0) + 1;
-      }
-
-      return resultado;
-    }
-
-    const latas = calcularLatas(litrosNecessarios);
-
-    // Custo total do material (considera preço por litro)
     const custoMaterial = litrosNecessarios * precoTinta;
     const custoMaoObra = area * maoObra;
     const custoTotal = custoMaterial + custoMaoObra + extras;
-
-    const lucro = custoTotal * 0.30; // 30% fixo
+    const lucro = custoTotal * 0.3;
     const valorFinal = custoTotal + lucro;
 
-    // Montar string das latas
-    let textoLatas = '';
-    for (const [tamanho, qtd] of Object.entries(latas)) {
-      textoLatas += `${qtd} lata(s) de ${tamanho}L<br>`;
-    }
+    const latasTexto = calcularLatas(litrosNecessarios);
 
-        $('#resultado').html(`
-            <h3>Resumo do Orçamento</h3>
-            <p><strong>Quantidade de tinta necessária:</strong> ${litrosNecessarios.toFixed(2)} litros</p>
-            <p><strong>Distribuição ideal de latas:</strong><br>${textoLatas}</p>
-            <p><strong>Gasto com material:</strong> R$ ${custoMaterial.toFixed(2)}</p>
-            <p><strong>Gasto com mão de obra:</strong> R$ ${custoMaoObra.toFixed(2)}</p>
-            <p><strong>Total de extras:</strong> R$ ${extras.toFixed(2)}</p>
-            <hr>
-            <p><strong>Valor do serviço (sem lucro):</strong> R$ ${custoTotal.toFixed(2)}</p>
-            <p><strong>Lucro aplicado (30%):</strong> R$ ${lucro.toFixed(2)}</p>
-            <p><strong>Valor final do serviço (com lucro):</strong> <span style="font-size: 18px; font-weight: bold;">R$ ${valorFinal.toFixed(2)}</span></p>
+    $('#salvar').show();
+
+    $('#resultado').html(`
+      <h3>Resumo do Orçamento</h3>
+      <p><strong>Quantidade de material:</strong> ${latasTexto}</p>
+      <p><strong>Litros necessários:</strong> ${litrosNecessarios.toFixed(2)} L</p>
+      <p><strong>Gasto com material:</strong> R$ ${custoMaterial.toFixed(2)}</p>
+      <p><strong>Gasto com mão de obra:</strong> R$ ${custoMaoObra.toFixed(2)}</p>
+      <p><strong>Total de extras:</strong> R$ ${extras.toFixed(2)}</p>
+      <p><strong>Valor sem lucro:</strong> R$ ${custoTotal.toFixed(2)}</p>
+      <p><strong>Lucro (30%):</strong> R$ ${lucro.toFixed(2)}</p>
+      <p><strong>Valor final:</strong> R$ ${valorFinal.toFixed(2)}</p>
     `);
 
+    dadosOrcamento = {
+      area, demao, rendimento, preco_tinta: precoTinta,
+      mao_obra: maoObra, extras,
+      litros_necessarios: litrosNecessarios.toFixed(2),
+      gasto_material: custoMaterial.toFixed(2),
+      gasto_mao_obra: custoMaoObra.toFixed(2),
+      total_extras: extras.toFixed(2),
+      lucro_aplicado: lucro.toFixed(2),
+      valor_sem_lucro: custoTotal.toFixed(2),
+      valor_final: valorFinal.toFixed(2)
+    };
+  });
+
+  $('#salvar').click(function () {
+    $.post("orçamento_salvar.php", dadosOrcamento, function (resposta) {
+      alert("Orçamento salvo com sucesso!");
+      $('#salvar').hide();
+    }).fail(function () {
+      alert("Erro ao salvar. Verifique o PHP.");
+    });
   });
 });
