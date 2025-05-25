@@ -51,6 +51,36 @@
         close_db($db);
     }
 
+    function update($table,$id,$array){
+        $db=open_db();
+        $items = null;
+
+		foreach ($array as $key => $value) {
+			$items .= trim($key, "'") . "='$value',";
+		}
+
+		// remove a ultima virgula
+		$items = rtrim($items, ',');
+
+		$sql  = "UPDATE " . $table;
+		$sql .= " SET $items ";
+		$sql .= " WHERE id=" . $id . ";";
+        try {
+			$db->query($sql);
+			if (session_status() === PHP_SESSION_NONE) {
+				session_start();
+			}
+			$_SESSION['message'] = "Registro atualizado com sucesso.";
+			$_SESSION['type'] = "success";
+
+		} catch (Exception $e) {
+
+			$_SESSION['message'] = 'Não foi possivel realizar a operacao.';
+			$_SESSION['type'] = 'danger';
+		} 
+        close_db($db);
+    }
+
 
 
 

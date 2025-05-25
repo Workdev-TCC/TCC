@@ -12,6 +12,8 @@
 <?php clear_messages(); ?>
 <?php endif; ?>
 
+<?php include("usuarios/conta/menu.php");?>
+
 <?php 
     include FOOTER_TEMPLATE;
 ?>

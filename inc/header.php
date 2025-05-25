@@ -73,7 +73,6 @@
                     <?php endif;?>
                 </ul>
 
-                <!-- Ícone de login à direita -->
                 <div class="d-flex">
                     <?php 
                         if(isset($_SESSION['foto'])){
@@ -83,16 +82,15 @@
                         }
 
                     ?>
-                    <a href="<?php 
-                            if (empty($_SESSION['user'])) {
-                                echo RAIZ_PROJETO . 'config/login.php';
-                            } else {
-                                echo '#';
-                            }
-                        ?>">
+                    <?php if(isset($_SESSION['user'])):?>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">
                         <img src="<?php echo $image;?>" alt="erro" class="rounded-circle profile-img">
                     </a>
-
+                    <?php else:?>
+                    <a href="<?php  echo RAIZ_PROJETO . 'config/login.php';?>">
+                        <img src="<?php echo $image;?>" alt="erro" class="rounded-circle profile-img">
+                    </a>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
