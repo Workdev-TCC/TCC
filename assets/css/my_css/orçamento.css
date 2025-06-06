@@ -1,9 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
+
 
 .container {
   max-width: 600px;
@@ -14,18 +9,18 @@ body {
   border-radius: 10px;
 }
 
-h1 {
+.h1-orça {
   text-align: center;
   margin-bottom: 25px;
 }
 
-label {
+.label-orça {
   font-weight: bold;
   margin-top: 15px;
   display: block;
 }
 
-input[type="number"] {
+.input-orça{
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -35,7 +30,7 @@ input[type="number"] {
   border-radius: 4px;
 }
 
-button {
+.button-orça {
   background-color: #28a745;
   color: white;
   border: none;
@@ -46,11 +41,11 @@ button {
   width: 100%;
 }
 
-button:hover {
+.button-orça:hover {
   background-color: #218838;
 }
 
-#resultado {
+.resultado {
   margin-top: 20px;
   background-color: #e9ecef;
   padding: 15px;
@@ -60,11 +55,6 @@ button:hover {
 
 /* listar.css */
 
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #fefefe;
-}
 
 h2 {
   margin-bottom: 20px;

@@ -65,7 +65,7 @@ $(document).ready(function () {
   });
 
   $('#salvar').click(function () {
-    $.post("orçamento_salvar.php", dadosOrcamento, function (resposta) {
+    $.post("../../orcamento/orçamento_salvar.php", dadosOrcamento, function (resposta) {
       alert("Orçamento salvo com sucesso!");
       $('#salvar').hide();
     }).fail(function () {

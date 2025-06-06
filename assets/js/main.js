@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Fecha o modal ao clicar no ícone do Font Awesome
     closeIcon.addEventListener('click', function() {
         const modalInstance = bootstrap.Modal.getInstance(modal);
         modalInstance.hide();
