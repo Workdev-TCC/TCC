@@ -17,6 +17,25 @@
         $_SESSION['message']=null;
         $_SESSION['type']=null;
     }
+    function listar_ordem($table, $order, $tipo = "DESC") {
+        $pdo = open_db();
+        try {
+            $sql = "SELECT * FROM " . $table . " ORDER BY " . $order . " " . $tipo;
+            $stmt = $pdo->query($sql);
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        } catch (Exception $e) {
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['message'] = $e->getMessage();
+            $_SESSION['type'] = "danger";
+            return []; // ← retorna array vazio em caso de erro
+        } finally {
+            close_db($pdo);
+        }
+    }
+    
 
     function save($table, $array) {
         $db = open_db();

@@ -1,12 +1,29 @@
-
 <?php      
-  include('config.php');
+  include('../config.php');
   include DBAPI;
   include HEADER_TEMPLATE;
 ?>
+<?php 
+    $msg = '';
+    $type = '';
+    
+    if (!empty($_GET['msg']) && !empty($_GET['type'])) {
+        $msg = $_GET['msg'];
+        $type = $_GET['type'];
+        if (session_status() === PHP_SESSION_NONE) {
+          session_start();
+        }
+          $_SESSION['message'] =$msg;
+          $_SESSION['type'] =$type;
+    }
+?>
 
-<div class="container"></div>
+
+<div class="container2">
     <?php 
+      if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+      }
         if (!empty($_SESSION['message'])) : ?>
     <div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">
         <?php echo $_SESSION['message']; ?>
@@ -28,31 +45,33 @@
     }
     ?>
 
-  <form method="post" id="formOrcamento">
-    <label class="label-orça" for="area">Área total a ser pintada (m²):</label>
-    <input class="input-orça" type="number" id="area" name="area" placeholder="Ex: 150" required>
+    <form method="post" id="formOrcamento">
+        <label class="label-orça" for="area">Área total a ser pintada (m²):</label>
+        <input class="input-orça" type="number" id="area" name="area" placeholder="Ex: 150" required>
 
-    <label class="label-orça" for="demao">Número de demãos:</label>
-    <input class="input-orça"type="number" id="demao" name="demao" placeholder="Ex: 2" required>
+        <label class="label-orça" for="demao">Número de demãos:</label>
+        <input class="input-orça" type="number" id="demao" name="demao" placeholder="Ex: 2" required>
 
-    <label class="label-orça" for="rendimento">Rendimento da tinta (m² por litro):</label>
-    <input class="input-orça" type="number" id="rendimento" name="rendimento" placeholder="Ex: 10" required>
+        <label class="label-orça" for="rendimento">Rendimento da tinta (m² por litro):</label>
+        <input class="input-orça" type="number" id="rendimento" name="rendimento" placeholder="Ex: 10" required>
 
-    <label class="label-orça" for="precoTinta">Preço por litro da tinta (R$):</label>
-    <input class="input-orça" type="number" id="precoTinta" name="precoTinta" placeholder="Ex: 25.00" required>
+        <label class="label-orça" for="precoTinta">Preço por litro da tinta (R$):</label>
+        <input class="input-orça" type="number" id="precoTinta" name="precoTinta" placeholder="Ex: 25.00" required>
 
-    <label class="label-orça" for="maoObra">Valor da mão de obra por m² (R$):</label>
-    <input class="input-orça" type="number" id="maoObra" name="maoObra" placeholder="Ex: 12.00" required>
+        <label class="label-orça" for="maoObra">Valor da mão de obra por m² (R$):</label>
+        <input class="input-orça" type="number" id="maoObra" name="maoObra" placeholder="Ex: 12.00" required>
 
-    <label class="label-orça" for="extras">Valor de extras (R$):</label>
-    <input class="input-orça"type="number" id="extras" name="extras" value="0" placeholder="Ex: 150.00">
+        <label class="label-orça" for="extras">Valor de extras (R$):</label>
+        <input class="input-orça" type="number" id="extras" name="extras" value="0" placeholder="Ex: 150.00">
 
-    <button class="button-orça" type="button" id="calcular">Calcular Orçamento</button>
-  </form>
+        <button class="button-orça" type="button" id="calcular">Calcular Orçamento</button>
+    </form>
 
-  <div class="resultado" id="resultado"></div>
+    <div class="resultado" id="resultado"></div>
 
-  <button class="button-orça" type="button" id="salvar" style="display: none;">Salvar Orçamento</button>
+    <button class="button-orça" type="button" id="salvar" style="display: none;">Salvar Orçamento</button>
 </div>
+
+
 
 <?php  include FOOTER_TEMPLATE;?>
