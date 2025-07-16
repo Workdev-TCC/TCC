@@ -1,0 +1,21 @@
+Regras de Sistema Para os Desenvolvedores
+
+BANCO DE DADOS
+
+- não acentua ex:(ç,ã,`)
+- Lembre de atualizar o arquivo zupinturas.sql caso seja necessario.
+
+-sempre usar "\_" em vez de "-"
+
+DIRETÓRIOS
+
+- não criar arquivos vagos no projeto sempre organizalos em pastas e subpastas
+
+- qualquer interação entre paginas DEVE OBRIGATORIAMENTE usar as CONSTANTES do arquivo config.php
+
+CSS e DESIGN PATTERNS
+
+- Cada pagina do site deve ter seu arquivo scss
+- os arquivos devem ser escrito em ordem do scroll do HTML
+- OBRIGATÓRIO comentar a seção que o scss se trata
+- compilar usando node.js e baixar o sass localmente e compilar em um style.css

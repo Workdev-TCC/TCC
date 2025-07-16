@@ -12,17 +12,17 @@
     }
    
     if(!defined('RAIZ_PROJETO')){
-        define("RAIZ_PROJETO",'/tcc/');
+        define("RAIZ_PROJETO",'/tcc-1/');
     }
    
-	if ( !defined('DBAPI') )
-		define('DBAPI', ABSOLUTE_PATH . 'config/database.php');
+	if ( !defined('DBF') )
+		define('DBF', ABSOLUTE_PATH . 'inc/database.php');
 
    
 	define('HEADER_TEMPLATE', ABSOLUTE_PATH . 'inc/header.php');
 	define('FOOTER_TEMPLATE', ABSOLUTE_PATH . 'inc/footer.php');
 	define('UTEIS', ABSOLUTE_PATH . 'inc/uteis.php');
-	define('IMGUSERS', ABSOLUTE_PATH . 'usuarios/img');
+	
    
 
 ?>

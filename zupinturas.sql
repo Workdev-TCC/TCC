@@ -1,5 +1,5 @@
 
-CREATE DATABASE IF NOT EXISTS zupinturas;
+CREATE DATABASE IF NOT EXISTS zupinturas_bd;
 USE zupinturas;
 
 

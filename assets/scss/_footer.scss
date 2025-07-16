@@ -1,0 +1,32 @@
+footer {
+  width: 100%;
+  .footer-mobile {
+    display: none;
+  }
+}
+
+// Tablets e Ipads
+@media (max-width: 800px) {
+}
+// Mobile
+@media (max-width: 550px) {
+  footer {
+    width: 100%;
+    .footer-mobile {
+      display: flex;
+      width: 100%;
+      padding: 10px 0px;
+      border-top: solid 1px var(--rosa);
+      background-color: $white;
+      position: fixed;
+      bottom: 0;
+      z-index: 10;
+      justify-content: space-around;
+      a {
+        text-decoration: none;
+        color: var(--rosa);
+        font-size: 20px;
+      }
+    }
+  }
+}
