@@ -18,21 +18,22 @@
 <!--fechou hero -->
 <section class="sobre">
     <div class="sobre-text">
-        <h2>SOBRE A EMPRESA <i class="fa-solid fa-building-circle-check"></i></h2>
-        <span>Dando cor e vida aos seus ambientes com excelência</span>
-        <p>Em 2009, Exupério Pereira, que até então era garçom, decidiu dar um passo ousado e fundou sua própria empresa
+        <h2 class="roboto">SOBRE A EMPRESA <i class="fa-solid fa-building-circle-check icon-grande"></i></h2>
+        <span class="hammersmith-one">Dando cor e vida aos seus ambientes com excelência</span>
+        <p class="hammersmith-one">Em 2009, Exupério Pereira, que até então era garçom, decidiu dar um passo ousado e
+            fundou sua própria empresa
             no ramo de pintura. Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para
             começar do zero.
             Desde então, a ZUPINTURAS vem se destacando com responsabilidade, experiência e compromisso com a qualidade,
             transformando imóveis com excelência e profissionalismo.</p>
         <ul>
-            <li>Pintura Residencial e Comercial</li>
-            <li>Acabamentos Profissionais</li>
-            <li>Equipe Treinada e Pontual</li>
+            <li> <i class='bx  bx-wrist-watch-round'></i> Pintura Residencial e Comercial</li>
+            <li><i class='bx  bx-wrist-watch-round'></i> Acabamentos Profissionais</li>
+            <li> <i class='bx  bx-wrist-watch-round'></i> Equipe Treinada e Pontual</li>
         </ul>
     </div>
     <div class="sobre-img">
-        <img src="" alt="">
+        <img class="img-fluid" src="<?php echo RAIZ_PROJETO;?>assets/img/sobre.png" alt="zupinturas">
     </div>
 </section>
 <!-- fecha sobre -->
@@ -108,27 +109,28 @@
         </div>
     </div>
     <div class="servicos-desktop">
-        <h2>NOSSOS SERVIÇOS</h2>
+        <h2 class="linha">NOSSOS SERVIÇOS</h2>
         <div class="servicos-boxes">
             <div class="servicos-box">
-                <img src="" alt="">
-                <h3>aaaaa</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consequuntur?</p>
+                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
+                <h3> Pintura Comercial</h3>
+                <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
             </div>
             <div class="servicos-box">
-                <img src="" alt="">
-                <h3>aaaaa</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consequuntur?</p>
+                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">
+                <h3> Texturas e Efeitos Especiais</h3>
+                <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
             </div>
             <div class="servicos-box">
-                <img src="" alt="">
-                <h3>aaaaa</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consequuntur?</p>
+                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
+                <h3>Tratamento de Imperfeições</h3>
+                <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado
+                    impecável.</p>
             </div>
             <div class="servicos-box">
-                <img src="" alt="">
-                <h3>aaaaa</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consequuntur?</p>
+                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">
+                <h3> Pintura Residencial</h3>
+                <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
             </div>
         </div>
     </div>
@@ -136,24 +138,26 @@
 <!-- fechar servicos -->
 <section class="locais">
     <h2>ONDE TRABALHAMOS?</h2>
-    <div class="locais-mapa">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50374.890752051826!2d-47.459754504954034!3d-23.451761013786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5a9089e7e91%3A0x101610d13ee905b1!2sShopping%20Cidade%20Sorocaba!5e0!3m2!1spt-BR!2sbr!4v1752683292190!5m2!1spt-BR!2sbr"
-            width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div class="locais-text">
-        <h3>Atuamos nas regiões de:</h3>
-        <hr>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorum?</p>
-        <div class="locais-box">
-            <ul>
-                <li>Sorocaba</li>
-                <li>Votorantim</li>
-                <li>Araçoiaba da Serra</li>
-                <li>Salto de Pirapora</li>
-                <li>Região metropolitana de Sorocaba</li>
-            </ul>
+    <div class="locais-content">
+        <div class="locais-mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50374.890752051826!2d-47.459754504954034!3d-23.451761013786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5a9089e7e91%3A0x101610d13ee905b1!2sShopping%20Cidade%20Sorocaba!5e0!3m2!1spt-BR!2sbr!4v1752683292190!5m2!1spt-BR!2sbr"
+                width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="locais-text">
+            <h3>Atuamos nas regiões de:</h3>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorum?</p>
+            <div class="locais-box">
+                <ul>
+                    <li>Sorocaba</li>
+                    <li>Votorantim</li>
+                    <li>Araçoiaba da Serra</li>
+                    <li>Salto de Pirapora</li>
+                    <li>Região metropolitana de Sorocaba</li>
+                </ul>
+            </div>
         </div>
     </div>
 

@@ -1,17 +1,238 @@
 .hero {
   width: 100%;
   height: 400px;
+  padding: 10px 20px;
   background-image: url("../img/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  max-width: 1350px;
 
   display: flex;
   flex-direction: row;
+  .hero-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $white;
+      font-size: 36px;
+      span {
+        color: $roxo;
+      }
+    }
+    p {
+      color: white;
+      font-size: 20px;
+    }
+  }
+  .hero-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: $white;
+      font-size: 60px;
+      .button-whats {
+        padding: 5px 40px;
+        background-color: green;
+        border-radius: 50px;
+      }
+    }
+    width: 100%;
+  }
+}
+// fecha section hero
+.sobre {
+  background-color: white;
+  max-width: 1350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px 5px 5px 5px;
+  .sobre-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 30px;
+    max-width: 700px;
+
+    h2 {
+      color: $roxo;
+    }
+    span {
+      font-weight: bold;
+      text-align: left;
+    }
+    p {
+      text-align: justify;
+      padding: 5px;
+      max-width: 700px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      li {
+        font-size: 22px;
+        color: $rosa;
+      }
+    }
+  }
+  .sobre-img {
+    padding: 20px;
+  }
+}
+// fecha section sobre
+.servicos {
+  background-image: url("../img/fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  max-width: 1350px;
+  .servicos-mobile {
+    display: none;
+  }
+  .servicos-desktop {
+    display: flex;
+    flex-direction: column;
+    .linha {
+      position: relative;
+      display: inline-block;
+      color: #007bff; /* Azul */
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .linha::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #007bff 50%, #ff4dc0 50%);
+      border-radius: 2px;
+    }
+
+    .servicos-boxes {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 80px;
+      .servicos-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: white;
+        border-radius: 30px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        img {
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+// fecha servicos
+.locais {
+  display: flex;
+  max-width: 1350px;
+  width: 100%;
+  flex-direction: column;
+  background-color: red;
+  margin-bottom: 30px;
+  .locais-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #ff4dc0;
+    width: 100%;
+    padding: 20px;
+    .locais-mapa {
+      background-color: yellow;
+      padding: 10px;
+    }
+    .locais-text {
+      background-color: #ffffff;
+      padding: 10px;
+      h3 {
+        position: relative;
+        display: inline-block;
+        color: #007bff; /* Azul */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      h3::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, #007bff 50%, #ff4dc0 50%);
+        border-radius: 2px;
+      }
+    }
+  }
 }
 // tablets e ipads
 @media (max-width: 800px) {
+  .hero {
+    height: 350px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    .hero-button {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: $white;
+        font-size: 30px;
+        .button-whats {
+          padding: 10px 20px;
+          background-color: green;
+          border-radius: 30px;
+        }
+      }
+      width: 100%;
+    }
+  }
+  .sobre {
+    flex-direction: column;
+    .sobre-img {
+      img {
+        display: none;
+      }
+    }
+  }
 }
 // mobile
 @media (max-width: 550px) {
@@ -25,14 +246,9 @@
     .hero-text {
       margin: 10px;
       h1 {
-        color: $white;
         font-size: 24px;
-        span {
-          color: $roxo;
-        }
       }
       p {
-        color: white;
         font-size: 15px;
       }
     }
@@ -51,6 +267,39 @@
         }
       }
       width: 100%;
+    }
+  }
+  // fecha section hero
+  .sobre {
+    flex-direction: column;
+    .sobre-img {
+      img {
+        display: none;
+      }
+    }
+    .sobre-text {
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      span {
+        text-align: center;
+      }
+
+      ul {
+        li {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+  // fecha section sobre
+  // fecha section sobre
+  .servicos {
+    .servicos-mobile {
+      display: block;
+    }
+    .servicos-desktop {
+      display: none;
     }
   }
 }

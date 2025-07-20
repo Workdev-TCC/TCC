@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --azul: #5170ff;
   --roxo: #976ce7;
@@ -21,12 +21,28 @@ body {
   text-align: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .aberto {
   display: block;
 }
 
 .roboto {
   font-family: "Roboto", sans-serif;
+}
+
+.hammersmith-one {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+.icon-grande {
+  font-size: 30px !important;
+  margin-left: 10px;
 }
 
 header {
@@ -121,15 +137,229 @@ header .nav-desktop .div-login-user .profile-img {
 .hero {
   width: 100%;
   height: 400px;
+  padding: 10px 20px;
   background-image: url("../img/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  max-width: 1350px;
   display: flex;
   flex-direction: row;
 }
+.hero .hero-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero .hero-text h1 {
+  color: var(--branco);
+  font-size: 36px;
+}
+.hero .hero-text h1 span {
+  color: var(--roxo);
+}
+.hero .hero-text p {
+  color: white;
+  font-size: 20px;
+}
+.hero .hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  width: 100%;
+}
+.hero .hero-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--branco);
+  font-size: 60px;
+}
+.hero .hero-button a .button-whats {
+  padding: 5px 40px;
+  background-color: green;
+  border-radius: 50px;
+}
 
+.sobre {
+  background-color: white;
+  max-width: 1350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px 5px 5px 5px;
+}
+.sobre .sobre-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 700px;
+}
+.sobre .sobre-text h2 {
+  color: var(--roxo);
+}
+.sobre .sobre-text span {
+  font-weight: bold;
+  text-align: left;
+}
+.sobre .sobre-text p {
+  text-align: justify;
+  padding: 5px;
+  max-width: 700px;
+}
+.sobre .sobre-text ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.sobre .sobre-text ul li {
+  font-size: 22px;
+  color: var(--rosa);
+}
+.sobre .sobre-img {
+  padding: 20px;
+}
+
+.servicos {
+  background-image: url("../img/fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  max-width: 1350px;
+}
+.servicos .servicos-mobile {
+  display: none;
+}
+.servicos .servicos-desktop {
+  display: flex;
+  flex-direction: column;
+}
+.servicos .servicos-desktop .linha {
+  position: relative;
+  display: inline-block;
+  color: #007bff; /* Azul */
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.servicos .servicos-desktop .linha::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #007bff 50%, #ff4dc0 50%);
+  border-radius: 2px;
+}
+.servicos .servicos-desktop .servicos-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 80px;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-box img {
+  width: 80px;
+}
+
+.locais {
+  display: flex;
+  max-width: 1350px;
+  width: 100%;
+  flex-direction: column;
+  background-color: red;
+  margin-bottom: 30px;
+}
+.locais .locais-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ff4dc0;
+  width: 100%;
+  padding: 20px;
+}
+.locais .locais-content .locais-mapa {
+  background-color: yellow;
+  padding: 10px;
+}
+.locais .locais-content .locais-text {
+  background-color: #ffffff;
+  padding: 10px;
+}
+.locais .locais-content .locais-text h3 {
+  position: relative;
+  display: inline-block;
+  color: #007bff; /* Azul */
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.locais .locais-content .locais-text h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #007bff 50%, #ff4dc0 50%);
+  border-radius: 2px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    height: 350px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+  .hero .hero-button {
+    width: 100%;
+  }
+  .hero .hero-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 30px;
+  }
+  .hero .hero-button a .button-whats {
+    padding: 10px 20px;
+    background-color: green;
+    border-radius: 30px;
+  }
+  .sobre {
+    flex-direction: column;
+  }
+  .sobre .sobre-img img {
+    display: none;
+  }
+}
 @media (max-width: 550px) {
   .hero {
     height: 300px;
@@ -142,14 +372,9 @@ header .nav-desktop .div-login-user .profile-img {
     margin: 10px;
   }
   .hero .hero-text h1 {
-    color: var(--branco);
     font-size: 24px;
   }
-  .hero .hero-text h1 span {
-    color: var(--roxo);
-  }
   .hero .hero-text p {
-    color: white;
     font-size: 15px;
   }
   .hero .hero-button {
@@ -167,6 +392,29 @@ header .nav-desktop .div-login-user .profile-img {
     padding: 10px 20px;
     background-color: green;
     border-radius: 30px;
+  }
+  .sobre {
+    flex-direction: column;
+  }
+  .sobre .sobre-img img {
+    display: none;
+  }
+  .sobre .sobre-text {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .sobre .sobre-text span {
+    text-align: center;
+  }
+  .sobre .sobre-text ul li {
+    font-size: 19px;
+  }
+  .servicos .servicos-mobile {
+    display: block;
+  }
+  .servicos .servicos-desktop {
+    display: none;
   }
 }
 .intocavel {
