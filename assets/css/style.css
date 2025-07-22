@@ -290,21 +290,27 @@ header .nav-desktop .div-login-user .profile-img {
   max-width: 1350px;
   width: 100%;
   flex-direction: column;
-  background-color: red;
   margin-bottom: 30px;
+}
+.locais h2 {
+  margin-top: 10px;
+  text-align: center;
 }
 .locais .locais-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: space-around;
   gap: 30px;
-  background-color: #ff4dc0;
   width: 100%;
   padding: 20px;
 }
 .locais .locais-content .locais-mapa {
-  background-color: yellow;
+  margin-bottom: 10px;
   padding: 10px;
+}
+.locais .locais-content .locais-mapa iframe {
+  width: 500px;
+  height: 300px;
 }
 .locais .locais-content .locais-text {
   background-color: #ffffff;
@@ -394,6 +400,11 @@ header .nav-desktop .div-login-user .profile-img {
     border-radius: 30px;
   }
   .sobre {
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     flex-direction: column;
   }
   .sobre .sobre-img img {
@@ -410,11 +421,82 @@ header .nav-desktop .div-login-user .profile-img {
   .sobre .sobre-text ul li {
     font-size: 19px;
   }
+  .servicos {
+    width: 100%;
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
   .servicos .servicos-mobile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: transparent;
+  }
+  .servicos .servicos-mobile .servicos-header {
+    width: 100%;
+    background: transparent;
+  }
+  .servicos .servicos-mobile .servicos-header h2 {
+    font-size: 30px;
+    color: var(--roxo);
+  }
+  .servicos .servicos-mobile .servicos-main {
+    padding: 4px;
+    background: transparent;
+  }
+  .servicos .servicos-mobile .servicos-main .accordion {
+    background: transparent !important;
+  }
+  .servicos .servicos-mobile .servicos-main .accordion .accordion-item {
+    background: transparent !important;
+  }
+  .servicos .servicos-mobile .servicos-main .accordion .accordion-item .accordion-header {
+    background: transparent !important;
+  }
+  .servicos .servicos-mobile .servicos-main .accordion .accordion-item .accordion-header button {
+    background: transparent !important;
+  }
+  .servicos .servicos-mobile .servicos-main .accordion .accordion-item .accordion-body {
+    background: transparent !important;
   }
   .servicos .servicos-desktop {
     display: none;
+  }
+  .locais h2 {
+    font-size: 30px;
+    color: var(--roxo);
+  }
+  .locais .locais-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .locais .locais-content .locais-mapa {
+    margin-bottom: 10px;
+    border: #007bff;
+    padding: 10px;
+  }
+  .locais .locais-content .locais-mapa iframe {
+    width: 300px;
+    height: 200px;
+  }
+  .locais .locais-content .locais-text {
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .locais .locais-content .locais-text p {
+    text-align: justify;
+    margin: 15px;
+  }
+  .locais .locais-content .locais-text ul {
+    list-style: none;
+  }
+  .locais .locais-content .locais-text ul li {
+    text-align: start;
+    margin-bottom: 20px;
   }
 }
 .intocavel {

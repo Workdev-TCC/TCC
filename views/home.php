@@ -137,27 +137,24 @@
 </section>
 <!-- fechar servicos -->
 <section class="locais">
-    <h2>ONDE TRABALHAMOS?</h2>
+    <h2 class="roboto">ONDE TRABALHAMOS?</h2>
     <div class="locais-content">
         <div class="locais-mapa">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50374.890752051826!2d-47.459754504954034!3d-23.451761013786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5a9089e7e91%3A0x101610d13ee905b1!2sShopping%20Cidade%20Sorocaba!5e0!3m2!1spt-BR!2sbr!4v1752683292190!5m2!1spt-BR!2sbr"
-                width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
+                style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="locais-text">
             <h3>Atuamos nas regiões de:</h3>
-            <hr>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorum?</p>
-            <div class="locais-box">
-                <ul>
-                    <li>Sorocaba</li>
-                    <li>Votorantim</li>
-                    <li>Araçoiaba da Serra</li>
-                    <li>Salto de Pirapora</li>
-                    <li>Região metropolitana de Sorocaba</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Sorocaba</li>
+                <li>Votorantim</li>
+                <li>Araçoiaba da Serra</li>
+                <li>Salto de Pirapora</li>
+                <li>Região metropolitana de Sorocaba</li>
+            </ul>
         </div>
     </div>
 

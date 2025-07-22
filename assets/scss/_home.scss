@@ -161,19 +161,25 @@
   max-width: 1350px;
   width: 100%;
   flex-direction: column;
-  background-color: red;
   margin-bottom: 30px;
+  h2 {
+    margin-top: 10px;
+    text-align: center;
+  }
   .locais-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-around;
     gap: 30px;
-    background-color: #ff4dc0;
     width: 100%;
     padding: 20px;
     .locais-mapa {
-      background-color: yellow;
+      margin-bottom: 10px;
       padding: 10px;
+      iframe {
+        width: 500px;
+        height: 300px;
+      }
     }
     .locais-text {
       background-color: #ffffff;
@@ -271,6 +277,11 @@
   }
   // fecha section hero
   .sobre {
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     flex-direction: column;
     .sobre-img {
       img {
@@ -293,13 +304,84 @@
     }
   }
   // fecha section sobre
-  // fecha section sobre
   .servicos {
+    width: 100%;
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     .servicos-mobile {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: transparent;
+      .servicos-header {
+        width: 100%;
+        background: transparent;
+        h2 {
+          font-size: 30px;
+          color: $roxo;
+        }
+      }
+      .servicos-main {
+        padding: 4px;
+        background: transparent;
+        .accordion {
+          background: transparent !important;
+          .accordion-item {
+            background: transparent !important;
+            .accordion-header {
+              background: transparent !important;
+              button {
+                background: transparent !important;
+              }
+            }
+            .accordion-body {
+              background: transparent !important;
+            }
+          }
+        }
+      }
     }
     .servicos-desktop {
       display: none;
+    }
+  }
+  .locais {
+      h2 {
+          font-size: 30px;
+          color: $roxo;
+        }
+    .locais-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      .locais-mapa {
+        margin-bottom: 10px;
+        border: #007bff;
+        padding: 10px;
+        iframe {
+          width: 300px;
+          height: 200px;
+        }
+      }
+      .locais-text {
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        p {
+          text-align: justify;
+          margin: 15px;
+        }
+        ul {
+          list-style: none;
+          li {
+            text-align: start;
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
   }
 }
