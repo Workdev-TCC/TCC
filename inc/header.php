@@ -41,7 +41,7 @@
             </div>
             <ul class="navbar-nav nav-links header-font">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INICIO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">SOBRE</a>
@@ -63,12 +63,12 @@
                     </ul>
                 </li>
             </ul>
-            <div class="div-login-user">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#perfilModal">
+            <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
+                <div class="div-login-user">
                     <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura.png" alt="erro"
                         class="rounded-circle profile-img">
-                </a>
-            </div>
+                </div>
+            </a>
         </nav>
     </header>
     <main>

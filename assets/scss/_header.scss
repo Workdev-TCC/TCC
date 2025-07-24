@@ -10,16 +10,15 @@ header {
   .header-font {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
-    font-style: to-upper-case($string: "A");
     li {
       a {
-        color: $roxo;
+        color: var(--roxo);
       }
     }
     li {
       li {
         a {
-          color: $roxo;
+          color: var(--roxo);
         }
       }
     }
@@ -94,7 +93,7 @@ header {
       align-items: center;
       justify-content: center;
       padding: 10px;
-      color: $roxo;
+      color: var(--roxo);
       font-size: 25px;
     }
     .logo-mobile {

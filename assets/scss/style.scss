@@ -1,14 +1,11 @@
 // apenas importações nesse arquivo
-@import "vars";
-// fontes
-
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
+@use "vars" as *;
 //Estrutura absoluta
-@import "global";
-@import "header";
+@use "global";
+@use "header";
 // todo arquivo criado fica entre header e sidebar
-@import "home";
+@use "home";
+@use "login_cadastro";
 // --------------------
-@import "sidebar";
-@import "footer";
+@use "sidebar";
+@use "footer";

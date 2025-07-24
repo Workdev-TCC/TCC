@@ -18,10 +18,10 @@
     justify-content: center;
     align-items: center;
     h1 {
-      color: $white;
+      color: #fff;
       font-size: 36px;
       span {
-        color: $roxo;
+        color: var(--roxo);
       }
     }
     p {
@@ -39,7 +39,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: $white;
+      color: #fff;
       font-size: 60px;
       .button-whats {
         padding: 5px 40px;
@@ -70,7 +70,7 @@
     max-width: 700px;
 
     h2 {
-      color: $roxo;
+      color: var(--roxo);
     }
     span {
       font-weight: bold;
@@ -89,7 +89,7 @@
 
       li {
         font-size: 22px;
-        color: $rosa;
+        color: var(--rosa);
       }
     }
   }
@@ -182,8 +182,20 @@
       }
     }
     .locais-text {
+      border-radius: 30px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background-color: #ffffff;
       padding: 10px;
+      p {
+        margin: 5px 20px;
+      }
+      ul {
+        list-style: none;
+        li {
+          text-align: start;
+        }
+      }
       h3 {
         position: relative;
         display: inline-block;
@@ -220,7 +232,7 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: $white;
+        color: #fff;
         font-size: 30px;
         .button-whats {
           padding: 10px 20px;
@@ -264,7 +276,7 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: $white;
+        color: #fff;
         font-size: 30px;
         .button-whats {
           padding: 10px 20px;
@@ -321,7 +333,7 @@
         background: transparent;
         h2 {
           font-size: 30px;
-          color: $roxo;
+          color: var(--roxo);
         }
       }
       .servicos-main {
@@ -349,10 +361,10 @@
     }
   }
   .locais {
-      h2 {
-          font-size: 30px;
-          color: $roxo;
-        }
+    h2 {
+      font-size: 30px;
+      color: var(--roxo);
+    }
     .locais-content {
       flex-direction: column-reverse;
       align-items: center;

@@ -2,6 +2,6 @@
     include("config.php");
     include HEADER_TEMPLATE;
     include ("views/home.php");
-    include ("inc/sidebar.php");
+    include SIDEBAR;
     include FOOTER_TEMPLATE;
 ?>

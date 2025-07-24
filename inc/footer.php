@@ -1,8 +1,9 @@
 </main>
 <footer>
     <div class="footer-mobile">
-        <a href="#" class="text-pink"><i class="fas fa-home fa-lg"></i></a>
-        <a href="#" class="text-pink"><span><i class="fas fa-user fa-lg"></i></span></a>
+        <a href=" <?php echo RAIZ_PROJETO;?>" class="text-pink"><i class="fas fa-home fa-lg"></i></a>
+        <a href=" <?php echo RAIZ_PROJETO;?>auth/views/login.php" class="text-pink"><span><i
+                    class="fas fa-user fa-lg"></i></span></a>
         <a href="#" class="text-pink"><i class="fas fa-cogs fa-lg"></i></a>
     </div>
 </footer>

@@ -20,6 +20,7 @@
 
    
 	define('HEADER_TEMPLATE', ABSOLUTE_PATH . 'inc/header.php');
+	define('SIDEBAR', ABSOLUTE_PATH . 'inc/sidebar.php');
 	define('FOOTER_TEMPLATE', ABSOLUTE_PATH . 'inc/footer.php');
 	define('UTEIS', ABSOLUTE_PATH . 'inc/uteis.php');
 	
