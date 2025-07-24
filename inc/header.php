@@ -50,19 +50,34 @@
                     <a class="nav-link active" href="#">CONTATOS</a>
                 </li>
 
-
+                <?php  if(isset($_SESSION['email'])):?>
+                <?php if($_SESSION['tipo']==="user"):?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        SERVIÇOS
+                        Visitas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">Design</a></li>
-                        <li><a class="dropdown-item" href="#">Desenvolvimento</a></li>
-                        <li><a class="dropdown-item" href="#">Consultoria</a></li>
+                        <li><a class="dropdown-item" href="#">Solicitar Visitas</a></li>
+                        <li><a class="dropdown-item" href="#">Gerenciar Solicitações</a></li>
                     </ul>
                 </li>
+                <?php else:?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dashboard
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
+                        <li><a class="dropdown-item" href="#">Calculadora</a></li>
+                        <li><a class="dropdown-item" href="#">Gerenciar Usuarios</a></li>
+                        <li><a class="dropdown-item" href="#">Gerenciar Pedidos </a></li>
+                    </ul>
+                </li>
+                <?php endif;?>
+                <?php endif;?>
             </ul>
+
             <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
                 <div class="div-login-user">
                     <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura.png" alt="erro"

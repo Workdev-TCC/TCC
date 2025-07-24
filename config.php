@@ -16,7 +16,7 @@
     }
    
 	if ( !defined('DBF') )
-		define('DBF', ABSOLUTE_PATH . 'inc/database.php');
+		define('DBAPI', ABSOLUTE_PATH . 'inc/database.php');
 
    
 	define('HEADER_TEMPLATE', ABSOLUTE_PATH . 'inc/header.php');

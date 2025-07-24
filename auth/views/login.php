@@ -5,19 +5,19 @@ include SIDEBAR;
 ?>
 <div class="fundo-login">
     <div class="login-wrapper">
-        <form class="login-box">
+        <form class="login-box" action="<?php echo RAIZ_PROJETO;?>auth/login.php">
             <div class="img-login">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" alt="logo">
             </div>
 
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Digite seu email" required>
+                <input type="text" placeholder="Digite seu email" name="email" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Digite sua senha" required>
+                <input type="password" placeholder="Digite sua senha" name="senha" required>
             </div>
 
             <div class="forgot">
