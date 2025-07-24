@@ -6,8 +6,8 @@
         </div>
 
         <div class="menu-section-1">
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-user"></i> Login</a>
+            <a href="<?php echo RAIZ_PROJETO;?>"><i class="fas fa-home"></i> Home</a>
+            <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php"><i class="fas fa-user"></i> Login</a>
         </div>
 
         <div class="menu-section">

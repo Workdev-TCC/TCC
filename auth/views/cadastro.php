@@ -14,20 +14,23 @@ include SIDEBAR;
                 <i class="fas fa-user"></i>
                 <input type="text" placeholder="Digite seu email" required>
             </div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Digite seu numero de telefone" required>
+            </div>
 
             <div class="input-group">
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Digite sua senha" required>
             </div>
-
-            <div class="forgot">
-                <a href="#">Esqueceu a senha?</a>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Confirme sua senha" required>
             </div>
 
-            <button class="login-btn" type="submit">LOGIN</button>
-
-            <p class="signup-link"> Não tem conta? <a href="<?php echo RAIZ_PROJETO;?>auth/views/cadastro.php">
-                    Cadastre-se já!</a></p>
+            <button class="login-btn" type="submit">Cadastrar</button>
+            <p class="signup-link"> Já tem conta? <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php"> Então faça
+                    seu login!</a></p>
         </form>
     </div>
 </div>
