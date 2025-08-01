@@ -5,7 +5,7 @@ include SIDEBAR;
 ?>
 <div class="fundo-login">
     <div class="login-wrapper">
-        <form class="login-box" action="<?php echo RAIZ_PROJETO;?>auth/login.php">
+        <form class="login-box" action="<?php echo RAIZ_PROJETO;?>auth/login.php" method="post">
             <div class="img-login">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" alt="logo">
             </div>

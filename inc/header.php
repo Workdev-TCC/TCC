@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
 <html lang="pt-br">
 
 <head>
@@ -77,13 +83,21 @@
                 <?php endif;?>
                 <?php endif;?>
             </ul>
-
+            <?php if(empty($_SESSION['email'])):?>
             <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
                 <div class="div-login-user">
-                    <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura.png" alt="erro"
+                    <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.jpg" alt="erro"
                         class="rounded-circle profile-img">
                 </div>
             </a>
+            <?php else:?>
+            <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/crud-user.php">
+                <div class="div-login-user">
+                    <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
+                        alt="foto do usuario" class="rounded-circle profile-img">
+                </div>
+            </a>
+            <?php endif;?>
         </nav>
     </header>
     <main>

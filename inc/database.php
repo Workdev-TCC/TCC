@@ -1,4 +1,5 @@
 <?php 
+   
     // abre DB
     function open_db(){
          try {
@@ -19,7 +20,7 @@
 
     //função que busca de registros na tabela
     function find($table, $id = null) {
-        $db = open_database();
+        $db = open_db();
         $found = null;
         try {
             if ($id) {
@@ -38,7 +39,7 @@
             $_SESSION['message'] = $e->getMessage();
             $_SESSION['type'] = 'danger';
         }
-        close_database($db);
+        close_db($db);
     }
 
     function find_all($table) {
@@ -46,7 +47,7 @@
     }
     // função salva no banco de dados
     function save($table, $array) {
-        $db = open_database();
+        $db = open_db();
         $columns = implode(", ", array_keys($array));
         $values = ":" . implode(", :", array_keys($array));
         $sql = "INSERT INTO $table ($columns) VALUES ($values)";        
@@ -62,11 +63,11 @@
             $_SESSION['message'] = $e->getMessage();
             $_SESSION['type'] = 'danger';
         }
-        close_database($db);
+        close_db($db);
     }
     // função atualiza no banco de dados
     function update($table, $id, $array) {
-        $db = open_database();
+        $db = open_db();
         $fields = "";
         $cleaned_array = [];
         foreach ($array as $key => $value) {
@@ -91,11 +92,11 @@
             $_SESSION['message'] = 'Não foi possível realizar a operação.';
             $_SESSION['type'] = 'danger';
         }
-        close_database($db);
+        close_db($db);
     }
 // função remove do banco de dados
     function remove($table, $id) {
-        $db = open_database();
+        $db = open_db();
         try {
             $sql = "DELETE FROM $table WHERE id = :id";
             $stmt = $db->prepare($sql);
@@ -107,6 +108,10 @@
             $_SESSION['message'] = $e->getMessage();
             $_SESSION['type'] = 'danger';
         }
-        close_database($db);
+        close_db($db);
+    }
+     function clear_messages(){
+        $_SESSION['message']=null;
+        $_SESSION['type']=null;
     }
 ?>

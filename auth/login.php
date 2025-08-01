@@ -40,6 +40,9 @@
         }
 
     }
+    else{
+        echo  "erro de receber dados";
+    }
   
 
 

@@ -24,7 +24,8 @@
             fundou sua própria empresa
             no ramo de pintura. Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para
             começar do zero.
-            Desde então, a ZUPINTURAS vem se destacando com responsabilidade, experiência e compromisso com a qualidade,
+            Desde então, a ZUPINTURAS vem se destacando com responsabilidade, experiência e compromisso com a
+            qualidade,
             transformando imóveis com excelência e profissionalismo.</p>
         <ul>
             <li> <i class='bx  bx-wrist-watch-round'></i> Pintura Residencial e Comercial</li>
