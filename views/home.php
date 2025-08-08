@@ -113,25 +113,33 @@
         <h2 class="linha">NOSSOS SERVIÇOS</h2>
         <div class="servicos-boxes">
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
-                <h3> Pintura Comercial</h3>
-                <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
+                    <h3> Pintura Comercial</h3>
+                    <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">
-                <h3> Texturas e Efeitos Especiais</h3>
-                <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">    
+                    <h3> Texturas e Efeitos Especiais</h3>
+                    <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
-                <h3>Tratamento de Imperfeições</h3>
-                <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado
-                    impecável.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
+                    <h3>Tratamento de Imperfeições</h3>
+                    <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado
+                        impecável.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">
-                <h3> Pintura Residencial</h3>
-                <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">    
+                    <h3> Pintura Residencial</h3>
+                    <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
+                </div>
             </div>
         </div>
     </div>

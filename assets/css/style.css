@@ -242,6 +242,7 @@ header .nav-desktop .div-login-user .profile-img {
 .servicos .servicos-desktop {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
 }
 .servicos .servicos-desktop .linha {
   position: relative;
@@ -264,23 +265,76 @@ header .nav-desktop .div-login-user .profile-img {
 .servicos .servicos-desktop .servicos-boxes {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 80px;
+  width: 100%;
+  height: 600px;
+  padding: 50px;
+  gap: 50px;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card {
+  display: flex;
+  flex-direction: column; /* organiza verticalmente */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card p {
+  opacity: 1;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card img {
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover p {
+  opacity: 1;
+  max-height: 200px;
+  color: white;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover h3 {
+  opacity: 1;
+  max-height: 200px;
+  color: white;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover img {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+  max-height: 200px;
+}
+.servicos .servicos-desktop .servicos-boxes p {
+  text-align: justify;
+  font-size: 15px;
 }
 .servicos .servicos-desktop .servicos-boxes .servicos-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 .servicos .servicos-desktop .servicos-boxes .servicos-box img {
-  width: 80px;
+  width: 50px;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-box p {
+  text-align: justify;
+  color: #606060;
 }
 
 .locais {
