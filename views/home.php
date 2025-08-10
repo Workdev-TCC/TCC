@@ -18,10 +18,15 @@
 
 </section>
 <!--fechou hero -->
+
+<div class="sobre-titulo">
+    <h2 class="roboto">Sobre Zupinturas</h2>   
+    <P class="hammersmith-one">Conheça um pouco mais sobre como a nossa empresa e os nossos valores 
+        transformam cada projeto<br> em uma obra única, feita com <span>dedicação </span>e <span>atenção</span> aos detalhes.</P> 
+</div>
 <section class="sobre">
     <div class="sobre-text">
-        <h2 class="roboto">SOBRE A EMPRESA <i class="fa-solid fa-building-circle-check icon-grande"></i></h2>
-        <span class="hammersmith-one">Dando cor e vida aos seus ambientes com excelência</span>
+        <span class="hammersmith-one">Um sonho grande</span>
         <p class="hammersmith-one">Em 2009, Exupério Pereira, que até então era garçom, decidiu dar um passo ousado e
             fundou sua própria empresa
             no ramo de pintura. Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para
@@ -30,9 +35,10 @@
             qualidade,
             transformando imóveis com excelência e profissionalismo.</p>
         <ul>
-            <li> <i class='bx  bx-wrist-watch-round'></i> Pintura Residencial e Comercial</li>
-            <li><i class='bx  bx-wrist-watch-round'></i> Acabamentos Profissionais</li>
-            <li> <i class='bx  bx-wrist-watch-round'></i> Equipe Treinada e Pontual</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Pintura Residencial e Comercial</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Acabamentos Profissionais</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Equipe Treinada e Pontual</li>
+
         </ul>
     </div>
     <div class="sobre-img">
