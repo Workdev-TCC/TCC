@@ -1,19 +1,21 @@
 <section class="hero">
     <div class="hero-text">
-        <h1 class="roboto">Pintura Profissional
-            que <span>VALORIZA</span> o seu Imóvel
+        <h1 class="roboto">Pintura que <span>VALORIZA</span> o seu Imóvel
         </h1>
-        <p>
-            Agilidade e responsabilidade para deixar o seu ambiente do jeitinho que você sempre quis!
-        </p>
+        <div class="hero-p">
+            <p>
+                Agilidade e responsabilidade para deixar o seu ambiente do jeitinho que você sempre quis!
+            </p>
+        </div>
+        <div class="hero-button">
+            <a href="">
+                <div class="button-whats">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="hero-button">
-        <a href="">
-            <div class="button-whats">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-        </a>
-    </div>
+
 </section>
 <!--fechou hero -->
 <section class="sobre">
@@ -130,8 +132,7 @@
                 <div class="servicos-card">
                     <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
                     <h3>Tratamento de Imperfeições</h3>
-                    <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado
-                        impecável.</p>
+                    <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado impecável.</p>
                 </div>
             </div>
             <div class="servicos-box">

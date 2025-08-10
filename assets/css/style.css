@@ -45,11 +45,8 @@ main {
 }
 
 header {
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px;
   max-width: 1200px;
 }
 header .header-font {
@@ -57,10 +54,10 @@ header .header-font {
   font-weight: 500;
 }
 header .header-font li a {
-  color: var(--roxo);
+  color: white;
 }
-header .header-font li li a {
-  color: var(--roxo);
+header .header-font :hover {
+  color: #d78cff;
 }
 header .mobile-menu-top {
   display: none;
@@ -70,9 +67,15 @@ header .logo-mobile {
 }
 header .nav-desktop {
   width: 100%;
-  margin: 0px 5px;
+  background-color: aqua;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
   justify-content: space-around;
 }
 header .nav-desktop .logo-desktop img {
@@ -134,14 +137,14 @@ header .nav-desktop .div-login-user .profile-img {
 }
 .hero {
   width: 100%;
-  height: 400px;
+  height: 600px;
   padding: 10px 20px;
-  background-image: url("../img/hero.png");
+  background-image: radial-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)), url("../img/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  max-width: 1350px;
+  max-width: 1600px;
   display: flex;
   flex-direction: row;
 }
@@ -151,10 +154,19 @@ header .nav-desktop .div-login-user .profile-img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 13%;
+}
+.hero .hero-text .hero-p p {
+  display: flex;
+  margin-top: 10px;
+  font-size: 17px;
+}
+.hero .hero-text .hero-p p span {
+  color: var(--roxo);
 }
 .hero .hero-text h1 {
   color: #fff;
-  font-size: 36px;
+  font-size: 50px;
 }
 .hero .hero-text h1 span {
   color: var(--roxo);
@@ -165,10 +177,20 @@ header .nav-desktop .div-login-user .profile-img {
 }
 .hero .hero-button {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  width: 100%;
+  gap: 10px;
+  margin-top: 50px;
+}
+.hero .hero-button .button-contate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hero .hero-button .button-contate p {
+  color: rgb(255, 255, 255);
 }
 .hero .hero-button a {
   display: flex;
@@ -179,20 +201,25 @@ header .nav-desktop .div-login-user .profile-img {
   font-size: 60px;
 }
 .hero .hero-button a .button-whats {
-  padding: 5px 40px;
-  background-color: green;
+  padding: 5px 30px;
+  background-color: rgb(26, 121, 26);
   border-radius: 50px;
+  transition: 0.1s ease;
+}
+.hero .hero-button a .button-whats:hover {
+  transform: scale(1.05);
+  background: rgb(0, 215, 0);
 }
 
 .sobre {
   background-color: white;
-  max-width: 1350px;
+  max-width: 1600px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
-  padding: 20px 5px 5px 5px;
+  padding: 20px 20px 20px 40px;
 }
 .sobre .sobre-text {
   display: flex;
@@ -229,12 +256,10 @@ header .nav-desktop .div-login-user .profile-img {
 }
 
 .servicos {
-  background-image: url("../img/fundo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  max-width: 1350px;
 }
 .servicos .servicos-mobile {
   display: none;
@@ -243,6 +268,7 @@ header .nav-desktop .div-login-user .profile-img {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  max-width: 1600px;
 }
 .servicos .servicos-desktop .linha {
   position: relative;

@@ -1,26 +1,22 @@
 // Desktop
 
 header {
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px;
   max-width: 1200px;
+  
   .header-font {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
-    li {
+    
+      li {
       a {
-        color: var(--roxo);
+        color: white;
       }
     }
-    li {
-      li {
-        a {
-          color: var(--roxo);
-        }
-      }
+    
+    :hover{
+        color: #d78cff;
     }
   }
   .mobile-menu-top {
@@ -31,9 +27,15 @@ header {
   }
   .nav-desktop {
     width: 100%;
-    margin: 0px 5px;
+    background-color: aqua;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
     justify-content: space-around;
     .logo-desktop {
       img {
