@@ -27,6 +27,13 @@ main {
   justify-content: center;
 }
 
+.profile-img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .aberto {
   display: block;
 }
@@ -89,12 +96,6 @@ header .nav-desktop .div-login-user {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-header .nav-desktop .div-login-user .profile-img {
-  width: 50px;
-  height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 @media (max-width: 800px) {
@@ -636,7 +637,7 @@ header .nav-desktop .div-login-user .profile-img {
   }
   .intocavel .sidebar {
     width: 300px;
-    height: 90vh;
+    height: 100vh;
     background: #fff;
     border-right: 1px solid #1a1717;
     position: fixed;
@@ -707,15 +708,23 @@ footer .footer-mobile {
     width: 100%;
     padding: 10px 0px;
     border-top: solid 1px var(--rosa);
-    background-color: #fff;
+    background-color: #ffffff;
     position: fixed;
     bottom: 0;
     z-index: 10;
     justify-content: space-around;
   }
   footer .footer-mobile a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: var(--rosa);
     font-size: 20px;
+  }
+  footer .footer-mobile a img {
+    max-width: 50px;
+    width: auto;
   }
 }/*# sourceMappingURL=style.css.map */

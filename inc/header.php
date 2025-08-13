@@ -91,7 +91,7 @@
                 </div>
             </a>
             <?php else:?>
-            <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/crud-user.php">
+            <a href="<?php echo RAIZ_PROJETO;?>auth/logout.php">
                 <div class="div-login-user">
                     <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
                         alt="foto do usuario" class="rounded-circle profile-img">

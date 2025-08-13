@@ -17,15 +17,23 @@ footer {
       width: 100%;
       padding: 10px 0px;
       border-top: solid 1px var(--rosa);
-      background-color: #fff;
+      background-color: #ffffff;
       position: fixed;
       bottom: 0;
       z-index: 10;
       justify-content: space-around;
       a {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-decoration: none;
         color: var(--rosa);
         font-size: 20px;
+        img{
+          max-width: 50px;
+          width: auto;
+        }
       }
     }
   }
