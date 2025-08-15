@@ -50,10 +50,13 @@
                     <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">SOBRE</a>
+                    <a class="nav-link active" aria-current="page" href="#">Projetos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">CONTATOS</a>
+                    <a class="nav-link active" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">FAQs</a>
                 </li>
 
                 <?php  if(isset($_SESSION['email'])):?>
@@ -75,7 +78,6 @@
                         Dashboard
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">Calculadora</a></li>
                         <li><a class="dropdown-item" href="#">Gerenciar Usuarios</a></li>
                         <li><a class="dropdown-item" href="#">Gerenciar Pedidos </a></li>
                     </ul>
@@ -91,7 +93,7 @@
                 </div>
             </a>
             <?php else:?>
-            <a href="<?php echo RAIZ_PROJETO;?>auth/logout.php">
+            <a id="abrirUserbar" href="#">
                 <div class="div-login-user">
                     <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
                         alt="foto do usuario" class="rounded-circle profile-img">

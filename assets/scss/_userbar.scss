@@ -1,0 +1,51 @@
+.userbar{
+    background-color: red;
+    display: flex;
+    padding: 10px;
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    right: -400px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    .header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: blue;
+        width: 100%;
+        button{
+            background:none;
+            border: none;
+            font-size: 30px;
+            color: white;
+        }
+    }
+    .body{
+        width: 100%;
+        height: 500px;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .links-userbar{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .footer{
+        background-color: white;
+        width: 100%;
+    }
+
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 500px) {
+   .userbar{
+    display: none;
+   }
+}

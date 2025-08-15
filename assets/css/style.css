@@ -692,6 +692,55 @@ header .nav-desktop .div-login-user {
     color: var(--rosa);
   }
 }
+.userbar {
+  background-color: red;
+  display: flex;
+  padding: 10px;
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+.userbar .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: blue;
+  width: 100%;
+}
+.userbar .header button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+}
+.userbar .body {
+  width: 100%;
+  height: 500px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.userbar .body .links-userbar {
+  display: flex;
+  flex-direction: column;
+}
+.userbar .footer {
+  background-color: white;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .userbar {
+    display: none;
+  }
+}
 footer {
   width: 100%;
 }

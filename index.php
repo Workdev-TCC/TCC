@@ -14,5 +14,6 @@
 <?php
     include ("views/home.php");
     include SIDEBAR;
+    include USERBAR;
     include FOOTER_TEMPLATE;
 ?>
