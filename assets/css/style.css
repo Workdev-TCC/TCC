@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --azul: #5170ff;
   --roxo: #976ce7;
@@ -45,11 +46,8 @@ main {
 }
 
 header {
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px;
   max-width: 1200px;
 }
 header .header-font {
@@ -57,10 +55,10 @@ header .header-font {
   font-weight: 500;
 }
 header .header-font li a {
-  color: var(--roxo);
+  color: white;
 }
-header .header-font li li a {
-  color: var(--roxo);
+header .header-font :hover {
+  color: #d78cff;
 }
 header .mobile-menu-top {
   display: none;
@@ -70,9 +68,15 @@ header .logo-mobile {
 }
 header .nav-desktop {
   width: 100%;
-  margin: 0px 5px;
+  background-color: aqua;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
   justify-content: space-around;
 }
 header .nav-desktop .logo-desktop img {
@@ -134,14 +138,14 @@ header .nav-desktop .div-login-user .profile-img {
 }
 .hero {
   width: 100%;
-  height: 400px;
+  height: 600px;
   padding: 10px 20px;
-  background-image: url("../img/hero.png");
+  background-image: radial-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)), url("../img/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  max-width: 1350px;
+  max-width: 1600px;
   display: flex;
   flex-direction: row;
 }
@@ -151,10 +155,19 @@ header .nav-desktop .div-login-user .profile-img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 13%;
+}
+.hero .hero-text .hero-p p {
+  display: flex;
+  margin-top: 10px;
+  font-size: 17px;
+}
+.hero .hero-text .hero-p p span {
+  color: var(--roxo);
 }
 .hero .hero-text h1 {
   color: #fff;
-  font-size: 36px;
+  font-size: 50px;
 }
 .hero .hero-text h1 span {
   color: var(--roxo);
@@ -165,10 +178,20 @@ header .nav-desktop .div-login-user .profile-img {
 }
 .hero .hero-button {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  width: 100%;
+  gap: 10px;
+  margin-top: 50px;
+}
+.hero .hero-button .button-contate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hero .hero-button .button-contate p {
+  color: rgb(255, 255, 255);
 }
 .hero .hero-button a {
   display: flex;
@@ -179,20 +202,52 @@ header .nav-desktop .div-login-user .profile-img {
   font-size: 60px;
 }
 .hero .hero-button a .button-whats {
-  padding: 5px 40px;
-  background-color: green;
+  padding: 5px 30px;
+  background-color: rgb(26, 121, 26);
   border-radius: 50px;
+  transition: 0.1s ease;
+}
+.hero .hero-button a .button-whats:hover {
+  transform: scale(1.05);
+  background: rgb(0, 215, 0);
+}
+
+.sobre-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7%;
+  font-weight: bold;
+  color: var(--roxo);
+}
+.sobre-titulo h2 {
+  font-size: 50px;
+}
+.sobre-titulo P {
+  color: #252525;
+  opacity: 0.7;
+  margin-top: 20px;
+  text-align: center;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.sobre-titulo span {
+  color: var(--roxo);
 }
 
 .sobre {
   background-color: white;
-  max-width: 1350px;
+  max-width: 1600px;
+  margin-top: 5%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
-  padding: 20px 5px 5px 5px;
+  padding: 20px 20px 20px 40px;
 }
 .sobre .sobre-text {
   display: flex;
@@ -201,6 +256,8 @@ header .nav-desktop .div-login-user .profile-img {
   justify-content: flex-start;
   gap: 30px;
   max-width: 700px;
+  margin-left: 120px;
+  margin-top: 100px;
 }
 .sobre .sobre-text h2 {
   color: var(--roxo);
@@ -208,6 +265,8 @@ header .nav-desktop .div-login-user .profile-img {
 .sobre .sobre-text span {
   font-weight: bold;
   text-align: left;
+  font-size: 30px;
+  color: var(--roxo);
 }
 .sobre .sobre-text p {
   text-align: justify;
@@ -219,22 +278,36 @@ header .nav-desktop .div-login-user .profile-img {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  margin-left: -4%;
+  font-family: "Roboto", sans-serif;
+}
+.sobre .sobre-text ul #icon {
+  color: var(--roxo);
+  margin-right: 20px;
 }
 .sobre .sobre-text ul li {
-  font-size: 22px;
-  color: var(--rosa);
+  font-size: 20px;
+  margin-bottom: 10px;
+  list-style-type: none;
+  color: black;
 }
-.sobre .sobre-img {
-  padding: 20px;
+.sobre .sobre-img img {
+  padding: 0px;
+  margin: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  margin-right: 140px;
+  width: 500px; /* ajuste conforme necessário */
+  height: 500px;
+  border-radius: 50%; /* deixa a imagem redonda */
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .servicos {
-  background-image: url("../img/fundo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  max-width: 1350px;
 }
 .servicos .servicos-mobile {
   display: none;
@@ -242,6 +315,8 @@ header .nav-desktop .div-login-user .profile-img {
 .servicos .servicos-desktop {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
+  max-width: 1600px;
 }
 .servicos .servicos-desktop .linha {
   position: relative;
@@ -264,23 +339,76 @@ header .nav-desktop .div-login-user .profile-img {
 .servicos .servicos-desktop .servicos-boxes {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 80px;
+  width: 100%;
+  height: 600px;
+  padding: 50px;
+  gap: 50px;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card {
+  display: flex;
+  flex-direction: column; /* organiza verticalmente */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card p {
+  opacity: 1;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card img {
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover p {
+  opacity: 1;
+  max-height: 200px;
+  color: white;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover h3 {
+  opacity: 1;
+  max-height: 200px;
+  color: white;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-card:hover img {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+  max-height: 200px;
+}
+.servicos .servicos-desktop .servicos-boxes p {
+  text-align: justify;
+  font-size: 15px;
 }
 .servicos .servicos-desktop .servicos-boxes .servicos-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 .servicos .servicos-desktop .servicos-boxes .servicos-box img {
-  width: 80px;
+  width: 50px;
+}
+.servicos .servicos-desktop .servicos-boxes .servicos-box p {
+  text-align: justify;
+  color: #606060;
 }
 
 .locais {

@@ -1,25 +1,32 @@
 <section class="hero">
     <div class="hero-text">
-        <h1 class="roboto">Pintura Profissional
-            que <span>VALORIZA</span> o seu Imóvel
+        <h1 class="roboto">Pintura que <span>VALORIZA</span> o seu Imóvel
         </h1>
-        <p>
-            Agilidade e responsabilidade para deixar o seu ambiente do jeitinho que você sempre quis!
-        </p>
+        <div class="hero-p">
+            <p>
+                Agilidade e responsabilidade para deixar o seu ambiente do jeitinho que você sempre quis!
+            </p>
+        </div>
+        <div class="hero-button">
+            <a href="">
+                <div class="button-whats">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="hero-button">
-        <a href="">
-            <div class="button-whats">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-        </a>
-    </div>
+
 </section>
 <!--fechou hero -->
+
+<div class="sobre-titulo">
+    <h2 class="roboto">Sobre Zupinturas</h2>   
+    <P class="hammersmith-one">Conheça um pouco mais sobre como a nossa empresa e os nossos valores 
+        transformam cada projeto<br> em uma obra única, feita com <span>dedicação </span>e <span>atenção</span> aos detalhes.</P> 
+</div>
 <section class="sobre">
     <div class="sobre-text">
-        <h2 class="roboto">SOBRE A EMPRESA <i class="fa-solid fa-building-circle-check icon-grande"></i></h2>
-        <span class="hammersmith-one">Dando cor e vida aos seus ambientes com excelência</span>
+        <span class="hammersmith-one">Um sonho grande</span>
         <p class="hammersmith-one">Em 2009, Exupério Pereira, que até então era garçom, decidiu dar um passo ousado e
             fundou sua própria empresa
             no ramo de pintura. Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para
@@ -28,9 +35,10 @@
             qualidade,
             transformando imóveis com excelência e profissionalismo.</p>
         <ul>
-            <li> <i class='bx  bx-wrist-watch-round'></i> Pintura Residencial e Comercial</li>
-            <li><i class='bx  bx-wrist-watch-round'></i> Acabamentos Profissionais</li>
-            <li> <i class='bx  bx-wrist-watch-round'></i> Equipe Treinada e Pontual</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Pintura Residencial e Comercial</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Acabamentos Profissionais</li>
+            <li><i class="fa-solid fa-circle-check" id="icon"></i> Equipe Treinada e Pontual</li>
+
         </ul>
     </div>
     <div class="sobre-img">
@@ -113,25 +121,32 @@
         <h2 class="linha">NOSSOS SERVIÇOS</h2>
         <div class="servicos-boxes">
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
-                <h3> Pintura Comercial</h3>
-                <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
+                    <h3> Pintura Comercial</h3>
+                    <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">
-                <h3> Texturas e Efeitos Especiais</h3>
-                <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">    
+                    <h3> Texturas e Efeitos Especiais</h3>
+                    <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
-                <h3>Tratamento de Imperfeições</h3>
-                <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado
-                    impecável.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
+                    <h3>Tratamento de Imperfeições</h3>
+                    <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado impecável.</p>
+                </div>
             </div>
             <div class="servicos-box">
-                <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">
-                <h3> Pintura Residencial</h3>
-                <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
+                <div class="servicos-card">
+                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">    
+                    <h3> Pintura Residencial</h3>
+                    <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
+                </div>
             </div>
         </div>
     </div>
