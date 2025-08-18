@@ -12,7 +12,7 @@
     }
    
     if(!defined('RAIZ_PROJETO')){
-        define("RAIZ_PROJETO",'/tcc-1/');
+        define("RAIZ_PROJETO",'/tcc/');
     }
    
 	if ( !defined('DBF') )
