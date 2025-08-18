@@ -642,7 +642,7 @@ header .nav-desktop .div-login-user .profile-img {
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(135deg, var(--rosa), var(--azul));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding-bottom: 150px;
 }
@@ -651,6 +651,7 @@ header .nav-desktop .div-login-user .profile-img {
   width: 100%;
   max-width: 400px;
   padding: 20px;
+  background-color: #3b5998;
 }
 .login-wrapper .login-box {
   background: #fff;
