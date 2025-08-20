@@ -58,6 +58,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="#">FAQs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contatos</a>
+                </li>
 
                 <?php  if(isset($_SESSION['email'])):?>
                 <?php if($_SESSION['tipo']==="user"):?>
@@ -84,22 +87,26 @@
                 </li>
                 <?php endif;?>
                 <?php endif;?>
+                <?php if(empty($_SESSION['email'])):?>
+                <li>
+                    <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
+                        <div class="div-login-user">
+                            <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.jpg" alt="erro"
+                                class="rounded-circle profile-img">
+                        </div>
+                    </a>
+                </li>
+                <?php else:?>
+                <li>
+                    <a id="abrirUserbar" href="#">
+                        <div class="div-login-user">
+                            <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
+                                alt="foto do usuario" class="rounded-circle profile-img">
+                        </div>
+                    </a>
+                </li>
+                <?php endif;?>
             </ul>
-            <?php if(empty($_SESSION['email'])):?>
-            <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
-                <div class="div-login-user">
-                    <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.jpg" alt="erro"
-                        class="rounded-circle profile-img">
-                </div>
-            </a>
-            <?php else:?>
-            <a id="abrirUserbar" href="#">
-                <div class="div-login-user">
-                    <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
-                        alt="foto do usuario" class="rounded-circle profile-img">
-                </div>
-            </a>
-            <?php endif;?>
         </nav>
     </header>
     <main>
