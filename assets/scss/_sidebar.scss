@@ -8,14 +8,14 @@
     position: fixed;
     width: 100%;
     height: 100vh;
-    z-index: 5;
+    z-index: 101;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     right: 0;
     .sidebar {
       width: 300px;
       height: 100vh;
-      background: #fff;
+      background: var(--bg);
       border-right: 1px solid #1a1717;
       position: fixed;
       left: -300;
@@ -23,7 +23,7 @@
       padding: 4px;
       overflow-y: auto;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      z-index: 10;
+      z-index: 200;
       .header-sidebar {
         width: 100%;
         display: flex;
@@ -31,7 +31,7 @@
         justify-content: space-between;
         .close-button {
           border: none;
-          background-color: #fff;
+          background-color:var(--bg) ;
           padding: 0;
           font-size: 30px;
           color: #93a1a6;

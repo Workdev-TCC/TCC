@@ -111,18 +111,58 @@
 // Mobile
 @media (max-width: 500px) {
     .hero{
-        height: 300px;
+        height: 400px;
         .hero-text{
             width: 100%;
             justify-content: center;
             align-items: center;
             h1{
-                font-size: 14px;
+                font-size:20px;
             }
             p{
                 font-size: 16px;
                 max-width: 90%;
             }
+        }
+    }
+    .servicos{
+        width:99%;
+        height: 100%;
+        border: purple 2px solid ;
+        margin-top:-80px;
+        padding: 20px;
+        align-items: start;
+        .img{
+
+            display: none;
+        }
+         .servicos-text{
+            width: 100%;
+            gap: 0;
+            h2{
+
+            }
+            ul{
+                gap: 10px; 
+            }
+        }
+    }
+    .sobre{
+        .sobre-img{
+            display: none;
+        }
+        .sobre-text{
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            align-items: center;
+            gap: 10px;
+            p{
+                text-align: justify;
+                font-size: 16px;
+                max-width: 100%;
+            }
+
         }
     }
 }
