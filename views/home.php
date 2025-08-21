@@ -7,7 +7,7 @@
 </div>
 <section class="servicos">
     <div class="img">
-
+        <img src="<?php echo RAIZ_PROJETO;?>assets/img/hero.png" alt="ero">
     </div>
     <div class="servicos-text">
         <h2>Nossos Serviços </h2>
