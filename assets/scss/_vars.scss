@@ -6,3 +6,16 @@
   --rosa: #ff66c4;
   --amarelo: #feba16;
 }
+//background
+:root{
+  --bg-dark: hsl(0 0% 0%);
+  --bg: hsl(0 0% 9%);
+  --bg-light: hsl(0 0% 18%);
+  --bg-lighter: hsl(0 0% 26%);
+  --bg-morelighter: hsl(0 0% 33%);
+  --text: hsl(0 0% 95%);
+  --text-muted: hsl(0, 0%, 70%);
+
+  --titulo: font-size: 24px;
+}
+
