@@ -20,7 +20,7 @@ $(document).ready(function () {
   // abrir userbar
   $("#abrirUserbar").click(function (){
     // $(".userbar").css("display","flex");
-    $(".userbar").css("right","0");
+    $(".userbar").css("right","20px");
   })
   // fechar pelo icon userbar
   $("#fecharUserbar").click(function(){
