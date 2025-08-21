@@ -2,12 +2,13 @@
 
 header {
   position: relative;
+  background:transparent;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0px;
-  max-width: 1200px;
+  max-width: 1500px;
   z-index: 100;
   .header-font {
     font-family: "Roboto", sans-serif;
@@ -36,7 +37,7 @@ header {
     margin: 0px 5px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     .logo-desktop {
       img {
         width: 80px;
@@ -45,14 +46,14 @@ header {
     .nav-links {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       li {
-        margin-left: 60px;
+        margin-left: 40px;
       }
     }
     .div-login-user {
       display: flex;
       align-items: center;
+      justify-content: center;
     }
   }
 }

@@ -65,12 +65,13 @@ main {
 
 header {
   position: relative;
+  background: transparent;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0px;
-  max-width: 1200px;
+  max-width: 1500px;
   z-index: 100;
 }
 header .header-font {
@@ -94,7 +95,7 @@ header .nav-desktop {
   margin: 0px 5px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 header .nav-desktop .logo-desktop img {
   width: 80px;
@@ -102,14 +103,14 @@ header .nav-desktop .logo-desktop img {
 header .nav-desktop .nav-links {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 header .nav-desktop .nav-links li {
-  margin-left: 60px;
+  margin-left: 40px;
 }
 header .nav-desktop .div-login-user {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 800px) {
