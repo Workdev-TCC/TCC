@@ -23,6 +23,7 @@
     <!-- Google Fonts (opcional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -47,19 +48,19 @@
             </div>
             <ul class="navbar-nav nav-links header-font">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INÍCIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Projetos</a>
+                    <a class="nav-link" aria-current="page" href="#">PROJETOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Serviços</a>
+                    <a class="nav-link" href="#">SERVIÇOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">FAQs</a>
+                    <a class="nav-link" href="#">FAQs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Contatos</a>
+                    <a class="nav-link" href="#">CONTATOS</a>
                 </li>
 
                 <?php  if(isset($_SESSION['email'])):?>
