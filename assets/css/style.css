@@ -167,6 +167,49 @@ header .nav-desktop .div-login-user {
   background-position: center;
   background-repeat: no-repeat;
 }
+.hero .hero-text {
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+}
+.hero .hero-text h1 {
+  color: white;
+}
+.hero .hero-text p {
+  color: white;
+}
+
+.servicos {
+  width: 100%;
+  border: purple 2px solid;
+  margin: 10px 60px;
+  padding: 30px;
+  max-width: 1200px;
+  display: flex;
+}
+.servicos .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.servicos .img img {
+  width: 100%;
+}
+.servicos .servicos-text {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.servicos .servicos-text ul {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .fundo-login {
   height: 100%;
