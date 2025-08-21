@@ -396,11 +396,13 @@ header .nav-desktop .div-login-user {
 }
 .userbar {
   background-color: var(--bg-light);
+  position: relative;
   display: flex;
   width: 350px;
   height: 77vh;
   position: fixed;
   bottom: 100px;
+  z-index: 110;
   right: -400px;
   align-items: center;
   border-radius: 20px;
