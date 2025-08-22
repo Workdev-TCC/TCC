@@ -49,8 +49,15 @@
         }
       }
       button{
-        margin-left: 200px;
-          width: 90px;
+        margin-left:0;
+        background:transparent ;
+        border-image:linear-gradient(to right,var(--rosa),var(--azul))1;
+        border-width: 1px ;
+        border-style: solid;
+        padding:10px 30px;
+        background:transparent ;
+        color: white;
+        border-radius: 30px;
       }
     }
   }
