@@ -145,7 +145,7 @@
         }
          .servicos-text{
             width: 100%;
-            gap: 0;
+            gap: 30px;
             h2{
 
             }
@@ -155,21 +155,25 @@
         }
     }
     .sobre{
+        height: auto;
+        width: 97%;
+        margin:0 ;
+        flex-direction: column;
         .sobre-img{
             display: none;
         }
         .sobre-text{
-            width: 100%;
+            width:100%;
             max-width: 100%;
-            padding: 0;
-            align-items: center;
-            gap: 10px;
+            align-items: start;
+            justify-content: start;
             p{
-                text-align: justify;
-                font-size: 16px;
-                max-width: 100%;
+                font-size: 17px;
+                width: 100%;
+                margin: 10px;
+                text-align: left;
             }
-
         }
+
     }
 }

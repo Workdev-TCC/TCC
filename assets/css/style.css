@@ -67,6 +67,13 @@ main {
   margin-left: 10px;
 }
 
+.word-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 header {
   position: relative;
   background: transparent;
@@ -329,10 +336,16 @@ header .nav-desktop .div-login-user {
   }
   .servicos .servicos-text {
     width: 100%;
-    gap: 0;
+    gap: 30px;
   }
   .servicos .servicos-text ul {
     gap: 10px;
+  }
+  .sobre {
+    height: auto;
+    width: 97%;
+    margin: 0;
+    flex-direction: column;
   }
   .sobre .sobre-img {
     display: none;
@@ -340,126 +353,66 @@ header .nav-desktop .div-login-user {
   .sobre .sobre-text {
     width: 100%;
     max-width: 100%;
-    padding: 0;
-    align-items: center;
-    gap: 10px;
+    align-items: start;
+    justify-content: start;
   }
   .sobre .sobre-text p {
-    text-align: justify;
-    font-size: 16px;
-    max-width: 100%;
+    font-size: 17px;
+    width: 100%;
+    margin: 10px;
+    text-align: left;
   }
 }
-.fundo-login {
-  height: 100%;
-  width: 100%;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, var(--rosa), var(--azul));
+.login-container {
   display: flex;
+  position: relative;
+  z-index: 0;
+  top: -100px;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  padding-bottom: 150px;
+  margin-bottom: -100px;
 }
-
-.login-wrapper {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
+.login-container .login-img {
+  background-image: linear-gradient(to right, var(--bg), rgba(0, 0, 0, 0)), url("../img/login-fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100vh;
 }
-.login-wrapper .login-box {
-  background: #fff;
-  border-radius: 10px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.login-container .login-form {
+  display: flex;
+  padding: 10px 90px;
+  flex-direction: column;
+  width: 50%;
+}
+.login-container .login-form h1 {
   text-align: center;
 }
-.login-wrapper .login-box .img-login {
-  height: 100px;
+.login-container .login-form p {
+  text-align: start;
 }
-.login-wrapper .login-box .img-login img {
-  width: auto;
-  height: 100%;
+.login-container .login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.login-wrapper .login-box .input-group {
-  position: relative;
-  margin-bottom: 20px;
+.login-container .login-form form input {
+  background: transparent;
+  -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
 }
-.login-wrapper .login-box .input-group i {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-}
-.login-wrapper .login-box .input-group input {
-  width: 100%;
-  padding: 10px 10px 10px 35px;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  outline: none;
-  transition: 0.3s;
-}
-.login-wrapper .login-box .input-group input:focus {
-  border-color: #9f4efb;
-}
-.login-wrapper .login-box .forgot {
-  text-align: right;
-  margin-bottom: 20px;
-}
-.login-wrapper .login-box .forgot a {
-  font-size: 0.9rem;
-  color: #555;
+.login-container .login-form form p a {
   text-decoration: none;
+  color: var(--rosa);
 }
-.login-wrapper .login-box .login-btn {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(90deg, var(--azul), var(--rosa));
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.login-wrapper .login-box .login-btn:hover {
-  opacity: 0.9;
-}
-.login-wrapper .login-box .signup-text {
-  margin: 20px 0 10px;
-  color: #888;
-}
-.login-wrapper .login-box .social-login a {
-  margin: 0 10px;
-  color: #fff;
-  background: #333;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  border-radius: 50%;
-  text-align: center;
-  transition: 0.3s;
-}
-.login-wrapper .login-box .social-login a:hover {
-  opacity: 0.8;
-}
-.login-wrapper .login-box .social-login a:nth-child(1) {
-  background: #3b5998;
-}
-.login-wrapper .login-box .social-login a:nth-child(2) {
-  background: #1da1f2;
-}
-.login-wrapper .login-box .social-login a:nth-child(3) {
-  background: #db4437;
-}
-.login-wrapper .login-box .signup-link {
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-.login-wrapper .login-box .signup-link a {
-  color: #9f4efb;
-  text-decoration: none;
+.login-container .login-form form button {
+  margin-left: 200px;
+  width: 90px;
 }
 
 .intocavel {
