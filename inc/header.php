@@ -92,7 +92,7 @@
                 <li>
                     <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
                         <div class="div-login-user">
-                            <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.jpg" alt="erro"
+                            <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.png" alt="erro"
                                 class="rounded-circle profile-img">
                         </div>
                     </a>
