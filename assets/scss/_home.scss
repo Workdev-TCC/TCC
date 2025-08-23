@@ -161,6 +161,70 @@ a.servicos-btn:hover {
         }
     }
 }
+.faqs{
+    width: 100%;
+    .faqs-text{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin: 30px;
+        h1{
+           
+            margin-left: 70px;
+        }
+        .accordions-box{
+            display: flex !important;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            margin-left: 50px;
+            .accordion{
+                width: 800px;
+                background:transparent;
+                .accordion-item{
+                    background:transparent;
+                    .accordion-header{
+                        .accordion-button{
+                            background-color: transparent;
+                            color: white;
+                            font-size: 14px;
+                            transition: all 0.35s ease;
+                            // HOVER
+                            &:hover {
+                                padding: 20px;
+                                font-size: 17px;
+                            }
+
+                            // QUANDO ESTÁ ATIVO (aberto)
+                            &:not(.collapsed) {
+                                font-size: 16px;
+                                border: 3px solid;    
+                                border-image: linear-gradient(to right, var(--azul),  var(--rosa)) 1;
+                            }
+                        }
+                    }
+                    .accordion-collapse{
+                        .accordion-body{
+                            color:white;
+                            background-color: var(--bg);
+                            transition: all 0.50s ease;
+                            font-size: 13px;
+                             &:hover{
+                                color:white;
+                                background-color: var(--bg-light);
+                                font-size: 15px;
+                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
 // Tablets e Ipads
 @media (max-width: 800px) {
 }
@@ -224,5 +288,62 @@ a.servicos-btn:hover {
             }
         }
 
+    }
+    .faqs{
+        margin-bottom: 50px;
+        .faqs-text{
+            align-items: center;
+            margin: 10px;
+            h1{
+                margin-left: 0;
+            }
+            .accordions-box{
+                gap: 30px;
+                padding: 10px;
+                width: 100%;
+                margin-left: 0;
+                .accordion{
+                    width: 100%;
+                    background:transparent;
+                    .accordion-item{
+                        background:transparent;
+                        .accordion-header{
+                            .accordion-button{
+                                
+                                background-color: transparent;
+                                color: white;
+                                font-size: 14px;
+                                transition: all 0.35s ease;
+                                // HOVER
+                                &:hover {
+                                    padding: 20px;
+                                    font-size: 17px;
+                                }
+
+                                // QUANDO ESTÁ ATIVO (aberto)
+                                &:not(.collapsed) {
+                                    font-size: 16px;
+                                    border: 3px solid;    
+                                    border-image: linear-gradient(to right, var(--azul),  var(--rosa)) 1;
+                                }
+                            }
+                        }
+                        .accordion-collapse{
+                            .accordion-body{
+                                color:white;
+                                background-color: var(--bg);
+                                transition: all 0.50s ease;
+                                font-size: 13px;
+                                &:hover{
+                                    color:white;
+                                    background-color: var(--bg-light);
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

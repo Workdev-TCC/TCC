@@ -369,6 +369,63 @@ a.servicos-btn:hover {
   max-width: 90%;
 }
 
+.faqs {
+  width: 100%;
+}
+.faqs .faqs-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin: 30px;
+}
+.faqs .faqs-text h1 {
+  margin-left: 70px;
+}
+.faqs .faqs-text .accordions-box {
+  display: flex !important;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  margin-left: 50px;
+}
+.faqs .faqs-text .accordions-box .accordion {
+  width: 800px;
+  background: transparent;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item {
+  background: transparent;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button {
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+  transition: all 0.35s ease;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:hover {
+  padding: 20px;
+  font-size: 17px;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  font-size: 16px;
+  border: 3px solid;
+  -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-collapse .accordion-body {
+  color: white;
+  background-color: var(--bg);
+  transition: all 0.5s ease;
+  font-size: 13px;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-collapse .accordion-body:hover {
+  color: white;
+  background-color: var(--bg-light);
+  font-size: 15px;
+}
+
 @media (max-width: 500px) {
   .hero {
     height: 400px;
@@ -423,6 +480,56 @@ a.servicos-btn:hover {
     width: 100%;
     margin: 10px;
     text-align: left;
+  }
+  .faqs {
+    margin-bottom: 50px;
+  }
+  .faqs .faqs-text {
+    align-items: center;
+    margin: 10px;
+  }
+  .faqs .faqs-text h1 {
+    margin-left: 0;
+  }
+  .faqs .faqs-text .accordions-box {
+    gap: 30px;
+    padding: 10px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .faqs .faqs-text .accordions-box .accordion {
+    width: 100%;
+    background: transparent;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item {
+    background: transparent;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button {
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    transition: all 0.35s ease;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:hover {
+    padding: 20px;
+    font-size: 17px;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+    font-size: 16px;
+    border: 3px solid;
+    -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-collapse .accordion-body {
+    color: white;
+    background-color: var(--bg);
+    transition: all 0.5s ease;
+    font-size: 13px;
+  }
+  .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-collapse .accordion-body:hover {
+    color: white;
+    background-color: var(--bg-light);
+    font-size: 15px;
   }
 }
 .login-container {
