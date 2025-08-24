@@ -42,14 +42,15 @@
     <div class="maps">
         
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117105.12419236638!2d-47.54910125225094!3d-23.477227189201994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f54bcad87989%3A0x4a9099fb9d10cb8e!2sSorocaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1755983447293!5m2!1spt-BR!2sbr"
-      
+        width="1360"
+        height="400" 
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
         id="map1"
         referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ECiKyD7ZmJuNclG7y0HtW-qd-LUfCuo&ehbc=2E312F&noprof=1"  id="map2"  style="display:none"></iframe>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ECiKyD7ZmJuNclG7y0HtW-qd-LUfCuo&ehbc=2E312F&noprof=1" width="1000" id="map2" height="400" style="display:none"></iframe>
     </div>
 
     <div class="info">
