@@ -13,39 +13,63 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
+   overflow: hidden;
     width: 50%;
     height: 100vh;
 
   }
   .login-form{
-   
     display: flex;
     padding:10px 90px;
     flex-direction: column;
     width: 50%;
     h1{
       text-align: center;
+      margin-bottom: 50px;
+      font-family: "Hammersmith One", sans-serif;   
+      color: var(--text);
+      letter-spacing: 0.1rem;
     }
     p{
       text-align: start;
+      color: var(--text-muted);
     }
     form{
       display: flex;
       flex-direction: column;
-    
       gap: 20px;
       input{
           background:transparent ;
-          border-image:linear-gradient(to right,var(--rosa),var(--azul))1;
+          background-color: black;
+          width: 500px;
+          height: 60px;
+          margin-left: 40px;
           border-width: 1px ;
           border-style: solid;
           padding: 10px;
+          border: 0 none;
+          outline: 0;
+          color: var(--text-muted);
+      }
+      input:focus{
+        border: 2px solid;
+        border-image:linear-gradient(to right,var(--rosa),var(--azul))1;
+
       }
       p{
-        a{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 40px;
+        gap: 5px;
+
+        a{  
           text-decoration: none;
-          color: var(--rosa);
+          color: var(--text-strong-muted);
+        }
+        a:last-child{
+          margin-left: auto;
+          margin-right: 40px;
         }
       }
       button{
@@ -54,10 +78,23 @@
         border-image:linear-gradient(to right,var(--rosa),var(--azul))1;
         border-width: 1px ;
         border-style: solid;
+        width: 290px;
+        margin-left: 150px;
         padding:10px 30px;
         background:transparent ;
-        color: white;
-        border-radius: 30px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        transition: 0.25s ease;
+        color: var(--text);
+
+        &:hover{
+          color: white;
+          transform: scale(1.01);
+          box-shadow: 0 0 20px rgba(115, 115, 115, 0.4);
+          font-size: 21px;
+          color: var(--text-strong-muted);
+        }
+      
       }
     }
   }

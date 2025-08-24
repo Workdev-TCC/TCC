@@ -27,5 +27,20 @@ $(document).ready(function () {
     $(".userbar").css("right","-400px")
   })
 
+  //localização
+    $(".maps").hover(
+        function() {
+            // mouse entra → iframe1 desaparece e iframe2 aparece com zoom
+            $("#map1").stop().fadeTo(500, 0).css("transform", "scale(1.1)");
+            $("#map2").stop().fadeTo(500, 1).css("transform", "scale(1.1)");
+        },
+        function() {
+            // mouse sai → iframe2 desaparece e iframe1 volta
+            $("#map2").stop().fadeTo(500, 0).css("transform", "scale(1)");
+            $("#map1").stop().fadeTo(500, 1).css("transform", "scale(1)");
+        }
+    );
+  
+
 
 });

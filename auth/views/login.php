@@ -13,11 +13,11 @@ include DBAPI;
 <?php endif; ?>
     <div class="login-container">
         <div class="login-form">
-            <h1>Login</h1>
+            <h1>LOGIN</h1>
             <form action="" class="">
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Senha">
-                <p>Não tem conta?<a href="#"> Cadastre aqui</a></p>
+                <p>Não tem conta?<a href="#"> Cadastre aqui</a><a href="#" class="forget"> Esqueceu a senha?</a></p>
                 <button type="submit">Login</button>
             </form>
         </div>

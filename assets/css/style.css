@@ -16,6 +16,8 @@
   --bg-morelighter: hsl(0 0% 33%);
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0, 0%, 70%);
+  --text-strong-muted: hsl(309, 70%, 70%);
+  --text-strong-muteder: hsl(309, 34%, 53%);
   --titulo: font-size: 24px;
 }
 
@@ -363,23 +365,140 @@ a.servicos-btn:hover {
   align-items: start;
   gap: 30px;
 }
+.sobre .sobre-text h1 {
+  font-family: "Hammersmith One", sans-serif;
+  letter-spacing: 0.1rem;
+  color: var(--text);
+}
+.sobre .sobre-text h2 {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 25px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.sobre .sobre-text h2 strong {
+  color: var(--text-strong-muted);
+}
 .sobre .sobre-text p {
   text-align: justify;
   font-size: 20px;
-  max-width: 90%;
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1rem;
+  color: var(--text-muted);
+}
+.sobre .sobre-text p strong {
+  color: var(--text-strong-muteder);
+}
+
+.localizacao {
+  display: flex;
+  flex-direction: column;
+  width: 1360px;
+  height: 550px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.localizacao .maps {
+  position: relative; /* necessário para a overlay se alinhar */
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+     border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  transition: opacity 0.1s ease;
+  transition: transform 0.5s ease;
+}
+.localizacao .maps #map2 {
+  border: 2px solid;
+  -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+     border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  box-shadow: 0 0 20px rgba(115, 115, 115, 0.4);
+}
+.localizacao .maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  border: 2px solid;
+  -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+     border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+}
+.localizacao .maps .overlay h1 {
+  color: white;
+  font-size: 28px;
+  text-align: center;
+}
+.localizacao .localizacao-text {
+  text-align: left;
+  margin-bottom: 20px;
+  font-family: "Hammersmith One", sans-serif;
+  letter-spacing: 0.1rem;
+  color: var(--text);
+}
+.localizacao .localizacao-text .linha {
+  display: flex;
+  width: 90%; /* ocupa toda a largura do container */
+  text-align: left; /* centraliza o conteúdo interno, se houver */
+  justify-content: left;
+  margin-bottom: 20px;
+}
+.localizacao .localizacao-text .linha::after {
+  content: "";
+  display: block;
+  width: 240px; /* tamanho da "linha" */
+  height: 3px; /* espessura da borda */
+  background: linear-gradient(to right, var(--azul), var(--rosa));
+  margin-left: 10px; /* centraliza horizontalmente */
+}
+.localizacao .info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.localizacao .info h2 {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 20px;
+}
+.localizacao .info p {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.localizacao .info p strong {
+  color: var(--text-strong-muted);
+}
+.localizacao .info .informacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.localizacao .info .contato {
+  /* estilos adicionais aqui */
 }
 
 .faqs {
   width: 100%;
+  margin-top: 50px;
 }
 .faqs .faqs-text {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
   margin: 30px;
 }
 .faqs .faqs-text h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-left: 70px;
 }
 .faqs .faqs-text .accordions-box {
@@ -392,7 +511,7 @@ a.servicos-btn:hover {
   margin-left: 50px;
 }
 .faqs .faqs-text .accordions-box .accordion {
-  width: 800px;
+  width: 1200px;
   background: transparent;
 }
 .faqs .faqs-text .accordions-box .accordion .accordion-item {
@@ -547,6 +666,7 @@ a.servicos-btn:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
   width: 50%;
   height: 100vh;
 }
@@ -558,9 +678,14 @@ a.servicos-btn:hover {
 }
 .login-container .login-form h1 {
   text-align: center;
+  margin-bottom: 50px;
+  font-family: "Hammersmith One", sans-serif;
+  color: var(--text);
+  letter-spacing: 0.1rem;
 }
 .login-container .login-form p {
   text-align: start;
+  color: var(--text-muted);
 }
 .login-container .login-form form {
   display: flex;
@@ -569,15 +694,36 @@ a.servicos-btn:hover {
 }
 .login-container .login-form form input {
   background: transparent;
-  -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+  background-color: black;
+  width: 500px;
+  height: 60px;
+  margin-left: 40px;
   border-width: 1px;
   border-style: solid;
   padding: 10px;
+  border: 0 none;
+  outline: 0;
+  color: var(--text-muted);
+}
+.login-container .login-form form input:focus {
+  border: 2px solid;
+  -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+}
+.login-container .login-form form p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 40px;
+  gap: 5px;
 }
 .login-container .login-form form p a {
   text-decoration: none;
-  color: var(--rosa);
+  color: var(--text-strong-muted);
+}
+.login-container .login-form form p a:last-child {
+  margin-left: auto;
+  margin-right: 40px;
 }
 .login-container .login-form form button {
   margin-left: 0;
@@ -586,10 +732,21 @@ a.servicos-btn:hover {
      border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
   border-width: 1px;
   border-style: solid;
+  width: 290px;
+  margin-left: 150px;
   padding: 10px 30px;
   background: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  transition: 0.25s ease;
+  color: var(--text);
+}
+.login-container .login-form form button:hover {
   color: white;
-  border-radius: 30px;
+  transform: scale(1.01);
+  box-shadow: 0 0 20px rgba(115, 115, 115, 0.4);
+  font-size: 21px;
+  color: var(--text-strong-muted);
 }
 
 .intocavel {
