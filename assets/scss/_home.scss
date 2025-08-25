@@ -186,8 +186,9 @@ a.servicos-btn:hover {
 .localizacao {
     display: flex;
     flex-direction: column;
-    width: 1360px;
-    height: 550px;
+    max-width: 1920px;
+    width: 90%;
+    height: 50vw;
     margin-top: 50px;
     margin-bottom: 20px;
     
@@ -289,74 +290,106 @@ a.servicos-btn:hover {
     }
 }
 
-.faqs{
+.faqs {
     width: 100%;
     margin-top: 50px;
-    .faqs-text{
+
+    .faqs-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: 30px;
-        h1{
+
+        h1 {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-left: 70px;
         }
-        .accordions-box{
+
+        .accordions-box {
             display: flex !important;
             flex-direction: column;
             align-items: start;
             justify-content: center;
             gap: 30px;
             padding: 20px;
-            margin-left: 50px;
-            .accordion{
-                width: 1200px;
-                background:transparent;
-                .accordion-item{
-                    background:transparent;
-                    .accordion-header{
-                        .accordion-button{
-                            background-color: transparent;
-                            color: white;
-                            font-size: 14px;
-                            transition: all 0.35s ease;
-                  
-                            // HOVER
-                            &:hover {
-                                padding: 20px;
-                                font-size: 17px;
-                            }
 
-                            // QUANDO ESTÁ ATIVO (aberto)
-                            &:not(.collapsed) {
-                                font-size: 16px;
-                                border: 3px solid;    
-                                border-image: linear-gradient(to right, var(--azul),  var(--rosa)) 1;
-                            }
+            .accordion {
+                width: 1170px;
+                background: transparent;
+
+                .accordion-item {
+                    background: transparent;
+                    border: none; /* remove todas as bordas do item */
+                    .accordion-header {
+                    .accordion-button {
+                        background-color: transparent;
+                        color: white;
+                        font-size: 14px;
+                        transition: all 0.35s ease;
+                        border: 1px solid rgba(255,255,255,0.2); // linha clara e discreta
+                        // REMOVE a borda azul de foco
+                        &:focus {
+                            box-shadow: none !important;
+                            outline: none !important;
+                        }
+
+                        // seta branca
+                        &::after {
+                            flex-shrink: 0;
+                            width: 1.25rem;
+                            height: 1.25rem;
+                            margin-left: auto;
+                            content: "";
+                            background-repeat: no-repeat;
+                            background-size: 1.25rem;
+                            transition: transform 0.2s ease-in-out;
+
+                            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+                        }
+
+                        &:not(.collapsed)::after {
+                            transform: rotate(-180deg);
+                        }
+
+                        // HOVER
+                        &:hover {
+                            padding: 20px;
+                            font-size: 17px;
+                        }
+
+                        // QUANDO ESTÁ ATIVO (aberto)
+                        &:not(.collapsed) {
+                            font-size: 16px;
+                            border: 3px solid;
+                            border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
                         }
                     }
-                    .accordion-collapse{
-                        .accordion-body{
-                            color:white;
+}
+
+
+                    .accordion-collapse {
+                        .accordion-body {
+                            color: white;
                             background-color: var(--bg);
                             transition: all 0.50s ease;
                             font-size: 13px;
-                             &:hover{
-                                color:white;
+
+                            &:hover {
+                                color: white;
                                 background-color: var(--bg-light);
                                 font-size: 15px;
-                             }
+                            }
                         }
                     }
                 }
             }
         }
     }
-
 }
+
 // Tablets e Ipads
 @media (max-width: 800px) {
 }

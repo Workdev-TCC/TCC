@@ -34,7 +34,7 @@
 </section>
 <section class="localizacao">
     <div class="localizacao-text">
-        <h1>LOCALIZAÇÃO</h1>
+        <h1>Locais de Atendimento</h1>
         <div class="linha">
 
         </div>
@@ -67,7 +67,7 @@
 
 <section class="faqs">
     <div class="faqs-text">
-        <h1>FAQs</h1>
+        <h1>Perguntas Frequentes</h1>
         <div class="accordions-box">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">

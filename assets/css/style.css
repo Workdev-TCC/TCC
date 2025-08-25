@@ -395,8 +395,9 @@ a.servicos-btn:hover {
 .localizacao {
   display: flex;
   flex-direction: column;
-  width: 1360px;
-  height: 550px;
+  max-width: 1920px;
+  width: 90%;
+  height: 50vw;
   margin-top: 50px;
   margin-bottom: 20px;
 }
@@ -508,20 +509,39 @@ a.servicos-btn:hover {
   justify-content: center;
   gap: 30px;
   padding: 20px;
-  margin-left: 50px;
 }
 .faqs .faqs-text .accordions-box .accordion {
-  width: 1200px;
+  width: 1170px;
   background: transparent;
 }
 .faqs .faqs-text .accordions-box .accordion .accordion-item {
   background: transparent;
+  border: none; /* remove todas as bordas do item */
 }
 .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button {
   background-color: transparent;
   color: white;
   font-size: 14px;
   transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+}
+.faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
 }
 .faqs .faqs-text .accordions-box .accordion .accordion-item .accordion-header .accordion-button:hover {
   padding: 20px;
