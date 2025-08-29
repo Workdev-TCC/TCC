@@ -80,7 +80,7 @@
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Primeiro Item
+                              Do que se trata a plataforma?
                         </button>
                     </h2>
                     <div
@@ -90,7 +90,7 @@
                         data-bs-parent="#accordionExample"
                     >
                         <div class="accordion-body">
-                            This is the first item's accordion body.
+                             A plataforma tem como objetivo organizar as solicitações de visitas dos clientes logados(que inclusive recebem preferencia na visita) e apresentar o nossos serviços
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Accordion Item #1
+                            Qual a média de preço para uma pintura residencial?
                         </button>
                     </h2>
                     <div
@@ -117,7 +117,7 @@
                         data-bs-parent="#accordionExample"
                     >
                         <div class="accordion-body">
-                            This is the first item's accordion body.
+                            Não existe uma média certeira pois o preço varia muito das condições da obra. Como se há móveis, se vai ser com material do cliente ou vai comprar, ou seja, não da pra saber ao certo antes de uma visita tecnica que inclusive em sorocaba e região NÂO TEM CUSTO.
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Accordion Item #1
+                             É seguro fazer login e usar a plataforma para agendar visitas ?
                         </button>
                     </h2>
                     <div
@@ -144,7 +144,7 @@
                         data-bs-parent="#accordionExample"
                     >
                         <div class="accordion-body" >
-                            This is the first item's accordion body.
+                             Sim. É completamente seguro usamos tecnolias de criptografia que protegem seus dados.
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Accordion Item #1
+                           Qual a vantagem de usar a plataforma para agendar visitas ao em  vez do whatssap?
                         </button>
                     </h2>
                     <div
@@ -171,7 +171,7 @@
                         data-bs-parent="#accordionExample"
                     >
                         <div class="accordion-body">
-                            This is the first item's accordion body.
+                             O objetivo principal da plataforma é organizar as solicitações de visitas e manter o controle dos nossos clientes, aumentando agilidade organização e praticidade no dia da visita.
                         </div>
                     </div>
                 </div>
@@ -181,3 +181,34 @@
         </div>
     </div>
 </section>
+<footer class="footer-desktop">
+    <div class="footer-left">
+            <h1>Zupinturas</h1>
+            <p>
+                © 2025 Todos os direitos reservados
+                para ZUPINTURAS    
+            </p>
+            <div class="footer-icons">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+    </div>
+    <div class="footer-right">
+        <div class="footer-links">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Agendamentos</a></li>
+                <li><a href="">Portifolio</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="">Projetos</a></li>
+                <li><a href="">Perguntas Frequentes</a></li>
+            </ul>
+
+        </div>
+        <div class="footer-links2">
+            <div class="termos"><a href="#">Termos de uso</a> | <a href="#">Politicas de Privacidade</a></div>
+        </div>
+    </div>
+
+</footer>
