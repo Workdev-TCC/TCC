@@ -41,6 +41,27 @@ $(document).ready(function () {
         }
     );
   
+//password eye
+$(".icon-eye").click(function () {
+  var inputId = $(this).data("input");
+  $("#" + inputId).focus();
+  var icone=$("#eye");
+  if(icone.hasClass("fa-eye")){
+    icone.removeClass("fa-eye");
+    icone.addClass("fa-eye-slash");
+    $("#senha").attr("type","text");
+
+  }else{
+    icone.removeClass("fa-eye-slash");
+    icone.addClass("fa-eye");
+    $("#senha").attr("type", "password");
+    
+  }
+     
+});
+
+
 
 
 });
+

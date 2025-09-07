@@ -1,12 +1,14 @@
 // apenas importações nesse arquivo
 @use "vars" as *;
+
 //Estrutura absoluta
 @use "global";
 @use "fontes";
 @use "header";
 // todo arquivo criado fica entre header e sidebar
 @use "home";
-@use "login_cadastro";
+// @use "login_cadastro";
+@use"login";
 // --------------------
 @use "sidebar";
 @use "userbar";

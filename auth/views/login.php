@@ -11,20 +11,21 @@ include DBAPI;
 </div>
 <?php clear_messages(); ?>
 <?php endif; ?>
-    <div class="login-container">
-        <div class="login-form">
-            <h1>LOGIN</h1>
-            <form action="" class="">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Senha">
-                <p>Não tem conta?<a href="#"> Cadastre aqui</a><a href="#" class="forget"> Esqueceu a senha?</a></p>
-                <button type="submit">Login</button>
+    <section class="login-container">
+        <div class="login-content">
+            <h1><i class="fas fa-user"></i>LOGIN</h1>
+            <form class="login-form" action="" method="post">
+                <div class="input-wrapper"><input class="login-input" type="text" placeholder="Email" name="email" id="email"></div>
+                <div class="input-wrapper">
+                    <input class="login-input-eye" type="password" placeholder="Senha" name="senha" id="senha">
+                    <div class="icon-eye" data-input="senha"><i id="eye" class="fas fa-eye"></i></div>
+                </div>
+                <button class="login-button" type="submit">Logar</button>
             </form>
+            <p>Não tem uma conta? Faça ja seu <span><a href="#">Cadastro</a></span></p>
         </div>
-        <div class="login-img">
-           
-        </div>
-    </div>
+        <div class="login-img"></div>
+    </section>
 <?php
 include FOOTER_TEMPLATE;
 ?>

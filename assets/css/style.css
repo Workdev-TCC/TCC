@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
   --azul: #5170ff;
-  --roxo: #976ce7;
+  --roxo: #976ce7a2;
   --preto: #000;
   --branco: #fff;
   --rosa: #ff66c4;
@@ -821,103 +821,142 @@ header .nav-desktop .div-login-user {
   }
 }
 .login-container {
-  display: flex;
-  position: relative;
-  z-index: 0;
-  top: -100px;
+  max-width: 1920px;
   width: 100%;
+  height: 100vh;
+  margin-bottom: -100px;
+  position: relative;
+  top: -100px;
+  display: flex;
+}
+.login-container .login-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: -100px;
+}
+.login-container .login-content .login-form {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.login-container .login-content .login-form .input-wrapper {
+  width: 100%;
+  display: flex;
+  border: solid 1px var(--roxo);
+}
+.login-container .login-content .login-form .input-wrapper input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  text-align: center;
+}
+.login-container .login-content .login-form .input-wrapper input::-moz-placeholder {
+  color: rgb(110, 109, 109);
+  font-size: 15px;
+}
+.login-container .login-content .login-form .input-wrapper input::placeholder {
+  color: rgb(110, 109, 109);
+  font-size: 15px;
+}
+.login-container .login-content .login-form .input-wrapper input:focus {
+  border: transparent;
+  background: transparent;
+  outline: none;
+  color: white;
+  text-align: center;
+}
+.login-container .login-content .login-form .input-wrapper input:not(:-moz-placeholder) {
+  color: white;
+}
+.login-container .login-content .login-form .input-wrapper input:not(:placeholder-shown) {
+  color: white;
+}
+.login-container .login-content .login-form .input-wrapper input:disabled {
+  color: white;
+}
+.login-container .login-content .login-form .input-wrapper input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(16, 16, 16, 0.5764705882) inset !important;
+  -webkit-text-fill-color: var(--rosa) !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.login-container .login-content .login-form .input-wrapper .login-input-eye {
+  width: 90%;
+}
+.login-container .login-content .login-form .input-wrapper .login-input {
+  width: 90%;
+}
+.login-container .login-content .login-form .input-wrapper .icon-eye {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--roxo);
+  font-size: 25px;
+  cursor: pointer;
 }
 .login-container .login-img {
+  width: 50%;
+  height: 100%;
   background-image: linear-gradient(to right, var(--bg), rgba(0, 0, 0, 0)), url("../img/login-fundo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  width: 50%;
-  height: 100vh;
-}
-.login-container .login-form {
-  display: flex;
-  padding: 10px 90px;
-  flex-direction: column;
-  width: 50%;
-}
-.login-container .login-form h1 {
-  text-align: center;
-  margin-bottom: 50px;
-  font-family: "Hammersmith One", sans-serif;
-  color: var(--text);
-  letter-spacing: 0.1rem;
-}
-.login-container .login-form p {
-  text-align: start;
-  color: var(--text-muted);
-}
-.login-container .login-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.login-container .login-form form input {
-  background: transparent;
-  background-color: black;
-  width: 500px;
-  height: 60px;
-  margin-left: 40px;
-  border-width: 1px;
-  border-style: solid;
-  padding: 10px;
-  border: 0 none;
-  outline: 0;
-  color: var(--text-muted);
-}
-.login-container .login-form form input:focus {
-  border: 2px solid;
-  -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-}
-.login-container .login-form form p {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 40px;
-  gap: 5px;
-}
-.login-container .login-form form p a {
-  text-decoration: none;
-  color: var(--text-strong-muted);
-}
-.login-container .login-form form p a:last-child {
-  margin-left: auto;
-  margin-right: 40px;
-}
-.login-container .login-form form button {
-  margin-left: 0;
-  background: transparent;
-  -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-  border-width: 1px;
-  border-style: solid;
-  width: 290px;
-  margin-left: 150px;
-  padding: 10px 30px;
-  background: transparent;
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  transition: 0.25s ease;
-  color: var(--text);
-}
-.login-container .login-form form button:hover {
-  color: white;
-  transform: scale(1.01);
-  box-shadow: 0 0 20px rgba(115, 115, 115, 0.4);
-  font-size: 21px;
-  color: var(--text-strong-muted);
 }
 
+@media (max-width: 800px) {
+  .login-container {
+    max-width: 800px;
+    width: 100%;
+    height: 110vh;
+  }
+  .login-container .login-content {
+    width: 60%;
+  }
+  .login-container .login-content .login-form {
+    width: 100%;
+    height: 270px;
+  }
+  .login-container .login-content .login-form .login-input {
+    width: 90%;
+    padding: 10px 0;
+  }
+  .login-container .login-img {
+    width: 40%;
+  }
+}
+@media (max-width: 550px) {
+  .login-container {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .login-container .login-content {
+    width: 100%;
+    background: transparent;
+    position: relative;
+    top: -300px;
+    margin-bottom: -300;
+  }
+  .login-container .login-content .login-form {
+    background: transparent;
+  }
+  .login-container .login-content .login-form .input-wrapper input {
+    font-size: 17px;
+  }
+  .login-container .login-img {
+    width: 100%;
+    background-image: linear-gradient(to top, var(--bg), rgba(0, 0, 0, 0)), url("../img/login-fundo.jpg");
+  }
+}
 .intocavel {
   display: none;
 }

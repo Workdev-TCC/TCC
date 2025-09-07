@@ -20,6 +20,7 @@
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/bootstrap_js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/fontawesome_js/all.min.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/main.js"></script>
+<script src="<?php echo RAIZ_PROJETO;?>assets/js/design.js"></script>
 </body>
 
 </html>
