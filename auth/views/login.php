@@ -13,8 +13,8 @@ include DBAPI;
 <?php endif; ?>
     <section class="login-container">
         <div class="login-content">
-            <h1><i class="fas fa-user"></i>LOGIN</h1>
-            <form class="login-form" action="" method="post">
+            <h1 class="h1-Hammersmith">LOGIN</h1>
+            <form class="login-form" action="<?php echo RAIZ_PROJETO;?>auth/login.php" method="post">
                 <div class="input-wrapper"><input class="login-input" type="text" placeholder="Email" name="email" id="email"></div>
                 <div class="input-wrapper">
                     <input class="login-input-eye" type="password" placeholder="Senha" name="senha" id="senha">

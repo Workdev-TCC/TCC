@@ -79,7 +79,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Dashboard
+                        Gerenciar
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
                         <li><a class="dropdown-item" href="#">Gerenciar Usuarios</a></li>
