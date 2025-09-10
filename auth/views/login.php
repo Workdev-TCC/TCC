@@ -22,7 +22,7 @@ include DBAPI;
                 </div>
                 <button class="login-button" type="submit">Logar</button>
             </form>
-            <p>Não tem uma conta? Faça ja seu <span><a href="#">Cadastro</a></span></p>
+            <p>Não tem uma conta? Faça ja seu <span><a href="<?php RAIZ_PROJETO;?>auth/views/cadastro.php">Cadastro</a></span></p>
         </div>
         <div class="login-img"></div>
     </section>
