@@ -41,7 +41,7 @@ $(document).ready(function () {
         }
     );
   
-//password eye
+//password system front-end
 $(".icon-eye").click(function () {
   var inputId = $(this).data("input");
   $("#" + inputId).focus();
