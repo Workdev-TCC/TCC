@@ -59,7 +59,7 @@ try {
     $_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
     $_SESSION['type'] = 'danger';
     if($_SESSION['message']=="Ocorreu um erro: Nenhum dado recebido."){
-        header("Location: " . RAIZ_PROJETO);
+        header("Location: " . RAIZ_PROJETO."auth/view/login.php");
         exit();
     }
     header("Location: " . RAIZ_PROJETO. "auth/views/login.php");
