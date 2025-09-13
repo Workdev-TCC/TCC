@@ -1,158 +1,117 @@
-<?php
-    <?php
-class Database {
-    private $pdo;
-    private $driver;
-    private $host;
-    private $dbname;
-    private $username;
-    private $password;
-    private $charset;
-
-    /**
-     * Construtor da classe
-     */
-    public function __construct(
-        $driver = "mysql",
-        $host = "localhost",
-        $dbname = "",
-        $username = "root",
-        $password = "",
-        $charset = "utf8"
-    ) {
-        $this->driver = $driver;
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->username = $username;
-        $this->password = $password;
-        $this->charset = $charset;
-
-        $this->connect();
-    }
-
-    /**
-     * Conecta ao banco
-     */
-    private function connect() {
-        try {
-            if ($this->driver === "sqlite") {
-                $dsn = "sqlite:" . $this->dbname;
-            } else {
-                $dsn = "{$this->driver}:host={$this->host};dbname={$this->dbname};charset={$this->charset}";
-            }
-
-            $this->pdo = new PDO($dsn, $this->username, $this->password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php 
+   
+    // abre DB
+    function open_db(){
+         try {
+            $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASS);
+            
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            return $pdo;
         } catch (PDOException $e) {
-            die("Erro na conexão: " . $e->getMessage());
+            die("Erro na conexão com o banco de dados: " . $e->getMessage());
         }
     }
 
-    /**
-     * Fecha conexão
-     */
-    public function close() {
-        $this->pdo = null;
+    // fecha DB
+    function close_db($conn){
+        $conn=null;
     }
 
-    /**
-     * Executa SELECT
-     */
-    public function find($table, $id = null, $primaryKey = 'id') {
+    //função que busca de registros na tabela
+    function find($table, $id = null) {
+        $db = open_db();
+        $found = null;
         try {
             if ($id) {
-                $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE $primaryKey = :id");
+                $sql = "SELECT * FROM $table WHERE id = :id";
+                $stmt = $db->prepare($sql);
                 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
                 $stmt->execute();
-                return $stmt->fetch(PDO::FETCH_ASSOC);
+                $found = $stmt->fetch(PDO::FETCH_ASSOC);
             } else {
-                $stmt = $this->pdo->query("SELECT * FROM $table");
-                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $sql = "SELECT * FROM $table";
+                $stmt = $db->query($sql);
+                $found = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
+            return $found;
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->getMessage();
+            $_SESSION['type'] = 'danger';
         }
+        close_db($db);
     }
 
-    /**
-     * Executa INSERT
-     */
-    public function insert($table, $data) {
+    function find_all($table) {
+        return find($table);
+    }
+    // função salva no banco de dados
+    function save($table, $array) {
+        $db = open_db();
+        $columns = implode(", ", array_keys($array));
+        $values = ":" . implode(", :", array_keys($array));
+        $sql = "INSERT INTO $table ($columns) VALUES ($values)";        
         try {
-            $columns = implode(", ", array_keys($data));
-            $values = ":" . implode(", :", array_keys($data));
-            $sql = "INSERT INTO $table ($columns) VALUES ($values)";
-            $stmt = $this->pdo->prepare($sql);
-            foreach ($data as $key => $value) {
-                $stmt->bindValue(":$key", $value);
+            $stmt = $db->prepare($sql);
+            foreach ($array as $key => $value) {
+                $stmt->bindValue(":" . $key, $value);
             }
             $stmt->execute();
-            return $this->pdo->lastInsertId();
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
+            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+            $_SESSION['type'] = 'success';
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->getMessage();
+            $_SESSION['type'] = 'danger';
         }
+        close_db($db);
     }
-
-    /**
-     * Executa UPDATE
-     */
-    public function update($table, $id, $data, $primaryKey = 'id') {
+    // função atualiza no banco de dados
+    function update($table, $id, $array) {
+        $db = open_db();
+        $fields = "";
+        $cleaned_array = [];
+        foreach ($array as $key => $value) {
+            $cleaned_key = trim($key, "'");
+            $cleaned_array[$cleaned_key] = $value;
+        }
+        foreach ($cleaned_array as $key => $value) {
+            $fields .= "$key = :$key, ";
+        }
+        $fields = rtrim($fields, ", ");
+        $sql = "UPDATE $table SET $fields WHERE id = :id";
         try {
-            $fields = implode(", ", array_map(fn($key) => "$key = :$key", array_keys($data)));
-            $sql = "UPDATE $table SET $fields WHERE $primaryKey = :id";
-            $stmt = $this->pdo->prepare($sql);
-            foreach ($data as $key => $value) {
+            $stmt = $db->prepare($sql);
+            foreach ($cleaned_array as $key => $value) {
                 $stmt->bindValue(":$key", $value);
             }
             $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
+            $stmt->execute();
+            $_SESSION['message'] = "Registro atualizado com sucesso.";
+            $_SESSION['type'] = "success";
+        } catch (Exception $e) {
+            $_SESSION['message'] = 'Não foi possível realizar a operação.';
+            $_SESSION['type'] = 'danger';
         }
+        close_db($db);
     }
-
-    /**
-     * Executa DELETE
-     */
-    public function delete($table, $id, $primaryKey = 'id') {
+// função remove do banco de dados
+    function remove($table, $id) {
+        $db = open_db();
         try {
-            $stmt = $this->pdo->prepare("DELETE FROM $table WHERE $primaryKey = :id");
+            $sql = "DELETE FROM $table WHERE id = :id";
+            $stmt = $db->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
+            $stmt->execute();
+            $_SESSION['message'] = "Registro removido com sucesso.";
+            $_SESSION['type'] = 'success';
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->getMessage();
+            $_SESSION['type'] = 'danger';
         }
+        close_db($db);
     }
-
-    /**
-     * Cria banco de dados
-     */
-    public function createDatabase($name) {
-        try {
-            $sql = "CREATE DATABASE IF NOT EXISTS $name";
-            return $this->pdo->exec($sql);
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
-        }
+     function clear_messages(){
+        $_SESSION['message']=null;
+        $_SESSION['type']=null;
     }
-
-    /**
-     * Cria tabela
-     */
-    public function createTable($sql) {
-        try {
-            return $this->pdo->exec($sql);
-        } catch (PDOException $e) {
-            return ["error" => $e->getMessage()];
-        }
-    }
-}
-
-
-
-
-
-
-
-
 ?>
