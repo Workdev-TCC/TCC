@@ -51,7 +51,7 @@
                     <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INÍCIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">PROJETOS</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo RAIZ_PROJETO;?>views/projetos.php">PROJETOS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">SERVIÇOS</a>
