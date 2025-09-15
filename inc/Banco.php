@@ -64,5 +64,19 @@
             }
             $this->close_db();
         }
+//melhorar depois 
+        public function selectLogin($table,$email,$senha){
+            $db=$this->open_db();
+            $sql = "SELECT * FROM $table WHERE email = :login AND senha = :senha LIMIT 1";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(":login", $email,PDO::PARAM_STR);
+            $stmt->bindParam(":senha", $senha,PDO::PARAM_STR);
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0){
+                return $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+            return null;
+        }
     }
 ?>
