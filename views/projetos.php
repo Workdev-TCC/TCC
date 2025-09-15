@@ -40,6 +40,7 @@
                 <img class="img4" src="<?php echo RAIZ_PROJETO;?>assets/img/servico.jpg" alt="erro">
                 <img class="img5" src="<?php echo RAIZ_PROJETO;?>assets/img/servico.jpg" alt="erro">
             </div>
+            
         </div>
     </div>
 

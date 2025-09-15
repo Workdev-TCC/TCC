@@ -85,55 +85,60 @@
 .projetos{
     display: flex;
     flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    overflow: hidden;
+    height: 1500px;
+    width: 100%;
     .img{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         padding: 10px;
-        gap: 20px;
-        justify-content: start;
+        width: 100%;
         .a-side{
-
         display: flex;
         flex-direction: column;
-        align-items: start;
+        gap: 50px;
+        align-items: center;
             .img1{
-                width: 90%;
-                
+                width: 95%;
+                height: 40%;
                 object-fit: cover;
                 border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
             }
             .img2{
-                width: 90%;
-                
+                width: 95%;
+                height: 50%;
                 object-fit: cover;
                 border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
             }
         }
         .b-side{
         display: flex;
+        gap: 50px;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
             .img3{
-                width: 90%;
-                height: 20%;
+                width: 95%;
+                height: 23.5%;
                 object-fit: cover;
                 border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
             }
             .img4{
-                width: 90%;
-                height: 30%;
+                width: 95%;
+                height: 40%;
                 object-fit: cover;
                 border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
             }
             .img5{
-                width: 90%;
-                height: 20%;
+                width: 95%;
+                height: 23.5%;
                 object-fit: cover;
                 border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
             }
+        }
+
+        .overlay{
+            display: none;
+            height: 100%;
         }
     }
 }
