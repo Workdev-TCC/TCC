@@ -48,9 +48,9 @@
     // função salva no banco de dados
     function save($table, $array) {
         $db = open_db();
-        $columns = implode(", ", array_keys($array));
-        $values = ":" . implode(", :", array_keys($array));
-        $sql = "INSERT INTO $table ($columns) VALUES ($values)";        
+    $columns = implode(", ", array_keys($array));
+    $values = ":" . implode(", :", array_keys($array));
+    $sql = "INSERT INTO $table ($columns) VALUES ($values)";        
         try {
             $stmt = $db->prepare($sql);
             foreach ($array as $key => $value) {

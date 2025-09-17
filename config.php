@@ -15,9 +15,14 @@
         define("RAIZ_PROJETO",'/tcc/');
     }
    
-	if ( !defined('DBF') )
-		define('DBAPI', ABSOLUTE_PATH . 'inc/database.php');
-
+	if ( !defined('DBAPI') ){
+        define('DBAPI', ABSOLUTE_PATH . 'inc/database.php');
+    }
+	if ( !defined('BANCO') ){
+        define('BANCO', ABSOLUTE_PATH . 'inc/Banco.php');
+    }
+		
+	
    
 	define('HEADER_TEMPLATE', ABSOLUTE_PATH . 'inc/header.php');
 	define('SIDEBAR', ABSOLUTE_PATH . 'inc/sidebar.php');

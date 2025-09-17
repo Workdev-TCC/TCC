@@ -2,9 +2,9 @@
 <?php 
  
     function verifica_login ($bd,$table,$campoemail,$camposenha,$login,$senha){
-        $sql= "SELECT * FROM $table WHERE $campoemail = :login AND $camposenha = :password LIMIT 1";
+        $sql= "SELECT * FROM $table WHERE $campoemail = :email AND $camposenha = :password LIMIT 1";
         $stmt= $bd->prepare($sql);
-        $stmt->bindParam(":login",$login,PDO::PARAM_STR);
+        $stmt->bindParam(":email",$login,PDO::PARAM_STR);
         $stmt->bindParam(":password",$senha,PDO::PARAM_STR);
         $stmt->execute();
         if($stmt->rowCount() >0){
@@ -14,7 +14,6 @@
         }
         return null;
     }
-    
 
 
  
