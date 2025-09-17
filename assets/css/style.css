@@ -77,6 +77,16 @@ main {
   gap: 20px;
 }
 
+.message-success {
+  position: fixed;
+  z-index: 9999;
+  padding: 10px 100;
+  width: 200px;
+  top: 100px;
+  left: calc(50% - 100px);
+  background-color: red;
+}
+
 .h1-Hammersmith {
   font-family: "Hammersmith One", sans-serif;
   font-size: 20px;
