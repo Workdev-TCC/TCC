@@ -23,6 +23,7 @@
     <!-- Google Fonts (opcional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -47,13 +48,19 @@
             </div>
             <ul class="navbar-nav nav-links header-font">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INÍCIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">SOBRE</a>
+                    <a class="nav-link" aria-current="page" href="#">PROJETOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">CONTATOS</a>
+                    <a class="nav-link" href="#">SERVIÇOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CONTATOS</a>
                 </li>
 
                 <?php  if(isset($_SESSION['email'])):?>
@@ -72,32 +79,35 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Dashboard
+                        Gerenciar
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">Calculadora</a></li>
                         <li><a class="dropdown-item" href="#">Gerenciar Usuarios</a></li>
                         <li><a class="dropdown-item" href="#">Gerenciar Pedidos </a></li>
                     </ul>
                 </li>
                 <?php endif;?>
                 <?php endif;?>
+                <?php if(empty($_SESSION['email'])):?>
+                <li>
+                    <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
+                        <div class="div-login-user">
+                            <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.png" alt="erro"
+                                class="rounded-circle profile-img">
+                        </div>
+                    </a>
+                </li>
+                <?php else:?>
+                <li>
+                    <a id="abrirUserbar" href="#">
+                        <div class="div-login-user">
+                            <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
+                                alt="foto do usuario" class="rounded-circle profile-img">
+                        </div>
+                    </a>
+                </li>
+                <?php endif;?>
             </ul>
-            <?php if(empty($_SESSION['email'])):?>
-            <a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">
-                <div class="div-login-user">
-                    <img src="<?php echo RAIZ_PROJETO;?>assets/img/login.jpg" alt="erro"
-                        class="rounded-circle profile-img">
-                </div>
-            </a>
-            <?php else:?>
-            <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/crud-user.php">
-                <div class="div-login-user">
-                    <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>"
-                        alt="foto do usuario" class="rounded-circle profile-img">
-                </div>
-            </a>
-            <?php endif;?>
         </nav>
     </header>
     <main>

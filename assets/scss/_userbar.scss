@@ -1,0 +1,153 @@
+.userbar{
+    background-color: var(--bg-light);
+    position: relative;
+    display: flex;
+    width: 350px;
+    height: 77vh;
+    position: fixed;
+    bottom: 100px;
+    z-index: 110;
+    
+    right: -400px;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    .body .header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .body{
+        width: 100%;
+        height: 500px;
+        margin-top: 15px;
+        background-color: var(--bg-light);      
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        
+        .links-userbar{
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-light);
+            height: 290px;
+            margin-top: -120px;
+            width: 100%;
+            .icon a:hover{
+           
+                background-color: var(--bg-morelighter);
+                color: white;
+                transition: 0.5s ease-out;
+                strong{
+                    color: white;
+                }
+            }
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;           
+                padding: 18px;         
+                text-decoration: none;    
+                color: var(--text);       
+                text-align: start;         
+             }
+           
+             strong{
+                color: rgb(227, 146, 219);
+            
+            }
+
+        }
+        .links-userbar #icon1{
+            display: flex;          /* inline mas com flex para centralizar */
+            flex-direction: row;
+            align-items: center;
+            width: 17px;
+            height: 17px;
+            padding: 13px;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--bg-lighter);
+            flex-shrink: 0;
+        }
+             .links-userbar #icon2{
+            display: flex; 
+            flex-direction: row;         /* inline mas com flex para centralizar */
+            margin-left: auto;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+        .links-userbar .icon i{
+          color: red;
+        }
+
+        .links-userbar a:last-child {
+           
+            border-bottom: none;
+        }
+
+        .img-userbar{
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            order: -1; /* manda a imagem para cima */
+            margin-top: -60px;
+            margin-left: 3%;
+            padding: 10px;
+            gap: 15px;
+            img{
+                width: 50px;
+                object-fit: cover; /* garante que a imagem não distorça */
+                border-radius: 50%;
+            }
+            h2{
+                color: var(--text);
+                font-size: 21px;
+                align-items: center;
+                padding-top: 10px;
+            }
+            button{
+                display: flex;
+                align-items: center;
+                background:none;
+                border: none;
+                font-size: 32px;
+                color: var(--text);
+
+                :hover{
+                    transition: 0.2s ease-out;
+                    color: rgb(227, 146, 219);
+                    
+                }
+            }
+        }
+        .img-userbar button{
+            position: relative;
+            margin-left: 80px;
+        }
+    }
+    .footer{
+        background-color: var(--bg-light);
+        color: var(--text-muted);
+        width: 100%;
+        padding: 15px;
+        border-radius: 20px;
+        margin-top: -55px;
+    }
+
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 500px) {
+   .userbar{
+    display: none;
+   }
+}

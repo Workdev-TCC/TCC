@@ -1,0 +1,58 @@
+//fontes
+//h1
+.h1-Hammersmith {
+   font-family: "Hammersmith One", sans-serif; 
+   font-size:20px;
+   font-weight: bold;
+} 
+@media(max-width:550px){
+  .h1-Hammersmith {
+    font-family: "Hammersmith One", sans-serif; 
+    font-size:16px;
+    font-weight: bold;
+  } 
+}
+@media(max-width:800px){
+  .h1-Hammersmith {
+    font-family: "Hammersmith One", sans-serif; 
+    font-size:18px;
+    font-weight: bold;
+  } 
+}
+//h2
+.h2-Hammersmith {
+   font-family: "Hammersmith One", sans-serif; 
+   font-size:14px;
+   font-weight: bold;
+} 
+@media(max-width:550px){
+  .h2-Hammersmith {
+   font-family: "Hammersmith One", sans-serif; 
+   font-size:12px;
+   font-weight: bold;
+  } 
+}
+@media(max-width:800px){
+  .h2-Hammersmith {
+    font-family: "Hammersmith One", sans-serif; 
+    font-size:13px;
+    font-weight: bold;
+  } 
+}
+//p
+.p-Hammersmith {
+   font-family: "Hammersmith One", sans-serif; 
+   font-size:14px;
+} 
+@media(max-width:550px){
+  .p-Hammersmith {
+    font-family: "Hammersmith One", sans-serif; 
+    font-size:12px;
+  } 
+}
+@media(max-width:800px){
+  .p-Hammersmith {
+    font-family: "Hammersmith One", sans-serif; 
+    font-size:13px;
+  } 
+}
