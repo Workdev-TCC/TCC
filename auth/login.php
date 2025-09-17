@@ -19,7 +19,7 @@ try {
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
         $dados = $db->selectLogin("usuarios", $email, $senha);
 
-        o variáveis
+        //o variáveis
         $id           = $dados["id"];
         $nome         = $dados["nome"];
         $email        = $dados["email"];
