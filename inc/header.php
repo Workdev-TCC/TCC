@@ -59,8 +59,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">FAQs</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTATOS</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        AJUDA
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
+                        <li><a class="dropdown-item" href="#">TERMOS DE USO</a></li>
+                        <li><a class="dropdown-item" href="#">POLITICAS DE PRIVACIDADE</a></li>
+                    </ul>
                 </li>
 
                 <?php  if(isset($_SESSION['email'])):?>
@@ -68,11 +75,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Visitas
+                        VISITAS
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">Solicitar Visitas</a></li>
-                        <li><a class="dropdown-item" href="#">Gerenciar Solicitações</a></li>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
+                        <li><a class="dropdown-item" href="#">SOLICITAR VISITAS</a></li>
+                        <li><a class="dropdown-item" href="#">GERENCIAR SOLICITAÇÔES</a></li>
                     </ul>
                 </li>
                 <?php else:?>
@@ -81,9 +88,9 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Gerenciar
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">Gerenciar Usuarios</a></li>
-                        <li><a class="dropdown-item" href="#">Gerenciar Pedidos </a></li>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
+                        <li><a class="dropdown-item" href="#">GERENCIAR USUÀRIOS</a></li>
+                        <li><a class="dropdown-item" href="#">GERENCIAR PEDIDOS </a></li>
                     </ul>
                 </li>
                 <?php endif;?>

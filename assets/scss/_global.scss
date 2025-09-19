@@ -45,6 +45,10 @@ main {
   gap: 20px;
 
 }
+.bg-black{
+  background-color: var(--bg);
+  color: white;
+}
 
 .message-success{
     position: fixed;
