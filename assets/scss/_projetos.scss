@@ -1,0 +1,144 @@
+.hero-projetos{
+    //medidas fundamentais
+    max-width: 1920px;
+    width: 100%;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    //flexbox
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //position
+    position: relative;
+    z-index: 0;
+    margin-bottom: -90px;
+    top:-100px;
+    //estilos personalizados
+    background-image:radial-gradient(rgba(0, 0, 0, 0.5),var(--bg)),url("../img/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    //elementos filhos
+    .projetos-text{
+        display: flex;
+        width: 900px;
+        flex-direction: column;
+        h1{
+            color: white;
+            font-size: 5vw;
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+        }
+        p{
+            color: white;
+            font-size: 1.2vw;
+            font-family: "Roboto", sans-serif;
+        }
+    }
+}
+
+.projetos-about{
+    //medidas fundamentais-
+    max-width: 1920px;
+    width: 100%;
+    height:100px;
+    padding: 20px;
+    //flexbox
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .about-text {
+        width: 100%;
+        height:10%;
+        text-align: left;
+        h1{
+            width: 500px;
+            background: linear-gradient(90deg, var(--rosa), var(--azul));
+            background-size: 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: var(--branco);
+            -webkit-text-fill-color: var(--branco); 
+            transition: all 0.4s ease-in-out;
+            &:hover{
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
+        }
+        .linha {
+            width:500px;    
+        }
+        .linha::after {
+            content: "";
+            display: block;
+            width: 100%;           /* tamanho da "linha" */
+            height: 3px;            /* espessura da borda */
+            background: linear-gradient(to right, var(--azul), var(--rosa));    
+            margin-left: 0px;         /* centraliza horizontalmente */
+        }   
+    }
+}
+
+.projetos{
+    display: flex;
+    flex-direction: row;
+    height: 1500px;
+    width: 100%;
+    .img{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+        width: 100%;
+        .a-side{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+            .img1{
+                width: 95%;
+                height: 40%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+            .img2{
+                width: 95%;
+                height: 50%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+        }
+        .b-side{
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        align-items: center;
+            .img3{
+                width: 95%;
+                height: 23.5%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+            .img4{
+                width: 95%;
+                height: 40%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+            .img5{
+                width: 95%;
+                height: 23.5%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+        }
+
+        .overlay{
+            display: none;
+            height: 100%;
+        }
+    }
+}
