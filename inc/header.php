@@ -86,7 +86,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Gerenciar
+                        GERENCIAR
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
                         <li><a class="dropdown-item" href="#">GERENCIAR USUÀRIOS</a></li>

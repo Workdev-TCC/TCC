@@ -14,4 +14,16 @@ $(document).ready(function () {
         "box-shadow": "none",
       });
     });
+
+  //alert
+  //alert icon
+  var iconMessageBox = $(".icon-message");
+  let tipo = iconMessageBox.data("icon");
+  let icone = $("#icon-msg");
+
+  if (tipo === "danger") {
+    icone.removeClass("fa-circle-check").addClass("fa-circle-xmark");
+  } else if (tipo === "success") {
+    icone.removeClass("fa-circle-xmark").addClass("fa-circle-check");
+  }
 });

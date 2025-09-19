@@ -9,7 +9,7 @@ include DBAPI;
     <div class="button-message"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
     <div class="box-message"><strong><?php echo $_SESSION['message']; ?> <div class="icon-message" data-icon="<?php echo $_SESSION['type'];?>"><i id="icon-msg" class="fa-solid fa-circle-check"></i></div></strong></div>
 </div>
-<!-- <?php //clear_messages(); ?> -->
+<!-- <?php clear_messages(); ?> -->
 <?php endif; ?>
     <section class="login-container">
         <div class="login-content">
@@ -30,7 +30,7 @@ include DBAPI;
                 </div>
                 <button class="login-button" type="submit">Cadastrar</button>
             </form>
-            <p>Ja tem conta?Faça seu <span><a href="<?php RAIZ_PROJETO;?>auth/views/login.php">Login</a></span></p>
+            <p>Ja tem conta?Faça seu <span><a href="<?php echo RAIZ_PROJETO;?>auth/views/login.php">Login</a></span></p>
         </div>
         <div class="login-img"></div>
     </section>
