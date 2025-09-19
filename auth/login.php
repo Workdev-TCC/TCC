@@ -1,5 +1,6 @@
 <?php
 include "../config.php";
+include "../inc/Banco.php";
 include DBAPI;
 include UTEIS;
 
@@ -13,16 +14,12 @@ try {
             throw new Exception("E-mail e senha são obrigatórios.");
         }
 
-        $db = open_db();
+        $db = new Banco;
 
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
-        $dados = verifica_login($db, "usuarios", "email", "senha", $email, $senha);
+        $dados = $db->selectLogin("usuarios", $email, $senha);
 
-        if (empty($dados)) {
-            throw new Exception("Usuário ou senha inválidos.");
-        }
-
-        // Definindo variáveis
+        //o variáveis
         $id           = $dados["id"];
         $nome         = $dados["nome"];
         $email        = $dados["email"];
@@ -30,7 +27,12 @@ try {
         $telefone     = $dados["telefone"];
         $tipo         = $dados["tipo"];
         $data_criacao = $dados["data_criacao"];
+        
+        if (empty($dados)) {
+            throw new Exception("Usuário ou senha inválidos.");
+        }
 
+        // Definind
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -59,7 +61,7 @@ try {
     $_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
     $_SESSION['type'] = 'danger';
     if($_SESSION['message']=="Ocorreu um erro: Nenhum dado recebido."){
-        header("Location: " . RAIZ_PROJETO);
+        header("Location: " . RAIZ_PROJETO."auth/view/login.php");
         exit();
     }
     header("Location: " . RAIZ_PROJETO. "auth/views/login.php");
