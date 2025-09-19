@@ -423,3 +423,157 @@
         }
     }
 }
+
+// Mobile
+@media (max-width: 550px) {
+    .hero-servicos{
+        height: 400px;
+        .servicos-text{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h1{
+                font-size:20px;
+            }
+            p{
+                font-size: 16px;
+                max-width: 90%;
+            }
+        }
+    }
+    .servicos-about{
+        //medidas fundamentais
+        margin-top: 0px;
+        margin: 0;
+        height: 70px;
+        padding: 0;
+        overflow: hidden;
+        gap: 10px;
+        text-align: center;
+        
+
+        //flexbox
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //elementos filhos
+        
+        .about1-text{
+            //medidas fundamentais
+            width: 99%;
+            margin: 0;
+            //flexbox
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            h1{
+                //zerando valores desktop
+                margin: 0;
+                padding: 0;
+            }
+        .linha {
+            width: 100%;
+            
+        }
+        .linha::after {
+            content: "";
+            display: block;
+            width: 100%;           /* tamanho da "linha" */
+            height: 3px;            /* espessura da borda */
+            background: linear-gradient(to right, var(--azul), var(--rosa));    
+            margin-left: 0px;         /* centraliza horizontalmente */
+        } 
+        }
+    }
+
+
+    .servicos-page{
+         //medidas fundamentais
+        width: 100%;
+        height: 100%;
+        gap: 50px;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        //flexbox
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        //estilos personalizados
+        .servico1{
+            width: 90%;
+            .servico1-img{
+                width: 100%;
+                padding: 0;
+                height: 500px;
+                .s1-grid{
+                    display: none;
+                }
+
+                .si1-img{
+                    width: 100%;
+                    padding: 0;
+                    height: 300px;
+                }
+            }
+
+            .servico1-text{
+                text-align: justify;
+                
+            }
+
+        }
+        .servico2{
+            width: 90%;
+            .servico2-img{
+                width: 100%;
+                padding: 0;
+                height: 600px;
+                .s2-grid{
+                    display: none;
+                }
+
+                .si2-img{
+                    width: 100%;
+                    padding: 0;
+                    height: 300px;
+                }
+            }
+
+            .servico2-text{
+                text-align: justify;
+                
+            }
+
+        }
+    }
+
+    .a-servico{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            gap: 20px;
+            height: 400px;
+            width: 90%;
+
+            flex-direction: column;
+            overflow: hidden;
+            .a-img{
+                display: none;
+                .an-grid{
+                  display: none;
+                }
+            }
+
+            .a-text{
+                width: 100%;
+
+                .a1-text{
+                    
+                }
+            }
+        }
+}

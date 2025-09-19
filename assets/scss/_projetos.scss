@@ -93,6 +93,7 @@
         justify-content: center;
         padding: 10px;
         width: 100%;
+
         .a-side{
         display: flex;
         flex-direction: column;
@@ -139,6 +140,186 @@
         .overlay{
             display: none;
             height: 100%;
+        }
+    }
+}
+
+
+// Tablets e Ipads
+@media (max-width: 800px) {
+    body{
+        //medidas fundamentais
+        max-width:800px;
+        height: 100vh;
+        font-size: 12px;
+        //--------------------
+    }
+    .hero-projetos{
+        height: 460px;
+    }
+    .projetos-about{
+        .img{
+            img{
+                object-position:right;
+            }
+            .servicos-text{
+                ul{
+                    margin-left: 0px;
+                }
+            }
+        }
+
+    }
+    .projetos{
+        //medidas fundamentais
+        max-width: 800px;
+        width: 100%;
+        //flexbox
+        display: flex;
+        flex-direction: column;
+        //estilos personalizados
+        border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+        border-width: 2px;
+        border-style: solid;
+        .sobre-img{
+            width: 100%;
+            height: 300px;
+            img{
+                width:100%;
+            }
+        }
+    }
+
+}
+
+// Mobile
+@media (max-width: 550px) {
+    .hero-projetos{
+        height: 400px;
+        width: 100%;
+        .projetos-text{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h1{
+                font-size:20px;
+            }
+            p{
+                font-size: 16px;
+                max-width: 90%;
+            }
+        }
+    }
+    .projetos-about{
+        //medidas fundamentais
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        gap: 10px;
+
+        //flexbox
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //elementos filhos
+        
+        .about-text{
+            //medidas fundamentais
+            width: 99%;
+            //flexbox
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            h1{
+                //zerando valores desktop
+                margin: 0;
+                padding: 0;
+            }
+        .linha {
+            width: 100%;
+            gap: 20px;
+            
+        }
+        .linha::after {
+            content: "";
+            display: block;
+            width: 100%;           /* tamanho da "linha" */
+            height: 3px;            /* espessura da borda */
+            background: linear-gradient(to right, var(--azul), var(--rosa));    
+            margin-left: 0px;         /* centraliza horizontalmente */
+        } 
+        }
+    }
+
+
+    .projetos{
+
+         //medidas fundamentais
+        max-width: 800px;
+        width: 100%;
+        height: 100%;
+        gap: 0px;
+        margin: 0px;
+        padding: 20px;
+        //flexbox
+        display: flex;
+        flex-direction: column;
+        //estilos personalizados
+        border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+        border-width: 2px;
+        border-style: solid;
+
+        .img{
+            flex-direction: column;
+            padding: 0px;
+            gap: 50px;
+
+        .a-side{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            .img1{
+                width: 100%;
+                height: 40%;
+                object-fit: cover;
+                border-image: none;
+            }
+            .img2{
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+        }
+        .b-side{
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        align-items: center;
+            .img3{
+                width: 100%;
+                height: 23.5%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+            .img4{
+                width: 100%;
+                height: 40%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+            .img5{
+                width: 100%;
+                height: 23.5%;
+                object-fit: cover;
+                border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+            }
+        }
         }
     }
 }

@@ -1147,6 +1147,164 @@ header .nav-desktop .div-login-user {
   height: 100%;
 }
 
+@media (max-width: 800px) {
+  body {
+    max-width: 800px;
+    height: 100vh;
+    font-size: 12px;
+  }
+  .hero-projetos {
+    height: 460px;
+  }
+  .projetos-about .img img {
+    -o-object-position: right;
+       object-position: right;
+  }
+  .projetos-about .img .servicos-text ul {
+    margin-left: 0px;
+  }
+  .projetos {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+       border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .projetos .sobre-img {
+    width: 100%;
+    height: 300px;
+  }
+  .projetos .sobre-img img {
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  .hero-projetos {
+    height: 400px;
+    width: 100%;
+  }
+  .hero-projetos .projetos-text {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .hero-projetos .projetos-text h1 {
+    font-size: 20px;
+  }
+  .hero-projetos .projetos-text p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .projetos-about {
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .projetos-about .about-text {
+    width: 99%;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .projetos-about .about-text h1 {
+    margin: 0;
+    padding: 0;
+  }
+  .projetos-about .about-text .linha {
+    width: 100%;
+    gap: 20px;
+  }
+  .projetos-about .about-text .linha::after {
+    content: "";
+    display: block;
+    width: 100%; /* tamanho da "linha" */
+    height: 3px; /* espessura da borda */
+    background: linear-gradient(to right, var(--azul), var(--rosa));
+    margin-left: 0px; /* centraliza horizontalmente */
+  }
+  .projetos {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    gap: 0px;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+       border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .projetos .img {
+    flex-direction: column;
+    padding: 0px;
+    gap: 50px;
+  }
+  .projetos .img .a-side {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+  .projetos .img .a-side .img1 {
+    width: 100%;
+    height: 40%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-border-image: none;
+       border-image: none;
+  }
+  .projetos .img .a-side .img2 {
+    width: 100%;
+    height: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  }
+  .projetos .img .b-side {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projetos .img .b-side .img3 {
+    width: 100%;
+    height: 23.5%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  }
+  .projetos .img .b-side .img4 {
+    width: 100%;
+    height: 40%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  }
+  .projetos .img .b-side .img5 {
+    width: 100%;
+    height: 23.5%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
+  }
+}
 .hero-servicos {
   max-width: 1920px;
   width: 100%;
@@ -1443,6 +1601,128 @@ header .nav-desktop .div-login-user {
   margin-left: 50px;
 }
 
+@media (max-width: 550px) {
+  .hero-servicos {
+    height: 400px;
+  }
+  .hero-servicos .servicos-text {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .hero-servicos .servicos-text h1 {
+    font-size: 20px;
+  }
+  .hero-servicos .servicos-text p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .servicos-about {
+    margin-top: 0px;
+    margin: 0;
+    height: 70px;
+    padding: 0;
+    overflow: hidden;
+    gap: 10px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .servicos-about .about1-text {
+    width: 99%;
+    margin: 0;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .servicos-about .about1-text h1 {
+    margin: 0;
+    padding: 0;
+  }
+  .servicos-about .about1-text .linha {
+    width: 100%;
+  }
+  .servicos-about .about1-text .linha::after {
+    content: "";
+    display: block;
+    width: 100%; /* tamanho da "linha" */
+    height: 3px; /* espessura da borda */
+    background: linear-gradient(to right, var(--azul), var(--rosa));
+    margin-left: 0px; /* centraliza horizontalmente */
+  }
+  .servicos-page {
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .servicos-page .servico1 {
+    width: 90%;
+  }
+  .servicos-page .servico1 .servico1-img {
+    width: 100%;
+    padding: 0;
+    height: 500px;
+  }
+  .servicos-page .servico1 .servico1-img .s1-grid {
+    display: none;
+  }
+  .servicos-page .servico1 .servico1-img .si1-img {
+    width: 100%;
+    padding: 0;
+    height: 300px;
+  }
+  .servicos-page .servico1 .servico1-text {
+    text-align: justify;
+  }
+  .servicos-page .servico2 {
+    width: 90%;
+  }
+  .servicos-page .servico2 .servico2-img {
+    width: 100%;
+    padding: 0;
+    height: 600px;
+  }
+  .servicos-page .servico2 .servico2-img .s2-grid {
+    display: none;
+  }
+  .servicos-page .servico2 .servico2-img .si2-img {
+    width: 100%;
+    padding: 0;
+    height: 300px;
+  }
+  .servicos-page .servico2 .servico2-text {
+    text-align: justify;
+  }
+  .a-servico {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    gap: 20px;
+    height: 400px;
+    width: 90%;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .a-servico .a-img {
+    display: none;
+  }
+  .a-servico .a-img .an-grid {
+    display: none;
+  }
+  .a-servico .a-text {
+    width: 100%;
+  }
+}
 .login-container {
   max-width: 1920px;
   width: 100%;
