@@ -14,8 +14,12 @@
 
     <div class="hero-servicos">
         <div class="servicos-text">
-            <h1>Conheça nossos Servicos</h1>
-            <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+            <div class="hero-h1">
+                <h1>Conheça nossos Serviços</h1>
+            </div>
+            <div class="hero-p">
+                <p>Transforme seu espaço com pintura profissional! Residencial, comercial ou decorativa</p>
+            </div>
         </div>
     </div>
 
@@ -46,8 +50,8 @@
                 </div>
             </div>
             <div class="servico1-text">
-            <h1>Conheça nossos Servicos</h1>
-                <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+                <h1>pinturas</h1>
+                <p>Transforme suas paredes com pinturas exclusivas: residencial, comercial ou industrial!</p>
             </div>  
 
         </div>
@@ -69,8 +73,8 @@
                 </div>
             </div>
             <div class="servico2-text">
-                <h1>Conheça nossos Servicos</h1>
-                <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+                <h1>Texturas</h1>
+                <p>Transforme seu espaço com texturas exclusivas: areia, grafiato ou marmorizado!</p>
             </div>
         </div>
     </div>

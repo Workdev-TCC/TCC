@@ -16,8 +16,8 @@
         <div class="menu-section">
             <h4>Empresa</h4>
             <a href="#">FAQs</a>
-            <a href="#">Serviços</a>
-            <a href="#">Projetos</a>
+            <a href="<?php echo RAIZ_PROJETO;?>views/servicos.php">Serviços</a>
+            <a href="<?php echo RAIZ_PROJETO;?>views/projetos.php">Projetos</a>
         </div>
 
         <div class="menu-section">

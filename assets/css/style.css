@@ -1182,9 +1182,18 @@ header .nav-desktop .div-login-user {
   }
 }
 @media (max-width: 550px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* garante que o scroll lateral não aparece */
+  }
   .hero-projetos {
     height: 400px;
     width: 100%;
+  }
+  .hero-projetos img {
+    width: 500px;
   }
   .hero-projetos .projetos-text {
     width: 100%;
@@ -1210,31 +1219,32 @@ header .nav-desktop .div-login-user {
     align-items: center;
   }
   .projetos-about .about-text {
-    width: 99%;
-    gap: 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
   }
   .projetos-about .about-text h1 {
     margin: 0;
     padding: 0;
+    width: auto;
   }
   .projetos-about .about-text .linha {
     width: 100%;
-    gap: 20px;
+    display: flex;
+    justify-content: center;
   }
   .projetos-about .about-text .linha::after {
     content: "";
     display: block;
-    width: 100%; /* tamanho da "linha" */
-    height: 3px; /* espessura da borda */
+    width: 50%;
+    height: 3px;
     background: linear-gradient(to right, var(--azul), var(--rosa));
-    margin-left: 0px; /* centraliza horizontalmente */
   }
   .projetos {
-    max-width: 800px;
     width: 100%;
     height: 100%;
     gap: 0px;
@@ -1251,16 +1261,19 @@ header .nav-desktop .div-login-user {
     flex-direction: column;
     padding: 0px;
     gap: 50px;
+    width: 100%;
   }
   .projetos .img .a-side {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding: 0px;
     align-items: center;
   }
   .projetos .img .a-side .img1 {
     width: 100%;
     height: 40%;
+    padding: 0px;
     -o-object-fit: cover;
        object-fit: cover;
     -o-border-image: none;
@@ -1308,7 +1321,7 @@ header .nav-desktop .div-login-user {
 .hero-servicos {
   max-width: 1920px;
   width: 100%;
-  height: 600px;
+  height: 750px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -1318,7 +1331,7 @@ header .nav-desktop .div-login-user {
   z-index: 0;
   margin-bottom: -90px;
   top: -100px;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/hero.png");
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2), var(--bg)), url("../img/hero-s.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1327,18 +1340,19 @@ header .nav-desktop .div-login-user {
   display: flex;
   width: 900px;
   flex-direction: column;
+  gap: 10px;
 }
-.hero-servicos .servicos-text h1 {
+.hero-servicos .servicos-text .hero-p p {
+  color: white;
+  font-size: 1.2vw;
+  font-family: "Roboto", sans-serif;
+}
+.hero-servicos .servicos-text .hero-h1 h1 {
   color: white;
   font-size: 5vw;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   letter-spacing: 0.2rem;
-}
-.hero-servicos .servicos-text p {
-  color: white;
-  font-size: 1.2vw;
-  font-family: "Roboto", sans-serif;
 }
 
 .servicos-about {
@@ -1603,20 +1617,28 @@ header .nav-desktop .div-login-user {
 
 @media (max-width: 550px) {
   .hero-servicos {
-    height: 400px;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
   }
   .hero-servicos .servicos-text {
-    width: 100%;
+    width: 80%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .hero-servicos .servicos-text h1 {
-    font-size: 20px;
+  .hero-servicos .servicos-text .hero-h1 {
+    width: 100%;
   }
-  .hero-servicos .servicos-text p {
-    font-size: 16px;
-    max-width: 90%;
+  .hero-servicos .servicos-text .hero-h1 h1 {
+    font-size: 30px;
+  }
+  .hero-servicos .servicos-text .hero-p {
+    width: 90%;
+    height: 100px;
+  }
+  .hero-servicos .servicos-text .hero-p p {
+    font-size: 15px;
   }
   .servicos-about {
     margin-top: 0px;
@@ -1632,27 +1654,26 @@ header .nav-desktop .div-login-user {
   }
   .servicos-about .about1-text {
     width: 99%;
-    margin: 0;
-    gap: 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    gap: 20px;
   }
   .servicos-about .about1-text h1 {
     margin: 0;
     padding: 0;
   }
   .servicos-about .about1-text .linha {
-    width: 100%;
+    display: flex;
+    width: 50%;
   }
   .servicos-about .about1-text .linha::after {
     content: "";
-    display: block;
-    width: 100%; /* tamanho da "linha" */
-    height: 3px; /* espessura da borda */
+    flex: 1;
+    height: 3px;
     background: linear-gradient(to right, var(--azul), var(--rosa));
-    margin-left: 0px; /* centraliza horizontalmente */
   }
   .servicos-page {
     width: 100%;
@@ -1683,7 +1704,21 @@ header .nav-desktop .div-login-user {
     height: 300px;
   }
   .servicos-page .servico1 .servico1-text {
-    text-align: justify;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .servicos-page .servico1 .servico1-text h1 {
+    width: 80%;
+    text-align: center;
+    font-size: 24px;
+  }
+  .servicos-page .servico1 .servico1-text p {
+    text-align: center;
+    width: 80%;
+    font-size: 15px;
+    color: var(--text-muted);
   }
   .servicos-page .servico2 {
     width: 90%;
@@ -1702,7 +1737,21 @@ header .nav-desktop .div-login-user {
     height: 300px;
   }
   .servicos-page .servico2 .servico2-text {
-    text-align: justify;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .servicos-page .servico2 .servico2-text h1 {
+    width: 80%;
+    text-align: center;
+    font-size: 24px;
+  }
+  .servicos-page .servico2 .servico2-text p {
+    text-align: center;
+    width: 80%;
+    font-size: 15px;
+    color: var(--text-muted);
   }
   .a-servico {
     margin-top: 0px;
