@@ -2,7 +2,7 @@
   //medidas fundamentais
   max-width: 1920px;
   width: 100%;
-  height: 600px;
+  height: 750px;
   margin: 0;
   padding: 0;
   //flexbox
@@ -16,7 +16,7 @@
   top: -100px;
   //estilos personalizados
   background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)),
-    url("../img/hero.png");
+    url("../img/hero-p.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@
 .projetos-about {
   //medidas fundamentais-
   max-width: 1920px;
-  width: 100%;
+  width: 90%;
   height: 100px;
   padding: 20px;
   //flexbox
@@ -87,7 +87,7 @@
   display: flex;
   flex-direction: row;
   height: 1500px;
-  width: 100%;
+  width: 90%;
   .img {
     display: flex;
     flex-direction: row;
@@ -155,7 +155,7 @@
     //--------------------
   }
   .hero-projetos {
-    height: 460px;
+    height: 600px;
   }
   .projetos-about {
     .img {
@@ -200,24 +200,30 @@
   }
 
   .hero-projetos {
-    height: 400px;
-    width: 100%;
+    //medidas
+    height: 650px;
+    justify-content: center;
+    align-items: center;
 
-    img {
-      width: 500px;
-    }
     .projetos-text {
-      width: 100%;
+      //medidas
+      width: 80%;
+      //position
       justify-content: center;
       align-items: center;
       flex-direction: column;
+
       h1 {
-        font-size: 20px;
+        font-size: 40px;
       }
       p {
         font-size: 16px;
         max-width: 90%;
       }
+    }
+
+    img {
+      width: 500px;
     }
   }
   .projetos-about {
@@ -274,21 +280,20 @@
     height: 100%;
     gap: 0px;
     margin: 0px;
+    margin-bottom: 100px;
     padding: 20px;
     //flexbox
     display: flex;
     flex-direction: column;
     //estilos personalizados
-    border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
-    border-width: 2px;
-    border-style: solid;
+    border: none;
 
     .img {
       flex-direction: column;
       padding: 0px;
       gap: 50px;
       width: 100%;
-
+      border: none;
       .a-side {
         display: flex;
         flex-direction: column;
