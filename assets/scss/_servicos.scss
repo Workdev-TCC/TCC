@@ -105,7 +105,7 @@
 
   //medidas
   width: 100%;
-  height: 600px;
+  height: 550px;
   gap: 40px;
   border: none;
 
@@ -289,7 +289,7 @@
 
   //medidas
   width: 100%;
-  height: 600px;
+  height: 370px;
   gap: 40px;
   border: none;
 
@@ -581,18 +581,18 @@
     //--------------------
   }
 
-  .hero-servicos {
-    margin: 0 !important;
-    padding: 0 !important;
+  .nav-desktop{
     position: relative;
-    top: 0;
-    height: 500;
+    padding: 0;
+  }
+
+  .hero-servicos { 
+    position: relative;
+    margin-bottom: 50px;
+    height: 650px;
     z-index: 1; /* fica atrás do header */
   }
 
-  .hero-servicos > * {
-    margin-top: 0 !important;
-  }
 
   .s-page {
     height: auto;
@@ -604,23 +604,199 @@
     display: flex;
     flex-wrap: wrap; // permite que quebre linha
     justify-content: center;
-    .servico4 {
-      .servico4-img {
-        width: 100%;
-        padding: 20px;
-        height: 60%;
-        .s4-grid {
-          display: none;
-        }
 
-        .si4-img {
+  //medidas
+  width: 100%;
+  height: 550px;
+  border: none;
+
+  //position
+  justify-content: center;
+ .servico4 {
+    //flex
+    display: flex;
+    flex-direction: column;
+
+    //medidas
+
+    width: 400px;
+    height: 500px;
+
+    //position
+
+    //border
+    border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
+
+    .servico4-img {
+      //flex
+      display: flex;
+      flex-direction: row;
+
+      //medidas
+      width: 100%;
+      height: 60%;
+
+      .si4-img {
+        //flex
+        display: flex;
+
+        //medidas
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //position
+        align-items: center;
+
+        .s4-img {
           width: 100%;
-          img {
-            height: 280px;
-          }
+          height: 100%;
         }
       }
     }
+
+    .servico4-text {
+      display: flex;
+      flex-direction: column;
+
+      //medidas
+      padding: 20px;
+      width: 100%;
+      height: 50%;
+      gap: 20px;
+      //position
+      text-align: left;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+   .servico5 {
+    //flex
+    display: flex;
+    flex-direction: column;
+
+    //medidas
+
+    width: 400px;
+    height: 500px;
+
+    //position
+
+    //border
+    border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
+
+    .servico5-img {
+      //flex
+      display: flex;
+      flex-direction: row;
+
+      //medidas
+      width: 100%;
+      height: 60%;
+
+      .si5-img {
+        //flex
+        display: flex;
+
+        //medidas
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //position
+        align-items: center;
+
+        .s5-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .servico5-text {
+      display: flex;
+      flex-direction: column;
+
+      //medidas
+      padding: 20px;
+      width: 100%;
+      height: 50%;
+      gap: 20px;
+      //position
+      text-align: left;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+   .servico6 {
+    //flex
+    display: flex;
+    flex-direction: column;
+
+    //medidas
+
+    width: 400px;
+    height: 500px;
+
+    //position
+
+    //border
+    border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
+
+    .servico6-img {
+      //flex
+      display: flex;
+      flex-direction: row;
+
+      //medidas
+      width: 100%;
+      height: 60%;
+
+      .si6-img {
+        //flex
+        display: flex;
+
+        //medidas
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //position
+        align-items: center;
+
+        .s6-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .servico6-text {
+      display: flex;
+      flex-direction: column;
+
+      //medidas
+      padding: 20px;
+      width: 100%;
+      height: 50%;
+      gap: 20px;
+      //position
+      text-align: left;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
   }
 
   .servicos-page > [class^="servico"] {
@@ -630,7 +806,7 @@
     margin: 0; // zera margem externa
     padding: 0; // ajusta padding interno se necessário
     width: 400px; // ajusta tamanho fixo para não ficar gigante
-    border: 2px solid;
+    border: 1px solid;
     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
     box-sizing: border-box;
   }
@@ -647,6 +823,7 @@
     display: block;
     object-fit: cover;
   }
+  
 
   // textos internos
   .servico1-text,
@@ -662,10 +839,6 @@
   }
 
   // ajustes gerais
-  .hero-servicos {
-    top: 0;
-    margin-bottom: 0;
-  }
 
   .servicos-about {
     left: 0;
@@ -801,7 +974,7 @@
         .si1-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -836,7 +1009,7 @@
         .si2-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -871,7 +1044,7 @@
         .si3-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -923,7 +1096,7 @@
         .si4-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -958,7 +1131,7 @@
         .si5-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -993,7 +1166,7 @@
         .si6-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1125,10 +1298,11 @@
 
     .servico1 {
       width: 90%;
+      height: 370px;
       .servico1-img {
         width: 100%;
         padding: 0;
-        height: 500px;
+        height: 270px;
         .s1-grid {
           display: none;
         }
@@ -1136,7 +1310,7 @@
         .si1-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1160,10 +1334,11 @@
     }
     .servico2 {
       width: 90%;
+      height: 370px;
       .servico2-img {
         width: 100%;
         padding: 0;
-        height: 600px;
+        height: 270px;
         .s2-grid {
           display: none;
         }
@@ -1171,7 +1346,7 @@
         .si2-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1195,10 +1370,11 @@
     }
     .servico3 {
       width: 90%;
+      height: 370px;
       .servico3-img {
         width: 100%;
         padding: 0;
-        height: 600px;
+        height: 370px;
         .s3-grid {
           display: none;
         }
@@ -1206,7 +1382,7 @@
         .si3-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1246,15 +1422,16 @@
 
     .servico4 {
       width: 90%;
+        height: 370px;
       .servico4-img {
         width: 100%;
         padding: 0;
-        height: 500px;
+        height: 270px;
 
         .si4-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1278,10 +1455,11 @@
     }
     .servico5 {
       width: 90%;
+      height: 370px;
       .servico5-img {
         width: 100%;
         padding: 0;
-        height: 600px;
+        height: 270px;
         .s5-grid {
           display: none;
         }
@@ -1289,7 +1467,7 @@
         .si5-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 
@@ -1313,10 +1491,11 @@
     }
     .servico6 {
       width: 90%;
+      height: 370px;
       .servico6-img {
         width: 100%;
         padding: 0;
-        height: 600px;
+        height: 270px;
         .s6-grid {
           display: none;
         }
@@ -1324,7 +1503,7 @@
         .si6-img {
           width: 100%;
           padding: 0;
-          height: 300px;
+          height: 220px;
         }
       }
 

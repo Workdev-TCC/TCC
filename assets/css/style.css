@@ -1410,7 +1410,7 @@ header .nav-desktop .div-login-user {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 600px;
+  height: 550px;
   gap: 40px;
   border: none;
   justify-content: center;
@@ -1528,7 +1528,7 @@ header .nav-desktop .div-login-user {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 600px;
+  height: 370px;
   gap: 40px;
   border: none;
   justify-content: center;
@@ -1719,16 +1719,15 @@ header .nav-desktop .div-login-user {
     height: 120vh;
     font-size: 12px;
   }
-  .hero-servicos {
-    margin: 0 !important;
-    padding: 0 !important;
+  .nav-desktop {
     position: relative;
-    top: 0;
-    height: 500;
-    z-index: 1; /* fica atrás do header */
+    padding: 0;
   }
-  .hero-servicos > * {
-    margin-top: 0 !important;
+  .hero-servicos {
+    position: relative;
+    margin-bottom: 50px;
+    height: 650px;
+    z-index: 1; /* fica atrás do header */
   }
   .s-page {
     height: auto;
@@ -1739,20 +1738,130 @@ header .nav-desktop .div-login-user {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    height: 550px;
+    border: none;
+    justify-content: center;
+  }
+  .servicos-page .servico4 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
   }
   .servicos-page .servico4 .servico4-img {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    padding: 20px;
     height: 60%;
   }
-  .servicos-page .servico4 .servico4-img .s4-grid {
-    display: none;
-  }
   .servicos-page .servico4 .servico4-img .si4-img {
+    display: flex;
     width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    align-items: center;
   }
-  .servicos-page .servico4 .servico4-img .si4-img img {
-    height: 280px;
+  .servicos-page .servico4 .servico4-img .si4-img .s4-img {
+    width: 100%;
+    height: 100%;
+  }
+  .servicos-page .servico4 .servico4-text {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    text-align: left;
+  }
+  .servicos-page .servico4 .servico4-text p {
+    text-align: left;
+  }
+  .servicos-page .servico5 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .servicos-page .servico5 .servico5-img {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60%;
+  }
+  .servicos-page .servico5 .servico5-img .si5-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    align-items: center;
+  }
+  .servicos-page .servico5 .servico5-img .si5-img .s5-img {
+    width: 100%;
+    height: 100%;
+  }
+  .servicos-page .servico5 .servico5-text {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    text-align: left;
+  }
+  .servicos-page .servico5 .servico5-text p {
+    text-align: left;
+  }
+  .servicos-page .servico6 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+       border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .servicos-page .servico6 .servico6-img {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60%;
+  }
+  .servicos-page .servico6 .servico6-img .si6-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    align-items: center;
+  }
+  .servicos-page .servico6 .servico6-img .si6-img .s6-img {
+    width: 100%;
+    height: 100%;
+  }
+  .servicos-page .servico6 .servico6-text {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    text-align: left;
+  }
+  .servicos-page .servico6 .servico6-text p {
+    text-align: left;
   }
   .servicos-page > [class^=servico] {
     flex: 0 1 calc(50% - 30px);
@@ -1761,7 +1870,7 @@ header .nav-desktop .div-login-user {
     margin: 0;
     padding: 0;
     width: 400px;
-    border: 2px solid;
+    border: 1px solid;
     -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
        border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
     box-sizing: border-box;
@@ -1788,10 +1897,6 @@ header .nav-desktop .div-login-user {
     padding: 20px;
     box-sizing: border-box;
     text-align: left;
-  }
-  .hero-servicos {
-    top: 0;
-    margin-bottom: 0;
   }
   .servicos-about {
     left: 0;
@@ -1905,7 +2010,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico1 .servico1-img .si1-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico1 .servico1-text {
     width: 100%;
@@ -1938,7 +2043,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico2 .servico2-img .si2-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico2 .servico2-text {
     width: 100%;
@@ -1971,7 +2076,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico3 .servico3-img .si3-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico3 .servico3-text {
     width: 100%;
@@ -2016,7 +2121,7 @@ header .nav-desktop .div-login-user {
   .servicos-page2 .servico4 .servico4-img .si4-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico4 .servico4-text {
     width: 100%;
@@ -2049,7 +2154,7 @@ header .nav-desktop .div-login-user {
   .servicos-page2 .servico5 .servico5-img .si5-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico5 .servico5-text {
     width: 100%;
@@ -2082,7 +2187,7 @@ header .nav-desktop .div-login-user {
   .servicos-page2 .servico6 .servico6-img .si6-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico6 .servico6-text {
     width: 100%;
@@ -2190,11 +2295,12 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page .servico1 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page .servico1 .servico1-img {
     width: 100%;
     padding: 0;
-    height: 500px;
+    height: 270px;
   }
   .servicos-page .servico1 .servico1-img .s1-grid {
     display: none;
@@ -2202,7 +2308,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico1 .servico1-img .si1-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico1 .servico1-text {
     width: 100%;
@@ -2223,11 +2329,12 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page .servico2 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page .servico2 .servico2-img {
     width: 100%;
     padding: 0;
-    height: 600px;
+    height: 270px;
   }
   .servicos-page .servico2 .servico2-img .s2-grid {
     display: none;
@@ -2235,7 +2342,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico2 .servico2-img .si2-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico2 .servico2-text {
     width: 100%;
@@ -2256,11 +2363,12 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page .servico3 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page .servico3 .servico3-img {
     width: 100%;
     padding: 0;
-    height: 600px;
+    height: 370px;
   }
   .servicos-page .servico3 .servico3-img .s3-grid {
     display: none;
@@ -2268,7 +2376,7 @@ header .nav-desktop .div-login-user {
   .servicos-page .servico3 .servico3-img .si3-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page .servico3 .servico3-text {
     width: 100%;
@@ -2301,16 +2409,17 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page2 .servico4 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page2 .servico4 .servico4-img {
     width: 100%;
     padding: 0;
-    height: 500px;
+    height: 270px;
   }
   .servicos-page2 .servico4 .servico4-img .si4-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico4 .servico4-text {
     width: 100%;
@@ -2331,11 +2440,12 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page2 .servico5 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page2 .servico5 .servico5-img {
     width: 100%;
     padding: 0;
-    height: 600px;
+    height: 270px;
   }
   .servicos-page2 .servico5 .servico5-img .s5-grid {
     display: none;
@@ -2343,7 +2453,7 @@ header .nav-desktop .div-login-user {
   .servicos-page2 .servico5 .servico5-img .si5-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico5 .servico5-text {
     width: 100%;
@@ -2364,11 +2474,12 @@ header .nav-desktop .div-login-user {
   }
   .servicos-page2 .servico6 {
     width: 90%;
+    height: 370px;
   }
   .servicos-page2 .servico6 .servico6-img {
     width: 100%;
     padding: 0;
-    height: 600px;
+    height: 270px;
   }
   .servicos-page2 .servico6 .servico6-img .s6-grid {
     display: none;
@@ -2376,7 +2487,7 @@ header .nav-desktop .div-login-user {
   .servicos-page2 .servico6 .servico6-img .si6-img {
     width: 100%;
     padding: 0;
-    height: 300px;
+    height: 220px;
   }
   .servicos-page2 .servico6 .servico6-text {
     width: 100%;
