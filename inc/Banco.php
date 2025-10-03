@@ -70,17 +70,16 @@
             //where=array assoc
             $db=$this->open_db();
             $campos_sql="";
-            $array_limpo=[];
             $placeholders=[];
+
             foreach($array as $key => $value){
-                $key_limpa=trim($key,"'");
-                $array_limpo[$key_limpa]=$value;
+                $campos_sql.=" {$key} = :{$key},";
+                $ph=":{$key}";
+                $placeholders[$ph]=$value;
             }
-            foreach($array_limpo as $key => $value){
-                $campos_sql.="{$key} = :{$key}, ";
-            }
-            $campos_sql=rtrim($campos_sql,", ");
-            $sql="UPDATE {$table} SET {$campos_sql}";
+            $campos_sql=rtrim($campos_sql,",");
+            $sql="UPDATE {$table} SET{$campos_sql}";
+            
             foreach($where as $campo => $valor){
                 $campo=trim($campo,"'");
                 $ph=":{$campo}";
@@ -88,32 +87,24 @@
                 $placeholders[$ph]=$valor;
             }
             $sql.=" WHERE ".implode("AND",$condicoes);
-
-            try {
-                $stmt=$db->prepare($sql);
-                foreach($placeholders as $ph => $value){
-                    $ph=trim($ph,"'");
-                    $type =is_int($value)? PDO::PARAM_INT : PDO::PARAM_STR; 
-                    $stmt->bindValue("{$ph}",$value,$type);
-                }
-                $stmt->execute();
-                if (session_status() === PHP_SESSION_NONE) {
-                        session_start();
-                    }
-                    $_SESSION['message'] ="atualização realizada com sucesso";
-                    $_SESSION['type'] = 'success'; 
-
-            } catch (Exception $e) {
-                 if (session_status() === PHP_SESSION_NONE) {
-                    session_start();
-                 }
-                $_SESSION['message'] = $e->getMessage();
-                $_SESSION['type'] = 'danger';
+           
+            $stmt=$db->prepare($sql);
+            foreach($placeholders as $ph => $value){
+                $type=is_int($value)? PDO::PARAM_INT : PDO::PARAM_STR; 
+                $stmt->bindValue("{$ph}",$value,$type);
             }
+            if( $stmt->execute()){
+                $_SESSION['message'] ="atualização realizada com sucesso";
+                $_SESSION['type'] = 'success'; 
+                return true;
+            }
+            return false;
+           
+
             $this->close_db();
         }
         //SELECT 
-        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0)
+        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0,$return_type='')
         {
             $db = $this->open_db();
             $resultado = $this->montarSelectSql($table, $retorno, $onde, $limit);
@@ -122,16 +113,23 @@
 
             $stmt = $db->prepare($sql);
 
-            foreach ($placeholders as $ph => $valor) {
-                $type = is_int($valor) ? PDO::PARAM_INT : PDO::PARAM_STR;
-                $stmt->bindValue($ph, $valor, $type);
+            if(!empty($placeholders)){
+                foreach ($placeholders as $ph => $valor) {
+                    $type = is_int($valor) ? PDO::PARAM_INT : PDO::PARAM_STR;
+                    $stmt->bindValue($ph, $valor, $type);
+                }
             }
 
             $stmt->execute();
             $this->close_db();
             if ($stmt->rowCount() > 0) {
+                if($return_type==="col"){
+                    $return_type2=$stmt->fetchAll(PDO::FETCH_COLUMN);
+                }else{
+                    $return_type2=$stmt->fetchAll(PDO::FETCH_ASSOC);
+                }
                 return $pegarVarios 
-                    ? $stmt->fetchAll(PDO::FETCH_ASSOC)
+                    ? $return_type2
                     : $stmt->fetch(PDO::FETCH_ASSOC);
             }
 

@@ -15,15 +15,22 @@
 <form action="<?php echo RAIZ_PROJETO;?>usuarios/edit.php" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" name="nome">
+    <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $_SESSION['nome']; ?>">
   </div>
   <div class="mb-3">
     <label for="tel" class="form-label">Telefone</label>
-    <input type="text" name="telefone" class="form-control" id="tel" aria-describedby="emailHelp">
+    <input type="text" name="telefone" class="form-control" id="tel" value="<?php echo $_SESSION['telefone']; ?>">
   </div>
-  <div class="mb-3">
-    <label for="foto" class="form-label">Foto</label>
-    <input type="file" name="foto" class="form-control" id="foto" aria-describedby="emailHelp">
+  <div class="row">
+      <div class="form-group col-md-4">
+          <label for="foto">Foto:</label>
+          <input type="file" class="form-control" name="foto" id="foto">
+      </div>
+      <div class="form-group col-md-4">
+          <label for="foto">Pre-Visualização</label>
+          <img class="form-control shadow p-1 mb-1 bg-body rounded" id="imgPreview"
+              src="../img/semimagem.jpg" width="200px" alt="foto do usuario">
+      </div>
   </div>
 
   <div class="mb-3 form-check">
