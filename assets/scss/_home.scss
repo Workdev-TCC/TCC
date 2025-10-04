@@ -1,7 +1,7 @@
 .hero {
   max-width: 1920px;
   width: 100%;
-  height: 800px;
+  height: 50vw;
   margin: 0;
   padding: 0;
   display: flex;
@@ -40,9 +40,10 @@
 .servicos {
   //medidas fundamentais
   max-width: 1920px;
-  width: 100%;
-  height: 600px;
-  padding: 70px 10px;
+  width: 90%;
+  height: 450px;
+  margin-left: 5%;
+  margin-right: 5%;
   //flexbox
   display: flex;
 
@@ -122,9 +123,10 @@
 }
 .sobre {
   //medidas fundamentais
-  max-width: 1920px;
-  width: 100%;
-  height: 600px;
+  width: 90%;
+  height: 450px;
+  margin-left: 5%;
+  margin-right: 5%;
   //flexbox
   display: flex;
   flex-direction: row;

@@ -1,7 +1,6 @@
 <?php
 include "../config.php";
 include "../inc/Banco.php";
-include "../inc/Banco.php";
 include DBAPI;
 include UTEIS;
 
@@ -15,7 +14,6 @@ try {
             throw new Exception("E-mail e senha são obrigatórios.");
         }
 
-        $db = new Banco;
         $db = new Banco;
 
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
