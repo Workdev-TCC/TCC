@@ -15,7 +15,7 @@
     <div class="hero-projetos">
         <div class="projetos-text">
             <h1>Conheça nossos Projetos</h1>
-            <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+            <p>Transforme seu espaço com pintura profissional! Residencial, comercial ou decorativa</p>
         </div>
     </div>
 
@@ -24,8 +24,7 @@
             <h1>Nossos Projetos</h1>
             <div class="linha">
 
-            </div>
-            <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+            </div>  
         </div>
     </div>
 

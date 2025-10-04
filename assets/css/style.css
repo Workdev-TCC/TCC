@@ -607,10 +607,11 @@ header .nav-desktop .div-login-user {
 }
 
 .localizacao {
+  margin-left: 5%;
+  margin-right: 5%;
   max-width: 1920px;
   width: 100%;
   height: 600px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -620,6 +621,7 @@ header .nav-desktop .div-login-user {
   width: 100%;
   height: 10%;
   text-align: left;
+  margin-left: 10%;
 }
 .localizacao .localizacao-text h1 {
   width: 500px;
@@ -680,7 +682,7 @@ header .nav-desktop .div-login-user {
   text-align: center;
 }
 .localizacao .info {
-  width: 100%;
+  width: 90%;
   height: 10%;
   display: flex;
   flex-direction: row;
@@ -709,7 +711,9 @@ header .nav-desktop .div-login-user {
 }
 
 .faqs {
-  width: 100%;
+  width: 95%;
+  margin-left: 5%;
+  margin-right: 5%;
   max-width: 1920px;
   display: flex;
   align-items: center;
@@ -1533,6 +1537,7 @@ header .nav-desktop .div-login-user {
 .login-container .login-content .login-form .input-wrapper .icon-eye {
   width: 10%;
   display: flex;
+  align-items: center;
   align-items: center;
   justify-content: center;
   color: var(--roxo);

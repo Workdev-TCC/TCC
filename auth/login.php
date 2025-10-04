@@ -1,6 +1,7 @@
 <?php
 include "../config.php";
 include "../inc/Banco.php";
+include "../inc/Banco.php";
 include DBAPI;
 include UTEIS;
 
@@ -15,6 +16,7 @@ try {
         }
 
         $db = new Banco;
+        $db = new Banco;
 
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
        $array = [
@@ -26,6 +28,7 @@ try {
             throw new Exception("Usuário ou senha inválidos.");
         }
 
+        //o variáveis
         //o variáveis
         $id           = $dados["id"];
         $nome         = $dados["nome"];
