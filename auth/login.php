@@ -21,7 +21,7 @@ try {
         'email'=>$email,
         'senha'=>$senha
        ];
-       $dados=$db->select("usuarios","*",$array,false,1);
+       $dados=$db->select("usuarios","*",$array,false,1,"fetch_assoc");
        if (empty($dados)) {
             throw new Exception("Usuário ou senha inválidos.");
         }
@@ -41,8 +41,7 @@ try {
             session_start();
         }
 
-        $_SESSION['message']       = "Bem vindo " . $nome;
-        $_SESSION['type']          = "success";
+      
         $_SESSION['nome']          = $nome;
         $_SESSION['email']         = $email;
         $_SESSION['id']            = $id;
@@ -51,9 +50,16 @@ try {
         $_SESSION['data_criacao']  = $data_criacao;
         $_SESSION['tipo']          = $tipo;
 
+        if(!empty($_SESSION['id'])){
+            $_SESSION['message']       = "Bem vindo " . $nome;
+            $_SESSION['type']          = "success";
+            header("Location: " . RAIZ_PROJETO);
+            exit();
+        }
+        $_SESSION['message']       = "erro ao iniciar";
+        $_SESSION['type']          = "danger";
         header("Location: " . RAIZ_PROJETO);
         exit();
-
     } else {
         throw new Exception("Nenhum dado recebido.");
     }

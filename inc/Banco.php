@@ -104,7 +104,7 @@
             $this->close_db();
         }
         //SELECT 
-        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0,$return_type='')
+        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0,$return_type)
         {
             $db = $this->open_db();
             $resultado = $this->montarSelectSql($table, $retorno, $onde, $limit);
@@ -118,19 +118,29 @@
                     $type = is_int($valor) ? PDO::PARAM_INT : PDO::PARAM_STR;
                     $stmt->bindValue($ph, $valor, $type);
                 }
+
             }
 
             $stmt->execute();
-            $this->close_db();
+            // $this->close_db();
             if ($stmt->rowCount() > 0) {
-                if($return_type==="col"){
-                    $return_type2=$stmt->fetchAll(PDO::FETCH_COLUMN);
-                }else{
-                    $return_type2=$stmt->fetchAll(PDO::FETCH_ASSOC);
+                switch ($return_type) {
+                    case 'fetch_all_col':
+                       return $stmt->fetchAll(PDO::FETCH_COLUMN);
+                        break;
+                    
+                    case 'fetch_all_assoc':
+                       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        break;
+                    
+                    case 'fetch_assoc':
+                       return $stmt->fetch(PDO::FETCH_ASSOC);
+                        break;
+                    
+                    default:
+                        return null;
+                        break;
                 }
-                return $pegarVarios 
-                    ? $return_type2
-                    : $stmt->fetch(PDO::FETCH_ASSOC);
             }
 
             return null;

@@ -16,7 +16,7 @@
                 "senha"=>$senha
             ];
             $bd = new Banco;
-            $verify=$bd->select("usuarios","*",$usuarios,false,1);
+            $verify=$bd->select("usuarios","*",$usuarios,false,1,"fetch_assoc");
             if($verify!==null){
                   if (session_status() === PHP_SESSION_NONE) {
                     session_start();
@@ -30,7 +30,7 @@
             
             if (!empty($nome) && !empty($email) && !empty($tel) && !empty($senha)){
                 $bd->save("usuarios",$usuarios);
-                $dados = $bd->select("usuarios","*",$usuarios,false,1);
+                $dados = $bd->select("usuarios","*",$usuarios,false,1,"fetch_assoc");
 
                 $id = $dados["id"];
                 $nome = $dados["nome"];

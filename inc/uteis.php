@@ -44,7 +44,7 @@
             }
 
             // 1. Buscar imagens do banco
-            $imagens_banco=$db->select("usuarios","foto",[],true,0,"col");
+            $imagens_banco=$db->select("usuarios","foto",[],true,0,"fetch_all_col");
             // $sql = "SELECT foto FROM usuarios";
             // $stmt = $db->open_db()->prepare($sql);
             // $stmt->execute();
