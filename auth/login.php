@@ -17,7 +17,14 @@ try {
         $db = new Banco;
 
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
-        $dados = $db->selectLogin("usuarios", $email, $senha);
+       $array = [
+        'email'=>$email,
+        'senha'=>$senha
+       ];
+       $dados=$db->select("usuarios","*",$array,false,1);
+       if (empty($dados)) {
+            throw new Exception("Usuário ou senha inválidos.");
+        }
 
         //o variáveis
         $id           = $dados["id"];
@@ -28,10 +35,7 @@ try {
         $tipo         = $dados["tipo"];
         $data_criacao = $dados["data_criacao"];
         
-        if (empty($dados)) {
-            throw new Exception("Usuário ou senha inválidos.");
-        }
-
+        
         // Definind
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -61,7 +65,7 @@ try {
     $_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
     $_SESSION['type'] = 'danger';
     if($_SESSION['message']=="Ocorreu um erro: Nenhum dado recebido."){
-        header("Location: " . RAIZ_PROJETO."auth/view/login.php");
+        header("Location: " . RAIZ_PROJETO."auth/views/login.php");
         exit();
     }
     header("Location: " . RAIZ_PROJETO. "auth/views/login.php");

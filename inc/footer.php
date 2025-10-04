@@ -21,6 +21,20 @@
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/fontawesome_js/all.min.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/main.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/design.js"></script>
+<script>
+$(document).ready(() => {
+    $("#foto").change(function() {
+        const file = this.files[0];
+        if (file) {
+            let reader = new FileReader();
+            reader.onload = function(event) {
+                $("#imgPreview").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+</script>
 </body>
 
 </html>

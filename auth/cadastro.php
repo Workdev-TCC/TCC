@@ -11,8 +11,12 @@
             $senha=$_POST['senha'];
 
             $usuarios= $_POST;
+            $dados_users=[
+                "email"=>$email,
+                "senha"=>$senha
+            ];
             $bd = new Banco;
-            $verify=$bd->selectLogin("usuarios",$email,$senha);
+            $verify=$bd->select("usuarios","*",$usuarios,false,1);
             if($verify!==null){
                   if (session_status() === PHP_SESSION_NONE) {
                     session_start();
@@ -26,7 +30,7 @@
             
             if (!empty($nome) && !empty($email) && !empty($tel) && !empty($senha)){
                 $bd->save("usuarios",$usuarios);
-                $dados = $bd->selectLogin("usuarios", $email, $senha);
+                $dados = $bd->select("usuarios","*",$usuarios,false,1);
 
                 $id = $dados["id"];
                 $nome = $dados["nome"];

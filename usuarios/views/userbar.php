@@ -16,7 +16,7 @@
         <div class="links-userbar">
             <div class="icon">
             <a href="#"><i class="fa-solid fa-key" id="icon1"></i>Alterar senha<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
-            <a href="#"><i class="fa-solid fa-image"id="icon1"></i>Alterar foto<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
+            <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/edit.php"><i class="fa-solid fa-image"id="icon1"></i>Alterar dados<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
             <a href="<?php echo RAIZ_PROJETO;?>auth/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"id="icon1"></i>Logout<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
             <a href="#"><i class="fa-solid fa-trash"id="icon1"></i><strong>Deletar conta</strong><i class="fa-solid fa-arrow-right" id="icon2"></i></a>
             </div>

@@ -55,7 +55,7 @@
                  }
                 $_SESSION['message'] ="Cadastro ralizado com sucesso";
                 $_SESSION['type'] = 'success';                
-            }catch(Exeption $e){
+            }catch(Exception $e){
                  if (session_status() === PHP_SESSION_NONE) {
                     session_start();
                  }
@@ -64,19 +64,107 @@
             }
             $this->close_db();
         }
-//melhorar depois 
-        public function selectLogin($table,$email,$senha){
+        //EDIT
+        public function update($table,$array,$where){
+            //camposUp=array assoc
+            //where=array assoc
             $db=$this->open_db();
-            $sql = "SELECT * FROM $table WHERE email = :login AND senha = :senha LIMIT 1";
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(":login", $email,PDO::PARAM_STR);
-            $stmt->bindParam(":senha", $senha,PDO::PARAM_STR);
-            $stmt->execute();
+            $campos_sql="";
+            $placeholders=[];
 
-            if($stmt->rowCount() > 0){
-                return $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+            foreach($array as $key => $value){
+                $campos_sql.=" {$key} = :{$key},";
+                $ph=":{$key}";
+                $placeholders[$ph]=$value;
             }
+            $campos_sql=rtrim($campos_sql,",");
+            $sql="UPDATE {$table} SET{$campos_sql}";
+            
+            foreach($where as $campo => $valor){
+                $campo=trim($campo,"'");
+                $ph=":{$campo}";
+                $condicoes[]="{$campo} = {$ph}";
+                $placeholders[$ph]=$valor;
+            }
+            $sql.=" WHERE ".implode("AND",$condicoes);
+           
+            $stmt=$db->prepare($sql);
+            foreach($placeholders as $ph => $value){
+                $type=is_int($value)? PDO::PARAM_INT : PDO::PARAM_STR; 
+                $stmt->bindValue("{$ph}",$value,$type);
+            }
+            if( $stmt->execute()){
+                $_SESSION['message'] ="atualização realizada com sucesso";
+                $_SESSION['type'] = 'success'; 
+                return true;
+            }
+            return false;
+           
+
+            $this->close_db();
+        }
+        //SELECT 
+        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0,$return_type='')
+        {
+            $db = $this->open_db();
+            $resultado = $this->montarSelectSql($table, $retorno, $onde, $limit);
+            $sql = $resultado['sql'];
+            $placeholders = $resultado['params'];
+
+            $stmt = $db->prepare($sql);
+
+            if(!empty($placeholders)){
+                foreach ($placeholders as $ph => $valor) {
+                    $type = is_int($valor) ? PDO::PARAM_INT : PDO::PARAM_STR;
+                    $stmt->bindValue($ph, $valor, $type);
+                }
+            }
+
+            $stmt->execute();
+            $this->close_db();
+            if ($stmt->rowCount() > 0) {
+                if($return_type==="col"){
+                    $return_type2=$stmt->fetchAll(PDO::FETCH_COLUMN);
+                }else{
+                    $return_type2=$stmt->fetchAll(PDO::FETCH_ASSOC);
+                }
+                return $pegarVarios 
+                    ? $return_type2
+                    : $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+
             return null;
         }
+        //privadas
+        private function montarSelectSql($tabela, $retorno, $where, $limit = 0)
+        {
+            $campos = is_array($retorno) ? implode(", ", $retorno) : $retorno;
+
+            $sql = "SELECT {$campos} FROM {$tabela}";
+
+            $placeholders = [];
+            $condicoes = [];
+
+            if (!empty($where)) {
+                foreach ($where as $campo => $valor) {
+                    $campo=trim($campo,"'");
+                    $ph = ":" . $campo;
+                    $condicoes[] = "{$campo} = {$ph}";
+                    $placeholders[$ph] = $valor;
+                }
+                $sql .= " WHERE " . implode(" AND ", $condicoes);
+            }
+
+            if ($limit > 0) {
+                $sql .= " LIMIT " . (int)$limit; // cast para garantir que seja inteiro
+            }
+
+            return [
+                'sql' => $sql,
+                'params' => $placeholders
+            ];
+        }
+
+
     }
 ?>
