@@ -1,177 +1,214 @@
-<section class="hero">
+
+<div class="hero">
     <div class="hero-text">
-        <h1 class="roboto">Pintura que <span>VALORIZA</span> o seu Imóvel
-        </h1>
-        <div class="hero-p">
-            <p>
-                Agilidade e responsabilidade para deixar o seu ambiente do jeitinho que você sempre quis!
-            </p>
-        </div>
-        <div class="hero-button">
-            <a href="">
-                <div class="button-whats">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-            </a>
-        </div>
+        <h1>ZUPINTURAS</h1>
+        <p>Pintura que valoriza o seu Imóvel.</p>
     </div>
-
-</section>
-<!--fechou hero -->
-
-<div class="sobre-titulo">
-    <h2 class="roboto">Sobre Zupinturas</h2>   
-    <P class="hammersmith-one">Conheça um pouco mais sobre como a nossa empresa e os nossos valores 
-        transformam cada projeto<br> em uma obra única, feita com <span>dedicação </span>e <span>atenção</span> aos detalhes.</P> 
 </div>
+<section class="servicos">
+    <div class="img">
+        <img src="<?php echo RAIZ_PROJETO;?>assets/img/servico.jpg" alt="erro">
+    </div>
+    <div class="servicos-text">
+        <h1>NOSSOS SERVIÇOS</h1>
+        <ul>
+            <li>Pintura Residencial</li>
+            <li>Pintura Comercial</li>
+            <li>Texturas e Efeitos Especias</li>
+            <li>Tratamento de Imperfeições</li>
+        </ul>
+        <a class="servicos-btn"  href="#">MAIS INFORMAÇÕES</a>
+    </div>
+</section>
 <section class="sobre">
     <div class="sobre-text">
-        <span class="hammersmith-one">Um sonho grande</span>
-        <p class="hammersmith-one">Em 2009, Exupério Pereira, que até então era garçom, decidiu dar um passo ousado e
-            fundou sua própria empresa
-            no ramo de pintura. Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para
-            começar do zero.
-            Desde então, a ZUPINTURAS vem se destacando com responsabilidade, experiência e compromisso com a
-            qualidade,
-            transformando imóveis com excelência e profissionalismo.</p>
-        <ul>
-            <li><i class="fa-solid fa-circle-check" id="icon"></i> Pintura Residencial e Comercial</li>
-            <li><i class="fa-solid fa-circle-check" id="icon"></i> Acabamentos Profissionais</li>
-            <li><i class="fa-solid fa-circle-check" id="icon"></i> Equipe Treinada e Pontual</li>
-
-        </ul>
+        <h1>SOBRE NÓS</h1>
+        <h2><strong>Zupinturas</strong></h2>
+        <p>Em 2009, <strong>Exupério Pereira</strong>, que até então era garçom, decidiu dar um passo ousado e fundou sua própria empresa no ramo de pintura.
+        Inspirado pelos irmãos, que já atuavam na área, ele encontrou motivação e coragem para começar do zero. Desde então, a <strong>ZUPINTURAS</strong> vem
+        se destacando com responsabilidade, experiência e compromisso com a qualidade, transformando imóveis com excelência e profissionalismo.</p>
     </div>
     <div class="sobre-img">
-        <img class="img-fluid" src="<?php echo RAIZ_PROJETO;?>assets/img/sobre.png" alt="zupinturas">
+        <img src="<?php echo RAIZ_PROJETO;?>assets/img/sobre.jpg" alt="erro">
     </div>
 </section>
-<!-- fecha sobre -->
-<section class="servicos">
-    <div class="servicos-mobile">
-        <div class="servicos-header">
-            <h2>Nossos Serviços</h2>
+<section class="localizacao">
+    <div class="localizacao-text">
+        <h1>Locais de Atendimento</h1>
+        <div class="linha">
+
         </div>
-        <div class="servicos-main">
-            <div class="accordion" id="servicosAccordion">
+    </div>
+    <div class="maps">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117105.12419236638!2d-47.54910125225094!3d-23.477227189201994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f54bcad87989%3A0x4a9099fb9d10cb8e!2sSorocaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1755983447293!5m2!1spt-BR!2sbr"
+        width="1360"
+        height="400" 
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        id="map1"
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ECiKyD7ZmJuNclG7y0HtW-qd-LUfCuo&ehbc=2E312F&noprof=1" width="1000" id="map2" height="400" style="display:none"></iframe>
+    </div>
+
+    <div class="info">
+        <div class="informacao">
+            <h2>Nossas regiões de atendimento:</h2>
+            <p>São nas cidades: <strong>Sorocaba, Itu, Pilar do Sul</strong> e <strong>Piedade</strong></p>
+        </div>
+        <div class="contato">
+            <h2>Contato</h2>
+                <p><strong>(11) 3456-7890</strong></p>
+        </div>
+    </div>
+</section>
+
+<section class="faqs">
+    <div class="faqs-text">
+        <h1>Perguntas Frequentes</h1>
+        <div class="accordions-box">
+            <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Pintura Residencial
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsetwo"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                              Do que se trata a plataforma?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#servicosAccordion">
+                    <div
+                        id="collapsetwo"
+                        class="accordion-collapse collapse "
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                    >
                         <div class="accordion-body">
-                            Transformamos seu lar com pinturas de alta qualidade, utilizando tintas premium e técnicas
-                            que garantem um acabamento impecável. Ideal para renovar ambientes internos e externos.
+                             A plataforma tem como objetivo organizar as solicitações de visitas dos clientes logados(que inclusive recebem preferencia na visita) e apresentar o nossos serviços
                         </div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Pintura Comercial
+                    <h2 class="accordion-header" id="headingOne">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsethree"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                            Qual a média de preço para uma pintura residencial?
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#servicosAccordion">
+                    <div
+                        id="collapsethree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                    >
                         <div class="accordion-body">
-                            Oferecemos serviços de pintura para empresas, escritórios e comércios, com agilidade e
-                            cuidado para não interferir na rotina do seu negócio. Acabamentos profissionais que
-                            valorizam seu espaço.
+                            Não existe uma média certeira pois o preço varia muito das condições da obra. Como se há móveis, se vai ser com material do cliente ou vai comprar, ou seja, não da pra saber ao certo antes de uma visita tecnica que inclusive em sorocaba e região NÂO TEM CUSTO.
                         </div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Acabamentos Especiais
+                    <h2 class="accordion-header" id="headingOne">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsefour"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                             É seguro fazer login e usar a plataforma para agendar visitas ?
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#servicosAccordion">
-                        <div class="accordion-body">
-                            Realizamos texturas, efeitos decorativos e acabamentos personalizados para atender às suas
-                            necessidades estéticas, garantindo um toque único ao seu ambiente.
+                    <div
+                        id="collapsefour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                    >
+                        <div class="accordion-body" >
+                             Sim. É completamente seguro usamos tecnolias de criptografia que protegem seus dados.
                         </div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Consultoria de Cores
+                    <h2 class="accordion-header" id="headingOne">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsefive"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                           Qual a vantagem de usar a plataforma para agendar visitas ao em  vez do whatssap?
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#servicosAccordion">
+                    <div
+                        id="collapsefive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                    >
                         <div class="accordion-body">
-                            Nossa equipe auxilia na escolha das melhores cores e combinações para harmonizar seu
-                            ambiente, oferecendo orientação profissional para um resultado esteticamente perfeito.
+                             O objetivo principal da plataforma é organizar as solicitações de visitas e manter o controle dos nossos clientes, aumentando agilidade organização e praticidade no dia da visita.
                         </div>
                     </div>
                 </div>
+                
             </div>
-        </div>
-    </div>
-    <div class="servicos-desktop">
-        <h2 class="linha">NOSSOS SERVIÇOS</h2>
-        <div class="servicos-boxes">
-            <div class="servicos-box">
-                <div class="servicos-card">
-                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/lata-pincel.png" alt="icon">
-                    <h3> Pintura Comercial</h3>
-                    <p>Renove ambientes comerciais com agilidade, organização e sem atrapalhar o seu negócio.</p>
-                </div>
-            </div>
-            <div class="servicos-box">
-                <div class="servicos-card">
-                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/pincel.png" alt="icon">    
-                    <h3> Texturas e Efeitos Especiais</h3>
-                    <p>Crie ambientes únicos com aplicação de texturas modernas e técnicas exclusivas.</p>
-                </div>
-            </div>
-            <div class="servicos-box">
-                <div class="servicos-card">
-                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/rolo-pincel.png" alt="icon">
-                    <h3>Tratamento de Imperfeições</h3>
-                    <p>Corrigimos rachaduras, infiltrações e imperfeições antes da pintura, garantindo um resultado impecável.</p>
-                </div>
-            </div>
-            <div class="servicos-box">
-                <div class="servicos-card">
-                    <img src=" <?php echo RAIZ_PROJETO;?>assets/img/casa-rolo.png" alt="icon">    
-                    <h3> Pintura Residencial</h3>
-                    <p>Transforme seu lar com acabamentos profissionais e tintas de alta durabilidade.</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
-<!-- fechar servicos -->
-<section class="locais">
-    <h2 class="roboto">ONDE TRABALHAMOS?</h2>
-    <div class="locais-content">
-        <div class="locais-mapa">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50374.890752051826!2d-47.459754504954034!3d-23.451761013786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f5a9089e7e91%3A0x101610d13ee905b1!2sShopping%20Cidade%20Sorocaba!5e0!3m2!1spt-BR!2sbr!4v1752683292190!5m2!1spt-BR!2sbr"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="locais-text">
-            <h3>Atuamos nas regiões de:</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorum?</p>
+<footer class="footer-desktop">
+    <div class="footer-left">
+            <h1>Zupinturas</h1>
+            <p>
+                © 2025 Todos os direitos reservados
+                para ZUPINTURAS    
+            </p>
+            <div class="footer-icons">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+    </div>
+    <div class="footer-right">
+        <div class="footer-links">
             <ul>
-                <li>Sorocaba</li>
-                <li>Votorantim</li>
-                <li>Araçoiaba da Serra</li>
-                <li>Salto de Pirapora</li>
-                <li>Região metropolitana de Sorocaba</li>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Agendamentos</a></li>
+                <li><a href="">Portifolio</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="">Projetos</a></li>
+                <li><a href="">Perguntas Frequentes</a></li>
             </ul>
+
+        </div>
+        <div class="footer-links2">
+            <div class="termos"><a href="#">Termos de uso</a> | <a href="#">Politicas de Privacidade</a></div>
         </div>
     </div>
 
-</section>
+</footer>
