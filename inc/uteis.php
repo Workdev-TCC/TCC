@@ -13,7 +13,7 @@
                 throw new Exception("Não é uma imagem");
             }
 
-            if ($file["size"] > 500000) {
+            if ($file["size"] > 50000000) {
                 throw new Exception("Arquivo muito grande");
             }
             if($img_type !== "jpg" && $img_type!=="png" && $img_type!=="jpeg"){

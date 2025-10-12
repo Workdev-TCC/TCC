@@ -13,7 +13,6 @@
             $foto_file=$_FILES['foto'];
 
             $foto_name=uploadImg($foto_file);
-
             $new_dados= $_POST;
             if($foto_name===false){
                $new_dados['foto']=$_SESSION['foto'];
