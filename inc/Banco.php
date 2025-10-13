@@ -104,7 +104,7 @@
             $this->close_db();
         }
         //SELECT 
-        public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0,$return_type)
+      public function select($table, $retorno = "*", $onde = [], $pegarVarios = true, $limit = 0, $return_type = 'fetch_all_assoc')
         {
             $db = $this->open_db();
             $resultado = $this->montarSelectSql($table, $retorno, $onde, $limit);
@@ -113,43 +113,35 @@
 
             $stmt = $db->prepare($sql);
 
-            if(!empty($placeholders)){
+            if (!empty($placeholders)) {
                 foreach ($placeholders as $ph => $valor) {
                     $type = is_int($valor) ? PDO::PARAM_INT : PDO::PARAM_STR;
                     $stmt->bindValue($ph, $valor, $type);
                 }
-
             }
 
             $stmt->execute();
-            // $this->close_db();
+
             if ($stmt->rowCount() > 0) {
                 switch ($return_type) {
                     case 'fetch_all_col':
-                       return $stmt->fetchAll(PDO::FETCH_COLUMN);
-                        break;
-                    
-                    case 'fetch_all_assoc':
-                       return $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        break;
-                    
+                        return $stmt->fetchAll(PDO::FETCH_COLUMN);
                     case 'fetch_assoc':
-                       return $stmt->fetch(PDO::FETCH_ASSOC);
-                        break;
-                    
+                        return $stmt->fetch(PDO::FETCH_ASSOC);
+                    case 'fetch_all_assoc':
                     default:
-                        return null;
-                        break;
+                        return $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
             }
 
             return null;
         }
-        //privadas
-        private function montarSelectSql($tabela, $retorno, $where, $limit = 0)
+
+        private function montarSelectSql($tabela, $retorno, $where = [], $limit = 0)
         {
             $campos = is_array($retorno) ? implode(", ", $retorno) : $retorno;
 
+            // Aqui o segredo: $tabela pode conter joins e aliases
             $sql = "SELECT {$campos} FROM {$tabela}";
 
             $placeholders = [];
@@ -157,8 +149,8 @@
 
             if (!empty($where)) {
                 foreach ($where as $campo => $valor) {
-                    $campo=trim($campo,"'");
-                    $ph = ":" . $campo;
+                    $campo = trim($campo, "'");
+                    $ph = ":" . str_replace('.', '_', $campo); // evita conflito com alias
                     $condicoes[] = "{$campo} = {$ph}";
                     $placeholders[$ph] = $valor;
                 }
@@ -166,7 +158,7 @@
             }
 
             if ($limit > 0) {
-                $sql .= " LIMIT " . (int)$limit; // cast para garantir que seja inteiro
+                $sql .= " LIMIT " . (int)$limit;
             }
 
             return [

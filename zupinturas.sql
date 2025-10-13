@@ -24,9 +24,6 @@ CREATE TABLE IF NOT EXISTS solicitacoes (
     cep VARCHAR(9) NOT NULL,
     endereco VARCHAR(255) NOT NULL,
     complemento VARCHAR(100),
-    bairro VARCHAR(100),
-    cidade VARCHAR(100),
-    estado VARCHAR(2),
     status ENUM('pendente', 'marcado', 'recusado') DEFAULT 'pendente',
     observacao_admin TEXT,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE

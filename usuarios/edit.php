@@ -55,5 +55,5 @@
         $_SESSION['type'] = 'danger';
         header("Location: " . RAIZ_PROJETO);
         exit();
-        }
+    }
 ?>

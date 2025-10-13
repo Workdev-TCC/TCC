@@ -78,8 +78,8 @@
                         VISITAS
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">SOLICITAR VISITAS</a></li>
-                        <li><a class="dropdown-item" href="#">GERENCIAR SOLICITAÇÔES</a></li>
+                        <li><a class="dropdown-item" href="<?php echo  RAIZ_PROJETO;?>usuarios/views/solicitar_visita.php">SOLICITAR VISITAS</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">GERENCIAR SOLICITAÇÔES</a></li>
                     </ul>
                 </li>
                 <?php else:?>
@@ -90,7 +90,7 @@
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
                         <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_usuarios.php">GERENCIAR USUÀRIOS</a></li>
-                        <li><a class="dropdown-item" href="#">GERENCIAR PEDIDOS </a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_solicitacoes.php">GERENCIAR PEDIDOS </a></li>
                     </ul>
                 </li>
                 <?php endif;?>
