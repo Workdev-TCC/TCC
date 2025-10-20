@@ -56,17 +56,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo RAIZ_PROJETO;?>views/servicos.php">SERVIÇOS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FAQs</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         AJUDA
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">TERMOS DE USO</a></li>
-                        <li><a class="dropdown-item" href="#">POLITICAS DE PRIVACIDADE</a></li>
+                        <li><a class="dropdown-item"  href="<?php echo RAIZ_PROJETO;?>views/termos.php">TERMOS DE USO</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/politica.php">POLITICAS DE PRIVACIDADE</a></li>
                     </ul>
                 </li>
 
