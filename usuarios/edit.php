@@ -11,7 +11,7 @@
             $nome=$_POST['nome'];
             $telefone=$_POST['telefone'];
             $foto_file=$_FILES['foto'];
-
+            
             $foto_name=uploadImg($foto_file);
             $new_dados= $_POST;
             if($foto_name===false){

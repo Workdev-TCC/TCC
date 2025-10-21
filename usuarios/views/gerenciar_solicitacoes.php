@@ -92,8 +92,8 @@
                                 <td><?= htmlspecialchars($mys['cep']); ?></td>
                                 <td><?= htmlspecialchars($mys['status']); ?></td>
                                 <?php if($mys['status']!=="pendente" && $mys['status']!=="recusado"):?>
-                                    <td><?= htmlspecialchars($mys['']); ?></td>
-                                    <td><?= htmlspecialchars($mys['status']); ?></td>
+                                    <td><?= !empty($mys['data_visita']) ? htmlspecialchars(date('d/m/Y', strtotime($mys['data_visita']))) : '--/--/----'; ?></td>
+                                    <td><?= !empty($mys['hora_visita']) ? htmlspecialchars($mys['hora_visita']) : '--:--'; ?></td>
                                 <?php else: ?>
                                     <td>--/--/----</td>
                                     <td>--:--</td>

@@ -2,6 +2,9 @@
 <?php 
     function uploadImg($file){
         try {
+            if (empty($file['tmp_name']) || $file['error'] === 4) {
+                return false;
+            }
             $dir= ABSOLUTE_PATH."usuarios/img/";
             $img_type = strtolower(pathinfo($file['name'],PATHINFO_EXTENSION));
             $nome_unico = uniqid("img_", true) . "." . $img_type;

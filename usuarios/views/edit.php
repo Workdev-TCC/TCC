@@ -11,7 +11,8 @@
 </div>
 <?php clear_messages(); ?>
 <?php endif; ?>
-
+<h1>Edite seus dados aqui.</h1>
+<p>certifique-se que eles estão corretos pois é assim que seus clientes entraram em contato.</p>
 <form action="<?php echo RAIZ_PROJETO;?>usuarios/edit.php" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
@@ -38,6 +39,7 @@
     <label class="form-check-label" for="confirma">Confirma?</label>
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
+  <a href="<?php echo RAIZ_PROJETO;?>" class="btn btn-danger">Voltar</a>
 </form>
 <?php
     include SIDEBAR;

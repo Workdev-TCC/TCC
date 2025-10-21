@@ -94,6 +94,50 @@ $(document).ready(function() {
 });
 </script>
 
+<!-- listar usuarios logica  -->
+ <script>
+// Função para abrir o modal e buscar detalhes do usuário
+$(document).on("click", ".btn-detalhes", function() {
+    const id = $(this).data("id");
+
+    $("#conteudoModal").html("<div class='text-center p-3'>Carregando...</div>");
+    $("#modalUsuario").modal("show");
+
+    $.ajax({
+        url: "detalhes_usuario.php",
+        method: "GET",
+        data: { id },
+        success: function(response) {
+            $("#conteudoModal").html(response);
+        },
+        error: function() {
+            $("#conteudoModal").html("<div class='alert alert-danger text-center'>Erro ao carregar dados.</div>");
+        }
+    });
+});
+
+// Função para excluir usuário (somente admin)
+$(document).on("click", "#btnExcluirUsuario", function() {
+    if (!confirm("Tem certeza que deseja excluir este usuário?")) return;
+
+    const id = $(this).data("id");
+
+    $.ajax({
+        url: "excluir_usuario.php",
+        method: "POST",
+        data: { id },
+        success: function(response) {
+            alert(response);
+            $("#modalUsuario").modal("hide");
+            carregarUsuarios('');
+        },
+        error: function() {
+            alert("Erro ao excluir o usuário.");
+        }
+    });
+});
+</script>
+
 
 
 </body>

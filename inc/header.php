@@ -90,7 +90,7 @@
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
                         <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_usuarios.php">GERENCIAR USUÀRIOS</a></li>
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_solicitacoes.php">GERENCIAR PEDIDOS </a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php">GERENCIAR PEDIDOS </a></li>
                     </ul>
                 </li>
                 <?php endif;?>
