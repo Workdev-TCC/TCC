@@ -1,51 +1,79 @@
 <?php
-include("../../inc/Banco.php");
-header('Content-Type: application/json');
+include("../../config.php");
+include "../../inc/Banco.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $bd = new Banco();
-    $id = $_POST['id'];
-    $status = $_POST['status'];
-    $data = $_POST['data'] ?? null;
-    $hora = $_POST['hora'] ?? null;
-    $justificativa = $_POST['justificativa'] ?? null;
+header("Content-Type: application/json");
 
-    try {
-        if ($status === 'marcado') {
-            // Atualiza solicitação
-            $bd->update('solicitacoes', ['status' => 'marcado'], ['id' => $id]);
-
-            // Cria ou atualiza visita agendada
-            $visita = $bd->select('visitas_agendadas', '*', ['solicitacao_id' => $id], false, 1, 'fetch_assoc');
-            if ($visita) {
-                $bd->update('visitas_agendadas', [
-                    'data_visita' => $data,
-                    'hora_visita' => $hora
-                ], ['solicitacao_id' => $id]);
-            } else {
-                $bd->save('visitas_agendadas', [
-                    'solicitacao_id' => $id,
-                    'data_visita' => $data,
-                    'hora_visita' => $hora
-                ]);
-            }
-
-            echo json_encode(['success' => true, 'message' => 'Visita marcada com sucesso!']);
-        }
-        elseif ($status === 'recusado') {
-            $bd->update('solicitacoes', [
-                'status' => 'recusado',
-                'observacao_admin' => $justificativa
-            ], ['id' => $id]);
-
-            echo json_encode(['success' => true, 'message' => 'Solicitação recusada com justificativa.']);
-        }
-        else {
-            $bd->update('solicitacoes', ['status' => 'pendente'], ['id' => $id]);
-            echo json_encode(['success' => true, 'message' => 'Status alterado para pendente.']);
-        }
-    } catch (Exception $e) {
-        echo json_encode(['success' => false, 'message' => 'Erro: ' . $e->getMessage()]);
-    }
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    echo json_encode(["success" => false, "message" => "Método inválido."]);
+    exit;
 }
-?>
+
+$id = $_POST["id"] ?? null;
+$status = $_POST["status"] ?? "";
+$data = $_POST["data"] ?? null;
+$hora = $_POST["hora"] ?? null;
+$justificativa = $_POST["justificativa"] ?? null;
+
+if (!$id) {
+    echo json_encode(["success" => false, "message" => "ID da solicitação não informado."]);
+    exit;
+}
+
+try {
+    $bd = new Banco();
+    $db = $bd->open_db();
+    $db->beginTransaction();
+
+    // Atualiza a solicitação
+    $sql = "UPDATE solicitacoes 
+            SET status = :status, observacao_admin = :obs 
+            WHERE id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([
+        ":status" => $status,
+        ":obs" => $justificativa ?: null,
+        ":id" => $id
+    ]);
+
+    // 🔧 Gerenciar a tabela visitas_agendadas
+    if ($status === "marcado") {
+        // Verifica se já existe visita para esta solicitação
+        $check = $db->prepare("SELECT id FROM visitas_agendadas WHERE solicitacao_id = :id");
+        $check->execute([":id" => $id]);
+        $visita = $check->fetch(PDO::FETCH_ASSOC);
+
+        if ($visita) {
+            // Atualiza data/hora da visita existente
+            $upd = $db->prepare("UPDATE visitas_agendadas 
+                                 SET data_visita = :data, hora_visita = :hora 
+                                 WHERE solicitacao_id = :id");
+            $upd->execute([
+                ":data" => $data,
+                ":hora" => $hora,
+                ":id" => $id
+            ]);
+        } else {
+            // Cria uma nova visita
+            $ins = $db->prepare("INSERT INTO visitas_agendadas (solicitacao_id, data_visita, hora_visita) 
+                                 VALUES (:id, :data, :hora)");
+            $ins->execute([
+                ":id" => $id,
+                ":data" => $data,
+                ":hora" => $hora
+            ]);
+        }
+    } else {
+        // Se mudou para pendente ou recusado → remove a visita agendada
+        $del = $db->prepare("DELETE FROM visitas_agendadas WHERE solicitacao_id = :id");
+        $del->execute([":id" => $id]);
+    }
+
+    $db->commit();
+
+    echo json_encode(["success" => true, "message" => "Solicitação atualizada com sucesso."]);
+
+} catch (Exception $e) {
+    if (isset($db)) $db->rollBack();
+    echo json_encode(["success" => false, "message" => "Erro ao atualizar: " . $e->getMessage()]);
+}
