@@ -1,10 +1,12 @@
-<?php
+<?php 
 include("../../config.php");
 include HEADER_TEMPLATE;
 include "../../inc/Banco.php";
 include_once UTEIS;
-
-
+if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 if ($_SESSION['tipo'] !== 'admin') {
     header("Location: ../../usuarios/views/gerenciar_solicitacoes.php");
     exit;
@@ -28,98 +30,90 @@ try {
 }
 ?>
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h2>Gerenciar Solicitações</h2>
+<div class="container mt-4 px-3">
+    <!-- Cabeçalho e navegação -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
+        <h2 class="mb-0 text-center text-md-start w-100">Gerenciar Solicitações</h2>
 
-        <div class="d-flex align-items-center gap-2">
-    <!-- Paginação entre tipos (Todos = gerenciar_solicitacoes.php por padrão) -->
-     <nav aria-label="Navegação de solicitações">
-                <ul class="pagination mb-0">
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
+            <nav aria-label="Navegação de solicitações">
+                <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
                     <?php $current = basename($_SERVER['PHP_SELF']); ?>
-
                     <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php"
-                           <?= $current === 'gerenciar_solicitacoes.php' ? 'aria-current="page"' : '' ?>>
-                            Todos
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
                     </li>
-
                     <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php"
-                           <?= $current === 'solicitacoes_pendentes.php' ? 'aria-current="page"' : '' ?>>
-                            Pendentes
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
                     </li>
-
                     <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php"
-                           <?= $current === 'solicitacoes_marcadas.php' ? 'aria-current="page"' : '' ?>>
-                            Marcados
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
                     </li>
-
                     <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php"
-                           <?= $current === 'solicitacoes_recusadas.php' ? 'aria-current="page"' : '' ?>>
-                            Recusadas
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
                     </li>
                 </ul>
             </nav>
 
-    <!-- Botão de recarregar -->
-    <button class="btn btn-outline-primary ms-2" onclick="location.reload()">
-        <i class="fa fa-refresh"></i> Recarregar
-    </button>
-</div>
+            <button class="btn btn-outline-primary btn-sm ms-md-2" onclick="location.reload()">
+                <i class="fa fa-refresh"></i> Recarregar
+            </button>
+        </div>
     </div>
 
+    <!-- Tabela -->
     <div class="card shadow-sm">
-        <div class="card-body">
+        <div class="card-body p-2 p-md-3">
             <?php if (!empty($solicitacoes)): ?>
-                <table class="table table-bordered table-striped align-middle text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Usuário</th>
-                            <th>CEP</th>
-                            <th>Status</th>
-                            <th>Data Visita</th>
-                            <th>Hora</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($solicitacoes as $s): ?>
-                            <tr data-id="<?= $s['id'] ?>">
-                                <td><?= $s['id'] ?></td>
-                                <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
-                                <td><?= htmlspecialchars($s['cep']) ?></td>
-                                <td>
-                                    <select class="form-select status-select">
-                                        <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
-                                        <option value="marcado" <?= $s['status'] == 'marcado' ? 'selected' : '' ?>>Marcado</option>
-                                        <option value="recusado" <?= $s['status'] == 'recusado' ? 'selected' : '' ?>>Recusado</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="date" class="form-control data-visita" value="<?= $s['data_visita'] ?? '' ?>">
-                                </td>
-                                <td>
-                                    <input type="time" class="form-control hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
-                                </td>
-                                <td>
-                                    <button class="btn btn-success btn-sm salvar-btn">
-                                        <i class="fa fa-save"></i> Salvar
-                                    </button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+               <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table class="table table-bordered table-striped align-middle text-center mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>CEP</th>
+                <th>Status</th>
+                <th>Data Visita</th>
+                <th>Hora</th>
+                <th>Contato</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($solicitacoes as $s): ?>
+                <tr data-id="<?= $s['id'] ?>">
+                    <td><?= $s['id'] ?></td>
+                    <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
+                    <td><?= htmlspecialchars($s['cep']) ?></td>
+                    <td>
+                        <select class="form-select form-select-sm status-select">
+                            <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
+                            <option value="marcado" <?= $s['status'] == 'marcado' ? 'selected' : '' ?>>Marcado</option>
+                            <option value="recusado" <?= $s['status'] == 'recusado' ? 'selected' : '' ?>>Recusado</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="date" class="form-control form-control-sm data-visita" value="<?= $s['data_visita'] ?? '' ?>">
+                    </td>
+                    <td>
+                        <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
+                    </td>
+                    <td>
+                        <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']); ?>" target="_blank" class="btn btn-success btn-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-sm salvar-btn">
+                            <i class="fa fa-save"></i> Salvar
+                        </button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
             <?php else: ?>
-                <div class="alert alert-warning text-center">Nenhuma solicitação encontrada.</div>
+                <div class="alert alert-warning text-center mb-0">Nenhuma solicitação encontrada.</div>
             <?php endif; ?>
         </div>
     </div>
@@ -146,10 +140,9 @@ try {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    let justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
+    const justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
     let solicitacaoSelecionada = null;
 
-    // Quando clicar em salvar
     document.querySelectorAll(".salvar-btn").forEach(btn => {
         btn.addEventListener("click", function() {
             const tr = this.closest("tr");
@@ -173,10 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Confirma justificativa
     document.getElementById("confirmarRecusa").addEventListener("click", () => {
         const justificativa = document.getElementById("justificativaTexto").value.trim();
-        if (justificativa === "") {
+        if (!justificativa) {
             alert("Por favor, preencha a justificativa.");
             return;
         }
@@ -191,14 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("justificativaTexto").value = "";
     });
 
-    // Função AJAX
     function salvarAlteracao(id, status, data, hora, justificativa) {
         fetch("../../admin/scripts/atualizar_solicitacao.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({
-                id, status, data, hora, justificativa
-            })
+            body: new URLSearchParams({ id, status, data, hora, justificativa })
         })
         .then(r => r.json())
         .then(res => {

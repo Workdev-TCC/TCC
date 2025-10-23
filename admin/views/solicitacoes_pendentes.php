@@ -3,7 +3,10 @@ include("../../config.php");
 include HEADER_TEMPLATE;
 include "../../inc/Banco.php";
 include_once UTEIS;
-
+if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 if ($_SESSION['tipo'] !== 'admin') {
     header("Location: ../../usuarios/views/gerenciar_solicitacoes.php");
     exit;
@@ -11,13 +14,12 @@ if ($_SESSION['tipo'] !== 'admin') {
 
 try {
     $bd = new Banco();
-    // Aqui filtramos apenas os pendentes
     $solicitacoes = $bd->select(
         'solicitacoes s LEFT JOIN usuarios u ON s.usuario_id = u.id LEFT JOIN visitas_agendadas v ON s.id = v.solicitacao_id',
         's.id, s.usuario_id, s.descricao, s.cep, s.endereco, s.complemento, s.status, s.observacao_admin, s.data_solicitacao,
          u.nome AS nome_usuario, u.email, u.telefone,
          v.data_visita, v.hora_visita',
-        ['s.status' => 'pendente'], // <-- filtro apenas pendentes
+        ['s.status' => 'pendente'],
         true,
         0,
         'fetch_all_assoc'
@@ -28,98 +30,86 @@ try {
 }
 ?>
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h2>Solicitações Pendentes</h2>
+<div class="container-fluid mt-4 px-3">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
+        <h2 class="mb-0 text-center text-md-start">Solicitações Pendentes</h2>
 
-        <div class="d-flex align-items-center gap-2">
-            <!-- Paginação entre tipos -->
-             <nav aria-label="Navegação de solicitações">
-                <ul class="pagination mb-0">
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
+            <nav aria-label="Navegação de solicitações">
+                <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
                     <?php $current = basename($_SERVER['PHP_SELF']); ?>
 
                     <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php"
-                           <?= $current === 'gerenciar_solicitacoes.php' ? 'aria-current="page"' : '' ?>>
-                            Todos
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
                     </li>
 
                     <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php"
-                           <?= $current === 'solicitacoes_pendentes.php' ? 'aria-current="page"' : '' ?>>
-                            Pendentes
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
                     </li>
 
                     <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php"
-                           <?= $current === 'solicitacoes_marcadas.php' ? 'aria-current="page"' : '' ?>>
-                            Marcados
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
                     </li>
 
                     <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?php echo RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php"
-                           <?= $current === 'solicitacoes_recusadas.php' ? 'aria-current="page"' : '' ?>>
-                            Recusadas
-                        </a>
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Botão de recarregar -->
-            <button class="btn btn-outline-primary ms-2" onclick="location.reload()">
+            <button class="btn btn-outline-primary btn-sm ms-md-2" onclick="location.reload()">
                 <i class="fa fa-refresh"></i> Recarregar
             </button>
         </div>
     </div>
 
     <div class="card shadow-sm">
-        <div class="card-body">
+        <div class="card-body p-2 p-md-3">
             <?php if (!empty($solicitacoes)): ?>
-                <table class="table table-bordered table-striped align-middle text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Usuário</th>
-                            <th>CEP</th>
-                            <th>Status</th>
-                            <th>Data Visita</th>
-                            <th>Hora</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($solicitacoes as $s): ?>
-                            <tr data-id="<?= $s['id'] ?>">
-                                <td><?= $s['id'] ?></td>
-                                <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
-                                <td><?= htmlspecialchars($s['cep']) ?></td>
-                                <td>
-                                    <select class="form-select status-select">
-                                        <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
-                                        <option value="marcado">Marcado</option>
-                                        <option value="recusado">Recusado</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="date" class="form-control data-visita" value="<?= $s['data_visita'] ?? '' ?>">
-                                </td>
-                                <td>
-                                    <input type="time" class="form-control hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
-                                </td>
-                                <td>
-                                    <button class="btn btn-success btn-sm salvar-btn">
-                                        <i class="fa fa-save"></i> Salvar
-                                    </button>
-                                </td>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped align-middle text-center mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Usuário</th>
+                                <th>CEP</th>
+                                <th>Status</th>
+                                <th>Data Visita</th>
+                                <th>Hora</th>
+                                <th>Ações</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($solicitacoes as $s): ?>
+                                <tr data-id="<?= $s['id'] ?>">
+                                    <td><?= $s['id'] ?></td>
+                                    <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
+                                    <td><?= htmlspecialchars($s['cep']) ?></td>
+                                    <td>
+                                        <select class="form-select form-select-sm status-select">
+                                            <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
+                                            <option value="marcado">Marcado</option>
+                                            <option value="recusado">Recusado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="date" class="form-control form-control-sm data-visita" value="<?= $s['data_visita'] ?? '' ?>">
+                                    </td>
+                                    <td>
+                                        <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm salvar-btn w-100 w-md-auto">
+                                            <i class="fa fa-save"></i> Salvar
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             <?php else: ?>
-                <div class="alert alert-warning text-center">Nenhuma solicitação pendente encontrada.</div>
+                <div class="alert alert-warning text-center mb-0">Nenhuma solicitação pendente encontrada.</div>
             <?php endif; ?>
         </div>
     </div>
@@ -193,9 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("../../admin/scripts/atualizar_solicitacao.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({
-                id, status, data, hora, justificativa
-            })
+            body: new URLSearchParams({ id, status, data, hora, justificativa })
         })
         .then(r => r.json())
         .then(res => {
@@ -206,6 +194,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 </script>
+
+<style>
+/* ======= ESTILOS RESPONSIVOS ======= */
+
+/* Tabela com rolagem horizontal */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ajuste geral */
+.container-fluid {
+    max-width: 100%;
+}
+
+/* Tabela compacta em telas pequenas */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.4rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .table th, .table td {
+        font-size: 13px;
+        white-space: nowrap;
+        padding: 6px;
+    }
+
+    .form-control-sm, .form-select-sm {
+        font-size: 13px;
+        padding: 4px;
+    }
+
+    .btn-sm {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+
+    .btn-outline-primary {
+        width: 100%;
+    }
+
+    .salvar-btn {
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .card-body {
+        padding: 8px;
+    }
+}
+
+/* Ajuste de botões e inputs médios */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .table th, .table td {
+        font-size: 14px;
+    }
+}
+</style>
 
 <?php
 include SIDEBAR;

@@ -3,6 +3,10 @@ include("../../config.php");
 include "../../inc/Banco.php";
 
 session_start();
+if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 
 if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
     http_response_code(403);

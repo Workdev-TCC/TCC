@@ -1,7 +1,10 @@
 <?php
 include("../../config.php");
 include "../../inc/Banco.php";
-
+if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 session_start();
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;

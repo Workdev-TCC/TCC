@@ -138,8 +138,7 @@ $(document).on("click", "#btnExcluirUsuario", function() {
 });
 </script>
 
-
-
+<script src="<?php echo RAIZ_PROJETO;?>assets/js/scripts.js"></script>
 </body>
 
 </html>

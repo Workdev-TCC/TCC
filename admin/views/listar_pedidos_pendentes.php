@@ -2,16 +2,36 @@
     include "../../config.php";
     include "../../inc/Banco.php";
     include HEADER_TEMPLATE;
-
+    if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 ?>
 
 
 <div class="container table-container">
     <h2 class="text-center mb-4">Solicitações Pendentes</h2>
-
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
+            <nav aria-label="Navegação de solicitações">
+                <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
+                    <?php $current = basename($_SERVER['PHP_SELF']); ?>
+                    <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
+                    </li>
+                    <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
+                    </li>
+                    <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
+                    </li>
+                    <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
+                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
+                    </li>
+                </ul>
+            </nav>
     <div class="card shadow-sm">
-        <div class="card-body">
-            <table class="table table-hover align-middle">
+        <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                    <table class="table table-bordered table-striped align-middle text-center mb-0">
                 <thead class="table-dark text-center">
                     <tr>
                         <th>ID da Solicitação</th>

@@ -9,11 +9,12 @@
             $email=$_POST['email'];
             $tel=$_POST['telefone'];
             $senha=$_POST['senha'];
+            $senha_crip=criptografia($senha);
 
             $usuarios= $_POST;
             $dados_users=[
                 "email"=>$email,
-                "senha"=>$senha
+                "senha"=>$senha_crip
             ];
             $bd = new Banco;
             $verify=$bd->select("usuarios","*",$usuarios,false,1,"fetch_assoc");
@@ -35,6 +36,7 @@
                 $id = $dados["id"];
                 $nome = $dados["nome"];
                 $email = $dados["email"];
+                $senha = $dados["senha"];
                 $foto = $dados["foto"];
                 $telefone = $dados["telefone"];
                 $tipo = $dados["tipo"];
@@ -53,6 +55,7 @@
                 $_SESSION['telefone']      = $telefone;
                 $_SESSION['data_criacao']  = $data_criacao;
                 $_SESSION['tipo']          = $tipo;
+                $_SESSION['senha']          = $senha;
                 header("Location:".RAIZ_PROJETO);
                 exit();
             }else{

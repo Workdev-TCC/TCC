@@ -1,5 +1,10 @@
 <?php
+require_once("../config.php");
 require_once("../inc/Banco.php");
+if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 try{
     $bd = new Banco();
 

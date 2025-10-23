@@ -3,6 +3,10 @@
     include HEADER_TEMPLATE;
     include "../../inc/Banco.php";
     include_once UTEIS;
+    if(empty($_SESSION['tipo'])){
+    header("Location:".RAIZ_PROJETO);
+    exit;
+}
 
     $busca = isset($_GET['busca']) ? trim($_GET['busca']) : '';
     $bd = new Banco;

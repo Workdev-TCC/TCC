@@ -1,0 +1,58 @@
+$primary: #007bff;
+$background: #fff;
+$text-color: #007bff;
+$border-color: #ccc;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+.container-senha {
+  max-width: 450px;
+  margin: 80px auto;
+  background: $background;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: $shadow;
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: $text-color;
+  }
+
+  .campos {
+    position: relative;
+    margin-bottom: 20px;
+
+    input {
+      width: 100%;
+      padding: 10px 40px 10px 12px;
+      border-radius: 8px;
+      border: 1px solid $border-color;
+      font-size: 0.95rem;
+    }
+
+    .icon-eye {
+      position: absolute;
+      top: 9px;
+      right: 12px;
+      color: #aaa;
+      cursor: pointer;
+
+      &:hover {
+        color: darken(#aaa, 15%);
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+  }
+}
+
+/* Modal */
+.modal-header {
+  background-color: $primary;
+  color: white;
+}

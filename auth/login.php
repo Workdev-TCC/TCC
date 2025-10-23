@@ -15,11 +15,11 @@ try {
         }
 
         $db = new Banco;
-
+        $senha_crip=criptografia($senha);
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
        $array = [
         'email'=>$email,
-        'senha'=>$senha
+        'senha'=>$senha_crip
        ];
        $dados=$db->select("usuarios","*",$array,false,1,"fetch_assoc");
        if (empty($dados)) {
@@ -30,6 +30,7 @@ try {
         $id           = $dados["id"];
         $nome         = $dados["nome"];
         $email        = $dados["email"];
+        $senha        = $dados["senha"];
         $foto         = $dados["foto"];
         $telefone     = $dados["telefone"];
         $tipo         = $dados["tipo"];
@@ -49,6 +50,7 @@ try {
         $_SESSION['telefone']      = $telefone;
         $_SESSION['data_criacao']  = $data_criacao;
         $_SESSION['tipo']          = $tipo;
+        $_SESSION['senha']          = $senha;
 
         if(!empty($_SESSION['id'])){
             $_SESSION['message']       = "Bem vindo " . $nome;

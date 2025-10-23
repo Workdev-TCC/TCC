@@ -27,8 +27,8 @@
                     <a href="#">Ver meu agendamento</a>
                     <a href="#">Solicitar agendamento</a>
                 <?php else:?>
-                    <a href="#">Gerenciar Solicitações</a>
-                    <a href="#">Gerenciar Usuarios</a>
+                    <a href="<?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php">Gerenciar Solicitações</a>
+                    <a href="<?php echo RAIZ_PROJETO;?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>
                 <?php endif;?>
             <?php endif;?>
             <a href="#">Ajuda</a>

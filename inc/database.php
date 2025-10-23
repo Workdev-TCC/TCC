@@ -1,5 +1,4 @@
 <?php 
-   
     // abre DB
     function open_db(){
          try {
