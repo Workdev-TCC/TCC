@@ -1609,6 +1609,169 @@ header .nav-desktop .div-login-user {
   color: white;
 }
 
+body {
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  font-family: "Poppins", "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.termos-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+}
+.termos-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.termos-container h2 {
+  font-size: 1.8rem;
+  color: #c77dff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.termos-container h3 {
+  color: #c77dff;
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+.termos-container p {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  text-align: left;
+}
+.termos-container strong {
+  color: #fff;
+  font-weight: 600;
+}
+.termos-container a {
+  color: #c77dff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.termos-container a:hover {
+  text-decoration: underline;
+  color: rgb(209.9846153846, 150.5, 255);
+}
+
+.termos-conteudo {
+  max-width: 950px;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+}
+.termos-conteudo p, .termos-conteudo h1, .termos-conteudo h2, .termos-conteudo h3 {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.assinatura {
+  margin-top: 4rem;
+  font-size: 1rem;
+  color: #aaa;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+  text-align: left;
+  opacity: 0.85;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  font-family: "Poppins", "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.politica-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+}
+.politica-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.politica-container h2 {
+  font-size: 1.8rem;
+  color: #c77dff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.politica-container h3 {
+  color: #c77dff;
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+.politica-container p {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  text-align: left;
+}
+.politica-container ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+}
+.politica-container ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+.politica-container strong {
+  color: #fff;
+  font-weight: 600;
+}
+.politica-container a {
+  color: #c77dff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.politica-container a:hover {
+  text-decoration: underline;
+  color: rgb(209.9846153846, 150.5, 255);
+}
+
+.politica-conteudo {
+  max-width: 950px;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+}
+.politica-conteudo p, .politica-conteudo h1, .politica-conteudo h2, .politica-conteudo h3 {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.assinatura {
+  margin-top: 4rem;
+  font-size: 1rem;
+  color: #999;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+  text-align: left;
+  opacity: 0.85;
+}
+
 .login-container {
   max-width: 1920px;
   width: 100%;

@@ -62,8 +62,8 @@
                         AJUDA
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="#">TERMOS DE USO</a></li>
-                        <li><a class="dropdown-item" href="#">POLITICAS DE PRIVACIDADE</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/termos.php">TERMOS DE USO</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/politica.php">POLITICAS DE PRIVACIDADE</a></li>
                     </ul>
                 </li>
 

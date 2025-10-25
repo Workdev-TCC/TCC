@@ -1,0 +1,95 @@
+// Paleta escura elegante e moderna
+$cor-fundo: #0d0d0d;
+$cor-texto: #e0e0e0;
+$cor-destaque: #c77dff; // lilás refinado
+$cor-secundaria: #aaa;
+$fonte-principal: 'Poppins', 'Inter', sans-serif;
+
+body {
+  background-color: $cor-fundo;
+  color: $cor-texto;
+  font-family: $fonte-principal;
+  margin: 0;
+  padding: 0;
+}
+
+.termos-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+
+  h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: $cor-destaque;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  color: $cor-destaque;
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.15rem;
+  color: $cor-texto;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  text-align: left;
+}
+
+strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+a {
+  color: $cor-destaque;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+    color: lighten($cor-destaque, 5%);
+  }
+}
+
+}
+
+.termos-conteudo {
+  max-width: 950px;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+
+  // efeito de leve brilho no texto
+  p, h1, h2, h3 {
+    text-shadow: 0 0 2px rgba(255,255,255,0.05);
+  }
+}
+
+
+.assinatura {
+  margin-top: 4rem;
+  font-size: 1rem;
+  color: $cor-secundaria;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+  text-align: left;
+  opacity: 0.85;
+}
+
+
