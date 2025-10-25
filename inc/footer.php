@@ -14,6 +14,37 @@
         <?php endif;?>
         <a href="#" class="text-pink"><i class="fas fa-cogs fa-lg"></i></a>
     </div>
+
+    <div class="footer-desktop">
+        <div class="footer-left">
+                <h1>Zupinturas</h1>
+                <p>
+                    © 2025 Todos os direitos reservados
+                    para ZUPINTURAS    
+                </p>
+                <div class="footer-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Agendameentos</a></li>
+                    <li><a href="">Portifolio</a></li>
+                    <li><a href="">Serviços</a></li>
+                    <li><a href="">Projetos</a></li>
+                    <li><a href="">Perguntas Frequentes</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-links2">
+                <div class="termos"><a href="#">Termos de uso</a> | <a href="#">Politicas de Privacidade</a></div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/jquery-3.7.1.min.js"></script>
