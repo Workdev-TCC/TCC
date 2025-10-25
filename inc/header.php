@@ -56,9 +56,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo RAIZ_PROJETO;?>views/servicos.php">SERVIÇOS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FAQs</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
