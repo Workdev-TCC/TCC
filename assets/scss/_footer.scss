@@ -1,3 +1,12 @@
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
 footer {
   width: 100%;
   .footer-mobile {
@@ -5,11 +14,26 @@ footer {
   }
 }
 .footer-desktop{
-
+ position: relative;
   max-width: 1920px;
   width: 100%;
-  height: 300px;
+  min-height: 300px;
   display: flex;
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+
+    &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, var(--rosa), var(--azul), var(--rosa));
+    background-size: 200% 100%;
+    animation: moveGradient 4s linear infinite;
+  }
   a{
     color: white;
   }
