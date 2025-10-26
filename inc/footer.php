@@ -1,4 +1,10 @@
 </main>
+<?php 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
 <footer>
     <div class="footer-mobile">
         <a href=" <?php echo RAIZ_PROJETO;?>" class="text-pink"><i class="fas fa-home fa-lg"></i></a>
@@ -31,13 +37,12 @@
                     <li>
                         <a href="">Início</a>
                     </li>
-                    <?php  if(isset($_SESSION['email'])):?>
-                    <?php if($_SESSION['tipo']==="user"):?> 
-                    <li>
-                        <a href="">Agendamentos</a>
-                    </li>
-                    <?php endif;?>
-                    <?php endif;?>
+               <?php if(isset($_SESSION['email'])): ?>
+<li>
+    <a href="#">Agendamentos</a>
+</li>
+<?php endif; ?>
+
                      <li>
                         <a href="">Portifolio</a>
                     </li> 
