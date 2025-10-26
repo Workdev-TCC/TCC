@@ -66,7 +66,7 @@
 </section>
 
 <section class="faqs">
-    <div class="faqs-text">
+    <div class="faqs-text" id="faq">
         <h1>Perguntas Frequentes</h1>
         <div class="accordions-box">
             <div class="accordion" id="accordionExample">

@@ -3,6 +3,8 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+
+    $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
 <footer>
@@ -23,8 +25,8 @@
 
     <div class="footer-desktop"> 
         <div class="footer-left"> 
-            <h1>Zupinturas</h1> 
-            <p> © 2025 Todos os direitos reservados para ZUPINTURAS </p> 
+            <h1><span class="zu">ZU</span>PINTURAS</h1>
+            <p> ©2025 Todos os direitos reservados para ZuPinturas</p> 
             <div class="footer-icons"> 
                 <a href=""><i class="fa-brands fa-instagram"></i></a> 
                 <a href=""><i class="fa-brands fa-facebook"></i></a> 
@@ -35,26 +37,28 @@
             <div class="footer-links"> 
                 <ul> 
                     <li>
-                        <a href="">Início</a>
+                        <a href="<?php echo RAIZ_PROJETO; ?>" class="<?php echo ($paginaAtual == 'index.php') ? 'active' : ''; ?>">Início</a>
                     </li>
-               <?php if(isset($_SESSION['email'])): ?>
-<li>
-    <a href="#">Agendamentos</a>
-</li>
-<?php endif; ?>
-
-                     <li>
-                        <a href="">Portifolio</a>
-                    </li> 
+                    <?php if (isset($_SESSION['email'])): ?>
+                        <?php if ($_SESSION['tipo'] === "user"): ?>
+                            <li>
+                                <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">Agendamentos</a>
+                            </li>
+                        <?php elseif ($_SESSION['tipo'] === "admin"): ?>
+                            <li>
+                                <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Agendamentos</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
                     <li>
-                        <a href="">Serviços</a>
-                    </li> 
+                        <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php" class="<?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">Serviços</a>
+                    </li>
                     <li>
-                        <a href="">Projetos</a>
-                    </li> 
+                        <a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php" class="<?php echo ($paginaAtual == 'projetos.php') ? 'active' : ''; ?>">Projetos</a>
+                    </li>
                     <li>
-                        <a href="">Perguntas Frequentes</a>
-                    </li> 
+                        <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?>">Perguntas Frequentes</a>
+                    </li>
                 </ul> 
             </div> 
             <div class="footer-links2">
@@ -71,6 +75,18 @@
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/fontawesome_js/all.min.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/main.js"></script>
 <script src="<?php echo RAIZ_PROJETO;?>assets/js/design.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('a[href*="#"]').on('click', function(e) {
+            var target = $(this.hash);
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: target.offset().top }, 600);
+            }
+        });
+    });
+</script>
 <script>
 $(document).ready(() => {
     $("#foto").change(function() {
