@@ -19,14 +19,22 @@ $(document).ready(function () {
   //----------------------------------------------------
   // abrir userbar
   $("#abrirUserbar").click(function (){
-    // $(".userbar").css("display","flex");
-    $(".userbar").css("right","20px");
-  })
-  // fechar pelo icon userbar
-  $("#fecharUserbar").click(function(){
-    $(".userbar").css("right","-400px")
-  })
+        // $(".userbar").css("display","flex");
+        $(".userbar").css("right","20px");
+      })
+      // fechar pelo icon userbar
+      $("#fecharUserbar").click(function(){
+        $(".userbar").css("right","-400px")
+      })
 
+      $(window).resize(function () {
+      // Se a largura da tela for maior que 1024px (modo desktop)
+      if ($(window).width() > 1024) {
+        $(".sidebar").css("left", "-300px");      // Fecha o menu lateral
+        $(".intocavel").css("display", "none");   // Some com o fundo escuro
+        $(".userbar").css("right", "-400px");     // Fecha a userbar, se aberta
+      }
+    });
   //localização
     $(".maps").hover(
         function() {

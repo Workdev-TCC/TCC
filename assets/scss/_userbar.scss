@@ -2,7 +2,7 @@
     background-color: var(--bg-light);
     position: relative;
     display: flex;
-    width: 300px;
+    width: 350px;
     height: 77vh;
     position: fixed;
     bottom: 100px;
@@ -36,8 +36,8 @@
             display: flex;
             flex-direction: column;
             background-color: var(--bg-light);
-            height: 190px;
-            margin-top: -190px;
+            height: 290px;
+            margin-top: -120px;
             width: 100%;
             .icon a:hover{
            
@@ -54,7 +54,7 @@
                 align-items: center;
                 justify-content: space-between;
                 gap: 20px;           
-                padding: 10px;         
+                padding: 18px;         
                 text-decoration: none;    
                 color: var(--text);       
                 text-align: start;         
@@ -99,13 +99,12 @@
             flex-direction: row;
             align-content: space-between;
             order: -1; /* manda a imagem para cima */
-            margin-top: -110px;
+            margin-top: -60px;
+            margin-left: 3%;
             padding: 10px;
-            gap: 36px;
+            gap: 15px;
             img{
                 width: 50px;
-                height: 50px;
-                margin-top: 2%;
                 object-fit: cover; /* garante que a imagem não distorça */
                 border-radius: 50%;
             }
@@ -114,14 +113,13 @@
                 font-size: 21px;
                 align-items: center;
                 padding-top: 10px;
-                margin-top: 2%;
             }
             button{
                 display: flex;
                 align-items: center;
                 background:none;
                 border: none;
-                font-size: 30px;
+                font-size: 32px;
                 color: var(--text);
 
                 :hover{
@@ -133,6 +131,7 @@
         }
         .img-userbar button{
             position: relative;
+            margin-left: 80px;
         }
     }
     .footer{
