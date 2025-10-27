@@ -1286,37 +1286,22 @@ header .nav-desktop .div-login-user {
   opacity: 1;
 }
 
-@media (max-width: 550px) {
-  .hero-projetos {
-    height: 440px;
-    margin-bottom: -100px;
+@media (max-width: 900px) {
+  .grade-projetos {
+    -moz-columns: 2 200px;
+         columns: 2 200px;
   }
-  .hero-projetos .projetos-text {
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
+}
+@media (max-width: 600px) {
+  .grade-projetos {
+    -moz-columns: 1 100%;
+         columns: 1 100%;
   }
-  .hero-projetos .projetos-text h1 {
-    font-size: 8vw;
-    letter-spacing: 0.05rem;
-    margin-bottom: 20px;
+  .titulo {
+    font-size: 2rem;
   }
-  .hero-projetos .projetos-text .pop {
-    white-space: nowrap;
-    /*Mantem a palavra projetos em um bloco continuo*/
-  }
-  .hero-projetos .projetos-text p {
-    color: white;
-    font-size: 3vw;
-  }
-  .projetos-about .about-text h1 {
-    width: 50px;
-    font-size: 7vw;
-  }
-  .projetos-about .about-text p {
-    font-size: 3.5vw;
-    margin-top: 15px;
-    line-height: 1.8;
+  .descricao {
+    font-size: 1rem;
   }
 }
 .hero-servicos {
