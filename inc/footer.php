@@ -26,7 +26,7 @@
     <div class="footer-desktop"> 
         <div class="footer-left"> 
             <h1><span class="zu">ZU</span>PINTURAS</h1>
-            <p> ©2025 Todos os direitos reservados para ZuPinturas</p> 
+            <p>©2025 Todos os direitos reservados para ZuPinturas</p> 
             <div class="footer-icons"> 
                 <a href=""><i class="fa-brands fa-instagram"></i></a> 
                 <a href=""><i class="fa-brands fa-facebook"></i></a> 
@@ -63,7 +63,7 @@
             </div> 
             <div class="footer-links2">
                  <div class="termos">
-                    <a href="#">Termos de uso</a> | <a href="#">Politicas de Privacidade</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>views/termos.php" class="<?php echo ($paginaAtual == 'termos.php') ? 'active' : ''; ?>">Termos de uso</a> | <a href="<?php echo RAIZ_PROJETO; ?>views/politica.php" class="<?php echo ($paginaAtual == 'politica.php') ? 'active' : ''; ?>">Politícas de Privacidade</a>
                 </div>
              </div>
         </div>

@@ -3,10 +3,11 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+
+    $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
     <title>Zupinturas</title>
     <meta name="description" content="Site desenvolvivido com finaldade ">
     <meta name="author"
-        content="Desenvolvido por formandos da escola tecnica ETEC Fernando Prestes do ano 2025. Gustavo Silva Prado, Caio Alves Vitor , Patricia Batistata Pereira, Stella Costa de Azevedo, Samanta Prado">
+        content="Desenvolvido por formandos da escola tecnica ETEC Fernando Prestes do ano 2025. Gustavo Silva Prado, Caio Alves Vitor , Patricia Batista Pereira, Stella Costa de Azevedo, Samanta Prado">
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- framework(local) de layout e icone -->
@@ -48,22 +49,30 @@
             </div>
             <ul class="navbar-nav nav-links header-font">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo RAIZ_PROJETO;?>">INÍCIO</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>"
+                     class="nav-link <?php echo ($paginaAtual == 'index.php') ? 'active' : ''; ?>">
+                     INÍCIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php echo RAIZ_PROJETO;?>views/projetos.php">PROJETOS</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php"
+                        class="nav-link <?php echo ($paginaAtual == 'projetos.php') ? 'active' : ''; ?>">
+                        PROJETOS
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo RAIZ_PROJETO;?>views/servicos.php">SERVIÇOS</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php"
+                        class="nav-link <?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">
+                        SERVIÇOS
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        AJUDA
+                        MAIS INFORMAÇÕES
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/termos.php">TERMOS DE USO</a></li>
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/politica.php">POLITICAS DE PRIVACIDADE</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/termos.php"><i class="fa-solid fa-file-contract"></i> Termos de Uso</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>views/politica.php"><i class="fa-solid fa-shield-halved"></i> Políticas de Privacidade</a></li>
                     </ul>
                 </li>
 
@@ -72,22 +81,22 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        VISITAS
+                        AGENDAMENTOS
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="<?php echo  RAIZ_PROJETO;?>usuarios/views/solicitar_visita.php">SOLICITAR VISITAS</a></li>
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">GERENCIAR SOLICITAÇÔES</a></li>
+                        <li><a class="dropdown-item" href="<?php echo  RAIZ_PROJETO;?>usuarios/views/solicitar_visita.php"><i class="fa-solid fa-calendar-plus"></i> Novo Agendamento</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php"><i class="fa-solid fa-calendar-days"></i> Meus Agendamentos</a></li>
                     </ul>
                 </li>
                 <?php else:?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        GERENCIAR
+                        PAINEL DE CONTROLE
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_usuarios.php">GERENCIAR USUÀRIOS</a></li>
-                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php">GERENCIAR PEDIDOS </a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/listar_usuarios.php"><i class="fa-solid fa-user"></i> Usuários Cadastrados</a></li>
+                        <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php"><i class="fa-solid fa-calendar-check"></i> Solicitações de Visitas</a></li>
                     </ul>
                 </li>
                 <?php endif;?>

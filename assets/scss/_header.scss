@@ -50,8 +50,10 @@ header {
     .nav-links {
       display: flex;
       flex-direction: row;
-      li{
+
+      .nav-item{
         margin-left: 40px;
+              
         a{
           background: linear-gradient(90deg, var(--rosa), var(--azul));
           background-size: 150%;
@@ -63,9 +65,10 @@ header {
         }
         a:hover {
           -webkit-text-fill-color: transparent;
-          color: transparent;
+          color: white;
         }
       }
+      
       a.active {
         background: none;
         -webkit-background-clip: initial;
@@ -81,8 +84,13 @@ header {
         -webkit-text-fill-color: var(--rosa);
         color: var(--rosa);
       }
+      .dropdown-menu{
+        font-family: "Hammersmith One", sans-serif;
+        font-size: 12px !important;
+      }
     }
     .div-login-user {
+      margin-left: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
