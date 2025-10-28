@@ -1286,6 +1286,55 @@ header .nav-desktop .div-login-user {
   opacity: 1;
 }
 
+/* iPads (até o Pro 12.9”) */
+@media (max-width: 1024px) {
+  .hero-projetos .projetos-text {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-projetos .projetos-text h1 {
+    font-size: 5vw;
+  }
+  .hero-projetos .projetos-text .pop {
+    white-space: nowrap;
+    /*Mantem a palavra projetos em um bloco continuo*/
+  }
+  .hero-projetos .projetos-text p {
+    color: white;
+    font-size: 2vw;
+  }
+}
+@media (max-width: 800px) {
+  .hero-projetos .projetos-text {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-projetos .projetos-text h1 {
+    font-size: 6vw;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20px;
+  }
+  .hero-projetos .projetos-text .pop {
+    white-space: nowrap;
+    /*Mantem a palavra projetos em um bloco continuo*/
+  }
+  .hero-projetos .projetos-text p {
+    color: white;
+    font-size: 2.5vw;
+  }
+  .projetos-about .about-text h1 {
+    font-size: 5vw;
+  }
+  .projetos-about .about-text .linha.active {
+    width: 350px;
+  }
+  .projetos-about .about-text p {
+    font-size: 2.8vw;
+    margin-top: 15px;
+  }
+}
 @media (max-width: 550px) {
   .hero-projetos {
     height: 440px;
@@ -1312,6 +1361,12 @@ header .nav-desktop .div-login-user {
   .projetos-about .about-text h1 {
     width: 50px;
     font-size: 7vw;
+  }
+  .projetos-about .about-text h1 {
+    font-size: 6vw;
+  }
+  .projetos-about .about-text .linha.active {
+    width: 55%;
   }
   .projetos-about .about-text p {
     font-size: 3.5vw;
