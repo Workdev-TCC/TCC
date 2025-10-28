@@ -15,7 +15,7 @@
     <div class="hero-servicos">
         <div class="servicos-text">
             <h1>Conheça nossos Servicos</h1>
-            <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+            <p>Dê um novo visual ao seu espaço com nossos serviços de pintura e reforma. Agende sua visita!</p>
         </div>
     </div>
 
@@ -24,72 +24,63 @@
             <h1 class="wave-hover">
                 <span>N</span><span>o</span><span>s</span><span>s</span><span>o</span><span>s</span>
                 <span>&nbsp;</span>
-                <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>t</span><span>o</span><span>s</span>
-            </h1>
+                <span>S</span><span>e</span><span>r</span><span>v</span><span>i</span><span>ç</span><span>o</span><span>s</span>
+            </h1> 
             <div class="linha"></div>
-            <p>Oferecemos soluções completas para transformar qualquer ambiente, seja residencial, comercial ou industrial. Nossos serviços incluem pintura decorativa, reformas de fachadas, aplicação de texturas, acabamentos modernos e projetos personalizados que valorizam cada espaço. Trabalhamos com materiais de alta qualidade e técnicas especializadas para garantir um resultado duradouro e esteticamente impecável. Abaixo, você pode conferir alguns exemplos de projetos que já realizamos e se inspirar para renovar o seu próprio espaço!</p>
+            <p>Transformamos ambientes residenciais, comerciais e industriais com pintura de qualidade, texturas modernas e acabamentos impecáveis. Cada projeto é único, feito para valorizar seu espaço com beleza e durabilidade. Inspire-se com nossos trabalhos e renove o seu ambiente!</p>
         </div>
     </div>
 
 <div class="servico-page">
-    <div class="card bg-dark rounded" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  <div class="card bg-dark rounded" style="width: 23rem; height: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Pintura Interna</h5>
+      <h6 class="card-subtitle mb-5 text-muted">Cores novas, ambientes renovados</h6>
+      <p class="card-text">Transforme cada cômodo com pintura lisa e acabamento perfeito. Qualidade e beleza em cada detalhe!</p>
     </div>
-    <div class="card bg-dark" style="width: 22rem; height: 17rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  </div>
+
+  <div class="card bg-dark" style="width: 23rem; height: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Pintura Externa</h5>
+      <h6 class="card-subtitle mb-5 text-muted">Proteção e estilo para sua fachada</h6>
+      <p class="card-text">Cores vivas e duráveis que resistem ao sol e à chuva. Sua casa sempre com aparência nova!</p>
     </div>
-    <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  </div>
+
+  <div class="card bg-dark" style="width: 23rem; height: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Pintura Decorativa</h5>
+      <h6 class="card-subtitle mb-5 text-muted">Toque de estilo e personalidade</h6>
+      <p class="card-text">Texturas e efeitos únicos que deixam seu ambiente moderno e cheio de charme.</p>
     </div>
-    <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
+  </div>
 </div>
+
 <div class="servico-page2">
-        <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  <div class="card bg-dark" style="width: 23rem; height: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Portas e Janelas</h5>
+      <h6 class="card-subtitle mb-5 text-muted">Acabamento impecável</h6>
+      <p class="card-text">Pintura lisa e uniforme em portas e janelas. Renovamos o visual com perfeição!</p>
     </div>
-        <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  </div>
+
+  <div class="card bg-dark" style="width: 23rem; height: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Tetos e Forros</h5>
+      <h6 class="card-subtitle mb-5 text-muted">Ambientes mais claros e limpos</h6>
+      <p class="card-text">Teto bem pintado transforma o ambiente. Serviço rápido, limpo e com ótimo acabamento!</p>
     </div>
-        <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  </div>
+
+  <div class="card bg-dark" style="width: 23rem; height: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Preparação de Superfícies</h5>
+      <h6 class="card-subtitle mb-5 text-muted">A base da pintura perfeita</h6>
+      <p class="card-text">Lixamento e correções para garantir pintura lisa e duradoura. Pronto para o novo!</p>
     </div>
-        <div class="card bg-dark" style="width: 22rem; height: 17rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-5 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
+  </div>
 </div>
 
 <script>

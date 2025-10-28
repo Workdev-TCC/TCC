@@ -20,6 +20,8 @@
     background-position: center;
     background-repeat: no-repeat;
     //elementos filhos
+    
+    
     .servicos-text{
         display: flex;
         width: 900px;
@@ -46,7 +48,7 @@
     text-align: start;
     align-items: center;
     justify-content: center;
-    width: 91%;
+    width: 100%;
 
     .card-body{
         display: flex;
@@ -64,8 +66,10 @@
     flex-direction: row;
     gap: 20px;
     text-align: start;
+    align-items: center;
+    justify-content: center;
     width: 91%;
-    margin-bottom: 20px;
+
 
         .card-body{
         display: flex;
@@ -74,7 +78,19 @@
 
     }
 }
+    
+    .card-title {
+    color: #ff66c4; /* rosa */
+    font-weight: 600;
+  }
 
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
     .card{
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
@@ -83,4 +99,69 @@
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 22, 228, 0.79);
   z-index: 10;
+
 }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 70%;
+    }
+
+    .servico-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    width: 80%;
+    height: 90%;
+    padding: 10px;
+
+    }
+    .servico-page2{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    margin-top: -50px;
+    margin-bottom: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 90%;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .hero-servicos{
+        .servicos-text{
+            h1{
+                font-size: 25px;
+                align-items: center;
+                justify-content: center;
+            }
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+    .servico-page{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 90%;
+        height: 90%;
+        padding: 10px;
+    }
+    .card-subtitle {
+      font-size: 0.85rem;
+    }
+
+    .card-text {
+      font-size: 0.8rem;
+    }
+  } 
