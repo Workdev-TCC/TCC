@@ -39,387 +39,48 @@
     }
 }
 
-.servicos-about{
-    //medidas fundamentais-
-    max-width: 1920px;
-    width: 100%;
-    height:100px;
-    padding: 20px;
-    //flexbox
+.servico-page{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
+    text-align: start;
     align-items: center;
-    gap: 30px;
-    .about1-text {
-        width: 100%;
-        height:10%;
-        text-align: left;
-        h1{
-            width: 500px;
-            background: linear-gradient(90deg, var(--rosa), var(--azul));
-            background-size: 100%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: var(--branco);
-            -webkit-text-fill-color: var(--branco); 
-            transition: all 0.4s ease-in-out;
-            &:hover{
-                -webkit-text-fill-color: transparent;
-                color: transparent;
-            }
-        }
-        .linha {
-            width:500px;    
-        }
-        .linha::after {
-            content: "";
-            display: block;
-            width: 100%;           /* tamanho da "linha" */
-            height: 3px;            /* espessura da borda */
-            background: linear-gradient(to right, var(--azul), var(--rosa));    
-            margin-left: 0px;         /* centraliza horizontalmente */
-        }   
-    }
-}
-
-.servicos-page{
-    //flex
-    display: flex;
-    flex-direction: row;
-    
-    //medidas 
-    width: 100%;
-    height: 600px;
-    gap: 50px;
-    border: none;
-
-    //position
     justify-content: center;
-    .servico1{
-        //flex
+    width: 91%;
+
+    .card-body{
         display: flex;
         flex-direction: column;
-
-        //medidas
-
-        width: 40%;
-        height: 500px;
-
-        //position
-
-        //border
-        border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-        border-width: 2px;
-        border-style: solid;
-
-        .servico1-img{
-            //flex
-            display: flex;
-            flex-direction: row;
-            
-            //medidas
-            width: 100%;
-            height: 50%;
-
-
-            .si1-img{
-                //flex
-                display: flex;
-                
-                //medidas
-                width: 50%;
-                height: 100%;
-                padding: 20px;
-                object-fit: cover;
-                //position
-                align-items: center;
-
-                .s1-img{
-                    width: 100%;
-                    height: 100%;
-                }
-
-                
-            }
-            .s1-grid{
-                //flex
-                display: flex;
-                flex-direction: row;
-                
-                //medidas
-                width: 50%;
-                height: 100%;
-                padding: 20px;
-                gap: 5px;
-                object-fit: cover;
-
-                //position
-                justify-content: center;
-                align-items: center;
-
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-                .grid-a{
-                    //flex
-                    display: flex;
-                    flex-direction: column;
-
-                    //medidas
-                    width: 100%;
-                    height: 100%;
-                    gap: 5px;
-
-                    //position
-
-                }
-
-                .grid-b{
-                    //flex
-                    display: flex;
-                    flex-direction: column;
-
-                    //medidas
-                    width: 100%;
-                    height: 100%;
-                    gap: 5px;
-                    
-                    //position
-
-                }
-            }
+        justify-content: center;
+        border-radius: 50px;
+        h5{
+            font-size: 22px;
         }
 
-        .servico1-text{
-            display: flex;
-            flex-direction: column;
-
-            //medidas
-            padding: 20px;
-            width: 100%;
-            height: 50%;
-            //position
-            text-align: left;
-        }
-    }
-
-    .servico2{
-        //flex
-        display: flex;
-        flex-direction: column;
-
-        //medidas
-        width: 40%;
-        height: 500px;
-
-        //position
-
-        //border
-        border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-        border-width: 2px;
-        border-style: solid;
-       .servico2-img{
-            //flex
-            display: flex;
-            flex-direction: row;
-            
-            //medidas
-            width: 100%;
-            height: 50%;
-
-
-            .si2-img{
-                //flex
-                display: flex;
-                
-                //medidas
-                width: 50%;
-                height: 100%;
-                padding: 20px;
-                object-fit: cover;
-                //position
-                align-items: center;
-
-                .s2-img{
-                    width: 100%;
-                    height: 100%;
-                }
-
-                
-            }
-            .s2-grid{
-                //flex
-                display: flex;
-                flex-direction: row;
-                
-                //medidas
-                width: 50%;
-                height: 100%;
-                padding: 20px;
-                gap: 5px;
-                object-fit: cover;
-
-                //position
-                justify-content: center;
-                align-items: center;
-
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-                .grid-a{
-                    //flex
-                    display: flex;
-                    flex-direction: column;
-
-                    //medidas
-                    width: 100%;
-                    height: 100%;
-                    gap: 5px;
-
-
-                    //position
-
-                }
-
-                .grid-b{
-                    //flex
-                    display: flex;
-                    flex-direction: column;
-
-                    //medidas
-                    width: 100%;
-                    height: 100%;
-                    gap: 5px;
-                    
-                    //position
-
-                }
-            }
-        }
-
-        .servico2-text{
-            
-            //flex
-            display: flex;
-            flex-direction: column;
-            
-            //medidas
-            padding: 20px;
-
-            //position
-            text-align: left;
-        }
     }
 }
-
-.a-servico{
-    //flex
+.servico-page2{
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    text-align: start;
+    width: 91%;
+    margin-bottom: 20px;
 
-    //medidas
-    width: 83%;
-    height: 450px;
-    margin-top: -90px;
-    margin-bottom: 90px;
-
-    //border
-    border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-    border-width: 2px;
-    border-style: solid;
-    .a-img{
-        //flex
-        display: flex;
-        
-        //medidas
-        width: 50%;
-        height: 100%;   
-        padding: 20px;
-
-        //position
-
-        align-items: center;
-        text-align: center;
-
-        //border
-        border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-        border-width: 1px;
-        border-style: solid;
-        .an-grid{
-            //flex
-            display: flex;
-            flex-direction: row;    
-
-            //medidas
-            width: 100%;
-            height: 100%;
-            gap: 20px;
-            //position
-            align-items: center;
-            justify-content: center;
-
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .grid-c{
-                //flex
-                display: flex;
-                flex-direction: column;   
-
-                //medidas
-                width: 100%;
-                height: 100%;
-                gap: 20px;          
-
-            }
-
-            .grid-d{
-                display: flex;
-                flex-direction: column;   
-
-                
-                //medidas
-                width: 100%;
-                height: 100%;
-                gap: 20px;          
-            }
-        }
-    }
-
-    .a-text{
+        .card-body{
         display: flex;
         flex-direction: column;
-        
-        //medidas
-        width: 50%;
-        height: 100%;
-
-        //position
-        align-items: center;
         justify-content: center;
 
-        .a1-text{
-            //flex
-            display: flex;
-            flex-direction: column;
-
-            //medidas
-            width: 70%;
-            height: 90%;
-            font-size: 45px;
-            //position
-
-            text-align: start;
-
-            h1{
-                margin-left: 50px;
-            }
-        }
     }
+}
+
+    .card{
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+  .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 22, 228, 0.79);
+  z-index: 10;
 }
