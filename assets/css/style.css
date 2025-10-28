@@ -1410,264 +1410,48 @@ header .nav-desktop .div-login-user {
   font-family: "Roboto", sans-serif;
 }
 
-.servicos-about {
-  max-width: 1920px;
-  width: 100%;
-  height: 100px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-.servicos-about .about1-text {
-  width: 100%;
-  height: 10%;
-  text-align: left;
-}
-.servicos-about .about1-text h1 {
-  width: 500px;
-  background: linear-gradient(90deg, var(--rosa), var(--azul));
-  background-size: 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: var(--branco);
-  -webkit-text-fill-color: var(--branco);
-  transition: all 0.4s ease-in-out;
-}
-.servicos-about .about1-text h1:hover {
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-.servicos-about .about1-text .linha {
-  width: 500px;
-}
-.servicos-about .about1-text .linha::after {
-  content: "";
-  display: block;
-  width: 100%; /* tamanho da "linha" */
-  height: 3px; /* espessura da borda */
-  background: linear-gradient(to right, var(--azul), var(--rosa));
-  margin-left: 0px; /* centraliza horizontalmente */
-}
-
-.servicos-page {
+.servico-page {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 600px;
-  gap: 50px;
-  border: none;
-  justify-content: center;
-}
-.servicos-page .servico1 {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  height: 500px;
-  -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-  border-width: 2px;
-  border-style: solid;
-}
-.servicos-page .servico1 .servico1-img {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 50%;
-}
-.servicos-page .servico1 .servico1-img .si1-img {
-  display: flex;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  align-items: center;
-}
-.servicos-page .servico1 .servico1-img .si1-img .s1-img {
-  width: 100%;
-  height: 100%;
-}
-.servicos-page .servico1 .servico1-img .s1-grid {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  gap: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  justify-content: center;
-  align-items: center;
-}
-.servicos-page .servico1 .servico1-img .s1-grid img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.servicos-page .servico1 .servico1-img .s1-grid .grid-a {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 5px;
-}
-.servicos-page .servico1 .servico1-img .s1-grid .grid-b {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 5px;
-}
-.servicos-page .servico1 .servico1-text {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 100%;
-  height: 50%;
-  text-align: left;
-}
-.servicos-page .servico2 {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  height: 500px;
-  -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-  border-width: 2px;
-  border-style: solid;
-}
-.servicos-page .servico2 .servico2-img {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 50%;
-}
-.servicos-page .servico2 .servico2-img .si2-img {
-  display: flex;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  align-items: center;
-}
-.servicos-page .servico2 .servico2-img .si2-img .s2-img {
-  width: 100%;
-  height: 100%;
-}
-.servicos-page .servico2 .servico2-img .s2-grid {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  gap: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  justify-content: center;
-  align-items: center;
-}
-.servicos-page .servico2 .servico2-img .s2-grid img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.servicos-page .servico2 .servico2-img .s2-grid .grid-a {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 5px;
-}
-.servicos-page .servico2 .servico2-img .s2-grid .grid-b {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 5px;
-}
-.servicos-page .servico2 .servico2-text {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  text-align: left;
-}
-
-.a-servico {
-  display: flex;
-  flex-direction: row;
-  width: 83%;
-  height: 450px;
-  margin-top: -90px;
-  margin-bottom: 90px;
-  -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-  border-width: 2px;
-  border-style: solid;
-}
-.a-servico .a-img {
-  display: flex;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  text-align: center;
-  -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-     border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-  border-width: 1px;
-  border-style: solid;
-}
-.a-servico .a-img .an-grid {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
   gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-.a-servico .a-img .an-grid img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.a-servico .a-img .an-grid .grid-c {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-}
-.a-servico .a-img .an-grid .grid-d {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-}
-.a-servico .a-text {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.a-servico .a-text .a1-text {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  height: 90%;
-  font-size: 45px;
   text-align: start;
+  align-items: center;
+  justify-content: center;
+  width: 91%;
 }
-.a-servico .a-text .a1-text h1 {
-  margin-left: 50px;
+.servico-page .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50px;
+}
+.servico-page .card-body h5 {
+  font-size: 22px;
+}
+
+.servico-page2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-align: start;
+  width: 91%;
+  margin-bottom: 20px;
+}
+.servico-page2 .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 22, 228, 0.79);
+  z-index: 10;
 }
 
 .fundo-gerenciar-conta {
