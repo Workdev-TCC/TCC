@@ -189,7 +189,7 @@ $animation-duration: 0.5s;
         transform: translateY(40px);
         transition: opacity 0.8s ease, transform 0.8s ease;
 
-         &.animate {
+        &.animate {
             opacity: 1;
             transform: translateY(0);
         }
@@ -251,21 +251,21 @@ $animation-duration: 0.5s;
 }
 
 @media (max-width: 900px) {
-  .grade-projetos {
-    columns: 2 200px;
-  }
+    .grade-projetos {
+        columns: 2 200px;
+    }
 }
 
 @media (max-width: 600px) {
-  .grade-projetos {
-    columns: 1 100%;
-  }
+    .grade-projetos {
+        columns: 1 100%;
+    }
 
-  .titulo {
-    font-size: 2rem;
-  }
+    .titulo {
+        font-size: 2rem;
+    }
 
-  .descricao {
-    font-size: 1rem;
-  }
+    .descricao {
+        font-size: 1rem;
+    }
 }
