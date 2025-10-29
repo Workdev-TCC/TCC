@@ -8,6 +8,14 @@
 ?>
 
 <footer>
+    
+   <a href="https://wa.me/5511999999999?text=Olá! Vim do site e gostaria de solicitar um orçamento."
+        class="whatsapp-fixo"
+        target="_blank"
+        aria-label="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <div class="footer-mobile">
         <a href=" <?php echo RAIZ_PROJETO;?>" class="text-pink"><i class="fas fa-home fa-lg"></i></a>
         <?php if(empty($_SESSION['email'])):?>
