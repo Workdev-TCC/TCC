@@ -113,12 +113,7 @@
 
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
-    }
-
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
+        return rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
     }
 
     function animateParagraph(p) {
