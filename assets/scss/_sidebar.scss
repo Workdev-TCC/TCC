@@ -98,8 +98,8 @@
         .opc{
           display: inline-block;
           font-size: 1.10rem;
-          color: var(--rosa);
-          gap: 10px;
+          color: var(--text);
+          //gap: 10px;
         }
         hr{
           width: 80%;
@@ -120,6 +120,7 @@
           text-decoration: none;
           color: var(--branco);
           margin-bottom: 10px;
+          margin-left: 9px;
           font-size: 1.10rem;
         }
       }

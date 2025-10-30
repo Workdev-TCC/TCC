@@ -36,9 +36,9 @@
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>
                 <?php endif; ?>
             <?php endif; ?>
-            <a href="#">Ajuda</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
+            <!-- <a href="#">Ajuda</a> -->
+            <div class="opc"><i class="fa-solid fa-book"></i><a href="#">Termos de Uso</a></div>
+            <div class="opc"><i class="fa-solid fa-gears"></i><a href="#">Política de Privacidade</a></div>
 
         </div>
 
@@ -52,7 +52,7 @@
 
         <div class="rodape">
             <div class="logo">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" width="150px" alt="Logo">
+                <!-- <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" width="150px" alt="Logo"> -->
                 <p>© 2025 Todos os direitos reservados</p>
                 <p>para <strong>ZUPINTURAS</strong></p>
             </div>

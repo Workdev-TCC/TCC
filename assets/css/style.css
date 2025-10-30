@@ -2310,8 +2310,7 @@ body {
   .intocavel .sidebar .menu-section .opc {
     display: inline-block;
     font-size: 1.1rem;
-    color: var(--rosa);
-    gap: 10px;
+    color: var(--text);
   }
   .intocavel .sidebar .menu-section hr {
     width: 80%;
@@ -2330,6 +2329,7 @@ body {
     text-decoration: none;
     color: var(--branco);
     margin-bottom: 10px;
+    margin-left: 9px;
     font-size: 1.1rem;
   }
   .intocavel .sidebar .menu-section-1 {
