@@ -66,7 +66,7 @@
 </section>
 
 <section class="faqs">
-    <div class="faqs-text">
+    <div class="faqs-text" id="faq">
         <h1>Perguntas Frequentes</h1>
         <div class="accordions-box">
             <div class="accordion" id="accordionExample">
@@ -181,34 +181,3 @@
         </div>
     </div>
 </section>
-<footer class="footer-desktop">
-    <div class="footer-left">
-            <h1>Zupinturas</h1>
-            <p>
-                © 2025 Todos os direitos reservados
-                para ZUPINTURAS    
-            </p>
-            <div class="footer-icons">
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-    </div>
-    <div class="footer-right">
-        <div class="footer-links">
-            <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Agendamentos</a></li>
-                <li><a href="">Portifolio</a></li>
-                <li><a href="">Serviços</a></li>
-                <li><a href="">Projetos</a></li>
-                <li><a href="">Perguntas Frequentes</a></li>
-            </ul>
-
-        </div>
-        <div class="footer-links2">
-            <div class="termos"><a href="#">Termos de uso</a> | <a href="#">Politicas de Privacidade</a></div>
-        </div>
-    </div>
-
-</footer>

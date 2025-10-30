@@ -10,8 +10,9 @@ header {
   padding: 0px;
   max-width: 1920px;
   z-index: 100;
+  
   .header-font {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 500;
     
       li {
@@ -133,7 +134,7 @@ header {
     .logo-mobile {
       display: inline;
       img {
-        width: 60px;
+        width: 80px;
         height: auto;
       }
     }
