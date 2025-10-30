@@ -87,7 +87,6 @@
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Contato</th>
-                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,11 +109,6 @@
                                     <?php endif; ?>
                                 </td>
 
-                                <td class="text-center">
-                                   <button class="btn btn-primary btn-sm btn-detalhes" data-id="<?= $usuario['id'] ?>">
-                                        <i class="bi bi-gear"></i> Ação
-                                    </button>
-                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
