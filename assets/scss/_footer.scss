@@ -61,6 +61,11 @@
       color: var(--rosa);
       transform: translateY(-2px);
     }
+
+    &.v-mobile:hover {
+      color: inherit;
+    }
+    
   }
 
   .footer-left {
@@ -139,16 +144,16 @@
 
         a.active {
           color: var(--rosa);
-        }
 
-        a.active::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 100%;
-          height: 2.5px;
-          background: linear-gradient(90deg, var(--azul), var(--rosa));
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--azul), var(--rosa));
+          }
         }
 
         li a {
@@ -172,12 +177,20 @@
             width: 100%;
           }
 
-          &.v-mobile-romove{
+          &.v-mobile-romove {
             display: inline;
           }
 
-          &.v-mobile{
+          &.v-mobile {
             display: none;
+
+            &::after {
+              content: none;
+            }
+
+            &:hover::after {
+              width: 0;
+            }
           }
 
           &.span.responsivo {
@@ -207,19 +220,21 @@
 
 /* Notebooks menores | Ipads grandes */
 @media (max-width: 1013px) {
-  .footer-desktop{
-    .footer-left{
+  .footer-desktop {
+    .footer-left {
       gap: 5px;
       width: 50%;
     }
-    .footer-right{
-      .footer-links{
-        ul{
-          li a{
-            &.v-mobile-romove{
+
+    .footer-right {
+      .footer-links {
+        ul {
+          li a {
+            &.v-mobile-romove {
               display: none;
             }
-            &.v-mobile{
+
+            &.v-mobile {
               display: inline;
             }
           }
@@ -256,12 +271,13 @@
 
       p {
         font-size: 0.70rem;
-        order:2;
+        order: 2;
       }
 
       .footer-icons {
         order: 1;
-        a{
+
+        a {
           font-size: 1.6rem;
         }
       }
@@ -275,27 +291,54 @@
       text-align: center;
       order: 1;
       gap: 15px;
+
       .footer-links {
         order: 1;
 
-        ul{
-
-          li a{
-            &.v-mobile-romove{
+        ul {
+          li a {
+            &.v-mobile-romove {
               display: none;
             }
-            &.v-mobile{
+
+            &.v-mobile {
               display: inline;
             }
+
+            &.pergunta-mobile {
+              position: relative;
+
+              &::after {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                left: 0;
+                bottom: -4px;
+                background: linear-gradient(90deg, var(--rosa), var(--azul));
+                transition: width 0.3s ease;
+              }
+
+              &.cliked::after {
+                width: 100%;
+              }
+
+              &.cor {
+                color: var(--rosa);
+                transform: translateY(-2px);
+              }
+            }
+
           }
         }
       }
 
       .footer-links2 {
         order: 2;
-          .termos {
-            font-size: 0.85rem;
-          }
+
+        .termos {
+          font-size: 0.85rem;
+        }
       }
     }
   }

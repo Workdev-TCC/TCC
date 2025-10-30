@@ -9,16 +9,16 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 
 <footer>
     <div class="footer-desktop">
-        <h1 class="zu-v-mobile"><span class="zu">ZU</span>PINTURAS</h1> 
-        <div class="footer-left"> 
+        <h1 class="zu-v-mobile"><span class="zu">ZU</span>PINTURAS</h1>
+        <div class="footer-left">
             <h1><span class="zu">ZU</span>PINTURAS</h1>
-            <p>©2025 Todos os direitos reservados para ZuPinturas</p> 
-            <div class="footer-icons"> 
-                <a href=""><i class="fa-brands fa-instagram"></i></a> 
-                <a href=""><i class="fa-brands fa-facebook"></i></a> 
-                <a href=""><i class="fa-brands fa-whatsapp"></i></a> 
-            </div> 
-        </div> 
+            <p>©2025 Todos os direitos reservados para ZuPinturas</p>
+            <div class="footer-icons">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
         <div class="footer-right">
             <div class="footer-links">
                 <ul>
@@ -44,8 +44,8 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                     </li>
                     <li>
                         <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?> v-mobile-romove">Perguntas <span class="responsivo">Frequentes</span></a>
-                        <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?> v-mobile">Perguntas</a>
-                            
+                        <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?> pergunta-mobile v-mobile">Perguntas</a>
+
                     </li>
                 </ul>
             </div>
@@ -74,9 +74,22 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                     scrollTop: target.offset().top
                 }, 600);
             }
+
+            var $link = $(this);
+            if($link.hasClass('pergunta-mobile')){
+                $link.addClass('cor')
+                $link.addClass('cliked')
+                
+
+                setTimeout(function(){
+                    $link.removeClass('cor');
+                    $link.removeClass('cliked');
+                }, 500);
+            }
         });
     });
 </script>
+
 <script>
     $(document).ready(() => {
         $("#foto").change(function() {
