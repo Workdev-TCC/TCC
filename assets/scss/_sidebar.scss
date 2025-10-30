@@ -90,9 +90,17 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        padding: 10px;
+        gap: 10px;
         //border-bottom: #93a1a6 solid 1px;
         font-family: "Roboto", sans-serif;
+        width: 100%;
+        padding: 10px 20px;
+        .opc{
+          display: inline-block;
+          font-size: 1.10rem;
+          color: var(--rosa);
+          gap: 10px;
+        }
         hr{
           width: 80%;
           height: 1.2px;
@@ -110,7 +118,7 @@
 
         a {
           text-decoration: none;
-          color: var(--black);
+          color: var(--branco);
           margin-bottom: 10px;
           font-size: 1.10rem;
         }
@@ -134,7 +142,7 @@
           font-size: 1.19rem;
           color: var(--branco);
           text-transform: uppercase;
-          
+          gap: 10px;
         }
       }
 

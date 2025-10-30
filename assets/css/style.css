@@ -2302,8 +2302,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 10px;
+    gap: 10px;
     font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .intocavel .sidebar .menu-section .opc {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: var(--rosa);
+    gap: 10px;
   }
   .intocavel .sidebar .menu-section hr {
     width: 80%;
@@ -2320,7 +2328,7 @@ body {
   }
   .intocavel .sidebar .menu-section a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--branco);
     margin-bottom: 10px;
     font-size: 1.1rem;
   }
@@ -2342,6 +2350,7 @@ body {
     font-size: 1.19rem;
     color: var(--branco);
     text-transform: uppercase;
+    gap: 10px;
   }
   .intocavel .sidebar .rodape {
     display: flex;

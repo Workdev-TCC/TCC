@@ -19,9 +19,9 @@
         <div class="menu-section">
             <h4>Empresa</h4>
             <hr>
-            <a href="#"><i class="fa-question-circle"></i>Perguntas Frequentes</a>
-            <a href="#"><i class="fa-handshake"></i>Serviços</a>
-            <a href="#">Projetos</a>
+            <div class="opc"><a href="#"><i class="fa-solid fa-circle-question"></i>Perguntas Frequentes</a></div>
+            <div class="opc"><i class="fa-solid fa-paintbrush"></i><a href="#">Serviços</a></div>
+            <div class="opc"><i class="fa-solid fa-brush"></i><a href="#">Projetos</a></div>
         </div>
 
         <div class="menu-section">
