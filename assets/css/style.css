@@ -2587,6 +2587,34 @@ body {
   max-width: 1300px;
   margin: 0 auto 2rem auto;
 }
+.gerenciar-pendentes .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.gerenciar-pendentes .pagination .page-item .page-link {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fdfdfd;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.gerenciar-pendentes .pagination .page-item .page-link:hover {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(122, 63, 255, 0.7);
+}
+.gerenciar-pendentes .pagination .page-item.active .page-link {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 18px rgba(122, 63, 255, 0.8);
+}
 .gerenciar-pendentes .card {
   background-color: #16161d;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2762,6 +2790,17 @@ body {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
   }
+  .gerenciar-pendentes .pagination {
+    gap: 0.3rem;
+  }
+  .gerenciar-pendentes .pagination .page-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .gerenciar-pendentes .btn-outline-primary {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+  }
   .gerenciar-pendentes .card {
     min-width: 100% !important;
     max-width: 100% !important;
@@ -2843,23 +2882,15 @@ body {
   .gerenciar-pendentes .table td:nth-of-type(3) {
     display: none;
   }
-  .gerenciar-pendentes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(8) {
-    display: inline-block !important;
-    width: 48% !important;
+  .gerenciar-pendentes .table td:nth-of-type(7) {
+    display: block !important;
+    width: 100% !important;
     padding-left: 0 !important;
     text-align: center;
     margin-bottom: 0;
-    float: left;
   }
-  .gerenciar-pendentes .table td:nth-of-type(7):before, .gerenciar-pendentes .table td:nth-of-type(8):before {
+  .gerenciar-pendentes .table td:nth-of-type(7):before {
     display: none;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7) {
-    margin-right: 4%;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(8) {
-    float: right;
-    margin-right: 0;
   }
   .gerenciar-pendentes .table tr:after {
     content: "";
@@ -2885,9 +2916,6 @@ body {
     content: "Hora:";
   }
   .gerenciar-pendentes .table td:nth-of-type(7):before {
-    content: "Contato:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(8):before {
     content: "Ações:";
   }
   .gerenciar-pendentes .table .form-select, .gerenciar-pendentes .table .form-control {
@@ -2898,17 +2926,6 @@ body {
     width: 100%;
     margin-bottom: 0;
     white-space: nowrap;
-  }
-  .gerenciar-pendentes .pagination {
-    gap: 0.3rem;
-  }
-  .gerenciar-pendentes .pagination .page-link {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.85rem;
-  }
-  .gerenciar-pendentes .btn-outline-primary {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.9rem;
   }
 }
 @media (max-width: 480px) {
@@ -2931,12 +2948,6 @@ body {
   .gerenciar-pendentes .table td:nth-of-type(2) .info-adicional {
     font-size: 0.8rem;
   }
-  .gerenciar-pendentes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(8) {
-    width: 48% !important;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7) {
-    margin-right: 2%;
-  }
   .gerenciar-pendentes .btn-outline-primary {
     font-size: 0.85rem;
     padding: 0.4rem 0.7rem;
@@ -2947,10 +2958,7 @@ body {
   }
 }
 @media (max-width: 360px) {
-  .gerenciar-pendentes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(8) {
-    width: 48% !important;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7) .btn, .gerenciar-pendentes .table td:nth-of-type(8) .btn {
+  .gerenciar-pendentes .table td:nth-of-type(7) .btn {
     font-size: 0.8rem;
     padding: 0.35rem 0.5rem;
   }
@@ -3337,6 +3345,392 @@ body {
     width: 48% !important;
   }
   .gerenciar-marcadas .table td:nth-of-type(7) .btn, .gerenciar-marcadas .table td:nth-of-type(8) .btn {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+.page-gerenciar-usuarios .container {
+  max-width: 1400px;
+  width: 95%;
+  padding-top: 5rem;
+  margin: 0 auto;
+  min-height: 450px;
+  height: 600px;
+}
+.page-gerenciar-usuarios h2 {
+  font-weight: 600;
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.page-gerenciar-usuarios .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.page-gerenciar-usuarios .pagination .page-item .page-link {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fdfdfd;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.page-gerenciar-usuarios .pagination .page-item .page-link:hover {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(122, 63, 255, 0.7);
+}
+.page-gerenciar-usuarios .pagination .page-item.active .page-link {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 18px rgba(122, 63, 255, 0.8);
+}
+.page-gerenciar-usuarios .btn-outline-primary {
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #1a1a27;
+  border: 1px solid transparent;
+  -o-border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
+     border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
+  color: #fdfdfd;
+  transition: all 0.3s ease;
+}
+.page-gerenciar-usuarios .btn-outline-primary:hover {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(122, 63, 255, 0.8);
+}
+.page-gerenciar-usuarios .btn {
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.page-gerenciar-usuarios .btn.btn-success {
+  background-color: #25d366;
+  border: none;
+  color: #fff;
+}
+.page-gerenciar-usuarios .btn.btn-success:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+}
+.page-gerenciar-usuarios .card {
+  background-color: #16161d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+}
+.page-gerenciar-usuarios .card .card-body {
+  padding: 1.5rem;
+}
+.page-gerenciar-usuarios .table {
+  background-color: #121219;
+  color: #fdfdfd;
+  border: none;
+  font-size: 0.95rem;
+  table-layout: fixed;
+  width: 100%;
+}
+.page-gerenciar-usuarios .table thead {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.page-gerenciar-usuarios .table thead th {
+  border: none;
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+}
+.page-gerenciar-usuarios .table tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.page-gerenciar-usuarios .table tbody tr:hover {
+  background-color: rgba(122, 63, 255, 0.08);
+  transform: none;
+}
+.page-gerenciar-usuarios .table tbody td {
+  vertical-align: middle;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+}
+.page-gerenciar-usuarios .table .form-select,
+.page-gerenciar-usuarios .table .form-control {
+  background-color: #1e1e27;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fdfdfd;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.5rem;
+  transition: all 0.3s ease;
+}
+.page-gerenciar-usuarios .table .form-select:focus,
+.page-gerenciar-usuarios .table .form-control:focus {
+  border-color: #7a3fff;
+  box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+  background-color: #262631;
+}
+.page-gerenciar-usuarios .table .form-select option,
+.page-gerenciar-usuarios .table .form-control option {
+  background-color: #1b1b23;
+  color: #fdfdfd;
+}
+.page-gerenciar-usuarios .modal-content {
+  background-color: #16161d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(122, 63, 255, 0.25);
+  border-radius: 12px;
+}
+.page-gerenciar-usuarios .modal-content .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+.page-gerenciar-usuarios .modal-content .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.page-gerenciar-usuarios .modal-content textarea {
+  background-color: #1b1b23;
+  color: #fdfdfd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  resize: none;
+}
+.page-gerenciar-usuarios .modal-content textarea:focus {
+  border-color: #7a3fff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+}
+@media (max-width: 1024px) {
+  .page-gerenciar-usuarios .container {
+    padding-top: 1.5rem;
+    width: 98%;
+  }
+  .page-gerenciar-usuarios h2 {
+    font-size: 1.6rem;
+  }
+  .page-gerenciar-usuarios .table {
+    font-size: 0.9rem;
+  }
+  .page-gerenciar-usuarios .form-control,
+  .page-gerenciar-usuarios .form-select {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .page-gerenciar-usuarios .container {
+    padding-top: 1rem;
+    width: 100%;
+  }
+  .page-gerenciar-usuarios h2 {
+    font-size: 1.4rem;
+  }
+  .page-gerenciar-usuarios .d-flex.flex-column.flex-md-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .page-gerenciar-usuarios .table-responsive {
+    overflow-x: visible;
+  }
+  .page-gerenciar-usuarios .table {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .page-gerenciar-usuarios .table thead {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table tbody, .page-gerenciar-usuarios .table tr, .page-gerenciar-usuarios .table td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .page-gerenciar-usuarios .table tr {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    background: rgba(22, 22, 29, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .page-gerenciar-usuarios .table tr:hover {
+    background-color: rgba(122, 63, 255, 0.1);
+  }
+  .page-gerenciar-usuarios .table td {
+    border: none;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 45%;
+  }
+  .page-gerenciar-usuarios .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    width: 40%;
+    font-weight: 600;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2) {
+    padding-left: 0;
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2):before {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2) .nome-usuario {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2) .info-adicional {
+    font-size: 0.85rem;
+    color: #c0c0c0;
+    display: block;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(1) {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(3) {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7), .page-gerenciar-usuarios .table td:nth-of-type(8) {
+    display: inline-block !important;
+    width: 48% !important;
+    padding-left: 0 !important;
+    text-align: center;
+    margin-bottom: 0;
+    float: left;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7):before, .page-gerenciar-usuarios .table td:nth-of-type(8):before {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7) {
+    margin-right: 4%;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(8) {
+    float: right;
+    margin-right: 0;
+  }
+  .page-gerenciar-usuarios .table tr:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(1):before {
+    content: "ID:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2):before {
+    content: "Usuário:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(3):before {
+    content: "CEP:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(4):before {
+    content: "Status:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(5):before {
+    content: "Data Visita:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(6):before {
+    content: "Hora:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7):before {
+    content: "Contato:";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(8):before {
+    content: "Ações:";
+  }
+  .page-gerenciar-usuarios .table .form-select, .page-gerenciar-usuarios .table .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .page-gerenciar-usuarios .table .btn {
+    width: 100%;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  .page-gerenciar-usuarios .pagination {
+    gap: 0.3rem;
+  }
+  .page-gerenciar-usuarios .pagination .page-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .page-gerenciar-usuarios .btn-outline-primary {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .page-gerenciar-usuarios .card {
+    padding: 0.5rem;
+  }
+  .page-gerenciar-usuarios .card-body {
+    padding: 1rem 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .page-gerenciar-usuarios h2 {
+    font-size: 1.2rem;
+  }
+  .page-gerenciar-usuarios .table {
+    font-size: 0.85rem;
+  }
+  .page-gerenciar-usuarios .table td {
+    padding-left: 50%;
+  }
+  .page-gerenciar-usuarios .table td:before {
+    width: 45%;
+    font-size: 0.75rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2) .nome-usuario {
+    font-size: 1.2rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2) .info-adicional {
+    font-size: 0.8rem;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7), .page-gerenciar-usuarios .table td:nth-of-type(8) {
+    width: 48% !important;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7) {
+    margin-right: 2%;
+  }
+  .page-gerenciar-usuarios .btn-outline-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+  }
+  .page-gerenciar-usuarios .pagination .page-link {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
+@media (max-width: 360px) {
+  .page-gerenciar-usuarios .table td:nth-of-type(7), .page-gerenciar-usuarios .table td:nth-of-type(8) {
+    width: 48% !important;
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(7) .btn, .page-gerenciar-usuarios .table td:nth-of-type(8) .btn {
     font-size: 0.8rem;
     padding: 0.35rem 0.5rem;
   }
