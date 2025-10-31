@@ -29,7 +29,7 @@ try {
     $_SESSION['type'] = 'danger';
 }
 ?>
-
+<div class="page-gerenciar-solicitacoes"> <!-- CLASE ESPECÍFICA AQUI -->
 <div class="container mt-4 px-3">
     <!-- Cabeçalho e navegação -->
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
@@ -137,36 +137,51 @@ try {
     </div>
   </div>
 </div>
+    </div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
     let solicitacaoSelecionada = null;
 
-    document.querySelectorAll(".salvar-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
-            const tr = this.closest("tr");
-            const id = tr.dataset.id;
-            const status = tr.querySelector(".status-select").value;
-            const data = tr.querySelector(".data-visita").value;
-            const hora = tr.querySelector(".hora-visita").value;
+    // Configura os botões salvar - busca dentro da página específica
+    function setupSaveButtons() {
+        const pageContainer = document.querySelector('.page-gerenciar-solicitacoes');
+        if (!pageContainer) return; // Se não encontrar a página, sai
+        
+        pageContainer.querySelectorAll(".salvar-btn").forEach(btn => {
+            // Remove event listener antigo e adiciona novo
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            
+            newBtn.addEventListener("click", function() {
+                const tr = this.closest("tr");
+                const id = tr.dataset.id;
+                const status = tr.querySelector(".status-select").value;
+                const data = tr.querySelector(".data-visita").value;
+                const hora = tr.querySelector(".hora-visita").value;
 
-            if (status === "marcado") {
-                if (!data || !hora) {
-                    alert("Preencha a data e a hora antes de salvar.");
-                    return;
+                if (status === "marcado") {
+                    if (!data || !hora) {
+                        alert("Preencha a data e a hora antes de salvar.");
+                        return;
+                    }
+                    salvarAlteracao(id, status, data, hora, "");
+                } else if (status === "recusado") {
+                    solicitacaoSelecionada = { id, status, data, hora };
+                    justificativaModal.show();
+                } else {
+                    salvarAlteracao(id, status, "", "", "");
                 }
-                salvarAlteracao(id, status, data, hora, "");
-            } else if (status === "recusado") {
-                solicitacaoSelecionada = { id, status, data, hora };
-                justificativaModal.show();
-            } else {
-                salvarAlteracao(id, status, "", "", "");
-            }
+            });
         });
-    });
+    }
 
-    document.getElementById("confirmarRecusa").addEventListener("click", () => {
+    // Configura inicialmente
+    setupSaveButtons();
+
+    document.getElementById("confirmarRecusa")?.addEventListener("click", () => {
         const justificativa = document.getElementById("justificativaTexto").value.trim();
         if (!justificativa) {
             alert("Por favor, preencha a justificativa.");
@@ -196,7 +211,67 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => alert("Erro: " + err));
     }
+
+    // Adaptação mobile APENAS para esta página
+    function adaptTableForMobile() {
+        const pageContainer = document.querySelector('.page-gerenciar-solicitacoes');
+        if (!pageContainer) return; // Se não encontrar a página, sai
+        
+        if (window.innerWidth <= 768) {
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            const headers = pageContainer.querySelectorAll('thead th');
+            
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                
+                cells.forEach((cell, index) => {
+                    if (headers[index]) {
+                        cell.setAttribute('data-label', headers[index].textContent.trim());
+                    }
+                    
+                    // Apenas para a célula do usuário (segunda coluna)
+                    if (index === 1 && !cell.classList.contains('mobile-adapted')) {
+                        const usuarioText = cell.textContent.trim();
+                        const originalId = row.dataset.id;
+                        
+                        cell.classList.add('mobile-adapted');
+                        cell.innerHTML = `
+                            <div class="nome-usuario">${usuarioText}</div>
+                            <div class="info-adicional">Solicitação #${originalId}</div>
+                        `;
+                    }
+                });
+            });
+        } else {
+            // Restaura para desktop
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                    cell.removeAttribute('data-label');
+                    
+                    if (index === 1 && cell.classList.contains('mobile-adapted')) {
+                        const nomeUsuario = cell.querySelector('.nome-usuario');
+                        if (nomeUsuario) {
+                            cell.textContent = nomeUsuario.textContent;
+                        }
+                        cell.classList.remove('mobile-adapted');
+                    }
+                });
+            });
+        }
+        
+        // Re-configura os botões após modificar o DOM
+        setTimeout(setupSaveButtons, 100);
+    }
+    
+    // Executa na carga inicial
+    adaptTableForMobile();
+    
+    // Executa no redimensionamento da tela
+    window.addEventListener('resize', adaptTableForMobile);
 });
+
 </script>
 
 <?php

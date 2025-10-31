@@ -6,7 +6,8 @@
 -- Tempo de geração: 25/10/2025 às 18:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
-
+CREATE IF NOT EXISTS DATABASE zupinturas;
+USE zupinturas;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";

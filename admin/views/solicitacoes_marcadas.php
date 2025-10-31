@@ -33,123 +33,125 @@ try {
     $_SESSION['type'] = 'danger';
 }
 ?>
-
-<div class="container mt-5">
-    <!-- Cabeçalho e navegação -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
-        <h2 class="mb-3 mb-md-0 text-center text-md-start">Solicitações Marcadas</h2>
-
-        <div class="d-flex flex-column flex-sm-row align-items-center gap-2 w-100 w-md-auto justify-content-center justify-content-md-end">
-            <nav aria-label="Navegação de solicitações" class="flex-shrink-0">
-                <ul class="pagination mb-0 flex-wrap justify-content-center">
-                    <?php $current = basename($_SERVER['PHP_SELF']); ?>
-                    <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
-                    </li>
-                    <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
-                    </li>
-                    <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
-                    </li>
-                    <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <button class="btn btn-outline-primary mt-2 mt-sm-0" onclick="location.reload()">
-                <i class="fa fa-refresh"></i> Recarregar
-            </button>
+<div class="gerenciar-marcadas">
+    
+    <div class="container mt-5">
+        <!-- Cabeçalho e navegação -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+            <h2 class="mb-3 mb-md-0 text-center text-md-start">Solicitações Marcadas</h2>
+    
+            <div class="d-flex flex-column flex-sm-row align-items-center gap-2 w-100 w-md-auto justify-content-center justify-content-md-end">
+                <nav aria-label="Navegação de solicitações" class="flex-shrink-0">
+                    <ul class="pagination mb-0 flex-wrap justify-content-center">
+                        <?php $current = basename($_SERVER['PHP_SELF']); ?>
+                        <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
+                        </li>
+                        <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
+                        </li>
+                        <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
+                        </li>
+                        <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <button class="btn btn-outline-primary mt-2 mt-sm-0" onclick="location.reload()">
+                    <i class="fa fa-refresh"></i> Recarregar
+                </button>
+            </div>
         </div>
-    </div>
-
-    <!-- Tabela -->
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
-                <?php if (!empty($solicitacoes)): ?>
-                    <table class="table table-bordered table-striped align-middle text-center">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Usuário</th>
-                                <th>CEP</th>
-                                <th>Status</th>
-                                <th>Data Visita</th>
-                                <th>Hora</th>
-                                <th>Contato</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($solicitacoes as $s): ?>
-                                <tr data-id="<?= $s['id'] ?>">
-                                    <td><?= $s['id'] ?></td>
-                                    <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
-                                    <td><?= htmlspecialchars($s['cep']) ?></td>
-                                    <td>
-                                        <select class="form-select status-select">
-                                            <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
-                                            <option value="marcado" <?= $s['status'] == 'marcado' ? 'selected' : '' ?>>Marcado</option>
-                                            <option value="recusado" <?= $s['status'] == 'recusado' ? 'selected' : '' ?>>Recusado</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="date" class="form-control data-visita" value="<?= $s['data_visita'] ?? '' ?>">
-                                    </td>
-                                    <td>
-                                        <input type="time" class="form-control hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
-                                    </td>
-                                    <td>
-                                        <div class="d-flex flex-column align-items-center gap-1">
-                                            <!-- WhatsApp -->
-                                            <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']) ?>" 
-                                               target="_blank" class="btn btn-success btn-sm w-100">
-                                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                                            </a>
-                                            <!-- Telefone -->
-                                            <span class="small"><?= htmlspecialchars($s['telefone']) ?></span>
-                                            <!-- Email -->
-                                            <a href="mailto:<?= htmlspecialchars($s['email']) ?>" class="small text-decoration-none text-primary">
-                                                <?= htmlspecialchars($s['email']) ?>
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm salvar-btn">
-                                            <i class="fa fa-save"></i> Salvar
-                                        </button>
-                                    </td>
+    
+        <!-- Tabela -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <?php if (!empty($solicitacoes)): ?>
+                        <table class="table table-bordered table-striped align-middle text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Usuário</th>
+                                    <th>CEP</th>
+                                    <th>Status</th>
+                                    <th>Data Visita</th>
+                                    <th>Hora</th>
+                                    <th>Contato</th>
+                                    <th>Ações</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                <?php else: ?>
-                    <div class="alert alert-warning text-center">Nenhuma solicitação marcada encontrada.</div>
-                <?php endif; ?>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($solicitacoes as $s): ?>
+                                    <tr data-id="<?= $s['id'] ?>">
+                                        <td><?= $s['id'] ?></td>
+                                        <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
+                                        <td><?= htmlspecialchars($s['cep']) ?></td>
+                                        <td>
+                                            <select class="form-select status-select">
+                                                <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
+                                                <option value="marcado" <?= $s['status'] == 'marcado' ? 'selected' : '' ?>>Marcado</option>
+                                                <option value="recusado" <?= $s['status'] == 'recusado' ? 'selected' : '' ?>>Recusado</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="form-control data-visita" value="<?= $s['data_visita'] ?? '' ?>">
+                                        </td>
+                                        <td>
+                                            <input type="time" class="form-control hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
+                                        </td>
+                                        <td>
+                                            <div class="d-flex flex-column align-items-center gap-1">
+                                                <!-- WhatsApp -->
+                                                <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']) ?>"
+                                                   target="_blank" class="btn btn-success btn-sm w-100">
+                                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                                                </a>
+                                                <!-- Telefone -->
+                                                <span class="small"><?= htmlspecialchars($s['telefone']) ?></span>
+                                                <!-- Email -->
+                                                <a href="mailto:<?= htmlspecialchars($s['email']) ?>" class="small text-decoration-none text-primary">
+                                                    <?= htmlspecialchars($s['email']) ?>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm salvar-btn">
+                                                <i class="fa fa-save"></i> Salvar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php else: ?>
+                        <div class="alert alert-warning text-center">Nenhuma solicitação marcada encontrada.</div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Modal de justificativa -->
-<div class="modal fade" id="modalJustificativa" tabindex="-1" aria-labelledby="modalJustificativaLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <h5 class="modal-title">Justificativa de Recusa</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <textarea id="justificativaTexto" class="form-control" rows="4" placeholder="Digite o motivo da recusa..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button class="btn btn-danger" id="confirmarRecusa">Salvar Recusa</button>
+    
+    <!-- Modal de justificativa -->
+    <div class="modal fade" id="modalJustificativa" tabindex="-1" aria-labelledby="modalJustificativaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title">Justificativa de Recusa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <textarea id="justificativaTexto" class="form-control" rows="4" placeholder="Digite o motivo da recusa..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-danger" id="confirmarRecusa">Salvar Recusa</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 <script>
@@ -209,6 +211,64 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => alert("Erro: " + err));
     }
+        // Adaptação mobile APENAS para esta página
+    function adaptTableForMobile() {
+        const pageContainer = document.querySelector('gerenciar-marcadas');
+        if (!pageContainer) return; // Se não encontrar a página, sai
+        
+        if (window.innerWidth <= 768) {
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            const headers = pageContainer.querySelectorAll('thead th');
+            
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                
+                cells.forEach((cell, index) => {
+                    if (headers[index]) {
+                        cell.setAttribute('data-label', headers[index].textContent.trim());
+                    }
+                    
+                    // Apenas para a célula do usuário (segunda coluna)
+                    if (index === 1 && !cell.classList.contains('mobile-adapted')) {
+                        const usuarioText = cell.textContent.trim();
+                        const originalId = row.dataset.id;
+                        
+                        cell.classList.add('mobile-adapted');
+                        cell.innerHTML = `
+                            <div class="nome-usuario">${usuarioText}</div>
+                            <div class="info-adicional">Solicitação #${originalId}</div>
+                        `;
+                    }
+                });
+            });
+        } else {
+            // Restaura para desktop
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                    cell.removeAttribute('data-label');
+                    
+                    if (index === 1 && cell.classList.contains('mobile-adapted')) {
+                        const nomeUsuario = cell.querySelector('.nome-usuario');
+                        if (nomeUsuario) {
+                            cell.textContent = nomeUsuario.textContent;
+                        }
+                        cell.classList.remove('mobile-adapted');
+                    }
+                });
+            });
+        }
+        
+        // Re-configura os botões após modificar o DOM
+        setTimeout(setupSaveButtons, 100);
+    }
+    
+    // Executa na carga inicial
+    adaptTableForMobile();
+    
+    // Executa no redimensionamento da tela
+    window.addEventListener('resize', adaptTableForMobile);
 });
 </script>
 

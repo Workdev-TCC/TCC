@@ -1,0 +1,501 @@
+// CLASSE COMUM PARA TODAS AS PÁGINAS - CENTRALIZADO E TAMANHO FIXO
+.gerenciar-pendentes{
+  // ----------------------------
+  // Container Principal Centralizado
+  // ----------------------------
+  .container,
+  .container-fluid {
+    max-width: 1400px;
+    width: 95%;
+    padding-top: 5rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 500px;
+  }
+
+  // ----------------------------
+  // Cabeçalho Centralizado
+  // ----------------------------
+  h2 {
+    font-weight: 600;
+    background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  // ----------------------------
+  // Navegação Centralizada
+  // ----------------------------
+  .d-flex.flex-column.flex-md-row {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 2rem auto;
+  }
+
+  // ----------------------------
+  // Card da Tabela (TAMANHO FIXO)
+  // ----------------------------
+  .card {
+    background-color: #16161d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 1300px; // LARGURA FIXA MÁXIMA
+    min-width: 1250px; // LARGURA FIXA MÍNIMA
+    margin: 0 auto;
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+  }
+
+  // ----------------------------
+  // Tabela (TAMANHO FIXO)
+  // ----------------------------
+  .table {
+    background-color: #121219;
+    color: #fdfdfd;
+    border: none;
+    font-size: 0.95rem;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0 auto;
+
+    thead {
+      background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      th {
+        border: none;
+        padding: 0.8rem 0.5rem;
+        text-align: center;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: all 0.2s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        &:hover {
+          background-color: rgba(122, 63, 255, 0.08);
+          transform: none; // REMOVE QUALQUER TRANSFORMAÇÃO QUE CAUSE SCROLL
+        }
+      }
+
+      td {
+        vertical-align: middle;
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        padding: 0.8rem 0.5rem;
+      }
+    }
+
+    .form-select,
+    .form-control {
+      background-color: #1e1e27;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fdfdfd;
+      font-size: 0.95rem;
+      padding: 0.35rem 0.5rem;
+      transition: all 0.3s ease;
+      width: 100%;
+
+      &:focus {
+        border-color: #7a3fff;
+        box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+        background-color: #262631;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Table Responsive (CORREÇÃO DO SCROLL)
+  // ----------------------------
+  .table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 1300px;
+    
+    @media (max-width: 1300px) {
+      max-width: 95%;
+    }
+    
+    @media (max-width: 768px) {
+      max-width: 100%;
+      overflow-x: visible; // NO MOBILE, TIRA O SCROLL HORIZONTAL
+    }
+  }
+
+  // ----------------------------
+  // Botão de Recarregar
+  // ----------------------------
+  .btn-outline-primary {
+    font-size: 0.95rem;
+    padding: 0.55rem 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #1a1a27;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
+    color: #fdfdfd;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(122, 63, 255, 0.8);
+    }
+  }
+
+  // ----------------------------
+  // Botões principais
+  // ----------------------------
+  .btn {
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &.btn-success {
+      background-color: #25d366;
+      border: none;
+      color: #fff;
+
+      &:hover {
+        filter: brightness(1.1);
+        box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+        transform: none; // REMOVE QUALQUER TRANSFORMAÇÃO
+      }
+    }
+  }
+
+  // ----------------------------
+  // Modal (mantido igual)
+  // ----------------------------
+  .modal-content {
+    background-color: #16161d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(122, 63, 255, 0.25);
+    border-radius: 12px;
+
+    .modal-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+    }
+
+    .modal-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    textarea {
+      background-color: #1b1b23;
+      color: #fdfdfd;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      resize: none;
+
+      &:focus {
+        border-color: #7a3fff;
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+      }
+    }
+  }
+
+  // ----------------------------
+  // RESPONSIVIDADE (MOBILE) - MANTIDA SUA VERSÃO
+  // ----------------------------
+  @media (max-width: 1300px) {
+    .card {
+      min-width: 95%;
+      max-width: 95%;
+    }
+    
+    .table-responsive {
+      max-width: 95%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container,
+    .container-fluid {
+      padding: 1.5rem 1rem;
+      width: 98%;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    .table {
+      font-size: 0.9rem;
+    }
+
+    .form-control,
+    .form-select {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container,
+    .container-fluid {
+      padding: 1rem 0.5rem;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      padding: 0.5rem;
+      
+      .card-body {
+        padding: 1rem 0.5rem;
+      }
+    }
+
+    .table-responsive {
+      max-width: 100%;
+      overflow-x: visible; // NO MOBILE, TIRA O SCROLL HORIZONTAL
+    }
+
+    // SUA VERSÃO MOBILE COMPLETA AQUI (não mudei nada)
+    .table {
+      min-width: 100% !important;
+      
+      thead {
+        display: none;
+      }
+
+      tbody, tr, td {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+      tr {
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        background: rgba(22, 22, 29, 0.8);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        
+        &:hover {
+          background-color: rgba(122, 63, 255, 0.1);
+          transform: none; // REMOVE QUALQUER TRANSFORMAÇÃO NO MOBILE
+        }
+      }
+
+      td {
+        border: none;
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 45%;
+        
+        &:before {
+          content: attr(data-label);
+          position: absolute;
+          left: 0.5rem;
+          width: 40%;
+          font-weight: 600;
+          color: #c0c0c0;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+        }
+
+        // Estilo especial para a célula do usuário (segunda coluna)
+        &:nth-of-type(2) {
+          padding-left: 0;
+          text-align: center;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          margin-bottom: 0.5rem;
+
+          &:before {
+            display: none;
+          }
+
+          .nome-usuario {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #7a3fff, #ff4fd8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.25rem;
+          }
+
+          .info-adicional {
+            font-size: 0.85rem;
+            color: #c0c0c0;
+            display: block;
+          }
+        }
+
+        // Estilo para ID (primeira coluna)
+        &:nth-of-type(1) {
+          display: none;
+        }
+
+        // Estilo para CEP (terceira coluna)
+        &:nth-of-type(3) {
+          display: none;
+        }
+
+        // Estilo para Contato e Ações
+        &:nth-of-type(7),
+        &:nth-of-type(8) {
+          display: inline-block !important;
+          width: 48% !important;
+          padding-left: 0 !important;
+          text-align: center;
+          margin-bottom: 0;
+          float: left;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        // Contato (WhatsApp)
+        &:nth-of-type(7) {
+          margin-right: 4%;
+        }
+
+        // Ações (Salvar)
+        &:nth-of-type(8) {
+          float: right;
+          margin-right: 0;
+        }
+      }
+
+      // Clearfix para garantir que os floats funcionem
+      tr:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      // Ajustes específicos para cada coluna
+      td:nth-of-type(1):before { content: "ID:"; }
+      td:nth-of-type(2):before { content: "Usuário:"; }
+      td:nth-of-type(3):before { content: "CEP:"; }
+      td:nth-of-type(4):before { content: "Status:"; }
+      td:nth-of-type(5):before { content: "Data Visita:"; }
+      td:nth-of-type(6):before { content: "Hora:"; }
+      td:nth-of-type(7):before { content: "Contato:"; }
+      td:nth-of-type(8):before { content: "Ações:"; }
+
+      // Ajustes para elementos de formulário
+      .form-select, .form-control {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      // Ajuste para botões
+      .btn {
+        width: 100%;
+        margin-bottom: 0;
+        white-space: nowrap;
+      }
+    }
+
+    // Paginação mais compacta
+    .pagination {
+      gap: 0.3rem;
+      
+      .page-link {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .btn-outline-primary {
+      padding: 0.45rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .table {
+      font-size: 0.85rem;
+      
+      td {
+        padding-left: 50%;
+        
+        &:before {
+          width: 45%;
+          font-size: 0.75rem;
+        }
+
+        // Ajustes específicos para mobile pequeno
+        &:nth-of-type(2) {
+          .nome-usuario {
+            font-size: 1.2rem;
+          }
+          
+          .info-adicional {
+            font-size: 0.8rem;
+          }
+        }
+
+        // Ajuste para Contato e Ações em telas muito pequenas
+        &:nth-of-type(7),
+        &:nth-of-type(8) {
+          width: 48% !important;
+        }
+
+        &:nth-of-type(7) {
+          margin-right: 2%;
+        }
+      }
+    }
+
+    .btn-outline-primary {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.7rem;
+    }
+
+    .pagination .page-link {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.6rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .table td {
+      &:nth-of-type(7),
+      &:nth-of-type(8) {
+        width: 48% !important;
+        
+        .btn {
+          font-size: 0.8rem;
+          padding: 0.35rem 0.5rem;
+        }
+      }
+    }
+  }
+}

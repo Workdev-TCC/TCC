@@ -29,110 +29,112 @@ try {
     $_SESSION['type'] = 'danger';
 }
 ?>
-
-<div class="container-fluid mt-4 px-3">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
-        <h2 class="mb-0 text-center text-md-start">Solicitações Pendentes</h2>
-
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
-            <nav aria-label="Navegação de solicitações">
-                <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
-                    <?php $current = basename($_SERVER['PHP_SELF']); ?>
-
-                    <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
-                    </li>
-
-                    <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
-                    </li>
-
-                    <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
-                    </li>
-
-                    <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
-                        <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <button class="btn btn-outline-primary btn-sm ms-md-2" onclick="location.reload()">
-                <i class="fa fa-refresh"></i> Recarregar
-            </button>
+<div class="gerenciar-pendentes">
+    
+    <div class="container-fluid mt-4 px-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
+            <h2 class="mb-0 text-center text-md-start">Solicitações Pendentes</h2>
+    
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
+                <nav aria-label="Navegação de solicitações">
+                    <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
+                        <?php $current = basename($_SERVER['PHP_SELF']); ?>
+    
+                        <li class="page-item <?= $current === 'gerenciar_solicitacoes.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Todos</a>
+                        </li>
+    
+                        <li class="page-item <?= $current === 'solicitacoes_pendentes.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_pendentes.php">Pendentes</a>
+                        </li>
+    
+                        <li class="page-item <?= $current === 'solicitacoes_marcadas.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_marcadas.php">Marcados</a>
+                        </li>
+    
+                        <li class="page-item <?= $current === 'solicitacoes_recusadas.php' ? 'active' : '' ?>">
+                            <a class="page-link" href="<?= RAIZ_PROJETO; ?>admin/views/solicitacoes_recusadas.php">Recusadas</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <button class="btn btn-outline-primary btn-sm ms-md-2" onclick="location.reload()">
+                    <i class="fa fa-refresh"></i> Recarregar
+                </button>
+            </div>
         </div>
-    </div>
-
-    <div class="card shadow-sm">
-        <div class="card-body p-2 p-md-3">
-            <?php if (!empty($solicitacoes)): ?>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped align-middle text-center mb-0">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Usuário</th>
-                                <th>CEP</th>
-                                <th>Status</th>
-                                <th>Data Visita</th>
-                                <th>Hora</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($solicitacoes as $s): ?>
-                                <tr data-id="<?= $s['id'] ?>">
-                                    <td><?= $s['id'] ?></td>
-                                    <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
-                                    <td><?= htmlspecialchars($s['cep']) ?></td>
-                                    <td>
-                                        <select class="form-select form-select-sm status-select">
-                                            <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
-                                            <option value="marcado">Marcado</option>
-                                            <option value="recusado">Recusado</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="date" class="form-control form-control-sm data-visita" value="<?= $s['data_visita'] ?? '' ?>">
-                                    </td>
-                                    <td>
-                                        <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm salvar-btn w-100 w-md-auto">
-                                            <i class="fa fa-save"></i> Salvar
-                                        </button>
-                                    </td>
+    
+        <div class="card shadow-sm">
+            <div class="card-body p-2 p-md-3">
+                <?php if (!empty($solicitacoes)): ?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped align-middle text-center mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Usuário</th>
+                                    <th>CEP</th>
+                                    <th>Status</th>
+                                    <th>Data Visita</th>
+                                    <th>Hora</th>
+                                    <th>Ações</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            <?php else: ?>
-                <div class="alert alert-warning text-center mb-0">Nenhuma solicitação pendente encontrada.</div>
-            <?php endif; ?>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($solicitacoes as $s): ?>
+                                    <tr data-id="<?= $s['id'] ?>">
+                                        <td><?= $s['id'] ?></td>
+                                        <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
+                                        <td><?= htmlspecialchars($s['cep']) ?></td>
+                                        <td>
+                                            <select class="form-select form-select-sm status-select">
+                                                <option value="pendente" <?= $s['status'] == 'pendente' ? 'selected' : '' ?>>Pendente</option>
+                                                <option value="marcado">Marcado</option>
+                                                <option value="recusado">Recusado</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="form-control form-control-sm data-visita" value="<?= $s['data_visita'] ?? '' ?>">
+                                        </td>
+                                        <td>
+                                            <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm salvar-btn w-100 w-md-auto">
+                                                <i class="fa fa-save"></i> Salvar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php else: ?>
+                    <div class="alert alert-warning text-center mb-0">Nenhuma solicitação pendente encontrada.</div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Modal de justificativa -->
-<div class="modal fade" id="modalJustificativa" tabindex="-1" aria-labelledby="modalJustificativaLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalJustificativaLabel">Justificativa de Recusa</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <textarea id="justificativaTexto" class="form-control" rows="4" placeholder="Digite o motivo da recusa..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button class="btn btn-danger" id="confirmarRecusa">Salvar Recusa</button>
+    
+    <!-- Modal de justificativa -->
+    <div class="modal fade" id="modalJustificativa" tabindex="-1" aria-labelledby="modalJustificativaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalJustificativaLabel">Justificativa de Recusa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <textarea id="justificativaTexto" class="form-control" rows="4" placeholder="Digite o motivo da recusa..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-danger" id="confirmarRecusa">Salvar Recusa</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+</div>  
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -192,73 +194,68 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => alert("Erro: " + err));
     }
+
+        // Adaptação mobile APENAS para esta página
+    function adaptTableForMobile() {
+        const pageContainer = document.querySelector('gerenciar-pendentes');
+        if (!pageContainer) return; // Se não encontrar a página, sai
+        
+        if (window.innerWidth <= 768) {
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            const headers = pageContainer.querySelectorAll('thead th');
+            
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                
+                cells.forEach((cell, index) => {
+                    if (headers[index]) {
+                        cell.setAttribute('data-label', headers[index].textContent.trim());
+                    }
+                    
+                    // Apenas para a célula do usuário (segunda coluna)
+                    if (index === 1 && !cell.classList.contains('mobile-adapted')) {
+                        const usuarioText = cell.textContent.trim();
+                        const originalId = row.dataset.id;
+                        
+                        cell.classList.add('mobile-adapted');
+                        cell.innerHTML = `
+                            <div class="nome-usuario">${usuarioText}</div>
+                            <div class="info-adicional">Solicitação #${originalId}</div>
+                        `;
+                    }
+                });
+            });
+        } else {
+            // Restaura para desktop
+            const tableRows = pageContainer.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                    cell.removeAttribute('data-label');
+                    
+                    if (index === 1 && cell.classList.contains('mobile-adapted')) {
+                        const nomeUsuario = cell.querySelector('.nome-usuario');
+                        if (nomeUsuario) {
+                            cell.textContent = nomeUsuario.textContent;
+                        }
+                        cell.classList.remove('mobile-adapted');
+                    }
+                });
+            });
+        }
+        
+        // Re-configura os botões após modificar o DOM
+        setTimeout(setupSaveButtons, 100);
+    }
+    
+    // Executa na carga inicial
+    adaptTableForMobile();
+    
+    // Executa no redimensionamento da tela
+    window.addEventListener('resize', adaptTableForMobile)
 });
 </script>
 
-<style>
-/* ======= ESTILOS RESPONSIVOS ======= */
-
-/* Tabela com rolagem horizontal */
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Ajuste geral */
-.container-fluid {
-    max-width: 100%;
-}
-
-/* Tabela compacta em telas pequenas */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 1.4rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    .pagination {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .table th, .table td {
-        font-size: 13px;
-        white-space: nowrap;
-        padding: 6px;
-    }
-
-    .form-control-sm, .form-select-sm {
-        font-size: 13px;
-        padding: 4px;
-    }
-
-    .btn-sm {
-        font-size: 13px;
-        padding: 5px 8px;
-    }
-
-    .btn-outline-primary {
-        width: 100%;
-    }
-
-    .salvar-btn {
-        width: 100%;
-        margin-top: 4px;
-    }
-
-    .card-body {
-        padding: 8px;
-    }
-}
-
-/* Ajuste de botões e inputs médios */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .table th, .table td {
-        font-size: 14px;
-    }
-}
-</style>
 
 <?php
 include SIDEBAR;
