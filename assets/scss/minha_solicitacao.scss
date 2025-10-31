@@ -1,0 +1,466 @@
+// Página Minhas Solicitações - Usuário
+.minhas-solicitacoes-page {
+  // ----------------------------
+  // Paleta base
+  // ----------------------------
+  $bg-dark: #0c0c11;
+  $bg-card: #16161d;
+  $bg-table: #121219;
+  $text-light: #fdfdfd;
+  $text-strong: #ffffff;
+  $text-muted: #c0c0c0;
+  $primary-gradient: linear-gradient(90deg, #7a3fff, #ff4fd8);
+  $border-color: rgba(255, 255, 255, 0.1);
+  $success: #25d367;
+
+  // ----------------------------
+  // Container Principal
+  // ----------------------------
+  .container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    height: 600px;
+  }
+
+  // ----------------------------
+  // Alert Personalizado
+  // ----------------------------
+  .alert {
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    
+    &.alert-success {
+      background: rgba(37, 211, 102, 0.15);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      color: #25d366;
+    }
+    
+    &.alert-danger {
+      background: rgba(255, 79, 111, 0.15);
+      border: 1px solid rgba(255, 79, 111, 0.3);
+      color: #ff4f6f;
+    }
+    
+    &.alert-warning {
+      background: rgba(255, 193, 7, 0.15);
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      color: #ffc107;
+    }
+    
+    &.alert-info {
+      background: rgba(122, 63, 255, 0.15);
+      border: 1px solid rgba(122, 63, 255, 0.3);
+      color: #7a3fff;
+    }
+    
+    .btn-close {
+      filter: invert(1) brightness(2);
+    }
+  }
+
+  // ----------------------------
+  // Cabeçalho da Página
+  // ----------------------------
+  h2 {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  // ----------------------------
+  // Barra de Pesquisa
+  // ----------------------------
+  .input-group {
+    .input-group-text {
+      background: $bg-card;
+      border: 1px solid $border-color;
+      border-right: none;
+      color: $text-muted;
+      border-radius: 10px 0 0 10px;
+    }
+    
+    .form-control {
+      background: $bg-card;
+      border: 1px solid $border-color;
+      border-left: none;
+      border-radius: 0 10px 10px 0;
+      color: $text-light;
+      padding: 0.75rem 1rem;
+      
+      &:focus {
+        background: rgba(38, 38, 49, 0.9);
+        border-color: #7a3fff;
+        box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+        color: $text-strong;
+      }
+      
+      &::placeholder {
+        color: $text-muted;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Botões e Controles
+  // ----------------------------
+  .btn {
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    &:hover::before {
+      left: 100%;
+    }
+    
+    &.btn-outline-primary {
+      background: transparent;
+      border: 1px solid #7a3fff;
+      color: #7a3fff;
+      
+      &:hover {
+        background: $primary-gradient;
+        border-color: transparent;
+        color: $text-strong;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(122, 63, 255, 0.3);
+      }
+    }
+    
+    &.btn-outline-secondary {
+      background: transparent;
+      border: 1px solid $border-color;
+      color: $text-muted;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: $text-muted;
+        color: $text-strong;
+      }
+    }
+    
+    &.btn-success {
+      background: $success;
+      border: none;
+      
+      &:hover {
+        background: lighten($success, 5%);
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      }
+    }
+    
+    &.btn-info {
+      background: rgba(122, 63, 255, 0.2);
+      border: 1px solid rgba(122, 63, 255, 0.5);
+      color: #7a3fff;
+      
+      &:hover {
+        background: $primary-gradient;
+        border-color: transparent;
+        color: $text-strong;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // ----------------------------
+  // Dropdown Menu
+  // ----------------------------
+  .dropdown-menu {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    .dropdown-item {
+      color: $text-light;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+      
+      &:hover, &.active {
+        background: $primary-gradient;
+        color: $text-strong;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Card Principal
+  // ----------------------------
+  .card {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    
+    .card-body {
+      padding: 2rem;
+    }
+  }
+
+  // ----------------------------
+  // Tabela Estilizada
+  // ----------------------------
+  .table {
+    background: transparent;
+    color: $text-light;
+    border: none;
+    margin-bottom: 0;
+    
+    thead {
+      background: $primary-gradient;
+      
+      th {
+        border: none;
+        padding: 1rem 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $text-strong;
+      }
+    }
+    
+    tbody {
+      tr {
+        transition: all 0.3s ease;
+        border-bottom: 1px solid $border-color;
+        
+        &:hover {
+          background: rgba(122, 63, 255, 0.05);
+          transform: translateX(5px);
+        }
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        td {
+          border: none;
+          padding: 1rem 0.75rem;
+          vertical-align: middle;
+          
+          &.text-center {
+            text-align: center;
+          }
+        }
+      }
+    }
+    
+    // Status com cores diferentes
+    td:nth-child(3) {
+      font-weight: 600;
+      text-transform: capitalize;
+      
+      &:contains("pendente") {
+        color: #ffc107;
+      }
+      
+      &:contains("marcado") {
+        color: #25d366;
+      }
+      
+      &:contains("recusado") {
+        color: #ff4f6f;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Modal Estilizado
+  // ----------------------------
+  .modal-content {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    
+    .modal-header {
+      border-bottom: 1px solid $border-color;
+      padding: 1.5rem;
+      
+      .modal-title {
+        color: $text-strong;
+        font-weight: 600;
+        
+        i {
+          color: #7a3fff;
+        }
+      }
+      
+      .btn-close {
+        filter: invert(1) brightness(2);
+      }
+    }
+    
+    .modal-body {
+      padding: 1.5rem;
+      color: $text-light;
+      
+      strong {
+        color: $text-strong;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        color: $text-muted;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border-left: 3px solid #7a3fff;
+      }
+    }
+    
+    .modal-footer {
+      border-top: 1px solid $border-color;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  // ----------------------------
+  // Layout do Header
+  // ----------------------------
+  .d-flex.justify-content-between {
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch !important;
+      
+      .flex-grow-1 {
+        margin-bottom: 1.5rem;
+      }
+      
+      .d-flex.gap-2 {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Responsividade
+  // ----------------------------
+  @media (max-width: 768px) {
+    .container {
+      margin: 1rem auto;
+      padding: 0 0.5rem;
+    }
+    
+    .card .card-body {
+      padding: 1rem;
+    }
+    
+    .table {
+      font-size: 0.9rem;
+      
+      thead {
+        display: none;
+      }
+      
+      tbody, tr, td {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+      
+      tr {
+        margin-bottom: 1rem;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 1rem;
+        background: rgba(22, 22, 29, 0.8);
+        
+        &:hover {
+          transform: none;
+          background: rgba(122, 63, 255, 0.1);
+        }
+        
+        td {
+          padding: 0.5rem 0;
+          position: relative;
+          padding-left: 45%;
+          
+          &:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0.5rem;
+            width: 40%;
+            font-weight: 600;
+            color: $text-muted;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+          }
+          
+          &.text-center {
+            text-align: left;
+            padding-left: 45%;
+          }
+        }
+      }
+    }
+    
+    .input-group {
+      width: 100% !important;
+    }
+    
+    .btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    .table tr td {
+      padding-left: 50%;
+      
+      &:before {
+        width: 45%;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  // ----------------------------
+  // Animações
+  // ----------------------------
+  .card {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
