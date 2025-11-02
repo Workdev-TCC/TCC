@@ -9,12 +9,12 @@
             $email=$_POST['email'];
             $tel=$_POST['telefone'];
             $senha=$_POST['senha'];
-            $senha_crip=criptografia($senha);
+            // $senha_crip=criptografia($senha);
 
             $usuarios= $_POST;
             $dados_users=[
                 "email"=>$email,
-                "senha"=>$senha_crip
+                "senha"=>$senha
             ];
             $bd = new Banco;
             $verify=$bd->select("usuarios","*",$usuarios,false,1,"fetch_assoc");

@@ -15,11 +15,11 @@ try {
         }
 
         $db = new Banco;
-        $senha_crip=criptografia($senha);
+        //$senha_crip=criptografia($senha);
         // Exemplo: $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
        $array = [
         'email'=>$email,
-        'senha'=>$senha_crip
+        'senha'=>$senha
        ];
        $dados=$db->select("usuarios","*",$array,false,1,"fetch_assoc");
        if (empty($dados)) {
