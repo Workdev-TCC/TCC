@@ -19,9 +19,12 @@
 @use "usuarios";
 @use "visita";
 @use "minha_solicitacao";
+@use "editar_dados/editar_dados";
+@use "editar_dados/responsivo";
 
 // @use "login_cadastro";
 @use"login";
+
 
 // --------------------
 @use "sidebar";

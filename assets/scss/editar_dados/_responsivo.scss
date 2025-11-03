@@ -1,0 +1,84 @@
+@media(max-width:500px){
+    /* Responsividade para telas até 500px */
+.container-editar-dados {
+  padding: 20px;
+
+  .card-editar {
+    width: 100%;
+    min-width: unset;
+    padding: 25px;
+    box-shadow: none;
+    border-radius: 10px;
+
+    .cabecalho {
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    form {
+      gap: 15px;
+
+      .input-grupo {
+        label {
+          font-size: 0.85rem;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+          font-size: 0.9rem;
+          padding: 8px;
+        }
+      }
+
+      .preview-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+
+        .input-grupo {
+          width: 100%;
+        }
+
+        .img-box {
+          width: 100%;
+
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+
+      .confirmacao {
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 0.85rem;
+
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .botoes {
+        flex-direction: column;
+        gap: 10px;
+
+        button,
+        a {
+          width: 100%;
+          text-align: center;
+          padding: 12px;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+}
