@@ -7,8 +7,19 @@
       Na <strong>ZUPINTURAS</strong>, cada parede ganha vida. Transformamos espaços com cores que inspiram, acabamentos impecáveis e cuidado em cada detalhe, valorizando seu imóvel e deixando seu ambiente único.
     </p>
     <?php if(isset($_SESSION['email'])): ?>
-        <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php" class="btn-agende btn-pulse">
-            AGENDE SUA VISITA <i class="fa-regular fa-calendar-days"></i>
+        <a href="
+        <?php if($_SESSION['tipo']=="admin"):?>
+         <?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php
+        <?php else:?>
+          <?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php
+        <?php endif;?>
+        " class="btn-agende btn-pulse">
+          <?php if($_SESSION['tipo']=="admin"): ?>
+            ACESSAR PAINEL
+          <?php else: ?>
+            AGENDE SUA VISITA
+            <?php endif; ?>
+             <i class="fa-regular fa-calendar-days"></i>
         </a>
     <?php else: ?>
         <button class="btn-agende btn-pulse" id="abrirModal">
