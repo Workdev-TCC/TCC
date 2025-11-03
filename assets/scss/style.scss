@@ -10,7 +10,6 @@
 @use "projetos";
 @use "servicos";
 @use "gerenciar_conta";
-@use "editar_senha";
 @use "termos";
 @use "politica";
 @use "solicitacoes";
@@ -21,7 +20,7 @@
 @use "minha_solicitacao";
 @use "editar_dados/editar_dados";
 @use "editar_dados/responsivo";
-
+@use "editar_senha/senha_edit";
 // @use "login_cadastro";
 @use"login";
 
