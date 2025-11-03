@@ -82,6 +82,10 @@ main {
   color: white;
 }
 
+.modal-backdrop {
+  z-index: 100 !important;
+}
+
 .message-success {
   position: fixed;
   z-index: 9999;
