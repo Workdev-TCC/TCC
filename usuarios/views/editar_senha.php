@@ -7,7 +7,8 @@ include_once UTEIS;
     $ok=false;
  if ($_SERVER['REQUEST_METHOD']==='POST'&& !empty($_POST)){
     $senha_atual=$_POST['senha_atual'];
-    if($senha_atual==$_SESSION['senha']){
+    $senha_crip=criptografia($senha_atual);
+    if($senha_crip==$_SESSION['senha']){
         $ok=true;
     }else{
         $ok=false;

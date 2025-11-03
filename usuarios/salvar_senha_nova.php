@@ -28,7 +28,7 @@ include_once UTEIS;
             header("Location:".RAIZ_PROJETO);
             exit();
         }else{
-            
+            echo "erro";
         }
 
     }else{
