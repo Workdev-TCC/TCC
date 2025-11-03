@@ -82,6 +82,10 @@ main {
   color: white;
 }
 
+.modal-backdrop {
+  z-index: 100 !important;
+}
+
 .message-success {
   position: fixed;
   z-index: 9999;
@@ -3751,6 +3755,7 @@ body {
   max-width: 1400px;
   margin: 2rem auto;
   padding: 0 1rem;
+  height: 600px;
 }
 .minhas-solicitacoes-page .alert {
   border: none;
