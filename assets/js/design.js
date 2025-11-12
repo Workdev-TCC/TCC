@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".login-input, .login-input-eye")
+ /*$(".login-input, .login-input-eye")
     .focus(function () {
       $(this).closest(".input-wrapper").css({
         padding: "4px",
@@ -14,6 +14,7 @@ $(document).ready(function () {
         "box-shadow": "none",
       });
     });
+  */
 
   //alert
   //alert icon

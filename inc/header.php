@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
-$paginaAtual = basename($_SERVER['PHP_SELF']);
+    $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
     <meta name="author"
         content="Desenvolvido por formandos da escola tecnica ETEC Fernando Prestes do ano 2025. Gustavo Silva Prado, Caio Alves Vitor , Patricia Batista Pereira, Stella Costa de Azevedo, Samanta Prado">
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo RAIZ_PROJETO; ?>assets/img/logo-reduzida.png" type="image/x-icon">
     <!-- framework(local) de layout e icone -->
     <link rel="stylesheet" href="<?php echo RAIZ_PROJETO; ?>assets/css/bootstrap_css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo RAIZ_PROJETO; ?>assets/css/fontawesome_css/all.min.css">
@@ -31,9 +30,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
         rel="stylesheet">
     <!-- Meu css -->
     <link rel="stylesheet" href="<?php echo RAIZ_PROJETO; ?>assets/css/style.css">
-
 </head>
-
 <body>
     <header>
         <div id="abrirMenu" class="mobile-menu-top">
