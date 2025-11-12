@@ -363,8 +363,7 @@ $animation-duration: 0.5s;
       position: relative;
       overflow: hidden;
       border-radius: 10px;
-      background: var(--azul);
-      padding: 4px;
+      border: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
 

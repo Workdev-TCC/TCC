@@ -14,11 +14,10 @@
 
     <div class="hero-projetos">
         <div class="projetos-text">
-            <h1>Conheça nossos <span class="pop">projetos</span></h1>
-            <p>Oferecemos serviços profissionais para transformar seu ambiente, incluindo pintura residencial, comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra qual opção é ideal para o seu espaço!</p>
+            <h1>Nossos <span class="pop">projetos</span></h1>
+            <p>Explore nossos projetos e veja como transformamos ambientes com criatividade e qualidade, incluindo pinturas residenciais e comerciais, reformas de fachadas e pintura decorativa.</p>
         </div>
     </div>
-
     <div class="projetos-about">
         <div class="about-text">
             <h1 class="wave-hover">
@@ -40,7 +39,6 @@
                     <p>Transformamos a sua casa com um toque de sofisticação: pintura completa de paredes internas e externas, escolha personalizada de cores, aplicação de verniz protetor e detalhes decorativos que valorizam cada ambiente, criando um lar moderno e acolhedor.</p>
                 </div>
             </div>
-
             <div class="projeto">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-comercial.jpg" alt="Renovação Comercial de Alto Impacto">
                 <div class="overlay">
@@ -48,7 +46,6 @@
                     <p>Revitalizamos fachadas e interiores de empresas com pintura resistente e cores que reforçam a identidade visual do seu negócio. Incluímos acabamentos de qualidade, rodapés e detalhes que causam excelente impressão aos clientes.</p>
                 </div>
             </div>
-
             <div class="projeto">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-predial.jpg" alt="Pintura Industrial e Predial Profissional">
                 <div class="overlay">
@@ -56,7 +53,6 @@
                     <p>Garantimos durabilidade e funcionalidade em espaços industriais e prediais, aplicando pintura epóxi em pisos, sinalização de segurança e acabamento resistente. Protegemos fachadas e paredes internas, unindo estética e segurança em cada projeto.</p>
                 </div>
             </div>
-
             <div class="projeto alto">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/texturas.jpg" alt="Projeto Decorativo Exclusivo">
                 <div class="overlay">
@@ -64,7 +60,6 @@
                     <p>Elevamos ambientes com técnicas de pintura artística: texturas sofisticadas, marmorizados, spatulados e efeitos personalizados que tornam cada espaço único. Cada detalhe é pensado para encantar e valorizar o local.</p>
                 </div>
             </div>
-
             <div class="projeto baixo">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-fachada.jpg" alt="Reforma Completa de Fachadas">
                 <div class="overlay">
@@ -72,7 +67,6 @@
                     <p>Transformamos fachadas desgastadas em vitrines de beleza e proteção. Corrigimos imperfeições, aplicamos pintura impermeável de alta durabilidade e realizamos acabamentos detalhados, garantindo estética moderna e resistência ao tempo.</p>
                 </div>
             </div>
-
             <div class="projeto">
                 <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-interiores.jpg" alt="Pintura e Acabamento de Interiores Sofisticados">
                 <div class="overlay">

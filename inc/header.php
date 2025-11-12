@@ -61,7 +61,7 @@
                         SERVIÇOS
                     </a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         MAIS INFORMAÇÕES
@@ -71,7 +71,7 @@
                         <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>views/politica.php"><i class="fa-solid fa-shield-halved"></i> Políticas de Privacidade</a></li>
                     </ul>
                 </li>
-
+                -->
                 <?php if (isset($_SESSION['email'])): ?>
                     <?php if ($_SESSION['tipo'] === "user"): ?>
                         <li class="nav-item dropdown">

@@ -9,7 +9,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 
 <footer>
     
-   <a href="https://wa.me/5511999999999?text=Olá! Vim do site e gostaria de solicitar um orçamento."
+   <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
         class="whatsapp-fixo"
         target="_blank"
         aria-label="Fale conosco no WhatsApp">
@@ -23,7 +23,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
             <div class="footer-icons">
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
                 <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
         <div class="footer-right">
@@ -52,7 +52,6 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                     <li>
                         <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?> v-mobile-romove">Perguntas <span class="responsivo">Frequentes</span></a>
                         <a href="<?php echo RAIZ_PROJETO; ?>#faq" class="<?php echo ($paginaAtual == 'index.php') ?> pergunta-mobile v-mobile">Perguntas</a>
-
                     </li>
                 </ul>
             </div>

@@ -114,7 +114,7 @@
       </div>
       <div class="contatos">
         <h3>Contatos</h3>
-        <p><i class="fa-solid fa-phone"></i> <strong>(11) 3456-7890</strong></p>
+        <p><i class="fa-solid fa-phone"></i> <strong>(15) 99629-8363</strong></p>
         <p><i class="fa-solid fa-envelope"></i> zupiturasempresa@gmail.com</p>
       </div>
     </div>

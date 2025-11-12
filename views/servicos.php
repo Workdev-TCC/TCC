@@ -4,167 +4,146 @@
     include DBAPI;
     include_once UTEIS;
 ?>
-<?php if (!empty($_SESSION['message'])) : ?>
-<div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">
-    <?php echo $_SESSION['message']; ?>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<?php clear_messages(); ?>
-<?php endif; ?>
-
-    <div class="hero-servicos">
-        <div class="servicos-text">
-            <h1>Conheça nossos Servicos</h1>
-            <p>Dê um novo visual ao seu espaço com nossos serviços de pintura e reforma. Agende sua visita!</p>
-        </div>
+  <?php if (!empty($_SESSION['message'])) : ?>
+    <div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">
+        <?php echo $_SESSION['message']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    <?php clear_messages(); ?>
+  <?php endif; ?>
 
-        <div class="projetos-about">
-        <div class="about-text">
-            <h1 class="wave-hover">
-                <span>N</span><span>o</span><span>s</span><span>s</span><span>o</span><span>s</span>
-                <span>&nbsp;</span>
-                <span>S</span><span>e</span><span>r</span><span>v</span><span>i</span><span>ç</span><span>o</span><span>s</span>
-            </h1> 
-            <div class="linha"></div>
-            <p>Transformamos ambientes residenciais, comerciais e industriais com pintura de qualidade, texturas modernas e acabamentos impecáveis. Cada projeto é único, feito para valorizar seu espaço com beleza e durabilidade. Inspire-se com nossos trabalhos e renove o seu ambiente!</p>
-        </div>
-    </div>
-
-<div class="servico-page">
-  <div class="card bg-dark rounded" style="width: 23rem; height: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Pintura Interna</h5>
-      <h6 class="card-subtitle mb-5 text-muted">Cores novas, ambientes renovados</h6>
-      <p class="card-text">Transforme cada cômodo com pintura lisa e acabamento perfeito. Qualidade e beleza em cada detalhe!</p>
+  <div class="hero-servicos">
+    <div class="servicos-text">
+      <h1>Nossos <span class="pop">serviços</span></h1>
+      <p>Transforme seu espaço com nossos serviços especializados! Oferecemos pintura residencial e comercial, reformas de fachadas e pintura decorativa. Agende uma visita e descubra a solução perfeita para o seu ambiente.</p>
     </div>
   </div>
 
-  <div class="card bg-dark" style="width: 23rem; height: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Pintura Externa</h5>
-      <h6 class="card-subtitle mb-5 text-muted">Proteção e estilo para sua fachada</h6>
-      <p class="card-text">Cores vivas e duráveis que resistem ao sol e à chuva. Sua casa sempre com aparência nova!</p>
+  <div class="servicos-about">
+    <div class="about-text">
+      <h1 class="wave-hover">
+        <span>N</span><span>o</span><span>s</span><span>s</span><span>o</span><span>s</span>
+        <span>&nbsp;</span>
+        <span>S</span><span>e</span><span>r</span><span>v</span><span>i</span><span>ç</span><span>o</span><span>s</span>
+      </h1> 
+      <div class="linha"></div>
+      <p>Está com dificuldade para encontrar profissionais especializados ou uma empresa de pintura que ofereça um serviço com qualidade e atendimento diferenciado?
+      Trabalhamos com pinturas residenciais e comerciais oferecendo novos conceitos de qualidade, comodidade e garantia, com um atendimento diferenciado garantindo a total satisfação do cliente e a excelência nos serviços prestados.</p>
     </div>
   </div>
 
-  <div class="card bg-dark" style="width: 23rem; height: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Pintura Decorativa</h5>
-      <h6 class="card-subtitle mb-5 text-muted">Toque de estilo e personalidade</h6>
-      <p class="card-text">Texturas e efeitos únicos que deixam seu ambiente moderno e cheio de charme.</p>
+  <!-- === GALERIA DESKTOP === -->
+  <div class="servicos-galeria">
+    <div class="galeria-card large">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-interna.jpg" alt="Pintura Interna">
+      <div class="overlay"><h3>Pintura Interna</h3></div>
+    </div>
+    <div class="galeria-card wide">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-casa.jpg" alt="Pintura da Fachadas">
+      <div class="overlay"><h3>Pintura da Fachada</h3></div>
+    </div>
+    <div class="galeria-card">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-portao.jpg" alt=">Pintura Portão">
+      <div class="overlay"><h3>Pintura de Portões, Janelas e Grades</h3></div>
+    </div>
+    <div class="galeria-card">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-decorativa.jpg" alt="Pintura Decorativa">
+      <div class="overlay"><h3>Pintura Decorativa</h3></div>
+    </div>
+    <div class="galeria-card small">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/textura-grafiato.png" alt="Aplicação de Texturas">
+      <div class="overlay"><h3>Aplicação de Texturas</h3></div>
+    </div>
+    <div class="galeria-card wide">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-predio.jpg" alt="Pintura Predial">
+      <div class="overlay"><h3>Pintura Predial</h3></div>
     </div>
   </div>
-</div>
 
-<div class="servico-page2">
-  <div class="card bg-dark" style="width: 23rem; height: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Portas e Janelas</h5>
-      <h6 class="card-subtitle mb-5 text-muted">Acabamento impecável</h6>
-      <p class="card-text">Pintura lisa e uniforme em portas e janelas. Renovamos o visual com perfeição!</p>
-    </div>
-  </div>
-
-  <div class="card bg-dark" style="width: 23rem; height: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Tetos e Forros</h5>
-      <h6 class="card-subtitle mb-5 text-muted">Ambientes mais claros e limpos</h6>
-      <p class="card-text">Teto bem pintado transforma o ambiente. Serviço rápido, limpo e com ótimo acabamento!</p>
-    </div>
-  </div>
-
-  <div class="card bg-dark" style="width: 23rem; height: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Preparação de Superfícies</h5>
-      <h6 class="card-subtitle mb-5 text-muted">A base da pintura perfeita</h6>
-      <p class="card-text">Lixamento e correções para garantir pintura lisa e duradoura. Pronto para o novo!</p>
-    </div>
-  </div>
-</div>
-
-<script>
-    window.addEventListener('load', () => {
-
+ <script>
+  window.addEventListener('load', () => {
     const popText = document.querySelector('.pop');
     const waveTitle = document.querySelector('.wave-hover');
     const linha = document.querySelector('.linha');
-    const aboutText = document.querySelector('.projetos-about p');
-    const projetos = document.querySelectorAll('.projeto');
+    const aboutText = document.querySelector('.servicos-about p');
+    const galeria = document.querySelector('.servicos-galeria');
 
+    // === Animação das letras do "serviços" ===
     if (popText) {
-        const letters = popText.textContent.split('');
-        popText.textContent = '';
-        letters.forEach((letter, i) => {
-            const span = document.createElement('span');
-            span.textContent = letter;
-            span.style.opacity = 0;
-            span.style.transform = 'translateY(20px)';
-            span.style.display = 'inline-block';
-            span.style.transition = 'all 0.9s ease';
-            popText.appendChild(span);
-            setTimeout(() => {
-                span.style.opacity = 1;
-                span.style.transform = 'translateY(0)';
-            }, i * 100);
-        });
+      const letters = popText.textContent.split('');
+      popText.textContent = '';
+      letters.forEach((letter, i) => {
+        const span = document.createElement('span');
+        span.textContent = letter;
+        span.style.opacity = 0;
+        span.style.transform = 'translateY(20px)';
+        span.style.display = 'inline-block';
+        span.style.transition = 'all 0.9s ease';
+        popText.appendChild(span);
+        setTimeout(() => {
+          span.style.opacity = 1;
+          span.style.transform = 'translateY(0)';
+        }, i * 100);
+      });
     }
 
+    // === Função pra verificar se um elemento está visível na tela ===
     function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
     }
 
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
-    }
-
+    // === Parágrafo do "sobre" com efeito de frase ===
     function animateParagraph(p) {
-        const text = p.textContent.trim();
-        const sentences = text.split(/(?<=[.!?])\s+/);
-        p.textContent = '';
-        sentences.forEach((sentence, i) => {
-            const span = document.createElement('span');
-            span.textContent = sentence + ' ';
-            p.appendChild(span);
-            setTimeout(() => {
-                span.style.opacity = 1;
-                span.style.transform = 'translateY(0)';
-            }, i * 600);
-        });
+      const text = p.textContent.trim();
+      const sentences = text.split(/(?<=[.!?])\s+/);
+      p.textContent = '';
+      sentences.forEach((sentence, i) => {
+        const span = document.createElement('span');
+        span.textContent = sentence + ' ';
+        p.appendChild(span);
+        setTimeout(() => {
+          span.style.opacity = 1;
+          span.style.transform = 'translateY(0)';
+        }, i * 600);
+      });
     }
 
+    // === Ativa o wave e linha ===
     function checkWave() {
-        if (waveTitle && linha && isInViewport(waveTitle)) {
-            waveTitle.classList.add('active');
-            linha.classList.add('active');
-        }
+      if (waveTitle && linha && isInViewport(waveTitle)) {
+        waveTitle.classList.add('active');
+        linha.classList.add('active');
+      }
 
-        if (aboutText && isInViewport(aboutText) && !aboutText.classList.contains('active')) {
-            aboutText.classList.add('active');
-            animateParagraph(aboutText);
-        }
+      if (aboutText && isInViewport(aboutText) && !aboutText.classList.contains('active')) {
+        aboutText.classList.add('active');
+        animateParagraph(aboutText);
+      }
     }
 
-    function animateProjetos() {
-        projetos.forEach((projeto, i) => {
-            if (isInViewport(projeto) && !projeto.classList.contains('animate')) {
-            setTimeout(() => {
-                projeto.classList.add('animate');
-            }, i * 200);
-            }
-        });
+    // === Animação da galeria ao rolar ===
+    function animateGaleria() {
+      if (galeria && isInViewport(galeria)) {
+        galeria.classList.add('show');
+      }
     }
 
+    // === Chamadas iniciais ===
     checkWave();
-    window.addEventListener('scroll', checkWave);
-    window.addEventListener('scroll', animateProjetos);
-    window.addEventListener('load', animateProjetos);
-});
+    animateGaleria();
+
+    // === Eventos de scroll ===
+    window.addEventListener('scroll', () => {
+      checkWave();
+      animateGaleria();
+    });
+  });
 </script>
+
+
 <?php
-    include SIDEBAR;
-    include USERBAR;
-    include FOOTER_TEMPLATE;
+  include SIDEBAR;
+  include USERBAR;
+  include FOOTER_TEMPLATE;
 ?>

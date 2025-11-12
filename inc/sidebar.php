@@ -15,13 +15,12 @@
             <?php endif; ?>
         </div>
 
-
         <div class="menu-section">
             <h4>Empresa</h4>
             <hr>
             <div class="opc"><a href="#"><i class="fa-solid fa-circle-question"></i>Perguntas Frequentes</a></div>
-            <div class="opc"><i class="fa-solid fa-paintbrush"></i><a href="#">Serviços</a></div>
-            <div class="opc"><i class="fa-solid fa-brush"></i><a href="#">Projetos</a></div>
+            <div class="opc"><i class="fa-solid fa-paintbrush"></i><a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php">Serviços</a></div>
+            <div class="opc"><i class="fa-solid fa-brush"></i><a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php">Projetos</a></div>
         </div>
 
         <div class="menu-section">
@@ -29,17 +28,16 @@
             <hr>
             <?php if (!empty($_SESSION['email'])): ?>
                 <?php if ($_SESSION['tipo'] == "user"): ?>
-                    <a href="#">Ver meu agendamento</a>
-                    <a href="#">Solicitar agendamento</a>
+                    <a href="#">Ver meus agendamentos</a>
+                    <a href="#">Solicitar novo agendamento</a>
                 <?php else: ?>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Gerenciar Solicitações</a>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>
                 <?php endif; ?>
             <?php endif; ?>
             <!-- <a href="#">Ajuda</a> -->
-            <div class="opc"><i class="fa-solid fa-book"></i><a href="#">Termos de Uso</a></div>
-            <div class="opc"><i class="fa-solid fa-gears"></i><a href="#">Política de Privacidade</a></div>
-
+            <div class="opc"><i class="fa-solid fa-book"></i><a href="<?php echo RAIZ_PROJETO; ?>views/termos.php">Termos de Uso</a></div>
+            <div class="opc"><i class="fa-solid fa-gears"></i><a href="<?php echo RAIZ_PROJETO; ?>views/politica.php">Política de Privacidade</a></div>
         </div>
 
         <!-- <div class="menu-section contatos">
