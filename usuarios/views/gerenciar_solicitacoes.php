@@ -114,9 +114,13 @@
                                             data-endereco="<?= htmlspecialchars($mys['endereco'], ENT_QUOTES); ?>"
                                             data-complemento="<?= htmlspecialchars($mys['complemento'], ENT_QUOTES); ?>"
                                             data-descricao="<?= htmlspecialchars($mys['descricao'], ENT_QUOTES); ?>"
+                                            data-servicos="<?= htmlspecialchars($mys['tipo_servico'], ENT_QUOTES); ?>"
                                             data-data="<?= $dataFormatada; ?>"
                                             data-bs-toggle="modal"
+                                            data-status="<?= htmlspecialchars($mys['status'], ENT_QUOTES); ?>"
+                                            data-observacao="<?= htmlspecialchars($mys['observacao_admin'] ?? '—', ENT_QUOTES); ?>"
                                             data-bs-target="#verMaisModal">
+                                            
                                             <i class="fa fa-eye"></i> Ver mais
                                         </button>
                                     </td>
@@ -157,6 +161,15 @@
               <strong>Data da Solicitação:</strong>
               <p id="modal-data" class="mb-2 text-muted"></p>
             </div>
+                <div class="mb-3" id="motivo-recusa" style="display:none;">
+                    <strong>Motivo da Recusa:</strong>
+                    <p id="modal-observacao" class="mb-2 text-danger"></p>
+                </div>
+
+        <div class="mb-3">
+        <strong>Tipo(s) de Serviço(s):</strong>
+        <p id="modal-servicos" class="mb-2 text-muted"></p>
+        </div>
           </div>
           <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">
@@ -167,6 +180,40 @@
       </div>
     </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const verMaisBtns = document.querySelectorAll(".ver-mais-btn");
+
+  verMaisBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const endereco = this.getAttribute("data-endereco") || "—";
+      const complemento = this.getAttribute("data-complemento") || "—";
+      const descricao = this.getAttribute("data-descricao") || "—";
+      const servicos = this.getAttribute("data-servicos") || "—";
+      const data = this.getAttribute("data-data") || "—";
+      const status = this.getAttribute("data-status") || "";
+      const observacao = this.getAttribute("data-observacao") || "—";
+
+      document.getElementById("modal-endereco").textContent = endereco;
+      document.getElementById("modal-complemento").textContent = complemento;
+      document.getElementById("modal-descricao").textContent = descricao;
+      document.getElementById("modal-servicos").textContent = servicos;
+      document.getElementById("modal-data").textContent = data;
+
+      // 👇 Se o status for "recusado", mostra o motivo
+      const motivoRecusaDiv = document.getElementById("motivo-recusa");
+      const motivoTexto = document.getElementById("modal-observacao");
+      if (status.toLowerCase() === "recusado" && observacao.trim() !== "—") {
+        motivoTexto.textContent = observacao;
+        motivoRecusaDiv.style.display = "block";
+      } else {
+        motivoRecusaDiv.style.display = "none";
+      }
+    });
+  });
+});
+</script>
 
 
 <?php

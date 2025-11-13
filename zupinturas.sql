@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS zupinturas;
 USE zupinturas;
 
@@ -24,6 +23,7 @@ CREATE TABLE `solicitacoes` (
   `cep` VARCHAR(9) NOT NULL,
   `endereco` VARCHAR(255) NOT NULL,
   `complemento` VARCHAR(100) DEFAULT NULL,
+  `tipo_servico` VARCHAR(200) DEFAULT NULL, -- 👈 nova coluna adicionada aqui
   `status` ENUM('pendente','marcado','recusado') DEFAULT 'pendente',
   `observacao_admin` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`),
