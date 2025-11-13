@@ -54,9 +54,9 @@
                     <i class="fa fa-filter"></i> Filtro
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="filtroDropdown">
-                    <li><a class="dropdown-item active" href="<?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php">Pendentes</a></li>
+                    <li><a class="dropdown-item " href="<?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php">Pendentes</a></li>
                     <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO;?>usuarios/views/solicitacoes_marcadas.php">Marcados</a></li>
-                    <li><a class="dropdown-item " href="#">Recusadas</a></li>
+                    <!-- <li><a class="dropdown-item " href="#">Recusadas</a></li> -->
                 </ul>
             </div>
     
