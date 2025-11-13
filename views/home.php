@@ -146,7 +146,7 @@
                         class="accordion-collapse collapse"
                         aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample"
-                    >
+                    > 
                         <div class="accordion-body">
                             Nossa plataforma tem como objetivo organizar os agendamentos de visitas dos clientes cadastrados, que recebem prioridade, além de apresentar de forma clara todos os nossos serviços.
                         </div>

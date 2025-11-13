@@ -1109,121 +1109,79 @@ header .nav-desktop .div-login-user {
     max-width: 90%;
   }
   .servicos {
-    margin-top: 100px;
+    align-items: center;
+  }
+  .servicos .linha {
     width: 100%;
-    height: 100%;
-    margin-top: 0px;
-    padding: 30px;
+  }
+  .servicos .linha::after {
+    width: 100%;
+  }
+  .sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    margin: 0;
+    flex-direction: column;
+  }
+  .sobre .imagem {
+    margin-top: 20px;
+  }
+  .sobre .imagem img {
+    width: 100%;
+    max-width: 450px;
+    height: 80%;
+  }
+  .localizacao {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .servicos .img {
-    display: none;
-  }
-  .servicos .servicos-text {
-    width: 99%;
-    gap: 10px;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-  }
-  .servicos .servicos-text h1 {
-    margin: 0;
-  }
-  .servicos .servicos-text ul {
-    gap: 10px;
-    padding: 0;
-    margin: 17px;
-  }
-  .servicos .servicos-text .servicos-btn {
-    margin-left: 0;
-    font-size: 14px;
-    padding: 10px 20px;
-    border: 3px solid;
-    -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-       border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
-  }
-  .sobre {
-    height: auto;
-    width: 100%;
-    margin: 0;
-    flex-direction: column;
-  }
-  .sobre .sobre-img {
-    display: none;
-  }
-  .sobre .sobre-text {
-    width: 100%;
-    max-width: 100%;
-    align-items: start;
-    justify-content: start;
-  }
-  .sobre .sobre-text p {
-    font-size: 17px;
-    width: 100%;
-    margin: 10px;
-    text-align: left;
-  }
-  .localizacao {
     max-width: 550px;
     width: 100%;
     height: 600px;
     gap: 0px;
   }
-  .localizacao .localizacao-text {
+  .localizacao h1 {
+    background-color: #e1e1e1;
+    text-align: center;
+    font-size: 25px;
+    margin-left: 0;
+  }
+  .localizacao .linha {
+    background-color: #1e1e1e;
     width: 100%;
-    height: 10%;
-    text-align: left;
   }
-  .localizacao .localizacao-text h1 {
-    width: 100%;
-  }
-  .localizacao .localizacao-text .linha {
-    width: 50%;
-  }
-  .localizacao .localizacao-text .linha::after {
+  .localizacao .linha::after {
     content: "";
     display: block;
-    width: 70%;
+    width: 100%;
     height: 3px;
     background: linear-gradient(to right, var(--azul), var(--rosa));
     margin-left: 0px;
   }
-  .localizacao .maps {
-    position: relative;
-    width: 90%;
-    height: 90%;
+  .localizacao .conteudo {
     display: flex;
-    border: 2px solid;
-    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
-       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
-    transition: opacity 0.1s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.5s ease;
   }
-  .localizacao .maps #map2 {
-    border: 2px solid;
-    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
-       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
-    box-shadow: 0 0 20px rgba(115, 115, 115, 0.4);
+  .localizacao .conteudo .mapa {
+    flex: 1;
   }
-  .localizacao .maps iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .localizacao .conteudo .mapa iframe {
     transition: transform 0.5s ease;
     border: 2px solid;
-    -o-border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
-       border-image: linear-gradient(to bottom, var(--azul), var(--rosa)) 1;
   }
-  .localizacao .maps .overlay h1 {
+  .localizacao .conteudo .overlay h1 {
     color: white;
     font-size: 28px;
     text-align: center;
   }
-  .localizacao .info {
+  .localizacao .conteudo .info .contatos {
     display: none;
   }
   .faqs {
@@ -1233,7 +1191,20 @@ header .nav-desktop .div-login-user {
     align-items: center;
     margin: 10px;
   }
+  .faqs .faqs-text .linha {
+    width: 100%;
+  }
+  .faqs .faqs-text .linha::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--azul), var(--rosa));
+    margin-left: 0px;
+  }
   .faqs .faqs-text h1 {
+    text-align: center;
+    font-size: 25px;
     margin-left: 0;
   }
   .faqs .faqs-text .accordions-box {

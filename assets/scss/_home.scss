@@ -774,24 +774,14 @@ $animation-duration: 0.5s;
     width: 90%;
     margin: 0;
     flex-direction: column;
-
-    .sobre-img {
-      display: none;
-    }
-
-    .sobre-text {
-      width: 100%;
-      max-width: 100%;
-      align-items: start;
-      justify-content: start;
-
-      p {
-        font-size: 17px;
-        width: 100%;
-        margin: 10px;
-        text-align: left;
+      .imagem{
+        margin-top: 20px;
+        img{
+          width: 100%;
+          max-width: 450px;
+          height: 80%;
+        }
       }
-    }
 
   }
 
@@ -858,7 +848,6 @@ $animation-duration: 0.5s;
 
   .faqs {
     margin-bottom: 50px;
-
 
     .faqs-text {
       align-items: center;
