@@ -1,7 +1,7 @@
 .container-edit-senha,
 .container-senha {
   background-color: #0d0d0d;
-  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,10 +11,17 @@
   h1 {
     color: #fff;
     font-size: 1.8rem;
-    margin-bottom: 25px;
     text-align: center;
+    margin-bottom: 0 !important; 
+    font-family: "Hammersmith One", sans-serif;
   }
-
+  .linha {
+    margin-bottom: 3%;
+    width: 49%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--azul), var(--rosa));
+    border-radius: 2px;
+  }
   form {
     background-color: #1c1c1c;
     padding: 30px 35px;
@@ -23,9 +30,10 @@
     flex-direction: column;
     gap: 20px;
     width: fit-content;
-    min-width: 320px;
-    max-width: 450px;
+    width: 50%;
+    min-height: 200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
 
     .input-grupo {
       display: flex;
@@ -53,7 +61,7 @@
         transition: color 0.3s ease;
 
         &:hover {
-          color: #ff0080;
+          color: #505050;
         }
       }
     }
@@ -67,7 +75,8 @@
 
     .botao-verificar,
     .botao-salvar {
-      background-color: #ff0080;
+     background: linear-gradient(20deg, var(--rosa), var(--azul));
+     align-items: bottom;
       color: #fff;
       border: none;
       padding: 12px 20px;
@@ -76,6 +85,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: center;
+      margin-top: auto;
 
       &:hover {
         background-color: #ff3399;

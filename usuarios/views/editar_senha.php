@@ -43,17 +43,16 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <?php if ($ok === false) : ?>
 <section class="container-edit-senha">
-    <h1>Confirme sua senha atual</h1>
+    <h1>Confirme a sua senha atual</h1>
+    <div class="linha"></div>
 
     <form action="<?php echo RAIZ_PROJETO; ?>usuarios/views/editar_senha.php" method="post">
         <div class="">
-            <label for="senha_atual">Senha atual</label>
             <div class="input-grupo">
-                <input type="password" name="senha_atual" id="senha_atual" required>
+                <input type="password" placeholder="Digite sua senha atual" name="senha_atual" id="senha_atual" required>
                 <span class="icon-eye"><i class="fa fa-eye"></i></span>
             </div>
         </div>
-
         <button type="submit" class="botao-verificar">Verificar</button>
     </form>
 </section>

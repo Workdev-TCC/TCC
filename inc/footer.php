@@ -32,17 +32,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
                     <li>
                         <a href="<?php echo RAIZ_PROJETO; ?>" class="<?php echo ($paginaAtual == 'index.php') ? 'active' : ''; ?>">Início</a>
                     </li>
-                    <?php if (isset($_SESSION['email'])): ?>
-                        <?php if ($_SESSION['tipo'] === "user"): ?>
-                            <li>
-                                <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">Agendamentos</a>
-                            </li>
-                        <?php elseif ($_SESSION['tipo'] === "admin"): ?>
-                            <li>
-                                <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Agendamentos</a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endif; ?>
+
                     <li>
                         <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php" class="<?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">Serviços</a>
                     </li>
