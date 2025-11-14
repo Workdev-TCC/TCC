@@ -1123,16 +1123,24 @@ header .nav-desktop .div-login-user {
     align-items: center;
     height: auto;
     width: 90%;
-    margin: 0;
     flex-direction: column;
   }
   .sobre .imagem {
     margin-top: 20px;
   }
   .sobre .imagem img {
-    width: 100%;
+    width: 85%;
     max-width: 450px;
-    height: 80%;
+  }
+  .sobre .imagem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: calc(100% + 10px);
+    background: linear-gradient(110deg, var(--azul), var(--rosa));
+    border-radius: 5px;
+    z-index: 1;
   }
   .localizacao {
     display: flex;
@@ -5676,8 +5684,10 @@ p a:hover {
     right: 0;
   }
   .intocavel .sidebar {
+    display: flex;
+    flex-direction: column;
     width: 300px;
-    height: 100vh;
+    height: 100dvh;
     background: linear-gradient(to top, #111, #1a1a1a);
     border-right: 1px solid #1a1717;
     position: fixed;
@@ -5733,7 +5743,7 @@ p a:hover {
     right: 0;
     border: none;
     padding: 0;
-    font-size: 33px;
+    font-size: 27px;
     background-color: var(--bg);
     color: var(--branco);
   }
@@ -5742,7 +5752,6 @@ p a:hover {
     flex-direction: column;
     align-items: start;
     gap: 10px;
-    font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px 20px;
   }
@@ -5750,6 +5759,8 @@ p a:hover {
     display: inline-block;
     font-size: 1.1rem;
     color: var(--text);
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 0.1rem;
   }
   .intocavel .sidebar .menu-section hr {
     width: 80%;
@@ -5776,7 +5787,6 @@ p a:hover {
     flex-direction: column;
     align-items: start;
     gap: 10px;
-    font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px 20px;
   }
@@ -5794,15 +5804,13 @@ p a:hover {
   .intocavel .sidebar .rodape {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-top: var(--bg-lighter) 1px solid;
+    gap: 5px;
+    margin-top: auto;
   }
   .intocavel .sidebar .rodape .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    width: 100%;
+    border-top: var(--bg-lighter) 1px solid;
+    padding: 10px;
   }
   .intocavel .sidebar .rodape .logo p {
     margin: 0;

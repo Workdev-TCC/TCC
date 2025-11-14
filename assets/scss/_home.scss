@@ -772,14 +772,22 @@ $animation-duration: 0.5s;
     align-items: center;
     height: auto;
     width: 90%;
-    margin: 0;
     flex-direction: column;
       .imagem{
         margin-top: 20px;
         img{
-          width: 100%;
+          width: 85%;
           max-width: 450px;
-          height: 80%;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 90%;
+          height: calc(100% + 10px);
+          background: linear-gradient(110deg, var(--azul), var(--rosa));
+          border-radius: 5px;
+          z-index: 1;
         }
       }
 
