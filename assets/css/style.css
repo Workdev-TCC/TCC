@@ -2248,9 +2248,8 @@ body {
   max-width: 1400px;
   width: 95%;
   padding-top: 5rem;
-  margin: 0 auto;
-  min-height: 450px;
-  height: 600px;
+  height: auto;
+  margin-bottom: 40px;
 }
 .page-gerenciar-solicitacoes h2 {
   font-weight: 600;
@@ -2420,6 +2419,7 @@ body {
   .page-gerenciar-solicitacoes .container {
     padding-top: 1.5rem;
     width: 98%;
+    height: auto;
   }
   .page-gerenciar-solicitacoes h2 {
     font-size: 1.6rem;
@@ -2592,6 +2592,9 @@ body {
   }
 }
 @media (max-width: 480px) {
+  .page-gerenciar-solicitacoes .container {
+    height: auto;
+  }
   .page-gerenciar-solicitacoes h2 {
     font-size: 1.2rem;
   }
@@ -2830,216 +2833,150 @@ body {
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
 }
-@media (max-width: 1300px) {
-  .gerenciar-pendentes .card {
-    min-width: 95%;
-    max-width: 95%;
-  }
-  .gerenciar-pendentes .table-responsive {
-    max-width: 95%;
-  }
-}
-@media (max-width: 1024px) {
-  .gerenciar-pendentes .container,
-  .gerenciar-pendentes .container-fluid {
-    padding: 1.5rem 1rem;
-    width: 98%;
-  }
-  .gerenciar-pendentes h2 {
-    font-size: 1.6rem;
-  }
-  .gerenciar-pendentes .table {
-    font-size: 0.9rem;
-  }
-  .gerenciar-pendentes .form-control,
-  .gerenciar-pendentes .form-select {
-    font-size: 0.9rem;
-  }
-}
+
+/* ============================================================
+   RESPONSIVIDADE MOBILE — SÓ ATIVA NO CELULAR (≤768px)
+   Mantém seu design fixo no PC 100% intacto!
+   ============================================================ */
 @media (max-width: 768px) {
-  .gerenciar-pendentes .container,
-  .gerenciar-pendentes .container-fluid {
-    padding: 1rem 0.5rem;
-    width: 100%;
-  }
-  .gerenciar-pendentes h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-  }
-  .gerenciar-pendentes .pagination {
-    gap: 0.3rem;
-  }
-  .gerenciar-pendentes .pagination .page-link {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.85rem;
-  }
-  .gerenciar-pendentes .btn-outline-primary {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.9rem;
+  .gerenciar-pendentes .container, .gerenciar-pendentes .container-fluid {
+    padding: 4rem 1rem 180px !important;
+    width: 100% !important;
+    height: auto;
   }
   .gerenciar-pendentes .card {
     min-width: 100% !important;
     max-width: 100% !important;
-    padding: 0.5rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   }
-  .gerenciar-pendentes .card .card-body {
-    padding: 1rem 0.5rem;
-  }
-  .gerenciar-pendentes .table-responsive {
-    max-width: 100%;
-    overflow-x: visible;
-  }
-  .gerenciar-pendentes .table {
-    min-width: 100% !important;
+  .gerenciar-pendentes .card-body {
+    padding: 1.5rem 1rem !important;
   }
   .gerenciar-pendentes .table thead {
     display: none;
   }
-  .gerenciar-pendentes .table tbody, .gerenciar-pendentes .table tr, .gerenciar-pendentes .table td {
+  .gerenciar-pendentes .table tbody tr {
     display: block;
-    width: 100%;
-    text-align: left;
-  }
-  .gerenciar-pendentes .table tr {
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 1rem;
-    background: rgba(22, 22, 29, 0.8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  .gerenciar-pendentes .table tr:hover {
-    background-color: rgba(122, 63, 255, 0.1);
-    transform: none;
+    background: #1a1a23;
+    border-radius: 16px;
+    padding: 1.6rem;
+    margin-bottom: 1.8rem;
+    border: 1px solid rgba(122, 63, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   }
   .gerenciar-pendentes .table td {
-    border: none;
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.9rem 0;
+    color: #fdfdfd;
+    font-weight: 500;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .gerenciar-pendentes .table td:before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0.5rem;
-    width: 40%;
-    font-weight: 600;
-    color: #c0c0c0;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) {
-    padding-left: 0;
-    text-align: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 0.5rem;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2):before {
-    display: none;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) .nome-usuario {
-    font-size: 1.3rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) .info-adicional {
-    font-size: 0.85rem;
-    color: #c0c0c0;
-    display: block;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(1) {
-    display: none;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(3) {
-    display: none;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7) {
-    display: block !important;
-    width: 100% !important;
-    padding-left: 0 !important;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7):before {
-    display: none;
-  }
-  .gerenciar-pendentes .table tr:after {
+  .gerenciar-pendentes .table td::before {
     content: "";
-    display: table;
-    clear: both;
+    font-weight: 700;
+    color: #c89dff;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    min-width: 110px;
+    flex-shrink: 0;
   }
-  .gerenciar-pendentes .table td:nth-of-type(1):before {
+  .gerenciar-pendentes .table td > * {
+    flex: 1;
+    text-align: right;
+    padding-left: 0.8rem;
+  }
+  .gerenciar-pendentes .table td:nth-of-type(1)::before {
     content: "ID:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(2):before {
+  .gerenciar-pendentes .table td:nth-of-type(2)::before {
     content: "Usuário:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(3):before {
+  .gerenciar-pendentes .table td:nth-of-type(3)::before {
     content: "CEP:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(4):before {
+  .gerenciar-pendentes .table td:nth-of-type(4)::before {
     content: "Status:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(5):before {
-    content: "Data Visita:";
+  .gerenciar-pendentes .table td:nth-of-type(5)::before {
+    content: "Data:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(6):before {
+  .gerenciar-pendentes .table td:nth-of-type(6)::before {
     content: "Hora:";
   }
-  .gerenciar-pendentes .table td:nth-of-type(7):before {
-    content: "Ações:";
+  .gerenciar-pendentes .table td:nth-of-type(7)::before {
+    content: "Ação:";
   }
-  .gerenciar-pendentes .table .form-select, .gerenciar-pendentes .table .form-control {
-    width: 100%;
-    margin-bottom: 0.5rem;
+  .gerenciar-pendentes .table td:nth-of-type(2) {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.4rem 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #9d4edd, #ff4fd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid rgba(122, 63, 255, 0.4);
   }
-  .gerenciar-pendentes .table .btn {
-    width: 100%;
-    margin-bottom: 0;
-    white-space: nowrap;
+  .gerenciar-pendentes .table td:nth-of-type(2)::before {
+    display: none;
+  }
+  .gerenciar-pendentes .table td:nth-of-type(2) > * {
+    text-align: center;
+    padding-left: 0;
+  }
+  .gerenciar-pendentes .table td:nth-of-type(5) .form-control, .gerenciar-pendentes .table td:nth-of-type(6) .form-control {
+    width: 140px;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .gerenciar-pendentes .table td:last-child {
+    justify-content: center;
+    border-bottom: none;
+    padding: 1.6rem 0 0.8rem;
+  }
+  .gerenciar-pendentes .table td:last-child::before {
+    display: none;
+  }
+  .gerenciar-pendentes .table td:last-child .btn-success {
+    width: auto;
+    min-width: 180px;
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+    border-radius: 14px;
+    font-weight: 600;
+  }
+  .gerenciar-pendentes h2 {
+    font-size: 1.85rem !important;
+    margin-bottom: 1.8rem;
   }
 }
 @media (max-width: 480px) {
-  .gerenciar-pendentes h2 {
-    font-size: 1.2rem;
-  }
-  .gerenciar-pendentes .table {
-    font-size: 0.85rem;
-  }
   .gerenciar-pendentes .table td {
-    padding-left: 50%;
+    font-size: 0.98rem;
+    padding: 0.85rem 0;
   }
-  .gerenciar-pendentes .table td:before {
-    width: 45%;
-    font-size: 0.75rem;
+  .gerenciar-pendentes .table td::before {
+    font-size: 0.78rem;
+    min-width: 100px;
   }
-  .gerenciar-pendentes .table td:nth-of-type(2) .nome-usuario {
-    font-size: 1.2rem;
+  .gerenciar-pendentes .table td:nth-of-type(2) {
+    font-size: 1.35rem;
   }
-  .gerenciar-pendentes .table td:nth-of-type(2) .info-adicional {
-    font-size: 0.8rem;
+  .gerenciar-pendentes .table td:nth-of-type(5) .form-control, .gerenciar-pendentes .table td:nth-of-type(6) .form-control {
+    width: 130px;
   }
-  .gerenciar-pendentes .btn-outline-primary {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.7rem;
-  }
-  .gerenciar-pendentes .pagination .page-link {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.6rem;
+  .gerenciar-pendentes .table td:last-child .btn-success {
+    min-width: 160px;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
   }
 }
-@media (max-width: 360px) {
-  .gerenciar-pendentes .table td:nth-of-type(7) .btn {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.5rem;
-  }
-}
-
 .gerenciar-recusadas .container {
   max-width: 1400px;
   width: 95%;
@@ -4179,6 +4116,119 @@ body {
   text-align: center;
   margin-bottom: 1.5rem;
 }
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between {
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #9d4edd, #e04aff, #ff4fd8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+  margin: 0;
+  padding: 0.5rem 0;
+  flex: 1;
+  min-width: 280px;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex {
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex {
+  background: rgba(22, 22, 29, 0.7);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex:hover, .page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex:focus-within {
+  border-color: #9d4edd;
+  box-shadow: 0 0 25px rgba(157, 78, 221, 0.5);
+  transform: translateY(-2px);
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .form-control {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  width: 260px;
+  transition: all 0.3s ease;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .form-control:focus {
+  box-shadow: none;
+  color: #fff;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .form-control::-moz-placeholder {
+  color: #b0b0ff;
+  font-style: italic;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .form-control::placeholder {
+  color: #b0b0ff;
+  font-style: italic;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .btn-primary {
+  background: linear-gradient(135deg, #9d4edd, #e04aff);
+  border: none;
+  padding: 0 1.6rem;
+  font-weight: 600;
+  border-radius: 0;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .btn-primary:hover {
+  background: linear-gradient(135deg, #b055ff, #ff4fd8);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(224, 74, 255, 0.6);
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex form.d-flex .btn-primary i {
+  font-size: 1.2rem;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex .btn-outline-primary {
+  background: rgba(22, 22, 29, 0.7);
+  border: 1.5px solid transparent;
+  -o-border-image: linear-gradient(90deg, #9d4edd, #ff4fd8) 1;
+     border-image: linear-gradient(90deg, #9d4edd, #ff4fd8) 1;
+  color: #e0aaff;
+  border-radius: 16px;
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex .btn-outline-primary:hover {
+  background: linear-gradient(90deg, #9d4edd, #ff4fd8);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(157, 78, 221, 0.6);
+  -o-border-image: none;
+     border-image: none;
+}
+.page-gerenciar-usuarios .container > .d-flex.justify-content-between > div.d-flex .btn-outline-primary i {
+  margin-right: 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-gerenciar-usuarios .container > .d-flex.justify-content-between h2 {
+    font-size: 2rem;
+  }
+  .page-gerenciar-usuarios .container > .d-flex.justify-content-between form.d-flex .form-control {
+    width: 200px;
+  }
+}
 .page-gerenciar-usuarios .pagination {
   display: flex;
   justify-content: center;
@@ -4274,7 +4324,6 @@ body {
 }
 .page-gerenciar-usuarios .table tbody tr:hover {
   background-color: rgba(122, 63, 255, 0.08);
-  transform: none;
 }
 .page-gerenciar-usuarios .table tbody td {
   vertical-align: middle;
@@ -4329,8 +4378,96 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
 }
 
+@media (max-width: 768px) {
+  .page-gerenciar-usuarios {
+    height: auto !important;
+    margin-bottom: 200px;
+  }
+  .page-gerenciar-usuarios .table thead {
+    display: none; /* esconde o cabeçalho original no mobile */
+  }
+  .page-gerenciar-usuarios .table tbody tr {
+    display: block;
+    background: #1a1a23;
+    border-radius: 16px;
+    padding: 1.4rem;
+    margin-bottom: 1.4rem;
+    border: 1px solid rgba(122, 63, 255, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .page-gerenciar-usuarios .table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(122, 63, 255, 0.3);
+  }
+  .page-gerenciar-usuarios .table td {
+    display: block;
+    width: 100%;
+    text-align: right !important;
+    padding: 0.7rem 0;
+    padding-left: 50%;
+    position: relative;
+    color: #fdfdfd !important;
+    font-weight: 500;
+    font-size: 1.05rem;
+    border: none;
+    /* TÍTULOS AUTOMÁTICOS (sem precisar de data-label) */
+    /* Botão WhatsApp centralizado e bonito */
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(1)::before {
+    content: "ID: ";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(2)::before {
+    content: "Nome: ";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(3)::before {
+    content: "Email: ";
+  }
+  .page-gerenciar-usuarios .table td:nth-of-type(4)::before {
+    content: "Contato: ";
+  }
+  .page-gerenciar-usuarios .table td::before {
+    position: absolute;
+    left: 1.2rem;
+    width: 45%;
+    font-weight: 700;
+    color: #c8aaff;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+  }
+  .page-gerenciar-usuarios .table td:last-child {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .page-gerenciar-usuarios .table td:last-child::before {
+    display: none;
+  }
+  .page-gerenciar-usuarios .table td:last-child .btn-success {
+    width: 100%;
+    max-width: 240px;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 480px) {
+  .page-gerenciar-usuarios .container {
+    height: auto;
+  }
+  .page-gerenciar-usuarios .table td {
+    padding-left: 48%;
+    font-size: 1rem;
+  }
+  .page-gerenciar-usuarios .table td::before {
+    font-size: 0.8rem;
+  }
+}
 .solicitar-visita-page {
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4339,6 +4476,7 @@ body {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
+  margin-top: 400px;
 }
 .solicitar-visita-page .alert {
   border: none;
@@ -4559,11 +4697,118 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 
+@media (max-width: 992px) {
+  .solicitar-visita-page {
+    height: auto !important;
+    min-height: 100vh;
+    padding: 2rem 0;
+    margin-top: 0 !important;
+  }
+  .solicitar-visita-page .container {
+    margin: 2rem auto !important;
+    padding: 0 1rem;
+  }
+  .solicitar-visita-page h1, .solicitar-visita-page h2 {
+    font-size: 2.1rem;
+  }
+  .solicitar-visita-page form {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .solicitar-visita-page {
+    padding: 1rem 0;
+  }
+  .solicitar-visita-page .container {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    width: 100%;
+  }
+  .solicitar-visita-page h1, .solicitar-visita-page h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .solicitar-visita-page form {
+    padding: 1.8rem 1.4rem;
+    border-radius: 18px;
+    /* Todos os campos em coluna */
+    /* Input group (select + remover serviço) */
+    /* Botão + Adicionar Serviço */
+    /* BOTÕES PRINCIPAIS (Enviar e Voltar) — TAMANHO IDEAL NO CELULAR */
+  }
+  .solicitar-visita-page form .col-md-12, .solicitar-visita-page form .col-md-9, .solicitar-visita-page form .col-md-8, .solicitar-visita-page form .col-md-4, .solicitar-visita-page form .col-md-3, .solicitar-visita-page form .col-12 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 1rem 0 !important;
+  }
+  .solicitar-visita-page form .input-group {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .solicitar-visita-page form .input-group select.form-control,
+  .solicitar-visita-page form .input-group .btn-remover-servico {
+    width: 100%;
+    border-radius: 12px !important;
+  }
+  .solicitar-visita-page form .input-group .btn-remover-servico {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  .solicitar-visita-page form #btn-add-servico {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+  .solicitar-visita-page form .text-end {
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1.2rem;
+  }
+  .solicitar-visita-page form .text-end .btn {
+    width: 100%;
+    max-width: 380px; /* não fica gigante */
+    margin: 0 auto; /* centraliza */
+    padding: 0.9rem 1.5rem; /* altura perfeita */
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .solicitar-visita-page h1, .solicitar-visita-page h2 {
+    font-size: 1.7rem;
+  }
+  .solicitar-visita-page form {
+    padding: 1.6rem 1.2rem;
+    /* Botões ainda menores e mais confortáveis no celular pequeno */
+  }
+  .solicitar-visita-page form .form-label {
+    font-size: 0.92rem;
+  }
+  .solicitar-visita-page form .form-control,
+  .solicitar-visita-page form select.form-control {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+  .solicitar-visita-page form .text-end .btn {
+    max-width: 320px;
+    padding: 0.85rem 1.4rem;
+    font-size: 1rem;
+  }
+  .solicitar-visita-page form #btn-add-servico,
+  .solicitar-visita-page form .btn-remover-servico {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
 .minhas-solicitacoes-page .container {
   max-width: 1400px;
   margin: 2rem auto;
   padding: 0 1rem;
-  height: 600px;
+  height: 800px;
+  margin-top: 100px;
 }
 .minhas-solicitacoes-page .alert {
   border: none;
@@ -4829,6 +5074,7 @@ body {
   .minhas-solicitacoes-page .container {
     margin: 1rem auto;
     padding: 0 0.5rem;
+    height: auto;
   }
   .minhas-solicitacoes-page .card .card-body {
     padding: 1rem;

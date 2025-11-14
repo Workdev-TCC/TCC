@@ -36,9 +36,135 @@
     text-align: center;
     margin-bottom: 1.5rem;
   }
+.container > .d-flex.justify-content-between {
+  gap: 2rem;
+  flex-wrap: wrap;
 
+  // Título com degradê neon forte
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #9d4edd, #e04aff, #ff4fd8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+    margin: 0;
+    padding: 0.5rem 0;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  // Container dos botões (alinhado à direita)
+  > div.d-flex {
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    // Formulário de busca (com input + botão coladinhos)
+    form.d-flex {
+      background: rgba(22, 22, 29, 0.7);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+
+      &:hover,
+      &:focus-within {
+        border-color: #9d4edd;
+        box-shadow: 0 0 25px rgba(157, 78, 221, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .form-control {
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+        width: 260px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          box-shadow: none;
+          color: #fff;
+        }
+
+        &::placeholder {
+          color: #b0b0ff;
+          font-style: italic;
+        }
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #9d4edd, #e04aff);
+        border: none;
+        padding: 0 1.6rem;
+        font-weight: 600;
+        border-radius: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+
+        &:hover {
+          background: linear-gradient(135deg, #b055ff, #ff4fd8);
+          transform: translateY(-3px);
+          box-shadow: 0 10px 25px rgba(224, 74, 255, 0.6);
+        }
+
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    // Botão Recarregar - NEON STYLE
+    .btn-outline-primary {
+      background: rgba(22, 22, 29, 0.7);
+      border: 1.5px solid transparent;
+      border-image: linear-gradient(90deg, #9d4edd, #ff4fd8) 1;
+      color: #e0aaff;
+      border-radius: 16px;
+      padding: 0.9rem 1.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        background: linear-gradient(90deg, #9d4edd, #ff4fd8);
+        color: white;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(157, 78, 221, 0.6);
+        border-image: none;
+      }
+
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Responsivo (mobile)
+@media (max-width: 768px) {
+  .container > .d-flex.justify-content-between {
+    h2 {
+      font-size: 2rem;
+    }
+    form.d-flex .form-control {
+      width: 200px;
+    }
+  }
+}
   // ----------------------------
-  // Paginação e botões maiores e chamativos
+  // Paginação e botões
   // ----------------------------
   .pagination {
     display: flex;
@@ -74,9 +200,6 @@
     }
   }
 
-  // ----------------------------
-  // Botão de Recarregar maior e chamativo
-  // ----------------------------
   .btn-outline-primary {
     font-size: 0.95rem;
     padding: 0.55rem 1rem;
@@ -95,10 +218,6 @@
     }
   }
 
-
-  // ----------------------------
-  // Botões principais
-  // ----------------------------
   .btn {
     font-weight: 500;
     border-radius: 10px;
@@ -160,7 +279,6 @@
 
         &:hover {
           background-color: rgba(122, 63, 255, 0.08);
-          transform: none;
         }
       }
 
@@ -195,7 +313,7 @@
   }
 
   // ----------------------------
-  // Modal de justificativa
+  // Modal
   // ----------------------------
   .modal-content {
     background-color: $bg-card;
@@ -228,3 +346,97 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .page-gerenciar-usuarios {
+    height: auto !important;     // Muito importante!
+    margin-bottom: 200px;
+    .table {
+      thead {
+        display: none; /* esconde o cabeçalho original no mobile */
+      }
+
+      tbody tr {
+        display: block;
+        background: #1a1a23;
+        border-radius: 16px;
+        padding: 1.4rem;
+        margin-bottom: 1.4rem;
+        border: 1px solid rgba(122, 63, 255, 0.25);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px rgba(122, 63, 255, 0.3);
+        }
+      }
+
+      td {
+        display: block;
+        width: 100%;
+        text-align: right !important;
+        padding: 0.7rem 0;
+        padding-left: 50%;
+        position: relative;
+        color: #fdfdfd !important;
+        font-weight: 500;
+        font-size: 1.05rem;
+        border: none;
+
+        /* TÍTULOS AUTOMÁTICOS (sem precisar de data-label) */
+        &:nth-of-type(1)::before { content: "ID: "; }
+        &:nth-of-type(2)::before { content: "Nome: "; }
+        &:nth-of-type(3)::before { content: "Email: "; }
+        &:nth-of-type(4)::before { content: "Contato: "; }
+
+        &::before {
+          position: absolute;
+          left: 1.2rem;
+          width: 45%;
+          font-weight: 700;
+          color: #c8aaff;
+          text-align: left;
+          text-transform: uppercase;
+          font-size: 0.85rem;
+          letter-spacing: 0.8px;
+        }
+
+        /* Botão WhatsApp centralizado e bonito */
+        &:last-child {
+          padding-left: 0;
+          text-align: center;
+          margin-top: 1rem;
+
+          &::before { display: none; }
+
+          .btn-success {
+            width: 100%;
+            max-width: 240px;
+            padding: 0.9rem;
+            font-size: 1.1rem;
+            border-radius: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .page-gerenciar-usuarios {
+     .container{
+      height: auto;
+     }
+    .table td {
+      padding-left: 48%;
+      font-size: 1rem;
+
+      &::before {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+

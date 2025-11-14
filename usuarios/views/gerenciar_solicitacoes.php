@@ -115,20 +115,19 @@
                                         <?php
                                             $dataFormatada = date('d/m/Y H:i', strtotime($mys['data_solicitacao']));
                                         ?>
-                                        <button
-                                            class="btn btn-info btn-sm ver-mais-btn"
-                                            data-endereco="<?= htmlspecialchars($mys['endereco'], ENT_QUOTES); ?>"
-                                            data-complemento="<?= htmlspecialchars($mys['complemento'], ENT_QUOTES); ?>"
-                                            data-descricao="<?= htmlspecialchars($mys['descricao'], ENT_QUOTES); ?>"
-                                            data-servicos="<?= htmlspecialchars($mys['tipo_servico'], ENT_QUOTES); ?>"
-                                            data-data="<?= $dataFormatada; ?>"
-                                            data-bs-toggle="modal"
-                                            data-status="<?= htmlspecialchars($mys['status'], ENT_QUOTES); ?>"
-                                            data-observacao="<?= htmlspecialchars($mys['observacao_admin'] ?? '—', ENT_QUOTES); ?>"
-                                            data-bs-target="#verMaisModal">
-                                            
-                                            <i class="fa fa-eye"></i> Ver mais
-                                        </button>
+                                            <button
+                                                class="btn btn-info btn-sm ver-mais-btn"
+                                                data-endereco="<?= htmlspecialchars($mys['endereco'], ENT_QUOTES); ?>"
+                                                data-complemento="<?= htmlspecialchars($mys['complemento'] ?? '', ENT_QUOTES); ?>"
+                                                data-descricao="<?= htmlspecialchars($mys['descricao'] ?? '', ENT_QUOTES); ?>"
+                                                data-servicos-json="<?= htmlspecialchars($mys['tipo_servico'], ENT_QUOTES); ?>"  
+                                                data-data="<?= $dataFormatada; ?>"
+                                                data-status="<?= htmlspecialchars($mys['status'], ENT_QUOTES); ?>"
+                                                data-observacao="<?= htmlspecialchars($mys['observacao_admin'] ?? '—', ENT_QUOTES); ?>"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#verMaisModal">
+                                                <i class="fa fa-eye"></i> Ver mais
+                                            </button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -189,38 +188,65 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const verMaisBtns = document.querySelectorAll(".ver-mais-btn");
+    const verMaisBtns = document.querySelectorAll(".ver-mais-btn");
+    const modalServicosContainer = document.getElementById("modal-servicos");
 
-  verMaisBtns.forEach(btn => {
-    btn.addEventListener("click", function () {
-      const endereco = this.getAttribute("data-endereco") || "—";
-      const complemento = this.getAttribute("data-complemento") || "—";
-      const descricao = this.getAttribute("data-descricao") || "—";
-      const servicos = this.getAttribute("data-servicos") || "—";
-      const data = this.getAttribute("data-data") || "—";
-      const status = this.getAttribute("data-status") || "";
-      const observacao = this.getAttribute("data-observacao") || "—";
+    verMaisBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            // Dados básicos
+            const endereco = this.getAttribute("data-endereco") || "—";
+            const complemento = this.getAttribute("data-complemento") || "—";
+            const descricao = this.getAttribute("data-descricao") || "—";
+            const data = this.getAttribute("data-data") || "—";
+            const status = this.getAttribute("data-status") || "";
+            const observacao = this.getAttribute("data-observacao") || "—";
 
-      document.getElementById("modal-endereco").textContent = endereco;
-      document.getElementById("modal-complemento").textContent = complemento;
-      document.getElementById("modal-descricao").textContent = descricao;
-      document.getElementById("modal-servicos").textContent = servicos;
-      document.getElementById("modal-data").textContent = data;
+            // Dados do modal
+            document.getElementById("modal-endereco").textContent = endereco;
+            document.getElementById("modal-complemento").textContent = complemento || "Não informado";
+            document.getElementById("modal-descricao").textContent = descricao || "Sem descrição";
+            document.getElementById("modal-data").textContent = data;
 
-      // 👇 Se o status for "recusado", mostra o motivo
-      const motivoRecusaDiv = document.getElementById("motivo-recusa");
-      const motivoTexto = document.getElementById("modal-observacao");
-      if (status.toLowerCase() === "recusado" && observacao.trim() !== "—") {
-        motivoTexto.textContent = observacao;
-        motivoRecusaDiv.style.display = "block";
-      } else {
-        motivoRecusaDiv.style.display = "none";
-      }
+            // === A MÁGICA ACONTECE AQUI ===
+            const servicosJson = this.getAttribute("data-servicos-json");
+            let servicosHtml = '';
+
+            try {
+                const servicos = JSON.parse(servicosJson || '[]');
+
+                if (Array.isArray(servicos) && servicos.length > 0) {
+                    servicos.forEach(servico => {
+                        const nomeBonito = servico
+                            .replace(/_/g, ' ')
+                            .replace(/\b\w/g, l => l.toUpperCase()); // Capitaliza palavras
+
+                        servicosHtml += `
+                            <span class="badge bg-primary text-white me-2 mb-2 fs-6 px-3 py-2">
+                                <i class="fas fa-paint-brush me-1"></i> ${nomeBonito}
+                            </span>`;
+                    });
+                } else {
+                    servicosHtml = '<span class="text-muted">Nenhum serviço selecionado</span>';
+                }
+            } catch (e) {
+                servicosHtml = '<span class="text-danger">Erro ao carregar serviços</span>';
+            }
+
+            modalServicosContainer.innerHTML = servicosHtml;
+
+            // Mostra motivo da recusa se existir
+            const motivoRecusaDiv = document.getElementById("motivo-recusa");
+            const motivoTexto = document.getElementById("modal-observacao");
+            if (status.toLowerCase() === "recusado" && observacao !== "—") {
+                motivoTexto.textContent = observacao;
+                motivoRecusaDiv.style.display = "block";
+            } else {
+                motivoRecusaDiv.style.display = "none";
+            }
+        });
     });
-  });
 });
 </script>
-
 
 <?php
     include SIDEBAR;
