@@ -194,3 +194,15 @@ $(document).ready(function () {
     }
   });
 });
+
+window.onload = () => {
+    const loading = document.getElementById("loading");
+    const conteudo = document.getElementById("conteudo");
+
+    loading.classList.add("fade-out");
+
+    setTimeout(() => {
+      loading.style.display = "none";
+      conteudo.style.display = "block";
+    }, 600);
+  };

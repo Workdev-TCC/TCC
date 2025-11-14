@@ -1,3 +1,11 @@
+<div id="loading">
+    <div class="loader-content">
+        <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" class="loading-img" alt="Logo">
+        <div class="spinner"></div>
+    </div>
+</div>
+
+
 <div class="hero">
   <div class="hero-text">
     <h1 class="wave-hover">
