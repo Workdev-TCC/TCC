@@ -23,7 +23,7 @@ include_once UTEIS;
         $dados2=$bd->select("usuarios","*",["id"=>$_SESSION['id']],false,1,"fetch_assoc");
         if(!empty($dados2['senha'])){
             $_SESSION['senha']=$dados2['senha'];
-            $_SESSION['message']="senha atualizada com sucesso";
+            $_SESSION['message']="Senha atualizada com sucesso!";
             $_SESSION['type']="success";
             header("Location:".RAIZ_PROJETO);
             exit();

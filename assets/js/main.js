@@ -48,7 +48,19 @@ $(document).ready(function () {
           $("#map1").stop().fadeTo(500, 1).css("transform", "scale(1)");
       }
   );
-  
+  //MODAL
+  function autoHideMessages(time = 3000) {
+      const msgs = document.querySelectorAll(".message-success, .message-danger");
+
+      msgs.forEach(msg => {
+          setTimeout(() => {
+              msg.classList.add("fade-out");
+              setTimeout(() => msg.remove(), 400);
+          }, time);
+      });
+  }
+  autoHideMessages(3500);
+
   // Mostrar ou ocultar senha
   $(".icon-eye").click(function () {
     var inputId = $(this).data("input");

@@ -1,3 +1,5 @@
+GLOBAL SCSS
+
 * {
   padding: 0;
   margin: 0;
@@ -54,199 +56,113 @@ main {
 .modal-backdrop{
   z-index: 100 !important;
 }
-.message-success{
+.message-success,
+.message-danger {
     position: fixed;
-    z-index: 9999;
-    padding: 0;
-    width: 800px;
-    height: 100px;
-    top: 100px;
-    left: calc(50% - 400px);
-    background-color:rgba(0,0,0,0.5);
-
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    max-width: 90%;
+    padding: 18px 22px;
     display: flex;
-    flex-direction: column;
-    .box-message{
-      width: 100%;
-      height: 50%;  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      strong{
-        width: 100%;
-        color: rgb(255, 255, 255);
-        position: relative;
-        top: -25px;
-        .icon-message{
-          color: rgb(12, 255, 3);
-        }
-
-      }
-
-    }
-    .button-message{
-      width: 100%;
-      height: 50%;
-      display: flex;
-      align-items:start;
-      justify-content:end;
-      color: white;
-      .btn-close {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-        position: relative;
-        left: 8px;
-        top: -9px;
-       
-      }
-    }
-
-}
-.message-danger{
-    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.55);
+    border-left: 4px solid;
+    color: #fff;
     z-index: 9999;
-    padding: 0;
-    width: 800px;
-    height: 100px;
-    top: 100px;
-    left: calc(50% - 400px);
-    background-color:rgba(0,0,0,0.5);
-
-    display: flex;
-    flex-direction: column;
-    .box-message{
-      width: 100%;
-      height: 50%;  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      strong{
-        width: 100%;
-        color: rgb(255, 255, 255);
-        position: relative;
-        top: -25px;
-        .icon-message{
-          color: rgb(255, 3, 3);
-        }
-
-      }
-
-    }
-    .button-message{
-      width: 100%;
-      height: 50%;
-      display: flex;
-      align-items:start;
-      justify-content:end;
-      color: white;
-      .btn-close {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-        position: relative;
-        left: 8px;
-        top: -9px;
-       
-      }
-    }
-
+    animation: slideDown 0.4s ease;
 }
 
-@media (max-width:800px){
-  
+/* CORES */
+.message-success {
+    border-color: #00ff6a;
+    box-shadow: 0 0 12px rgba(0, 255, 120, 0.4);
 }
-@media (max-width:550px){
-  
-.message-success{
-    position: fixed;
-    z-index: 9999;
-    padding: 0;
-    width:100%;
-    height: 90px;
-    top: 60px;
-    left: 0;
-    background-color:rgba(0,0,0,0.5);
 
-    display: flex;
-    flex-direction: column;
-    .box-message{
-      width: 100%;
-      height: 50%;  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      strong{
-        width: 100%;
-        color: rgb(255, 255, 255);
-        position: relative;
-        top: -25px;
-        .icon-message{
-          color: rgb(12, 255, 3);
-        }
-
-      }
-
-    }
-    .button-message{
-      width: 100%;
-      height: 50%;
-      display: flex;
-      align-items:start;
-      justify-content:end;
-      color: white;
-      .btn-close {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-        position: relative;
-        left: 8px;
-        top: -9px;
-       
-      }
-    }
-
+.message-danger {
+    border-color: #ff3b3b;
+    box-shadow: 0 0 12px rgba(255, 60, 60, 0.4);
 }
-.message-danger{
-    position: fixed;
-    z-index: 9999;
-    padding: 0;
-    width: 800px;
-    height: 100px;
-    top: 100px;
-    left: calc(50% - 400px);
-    background-color:rgba(0,0,0,0.5);
 
+/* TEXTO */
+.message-success strong,
+.message-danger strong {
+    font-size: 1rem;
+    font-family: "Opens Sans", sans-serif;
     display: flex;
-    flex-direction: column;
-    .box-message{
-      width: 100%;
-      height: 50%;  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      strong{
-        width: 100%;
-        color: rgb(255, 255, 255);
-        position: relative;
-        top: -25px;
-        .icon-message{
-          color: rgb(255, 3, 3);
-        }
+    align-items: center;
+    gap: 10px;
+}
 
-      }
+.icon-message {
+    font-size: 1.3rem;
+}
 
+/* BOTÃO FECHAR */
+.btn-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    filter: invert(100%);
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.btn-close:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* ===========================
+          ANIMAÇÕES
+   =========================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
     }
-    .button-message{
-      width: 100%;
-      height: 50%;
-      display: flex;
-      align-items:start;
-      justify-content:end;
-      color: white;
-      .btn-close {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-        position: relative;
-        left: 8px;
-        top: -9px;
-       
-      }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ANIMAÇÃO PARA SUMIR */
+.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* ===========================
+         RESPONSIVIDADE
+   =========================== */
+
+@media (max-width: 550px) {
+    .message-success,
+    .message-danger {
+        top: 50px;
+        padding: 15px 18px;
+        border-radius: 8px;
     }
 
-  }
+    .message-success strong,
+    .message-danger strong {
+        font-size: 0.9rem;
+    }
+
+    .icon-message {
+        font-size: 1.1rem;
+    }
 }
 

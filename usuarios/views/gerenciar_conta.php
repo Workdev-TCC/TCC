@@ -16,11 +16,17 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 
 <?php if (!empty($_SESSION['message'])) : ?>
-<div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">
-    <?php echo $_SESSION['message']; ?>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<?php clear_messages(); ?>
+	<div class="message-<?php echo $_SESSION['type']; ?>">
+		<?php if ($_SESSION['type'] === "success") : ?>
+			<i class="fas fa-check-circle icon-message"></i>
+		<?php else : ?>
+			<i class="fas fa-times-circle icon-message"></i>
+		<?php endif; ?>
+		<span><?php echo $_SESSION['message']; ?></span>
+		<i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
+	</div>
+	<?php unset($_SESSION['message']); unset($_SESSION['type']); ?>
+	<?php clear_messages(); ?>
 <?php endif; ?>
 
 <div class="fundo-gerenciar-conta">

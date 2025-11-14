@@ -5,10 +5,16 @@
     include_once UTEIS;
 ?>
 <?php if (!empty($_SESSION['message'])) : ?>
-<div class="alert message-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">
-    <div class="button-message"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
-    <div class="box-message"><strong><?php echo $_SESSION['message']; ?> <div class="icon-message" data-icon="<?php echo $_SESSION['type'];?>"><i id="icon-msg" class="fa-solid fa-circle-check"></i></div></strong></div>
+<div class="message-<?php echo $_SESSION['type']; ?>">
+    <?php if ($_SESSION['type'] === "success") : ?>
+        <i class="fas fa-check-circle icon-message"></i>
+    <?php else : ?>
+        <i class="fas fa-times-circle icon-message"></i>
+    <?php endif; ?>
+    <span><?php echo $_SESSION['message']; ?></span>
+    <i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
 </div>
+<?php unset($_SESSION['message']); unset($_SESSION['type']); ?>
 <!-- <?php clear_messages(); ?> -->
 <?php endif; ?>
 <?php
