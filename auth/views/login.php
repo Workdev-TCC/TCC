@@ -43,30 +43,32 @@
         <?php endif; ?>
 
         <section class="login-container">
-            <div class="login-img">
-                <h2 class="titulo-img"><span class="zu">ZU</span>PINTURAS</h2>
-                <a href="<?php echo RAIZ_PROJETO; ?>" class="btn-voltar">Voltar ao Website <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="login-content">
-                <div class="login-box">
-                    <h1>Acesse a sua conta!</h1>
-                    <div class="linha"></div>
-                    <form class="login-form" action="<?php echo RAIZ_PROJETO;?>auth/login.php" method="post">
-                        <div class="input-wrapper">
-                            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                            <input class="login-input" type="email" placeholder="Email" name="email" id="email">
-                        </div>
-                        <div class="input-wrapper">
-                            <div class="icon"><i class="fa-solid fa-key"></i></div>
-                            <input class="login-input-eye" type="password" placeholder="Senha" name="senha" id="senha">
-                            <div class="icon-eye" data-input="senha"><i id="eye" class="fas fa-eye"></i></div>
-                        </div>
-                        <button class="login-button" type="submit">ENTRAR</button>
-                    </form>
-                    <p>Novo no ZuPinturas? <a href="<?php echo RAIZ_PROJETO;?>auth/views/cadastro.php">Cadastre-se</a>.</p>
+    <div class="login-img">
+        <h2 class="titulo-img"><span class="zu">ZU</span>PINTURAS</h2>
+        <a href="<?php echo RAIZ_PROJETO; ?>" class="btn-voltar">Voltar ao Website <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="login-content">
+        <div class="login-box">
+            <h1>Acesse a sua conta!</h1>
+            <div class="linha"></div>
+            <form class="login-form" action="<?php echo RAIZ_PROJETO;?>auth/login.php" method="post">
+                <div class="input-wrapper">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <input class="login-input" type="email" placeholder="Email" name="email" id="email">
                 </div>
-            </div>
-        </section>
+                <div class="input-wrapper">
+                    <div class="icon"><i class="fa-solid fa-key"></i></div>
+                    <input class="login-input-eye" type="password" placeholder="Senha" name="senha" id="senha">
+                    <div class="icon-eye" data-input="senha">
+                        <i class="fas fa-eye"></i> <!-- Começa com olho cortado -->
+                    </div>
+                </div>
+                <button class="login-button" type="submit">ENTRAR</button>
+            </form>
+            <p>Novo no ZuPinturas? <a href="<?php echo RAIZ_PROJETO;?>auth/views/cadastro.php">Cadastre-se</a>.</p>
+        </div>
+    </div>
+</section>
         <script src="<?php echo RAIZ_PROJETO; ?>assets/js/jquery-3.7.1.min.js"></script>
         <script src="<?php echo RAIZ_PROJETO; ?>assets/js/bootstrap_js/bootstrap.bundle.min.js"></script>
         <script src="<?php echo RAIZ_PROJETO; ?>assets/js/fontawesome_js/all.min.js"></script>
