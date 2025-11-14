@@ -46,7 +46,7 @@
       position: relative;
       border: 1px solid #333;
 
-      input[type="password"] {
+      input[type="password"],input[type="text"] {
         flex: 1;
         background: transparent;
         border: none;
@@ -57,7 +57,9 @@
         padding: 10px;
       }
 
-       .icon-eyes {
+      
+
+       .icon-eye {
           position: absolute;
           right: 10px;
           top: 50%;

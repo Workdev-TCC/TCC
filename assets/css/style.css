@@ -5530,7 +5530,7 @@ body {
   position: relative;
   border: 1px solid #333;
 }
-.container-edit-senha form .input-grupo input[type=password], .container-senha form .input-grupo input[type=password] {
+.container-edit-senha form .input-grupo input[type=password], .container-edit-senha form .input-grupo input[type=text], .container-senha form .input-grupo input[type=password], .container-senha form .input-grupo input[type=text] {
   flex: 1;
   background: transparent;
   border: none;
@@ -5540,7 +5540,7 @@ body {
   font-size: 1rem;
   padding: 10px;
 }
-.container-edit-senha form .input-grupo .icon-eyes, .container-senha form .input-grupo .icon-eyes {
+.container-edit-senha form .input-grupo .icon-eye, .container-senha form .input-grupo .icon-eye {
   position: absolute;
   right: 10px;
   top: 50%;

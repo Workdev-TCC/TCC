@@ -66,13 +66,13 @@
                         </div>
                         <div class="input-wrapper">
                             <small id="erro-tamanho"><i class="fa-solid fa-circle-exclamation sm"></i> A senha deve conter no mínimo 8 caracteres.</small>
-                            <input class="login-input-eye" type="password" placeholder="Digite a sua senha" name="senha" id="senha">
-                            <div class="icon-eye" data-input="senha"><i class="fa-solid fa-eye-slash"></i></div>
+                            <input class="login-input-eye" type="password" placeholder="Digite a sua senha" name="senha" id="senha" >
+                            <div class="icon-eye" data-input="senha"><i class="fa-solid fa-eye"></i></div>
                         </div>
                         <div class="input-wrapper">
                             <small id="erro-senha"><i class="fa-solid fa-circle-exclamation sm"></i> Senha incorreta! Tente novamente...</small>
                             <input class="login-input-eye" type="password" placeholder="Confirmar senha" id="confirmar_senha">
-                            <div class="icon-eye " data-input="confirmar_senha"><i class="fa-solid fa-eye-slash"></i></div>
+                            <div class="icon-eye " data-input="senha"><i class="fa-solid fa-eye"></i></div>
                         </div>
                         <button class="login-button" type="submit">CADASTRE-SE</button>
                     </form>

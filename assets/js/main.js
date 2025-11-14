@@ -62,20 +62,23 @@ $(document).ready(function () {
   autoHideMessages(3500);
 
   // Mostrar ou ocultar senha
-  $(".icon-eye").click(function () {
-    var inputId = $(this).data("input");
-    var input = $("#" + inputId);
-    var icone = $(this).find("i");
-    if (input.attr("type") === "password") {
-      input.attr("type", "text");
-      icone.removeClass("fa-eye-slash").addClass("fa-eye");
-    } else {
-      input.attr("type", "password");
-      icone.removeClass("fa-eye").addClass("fa-eye-slash");
-    }
+ // Alternar visibilidade da senha
+      $(".icon-eye").on("click", function () {
+                const inputId = $(this).data("input");
+                const $input = $("#" + inputId);
+                const $icon = $(this).find("i");
 
-    input.focus();
-  });
+                if ($input.attr("type") === "password") {
+                    $input.attr("type", "text");
+                    $icon.removeClass("fa-eye-slash").addClass("fa-eye");
+                } else {
+                    $input.attr("type", "password");
+                    $icon.removeClass("fa-eye").addClass("fa-eye-slash");
+                }
+
+                // Mantém o foco no input
+                $input.trigger("focus");
+            });
 
   // email
   document.querySelector('.cadastro-form')?.addEventListener('submit', function(e) {

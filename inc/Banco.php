@@ -167,6 +167,38 @@
             ];
         }
 
+       public function delete($table, $where) {
+            $db = $this->open_db();
+            $placeholders = [];
+            $condicoes = [];
+
+            // Monta as condições WHERE
+            foreach ($where as $campo => $valor) {
+                $campo = trim($campo, "'");
+                $ph = ":{$campo}";
+                $condicoes[] = "{$campo} = {$ph}";
+                $placeholders[$ph] = $valor;
+            }
+
+            $sql = "DELETE FROM {$table} WHERE " . implode(" AND ", $condicoes);
+            
+            $stmt = $db->prepare($sql);
+
+            // Bind dos parâmetros
+            foreach ($placeholders as $ph => $value) {
+                $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+                $stmt->bindValue($ph, $value, $type);
+            }
+
+            $executado = $stmt->execute();
+            if ($executado) {
+                return true;
+            } else {
+                return false;
+            }
+
+            $this->close_db();
+        }
 
     }
 ?>
