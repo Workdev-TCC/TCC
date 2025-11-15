@@ -106,19 +106,13 @@ try {
                                             <div class="d-flex flex-column align-items-center gap-1">
                                                 <!-- WhatsApp -->
                                                 <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']) ?>"
-                                                   target="_blank" class="btn btn-success btn-sm w-100">
-                                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                                                </a>
-                                                <!-- Telefone -->
-                                                <span class="small"><?= htmlspecialchars($s['telefone']) ?></span>
-                                                <!-- Email -->
-                                                <a href="mailto:<?= htmlspecialchars($s['email']) ?>" class="small text-decoration-none text-primary">
-                                                    <?= htmlspecialchars($s['email']) ?>
+                                                   target="_blank" class="btn btn-success btn-sm">
+                                                    <i class="fa-brands fa-whatsapp"></i> 
                                                 </a>
                                             </div>
                                         </td>
                                         <td>
-                                            <button class="btn btn-success btn-sm salvar-btn">
+                                            <button class="btn-roxo salvar-btn">
                                                 <i class="fa fa-save"></i> Salvar
                                             </button>
                                         </td>
@@ -156,6 +150,23 @@ try {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    function aplicarCorStatusSelect() {
+            document.querySelectorAll("select.status-select").forEach(sel => {
+                sel.classList.remove("pendente", "marcado", "recusado");
+                sel.classList.add(sel.value);
+            });
+        }
+
+        // Aplica ao carregar
+        aplicarCorStatusSelect();
+
+        // Aplica quando o usuário troca o valor
+        document.addEventListener("change", e => {
+            if (e.target.classList.contains("status-select")) {
+                aplicarCorStatusSelect();
+            }
+        });
     let justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
     let solicitacaoSelecionada = null;
 

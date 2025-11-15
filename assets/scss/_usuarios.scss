@@ -347,12 +347,54 @@
   }
 }
 @media (max-width: 768px) {
+
+  .page-gerenciar-usuarios .d-flex.justify-content-between {
+    flex-direction: column !important;
+    gap: 15px;
+    align-items: stretch !important;
+  }
+
+  /* Linha dos botões e formulário */
+  .page-gerenciar-usuarios .d-flex.gap-2 {
+    width: 100%;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  /* FORMULÁRIO SEM VAZAR */
+  .page-gerenciar-usuarios form.d-flex {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .page-gerenciar-usuarios form.d-flex .form-control {
+    flex: 1 1 auto;
+    min-width: 0 !important;  /* impede vazamento */
+  }
+
+  .page-gerenciar-usuarios form.d-flex .btn-primary {
+    white-space: nowrap;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  /* Botão de recarregar ocupa largura total */
+  .page-gerenciar-usuarios .btn-outline-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* 🔥 SUAS CONFIGURAÇÕES EXISTENTES DO MOBILE */
   .page-gerenciar-usuarios {
-    height: auto !important;     // Muito importante!
+    height: auto !important;
     margin-bottom: 200px;
+
     .table {
       thead {
-        display: none; /* esconde o cabeçalho original no mobile */
+        display: none;
       }
 
       tbody tr {
@@ -383,7 +425,6 @@
         font-size: 1.05rem;
         border: none;
 
-        /* TÍTULOS AUTOMÁTICOS (sem precisar de data-label) */
         &:nth-of-type(1)::before { content: "ID: "; }
         &:nth-of-type(2)::before { content: "Nome: "; }
         &:nth-of-type(3)::before { content: "Email: "; }
@@ -401,7 +442,6 @@
           letter-spacing: 0.8px;
         }
 
-        /* Botão WhatsApp centralizado e bonito */
         &:last-child {
           padding-left: 0;
           text-align: center;
@@ -425,9 +465,11 @@
 
 @media (max-width: 480px) {
   .page-gerenciar-usuarios {
-     .container{
+    .container {
       height: auto;
-     }
+      width: 80%;
+    }
+
     .table td {
       padding-left: 48%;
       font-size: 1rem;
@@ -438,5 +480,6 @@
     }
   }
 }
+
 
 

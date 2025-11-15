@@ -2314,14 +2314,15 @@ body {
 
 .page-gerenciar-solicitacoes, .gerenciar-pendentes, .gerenciar-marcadas, .gerenciar-recusadas {
   margin-bottom: 10%;
+  margin-top: 5%;
 }
 
-.page-gerenciar-solicitacoes .container {
+.page-gerenciar-solicitacoes .container, .gerenciar-pendentes .container {
   max-width: 1400px;
   padding-top: 3rem;
   height: auto;
 }
-.page-gerenciar-solicitacoes h2 {
+.page-gerenciar-solicitacoes h2, .gerenciar-pendentes h2 {
   font-weight: 600;
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
   -webkit-background-clip: text;
@@ -2330,13 +2331,13 @@ body {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-.page-gerenciar-solicitacoes .pagination {
+.page-gerenciar-solicitacoes .pagination, .gerenciar-pendentes .pagination {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-.page-gerenciar-solicitacoes .pagination .page-item .page-link {
+.page-gerenciar-solicitacoes .pagination .page-item .page-link, .gerenciar-pendentes .pagination .page-item .page-link {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fdfdfd;
@@ -2346,25 +2347,25 @@ body {
   font-size: 0.95rem;
   transition: all 0.3s ease;
 }
-.page-gerenciar-solicitacoes .pagination .page-item .page-link:hover {
+.page-gerenciar-solicitacoes .pagination .page-item .page-link:hover, .gerenciar-pendentes .pagination .page-item .page-link:hover {
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
   border-color: transparent;
   color: #fff;
   box-shadow: 0 0 16px rgba(122, 63, 255, 0.7);
 }
-.page-gerenciar-solicitacoes .pagination .page-item.active .page-link {
+.page-gerenciar-solicitacoes .pagination .page-item.active .page-link, .gerenciar-pendentes .pagination .page-item.active .page-link {
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
   color: #fff;
   border: none;
   box-shadow: 0 0 18px rgba(122, 63, 255, 0.8);
 }
-.page-gerenciar-solicitacoes .btn-outline-primary {
+.page-gerenciar-solicitacoes .btn-outline-primary, .gerenciar-pendentes .btn-outline-primary {
   margin-right: 10px;
 }
-.page-gerenciar-solicitacoes .btn-remover-servico {
+.page-gerenciar-solicitacoes .btn-remover-servico, .gerenciar-pendentes .btn-remover-servico {
   border-radius: 0 6px 6px 0;
 }
-.page-gerenciar-solicitacoes .btn-outline-primary {
+.page-gerenciar-solicitacoes .btn-outline-primary, .gerenciar-pendentes .btn-outline-primary {
   font-size: 0.95rem;
   padding: 0.55rem 1rem;
   font-weight: 600;
@@ -2376,26 +2377,66 @@ body {
   color: #fdfdfd;
   transition: all 0.3s ease;
 }
-.page-gerenciar-solicitacoes .btn-outline-primary:hover {
+.page-gerenciar-solicitacoes .btn-outline-primary:hover, .gerenciar-pendentes .btn-outline-primary:hover {
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
   color: #fff;
   box-shadow: 0 0 20px rgba(122, 63, 255, 0.8);
 }
-.page-gerenciar-solicitacoes .btn {
+.page-gerenciar-solicitacoes .btn, .gerenciar-pendentes .btn {
   font-weight: 500;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
-.page-gerenciar-solicitacoes .btn.btn-success {
+.page-gerenciar-solicitacoes .btn.btn-success, .gerenciar-pendentes .btn.btn-success {
   background-color: #25d366;
   border: none;
   color: #fff;
 }
-.page-gerenciar-solicitacoes .btn.btn-success:hover {
+.page-gerenciar-solicitacoes .btn.btn-success:hover, .gerenciar-pendentes .btn.btn-success:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
 }
-.page-gerenciar-solicitacoes .card {
+.page-gerenciar-solicitacoes .btn-contato, .gerenciar-pendentes .btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  font-size: 1rem !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.page-gerenciar-solicitacoes .btn-contato i, .gerenciar-pendentes .btn-contato i {
+  font-size: 1.3rem;
+}
+.page-gerenciar-solicitacoes .btn.btn-success.btn-sm.btn-contato, .gerenciar-pendentes .btn.btn-success.btn-sm.btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  height: auto !important;
+}
+.page-gerenciar-solicitacoes .btn-roxo, .gerenciar-pendentes .btn-roxo {
+  background: linear-gradient(90deg, #a93aff, #bf57ff);
+  color: #fff !important;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 0 10px rgba(186, 85, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.page-gerenciar-solicitacoes .btn-roxo:hover, .gerenciar-pendentes .btn-roxo:hover {
+  background: linear-gradient(90deg, #b54dff, #d47aff);
+  box-shadow: 0 0 16px rgba(200, 100, 255, 0.7);
+  transform: scale(1.04);
+}
+.page-gerenciar-solicitacoes .btn-roxo:active, .gerenciar-pendentes .btn-roxo:active {
+  transform: scale(0.97);
+}
+.page-gerenciar-solicitacoes .card, .gerenciar-pendentes .card {
   background-color: #16161d;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
@@ -2404,10 +2445,10 @@ body {
   width: 100%;
   max-width: 1100px;
 }
-.page-gerenciar-solicitacoes .card .card-body {
+.page-gerenciar-solicitacoes .card .card-body, .gerenciar-pendentes .card .card-body {
   padding: 1.5rem;
 }
-.page-gerenciar-solicitacoes .table {
+.page-gerenciar-solicitacoes .table, .gerenciar-pendentes .table {
   background-color: #121219;
   color: #fdfdfd;
   border: none;
@@ -2415,34 +2456,35 @@ body {
   table-layout: fixed;
   width: 100%;
 }
-.page-gerenciar-solicitacoes .table thead {
+.page-gerenciar-solicitacoes .table thead, .gerenciar-pendentes .table thead {
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.page-gerenciar-solicitacoes .table thead th {
+.page-gerenciar-solicitacoes .table thead th, .gerenciar-pendentes .table thead th {
   border: none;
   padding: 0.8rem 0.5rem;
   text-align: center;
 }
-.page-gerenciar-solicitacoes .table tbody tr {
+.page-gerenciar-solicitacoes .table tbody tr, .gerenciar-pendentes .table tbody tr {
   transition: all 0.2s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.page-gerenciar-solicitacoes .table tbody tr:hover {
+.page-gerenciar-solicitacoes .table tbody tr:hover, .gerenciar-pendentes .table tbody tr:hover {
   background-color: rgba(122, 63, 255, 0.08);
   transform: none;
 }
-.page-gerenciar-solicitacoes .table tbody td {
+.page-gerenciar-solicitacoes .table tbody td, .gerenciar-pendentes .table tbody td {
   vertical-align: middle;
   border: none;
   color: #ffffff;
   text-align: center;
 }
 .page-gerenciar-solicitacoes .table .form-select,
-.page-gerenciar-solicitacoes .table .form-control {
+.page-gerenciar-solicitacoes .table .form-control, .gerenciar-pendentes .table .form-select,
+.gerenciar-pendentes .table .form-control {
   background-color: #1e1e27;
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fdfdfd;
@@ -2451,88 +2493,91 @@ body {
   transition: all 0.3s ease;
 }
 .page-gerenciar-solicitacoes .table .form-select:focus,
-.page-gerenciar-solicitacoes .table .form-control:focus {
+.page-gerenciar-solicitacoes .table .form-control:focus, .gerenciar-pendentes .table .form-select:focus,
+.gerenciar-pendentes .table .form-control:focus {
   border-color: #7a3fff;
   box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
   background-color: #262631;
 }
 .page-gerenciar-solicitacoes .table .form-select option,
-.page-gerenciar-solicitacoes .table .form-control option {
+.page-gerenciar-solicitacoes .table .form-control option, .gerenciar-pendentes .table .form-select option,
+.gerenciar-pendentes .table .form-control option {
   background-color: #1b1b23;
   color: #fdfdfd;
 }
-.page-gerenciar-solicitacoes .modal-content {
+.page-gerenciar-solicitacoes .modal-content, .gerenciar-pendentes .modal-content {
   background-color: #16161d;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 30px rgba(122, 63, 255, 0.25);
   border-radius: 12px;
 }
-.page-gerenciar-solicitacoes .modal-content .modal-header {
+.page-gerenciar-solicitacoes .modal-content .modal-header, .gerenciar-pendentes .modal-content .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
 }
-.page-gerenciar-solicitacoes .modal-content .modal-footer {
+.page-gerenciar-solicitacoes .modal-content .modal-footer, .gerenciar-pendentes .modal-content .modal-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.page-gerenciar-solicitacoes .modal-content textarea {
+.page-gerenciar-solicitacoes .modal-content textarea, .gerenciar-pendentes .modal-content textarea {
   background-color: #1b1b23;
   color: #fdfdfd;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   resize: none;
 }
-.page-gerenciar-solicitacoes .modal-content textarea:focus {
+.page-gerenciar-solicitacoes .modal-content textarea:focus, .gerenciar-pendentes .modal-content textarea:focus {
   border-color: #7a3fff;
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
 }
 @media (max-width: 1024px) {
-  .page-gerenciar-solicitacoes .container {
+  .page-gerenciar-solicitacoes .container, .gerenciar-pendentes .container {
     padding-top: 1.5rem;
     width: 98%;
     height: auto;
   }
-  .page-gerenciar-solicitacoes h2 {
+  .page-gerenciar-solicitacoes h2, .gerenciar-pendentes h2 {
     font-size: 1.6rem;
   }
-  .page-gerenciar-solicitacoes .table {
+  .page-gerenciar-solicitacoes .table, .gerenciar-pendentes .table {
     font-size: 0.9rem;
   }
   .page-gerenciar-solicitacoes .form-control,
-  .page-gerenciar-solicitacoes .form-select {
+  .page-gerenciar-solicitacoes .form-select, .gerenciar-pendentes .form-control,
+  .gerenciar-pendentes .form-select {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 768px) {
-  .page-gerenciar-solicitacoes .container {
+  .page-gerenciar-solicitacoes .container, .gerenciar-pendentes .container {
     padding-top: 1rem;
     width: 100%;
   }
-  .page-gerenciar-solicitacoes h2 {
+  .page-gerenciar-solicitacoes h2, .gerenciar-pendentes h2 {
     font-size: 1.4rem;
   }
-  .page-gerenciar-solicitacoes .d-flex.flex-column.flex-md-row {
+  .page-gerenciar-solicitacoes .d-flex.flex-column.flex-md-row, .gerenciar-pendentes .d-flex.flex-column.flex-md-row {
     flex-direction: column;
     gap: 1rem;
   }
-  .page-gerenciar-solicitacoes .table-responsive {
+  .page-gerenciar-solicitacoes .table-responsive, .gerenciar-pendentes .table-responsive {
     overflow-x: visible;
   }
-  .page-gerenciar-solicitacoes .table {
+  .page-gerenciar-solicitacoes .table, .gerenciar-pendentes .table {
     display: block;
     width: 100%;
     border: none;
   }
-  .page-gerenciar-solicitacoes .table thead {
+  .page-gerenciar-solicitacoes .table thead, .gerenciar-pendentes .table thead {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table tbody, .page-gerenciar-solicitacoes .table tr, .page-gerenciar-solicitacoes .table td {
+  .page-gerenciar-solicitacoes .table tbody, .page-gerenciar-solicitacoes .table tr, .page-gerenciar-solicitacoes .table td, .gerenciar-pendentes .table tbody, .gerenciar-pendentes .table tr, .gerenciar-pendentes .table td {
     display: block;
     width: 100%;
     text-align: left;
   }
-  .page-gerenciar-solicitacoes .table tr {
+  .page-gerenciar-solicitacoes .table tr, .gerenciar-pendentes .table tr {
     margin-bottom: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -2540,16 +2585,16 @@ body {
     background: rgba(22, 22, 29, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
-  .page-gerenciar-solicitacoes .table tr:hover {
+  .page-gerenciar-solicitacoes .table tr:hover, .gerenciar-pendentes .table tr:hover {
     background-color: rgba(122, 63, 255, 0.1);
   }
-  .page-gerenciar-solicitacoes .table td {
+  .page-gerenciar-solicitacoes .table td, .gerenciar-pendentes .table td {
     border: none;
     padding: 0.5rem 0;
     position: relative;
     padding-left: 45%;
   }
-  .page-gerenciar-solicitacoes .table td:before {
+  .page-gerenciar-solicitacoes .table td:before, .gerenciar-pendentes .table td:before {
     content: attr(data-label);
     position: absolute;
     left: 0.5rem;
@@ -2559,17 +2604,17 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2), .gerenciar-pendentes .table td:nth-of-type(2) {
     padding-left: 0;
     text-align: center;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 0.5rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2):before, .gerenciar-pendentes .table td:nth-of-type(2):before {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .nome-usuario {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .nome-usuario, .gerenciar-pendentes .table td:nth-of-type(2) .nome-usuario {
     font-size: 1.3rem;
     font-weight: 700;
     background: linear-gradient(90deg, #7a3fff, #ff4fd8);
@@ -2578,492 +2623,189 @@ body {
     display: block;
     margin-bottom: 0.25rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .info-adicional {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .info-adicional, .gerenciar-pendentes .table td:nth-of-type(2) .info-adicional {
     font-size: 0.85rem;
     color: #c0c0c0;
     display: block;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(1) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(1), .gerenciar-pendentes .table td:nth-of-type(1) {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(3) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(3), .gerenciar-pendentes .table td:nth-of-type(3) {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .page-gerenciar-solicitacoes .table td:nth-of-type(8) {
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(7),
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(8), .gerenciar-pendentes .table td td:nth-of-type(7),
+  .gerenciar-pendentes .table td td:nth-of-type(8) {
     display: inline-block !important;
-    width: 48% !important;
+    width: calc(50% - 2px) !important;
     padding-left: 0 !important;
     text-align: center;
-    margin-bottom: 0;
     float: left;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7):before, .page-gerenciar-solicitacoes .table td:nth-of-type(8):before {
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(7):before,
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(8):before, .gerenciar-pendentes .table td td:nth-of-type(7):before,
+  .gerenciar-pendentes .table td td:nth-of-type(8):before {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7) {
-    margin-right: 4%;
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(7), .gerenciar-pendentes .table td td:nth-of-type(7) {
+    margin-right: 4px !important;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(8) {
-    float: right;
-    margin-right: 0;
+  .page-gerenciar-solicitacoes .table td td:nth-of-type(8), .gerenciar-pendentes .table td td:nth-of-type(8) {
+    margin-right: 0 !important;
   }
-  .page-gerenciar-solicitacoes .table tr:after {
+  .page-gerenciar-solicitacoes .table tr:after, .gerenciar-pendentes .table tr:after {
     content: "";
     display: table;
     clear: both;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(1):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(1):before, .gerenciar-pendentes .table td:nth-of-type(1):before {
     content: "ID:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2):before, .gerenciar-pendentes .table td:nth-of-type(2):before {
     content: "Usuário:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(3):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(3):before, .gerenciar-pendentes .table td:nth-of-type(3):before {
     content: "CEP:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(4):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(4):before, .gerenciar-pendentes .table td:nth-of-type(4):before {
     content: "Status:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(5):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(5):before, .gerenciar-pendentes .table td:nth-of-type(5):before {
     content: "Data Visita:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(6):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(6):before, .gerenciar-pendentes .table td:nth-of-type(6):before {
     content: "Hora:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7):before, .gerenciar-pendentes .table td:nth-of-type(7):before {
     content: "Contato:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(8):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(8):before, .gerenciar-pendentes .table td:nth-of-type(8):before {
     content: "Ações:";
   }
-  .page-gerenciar-solicitacoes .table .form-select, .page-gerenciar-solicitacoes .table .form-control {
+  .page-gerenciar-solicitacoes .table .form-select, .page-gerenciar-solicitacoes .table .form-control, .gerenciar-pendentes .table .form-select, .gerenciar-pendentes .table .form-control {
     width: 100%;
     margin-bottom: 0.5rem;
   }
-  .page-gerenciar-solicitacoes .table .btn {
+  .page-gerenciar-solicitacoes .table .btn, .gerenciar-pendentes .table .btn {
     width: 100%;
     margin-bottom: 0;
     white-space: nowrap;
   }
-  .page-gerenciar-solicitacoes .pagination {
+  .page-gerenciar-solicitacoes .pagination, .gerenciar-pendentes .pagination {
     gap: 0.3rem;
   }
-  .page-gerenciar-solicitacoes .pagination .page-link {
+  .page-gerenciar-solicitacoes .pagination .page-link, .gerenciar-pendentes .pagination .page-link {
     padding: 0.4rem 0.7rem;
     font-size: 0.85rem;
   }
-  .page-gerenciar-solicitacoes .btn-outline-primary {
+  .page-gerenciar-solicitacoes .btn-outline-primary, .gerenciar-pendentes .btn-outline-primary {
     padding: 0.45rem 0.8rem;
     font-size: 0.9rem;
   }
-  .page-gerenciar-solicitacoes .card {
+  .page-gerenciar-solicitacoes .card, .gerenciar-pendentes .card {
     padding: 0.5rem;
   }
-  .page-gerenciar-solicitacoes .card-body {
+  .page-gerenciar-solicitacoes .card-body, .gerenciar-pendentes .card-body {
     padding: 1rem 0.5rem;
   }
 }
 @media (max-width: 480px) {
-  .page-gerenciar-solicitacoes .container {
+  .page-gerenciar-solicitacoes .container, .gerenciar-pendentes .container {
     height: auto;
   }
-  .page-gerenciar-solicitacoes h2 {
+  .page-gerenciar-solicitacoes h2, .gerenciar-pendentes h2 {
     font-size: 1.2rem;
   }
-  .page-gerenciar-solicitacoes .table {
+  .page-gerenciar-solicitacoes .table, .gerenciar-pendentes .table {
     font-size: 0.85rem;
   }
-  .page-gerenciar-solicitacoes .table td {
+  .page-gerenciar-solicitacoes .table td, .gerenciar-pendentes .table td {
     padding-left: 50%;
   }
-  .page-gerenciar-solicitacoes .table td:before {
+  .page-gerenciar-solicitacoes .table td:before, .gerenciar-pendentes .table td:before {
     width: 45%;
     font-size: 0.75rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .nome-usuario {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .nome-usuario, .gerenciar-pendentes .table td:nth-of-type(2) .nome-usuario {
     font-size: 1.2rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .info-adicional {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(2) .info-adicional, .gerenciar-pendentes .table td:nth-of-type(2) .info-adicional {
     font-size: 0.8rem;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .page-gerenciar-solicitacoes .table td:nth-of-type(8) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .page-gerenciar-solicitacoes .table td:nth-of-type(8), .gerenciar-pendentes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(8) {
     width: 48% !important;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(7) {
     margin-right: 2%;
   }
-  .page-gerenciar-solicitacoes .btn-outline-primary {
+  .page-gerenciar-solicitacoes .btn-outline-primary, .gerenciar-pendentes .btn-outline-primary {
     font-size: 0.85rem;
     padding: 0.4rem 0.7rem;
   }
-  .page-gerenciar-solicitacoes .pagination .page-link {
+  .page-gerenciar-solicitacoes .pagination .page-link, .gerenciar-pendentes .pagination .page-link {
     font-size: 0.8rem;
     padding: 0.35rem 0.6rem;
   }
 }
 @media (max-width: 360px) {
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .page-gerenciar-solicitacoes .table td:nth-of-type(8) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .page-gerenciar-solicitacoes .table td:nth-of-type(8), .gerenciar-pendentes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(8) {
     width: 48% !important;
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(7) .btn, .page-gerenciar-solicitacoes .table td:nth-of-type(8) .btn {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7) .btn, .page-gerenciar-solicitacoes .table td:nth-of-type(8) .btn, .gerenciar-pendentes .table td:nth-of-type(7) .btn, .gerenciar-pendentes .table td:nth-of-type(8) .btn {
     font-size: 0.8rem;
     padding: 0.35rem 0.5rem;
   }
 }
 
-.gerenciar-pendentes .container,
-.gerenciar-pendentes .container-fluid {
-  max-width: 1400px;
-  padding-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: auto;
-}
-.gerenciar-pendentes h2 {
-  font-weight: 600;
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-.gerenciar-pendentes .d-flex.flex-column.flex-md-row {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto 2rem auto;
-}
-.gerenciar-pendentes .pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.gerenciar-pendentes .pagination .page-item .page-link {
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fdfdfd;
+.page-gerenciar-solicitacoes select.status-select {
+  font-weight: 700;
+  color: #fff !important;
   border-radius: 8px;
-  padding: 0.5rem 0.9rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-.gerenciar-pendentes .pagination .page-item .page-link:hover {
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  border-color: transparent;
-  color: #fff;
-  box-shadow: 0 0 16px rgba(122, 63, 255, 0.7);
-}
-.gerenciar-pendentes .pagination .page-item.active .page-link {
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  color: #fff;
-  border: none;
-  box-shadow: 0 0 18px rgba(122, 63, 255, 0.8);
-}
-.gerenciar-pendentes .btn-outline-primary {
-  font-size: 0.95rem;
-  padding: 0.55rem 1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  background-color: #1a1a27;
-  border: 1px solid transparent;
-  -o-border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
-     border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
-  color: #fdfdfd;
-  transition: all 0.3s ease;
-}
-.gerenciar-pendentes .btn-outline-primary:hover {
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(122, 63, 255, 0.8);
-}
-.gerenciar-pendentes .card {
-  background-color: #16161d;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  width: 100%;
-  max-width: 1100px;
-  padding: 1rem;
-}
-.gerenciar-pendentes .card .card-body {
-  padding: 1.5rem;
-}
-.gerenciar-pendentes .table {
-  background-color: #121219;
-  color: #fdfdfd;
-  border: none;
-  font-size: 0.95rem;
-  table-layout: fixed;
-  width: 100%;
-  margin: 0 auto;
-}
-.gerenciar-pendentes .table thead {
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  color: #fff;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.gerenciar-pendentes .table thead th {
-  border: none;
-  padding: 0.8rem 0.5rem;
-  text-align: center;
-}
-.gerenciar-pendentes .table tbody tr {
-  transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-.gerenciar-pendentes .table tbody tr:hover {
-  background-color: rgba(122, 63, 255, 0.08);
-  transform: none;
-}
-.gerenciar-pendentes .table tbody td {
-  vertical-align: middle;
-  border: none;
-  color: #ffffff;
-  text-align: center;
-}
-.gerenciar-pendentes .table .form-select,
-.gerenciar-pendentes .table .form-control {
-  background-color: #1e1e27;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fdfdfd;
-  font-size: 0.95rem;
-  padding: 0.35rem 0.5rem;
-  transition: all 0.3s ease;
-}
-.gerenciar-pendentes .table .form-select:focus,
-.gerenciar-pendentes .table .form-control:focus {
-  border-color: #7a3fff;
-  box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
-  background-color: #262631;
-}
-.gerenciar-pendentes .table-responsive {
-  overflow-x: auto;
-  width: 100%;
-  max-width: 1300px;
-}
-@media (max-width: 1300px) {
-  .gerenciar-pendentes .table-responsive {
-    max-width: 95%;
-  }
-}
-@media (max-width: 768px) {
-  .gerenciar-pendentes .table-responsive {
-    max-width: 100%;
-    overflow-x: visible;
-  }
-}
-.gerenciar-pendentes .btn-outline-primary {
-  font-size: 0.95rem;
-  padding: 0.55rem 1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  background-color: #1a1a27;
-  border: 1px solid transparent;
-  -o-border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
-     border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
-  color: #fdfdfd;
-  transition: all 0.3s ease;
-}
-.gerenciar-pendentes .btn-outline-primary:hover {
-  background: linear-gradient(90deg, #7a3fff, #ff4fd8);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(122, 63, 255, 0.8);
-}
-.gerenciar-pendentes .btn {
-  font-weight: 500;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-.gerenciar-pendentes .btn.btn-success {
-  background-color: #25d366;
-  border: none;
-  color: #fff;
-}
-.gerenciar-pendentes .btn.btn-success:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
-  transform: none;
-}
-.gerenciar-pendentes .modal-content {
-  background-color: #16161d;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 30px rgba(122, 63, 255, 0.25);
-  border-radius: 12px;
-}
-.gerenciar-pendentes .modal-content .modal-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-}
-.gerenciar-pendentes .modal-content .modal-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.gerenciar-pendentes .modal-content textarea {
-  background-color: #1b1b23;
-  color: #fdfdfd;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  resize: none;
-}
-.gerenciar-pendentes .modal-content textarea:focus {
-  border-color: #7a3fff;
-  outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(122, 63, 255, 0.25);
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
 }
 
-/* ============================================================
-   RESPONSIVIDADE MOBILE — SÓ ATIVA NO CELULAR (≤768px)
-   Mantém seu design fixo no PC 100% intacto!
-   ============================================================ */
-@media (max-width: 768px) {
-  .gerenciar-pendentes .container, .gerenciar-pendentes .container-fluid {
-    padding: 4rem 1rem 180px !important;
-    width: 100% !important;
-    height: auto;
-  }
-  .gerenciar-pendentes .card {
-    min-width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  }
-  .gerenciar-pendentes .card-body {
-    padding: 1.5rem 1rem !important;
-  }
-  .gerenciar-pendentes .table thead {
-    display: none;
-  }
-  .gerenciar-pendentes .table tbody tr {
-    display: block;
-    background: #1a1a23;
-    border-radius: 16px;
-    padding: 1.6rem;
-    margin-bottom: 1.8rem;
-    border: 1px solid rgba(122, 63, 255, 0.3);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  }
-  .gerenciar-pendentes .table td {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.9rem 0;
-    color: #fdfdfd;
-    font-weight: 500;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .gerenciar-pendentes .table td::before {
-    content: "";
-    font-weight: 700;
-    color: #c89dff;
-    text-transform: uppercase;
-    font-size: 0.82rem;
-    letter-spacing: 1px;
-    min-width: 110px;
-    flex-shrink: 0;
-  }
-  .gerenciar-pendentes .table td > * {
-    flex: 1;
-    text-align: right;
-    padding-left: 0.8rem;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(1)::before {
-    content: "ID:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2)::before {
-    content: "Usuário:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(3)::before {
-    content: "CEP:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(4)::before {
-    content: "Status:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(5)::before {
-    content: "Data:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(6)::before {
-    content: "Hora:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(7)::before {
-    content: "Ação:";
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.4rem 0;
-    font-size: 1.45rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #9d4edd, #ff4fd8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 2px solid rgba(122, 63, 255, 0.4);
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2)::before {
-    display: none;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) > * {
-    text-align: center;
-    padding-left: 0;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(5) .form-control, .gerenciar-pendentes .table td:nth-of-type(6) .form-control {
-    width: 140px;
-    font-size: 0.95rem;
-    padding: 0.4rem 0.6rem;
-  }
-  .gerenciar-pendentes .table td:last-child {
-    justify-content: center;
-    border-bottom: none;
-    padding: 1.6rem 0 0.8rem;
-  }
-  .gerenciar-pendentes .table td:last-child::before {
-    display: none;
-  }
-  .gerenciar-pendentes .table td:last-child .btn-success {
-    width: auto;
-    min-width: 180px;
-    padding: 0.85rem 2rem;
-    font-size: 1.05rem;
-    border-radius: 14px;
-    font-weight: 600;
-  }
-  .gerenciar-pendentes h2 {
-    font-size: 1.85rem !important;
-    margin-bottom: 1.8rem;
-  }
+/* PENDENTE = AMARELO */
+.page-gerenciar-solicitacoes select.status-select.pendente {
+  color: #6e6e6e !important;
 }
-@media (max-width: 480px) {
-  .gerenciar-pendentes .container {
-    height: auto;
-  }
-  .gerenciar-pendentes .table td {
-    font-size: 0.98rem;
-    padding: 0.85rem 0;
-  }
-  .gerenciar-pendentes .table td::before {
-    font-size: 0.78rem;
-    min-width: 100px;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(2) {
-    font-size: 1.35rem;
-  }
-  .gerenciar-pendentes .table td:nth-of-type(5) .form-control, .gerenciar-pendentes .table td:nth-of-type(6) .form-control {
-    width: 130px;
-  }
-  .gerenciar-pendentes .table td:last-child .btn-success {
-    min-width: 160px;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-  }
+
+/* MARCADO = VERDE */
+.page-gerenciar-solicitacoes select.status-select.marcado {
+  color: #8031ca !important;
 }
+
+/* RECUSADO = VERMELHO */
+.page-gerenciar-solicitacoes select.status-select.recusado {
+  color: #d83232 !important;
+}
+
+.gerenciar-pendentes select.status-select {
+  font-weight: 700;
+  color: #fff !important;
+  border-radius: 8px;
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+/* PENDENTE = AMARELO */
+.gerenciar-pendentes select.status-select.pendente {
+  color: #6e6e6e !important;
+}
+
+/* MARCADO = VERDE */
+.gerenciar-pendentes select.status-select.marcado {
+  color: #8031ca !important;
+}
+
+/* RECUSADO = VERMELHO */
+.gerenciar-pendentes select.status-select.recusado {
+  color: #d83232 !important;
+}
+
 .gerenciar-recusadas .container {
   max-width: 1400px;
   padding-top: 3rem;
@@ -3393,6 +3135,7 @@ body {
   }
   .gerenciar-recusadas .pagination {
     gap: 0.3rem;
+    right: 0;
   }
   .gerenciar-recusadas .pagination .page-link {
     padding: 0.4rem 0.7rem;
@@ -3401,6 +3144,7 @@ body {
   .gerenciar-recusadas .btn-outline-primary {
     padding: 0.45rem 0.8rem;
     font-size: 0.9rem;
+    right: 0;
   }
   .gerenciar-recusadas .card {
     padding: 0.5rem;
@@ -3475,7 +3219,6 @@ body {
   gap: 0.5rem;
   flex-wrap: wrap;
   position: relative;
-  right: 200px;
 }
 .gerenciar-marcadas .pagination .page-item .page-link {
   background-color: transparent;
@@ -3511,7 +3254,6 @@ body {
   color: #fdfdfd;
   transition: all 0.3s ease;
   position: relative;
-  right: 200px;
 }
 .gerenciar-marcadas .btn-outline-primary:hover {
   background: linear-gradient(90deg, #7a3fff, #ff4fd8);
@@ -3531,6 +3273,46 @@ body {
 .gerenciar-marcadas .btn.btn-success:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+}
+.gerenciar-marcadas .btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  font-size: 1rem !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.gerenciar-marcadas .btn-contato i {
+  font-size: 1.3rem;
+}
+.gerenciar-marcadas .btn.btn-success.btn-sm.btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  height: auto !important;
+}
+.gerenciar-marcadas .btn-roxo {
+  background: linear-gradient(90deg, #a93aff, #bf57ff);
+  color: #fff !important;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 0 10px rgba(186, 85, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.gerenciar-marcadas .btn-roxo:hover {
+  background: linear-gradient(90deg, #b54dff, #d47aff);
+  box-shadow: 0 0 16px rgba(200, 100, 255, 0.7);
+  transform: scale(1.04);
+}
+.gerenciar-marcadas .btn-roxo:active {
+  transform: scale(0.97);
 }
 .gerenciar-marcadas .card {
   background-color: #16161d;
@@ -3853,6 +3635,30 @@ body {
     font-size: 0.8rem;
     padding: 0.35rem 0.5rem;
   }
+}
+
+.gerenciar-marcadas select.status-select {
+  font-weight: 700;
+  color: #fff !important;
+  border-radius: 8px;
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+/* PENDENTE = AMARELO */
+.gerenciar-marcadas select.status-select.pendente {
+  color: #6e6e6e !important;
+}
+
+/* MARCADO = VERDE */
+.gerenciar-marcadas select.status-select.marcado {
+  color: #8031ca !important;
+}
+
+/* RECUSADO = VERMELHO */
+.gerenciar-marcadas select.status-select.recusado {
+  color: #d83232 !important;
 }
 
 .gerenciar-marcadas-user .container {
@@ -4487,12 +4293,46 @@ body {
 }
 
 @media (max-width: 768px) {
+  .page-gerenciar-usuarios .d-flex.justify-content-between {
+    flex-direction: column !important;
+    gap: 15px;
+    align-items: stretch !important;
+  }
+  /* Linha dos botões e formulário */
+  .page-gerenciar-usuarios .d-flex.gap-2 {
+    width: 100%;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  /* FORMULÁRIO SEM VAZAR */
+  .page-gerenciar-usuarios form.d-flex {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+  .page-gerenciar-usuarios form.d-flex .form-control {
+    flex: 1 1 auto;
+    min-width: 0 !important; /* impede vazamento */
+  }
+  .page-gerenciar-usuarios form.d-flex .btn-primary {
+    white-space: nowrap;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  /* Botão de recarregar ocupa largura total */
+  .page-gerenciar-usuarios .btn-outline-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  /* 🔥 SUAS CONFIGURAÇÕES EXISTENTES DO MOBILE */
   .page-gerenciar-usuarios {
     height: auto !important;
     margin-bottom: 200px;
   }
   .page-gerenciar-usuarios .table thead {
-    display: none; /* esconde o cabeçalho original no mobile */
+    display: none;
   }
   .page-gerenciar-usuarios .table tbody tr {
     display: block;
@@ -4519,8 +4359,6 @@ body {
     font-weight: 500;
     font-size: 1.05rem;
     border: none;
-    /* TÍTULOS AUTOMÁTICOS (sem precisar de data-label) */
-    /* Botão WhatsApp centralizado e bonito */
   }
   .page-gerenciar-usuarios .table td:nth-of-type(1)::before {
     content: "ID: ";
@@ -4565,6 +4403,7 @@ body {
 @media (max-width: 480px) {
   .page-gerenciar-usuarios .container {
     height: auto;
+    width: 80%;
   }
   .page-gerenciar-usuarios .table td {
     padding-left: 48%;
@@ -5011,6 +4850,9 @@ body {
     font-size: 0.95rem;
   }
 }
+.minhas-solicitacoes-page {
+  /* Telas muito pequenas */
+}
 .minhas-solicitacoes-page .container {
   max-width: 1400px;
   margin-top: 200px;
@@ -5287,18 +5129,67 @@ body {
 }
 @media (max-width: 768px) {
   .minhas-solicitacoes-page .d-flex.justify-content-between {
-    flex-direction: column;
-    align-items: stretch !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
   }
   .minhas-solicitacoes-page .d-flex.justify-content-between .flex-grow-1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    margin-right: 1rem;
+    flex: 1 1 auto;
   }
   .minhas-solicitacoes-page .d-flex.justify-content-between .d-flex.gap-2 {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
 @media (max-width: 768px) {
+  .minhas-solicitacoes-page .d-flex.justify-content-between {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+  }
+  .minhas-solicitacoes-page .d-flex.justify-content-between .flex-grow-1 {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    flex: 1 1 auto;
+  }
+  .minhas-solicitacoes-page .d-flex.justify-content-between .d-flex.gap-2 {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .minhas-solicitacoes-page {
+    /* Header da página */
+    /* Campo de pesquisa = metade da linha */
+    /* Botões = metade da linha */
+    /* Input ocupa toda a largura dentro do container */
+    /* ============================
+       CORREÇÃO DO BUG DOS TÍTULOS
+       ============================ */
+    /* ============================ */
+  }
+  .minhas-solicitacoes-page .minhas-solicitacoes-page .d-flex.justify-content-between {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .minhas-solicitacoes-page .minhas-solicitacoes-page .flex-grow-1 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+  }
+  .minhas-solicitacoes-page .minhas-solicitacoes-page .d-flex.gap-2 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+    justify-content: end !important;
+  }
+  .minhas-solicitacoes-page .minhas-solicitacoes-page .input-group {
+    width: 100% !important;
+  }
   .minhas-solicitacoes-page .container {
     margin: 1rem auto;
     padding: 0 0.5rem;
@@ -5307,46 +5198,52 @@ body {
   .minhas-solicitacoes-page .card .card-body {
     padding: 1rem;
   }
-  .minhas-solicitacoes-page .table {
-    font-size: 0.9rem;
-  }
-  .minhas-solicitacoes-page .table thead {
+  .minhas-solicitacoes-page table thead {
     display: none;
   }
-  .minhas-solicitacoes-page .table tbody, .minhas-solicitacoes-page .table tr, .minhas-solicitacoes-page .table td {
+  .minhas-solicitacoes-page table,
+  .minhas-solicitacoes-page tbody,
+  .minhas-solicitacoes-page tr,
+  .minhas-solicitacoes-page td {
     display: block;
     width: 100%;
-    text-align: left;
   }
-  .minhas-solicitacoes-page .table tr {
+  .minhas-solicitacoes-page tr {
     margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    background: rgba(22, 22, 29, 0.8);
-  }
-  .minhas-solicitacoes-page .table tr:hover {
-    transform: none;
-    background: rgba(122, 63, 255, 0.1);
-  }
-  .minhas-solicitacoes-page .table tr td {
-    padding: 0.5rem 0;
+    background: #0e0d14;
+    padding: 1.2rem;
+    border-radius: 12px;
     position: relative;
-    padding-left: 45%;
   }
-  .minhas-solicitacoes-page .table tr td:before {
+  .minhas-solicitacoes-page td {
+    padding-left: 0 !important;
+    padding-top: 28px !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    border: none !important;
+    position: relative;
+    font-size: 0.95rem;
+    color: #e4e4e4;
+    word-break: break-word;
+  }
+  .minhas-solicitacoes-page td::before {
     content: attr(data-label);
     position: absolute;
-    left: 0.5rem;
-    width: 40%;
-    font-weight: 600;
-    color: #c0c0c0;
+    top: 5px;
+    left: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    color: #bbb;
+    font-size: 0.75rem;
+    width: calc(100% - 24px);
+    line-height: 1.1;
+    white-space: normal;
   }
-  .minhas-solicitacoes-page .table tr td.text-center {
-    text-align: left;
-    padding-left: 45%;
+  .minhas-solicitacoes-page td .btn,
+  .minhas-solicitacoes-page td a {
+    margin-top: 6px;
+    width: 100%;
+    justify-content: center;
   }
   .minhas-solicitacoes-page .input-group {
     width: 100% !important;
@@ -5362,7 +5259,7 @@ body {
     text-align: center;
   }
   .minhas-solicitacoes-page .table tr td {
-    padding-left: 50%;
+    padding-left: 0 !important;
   }
   .minhas-solicitacoes-page .table tr td:before {
     width: 45%;

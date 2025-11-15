@@ -98,12 +98,12 @@ try {
                         <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
                     </td>
                     <td>
-                        <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']); ?>" target="_blank" class="btn btn-success btn-sm">
+                        <a href="https://wa.me/55<?= preg_replace('/\D/', '', $s['telefone']); ?>" target="_blank" class="btn btn-success btn-contato">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
                     </td>
                     <td>
-                        <button class="btn btn-success btn-sm salvar-btn">
+                        <button class="btn-roxo salvar-btn">
                             <i class="fa fa-save"></i> Salvar
                         </button>
                     </td>
@@ -142,6 +142,24 @@ try {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+            function aplicarCorStatusSelect() {
+            document.querySelectorAll("select.status-select").forEach(sel => {
+                sel.classList.remove("pendente", "marcado", "recusado");
+                sel.classList.add(sel.value);
+            });
+        }
+
+        // Aplica ao carregar
+        aplicarCorStatusSelect();
+
+        // Aplica quando o usuário troca o valor
+        document.addEventListener("change", e => {
+            if (e.target.classList.contains("status-select")) {
+                aplicarCorStatusSelect();
+            }
+        });
+
+    
     const justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
     let solicitacaoSelecionada = null;
 

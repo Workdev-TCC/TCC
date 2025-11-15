@@ -76,6 +76,7 @@ try {
                                     <th>Status</th>
                                     <th>Data Visita</th>
                                     <th>Hora</th>
+                                    <th>Contato</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -98,11 +99,17 @@ try {
                                         <td>
                                             <input type="time" class="form-control form-control-sm hora-visita" value="<?= $s['hora_visita'] ?? '' ?>">
                                         </td>
+                                        <td class="text-center">
+                                            <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" target="_blank" class="btn btn-success btn-contato">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                            </a>
+                                        </td>
                                         <td>
-                                            <button class="btn btn-success btn-sm salvar-btn w-100 w-md-auto">
+                                            <button class="btn-roxo salvar-btn">
                                                 <i class="fa fa-save"></i> Salvar
                                             </button>
                                         </td>
+                                        
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -137,6 +144,23 @@ try {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    function aplicarCorStatusSelect() {
+            document.querySelectorAll("select.status-select").forEach(sel => {
+                sel.classList.remove("pendente", "marcado", "recusado");
+                sel.classList.add(sel.value);
+            });
+        }
+
+        // Aplica ao carregar
+        aplicarCorStatusSelect();
+
+        // Aplica quando o usuário troca o valor
+        document.addEventListener("change", e => {
+            if (e.target.classList.contains("status-select")) {
+                aplicarCorStatusSelect();
+            }
+        });
     let justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
     let solicitacaoSelecionada = null;
 

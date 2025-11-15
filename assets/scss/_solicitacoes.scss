@@ -1,8 +1,9 @@
 .page-gerenciar-solicitacoes,.gerenciar-pendentes, .gerenciar-marcadas, .gerenciar-recusadas{
   margin-bottom: 10%;
+  margin-top: 5%;
 }
 
-.page-gerenciar-solicitacoes {
+.page-gerenciar-solicitacoes, .gerenciar-pendentes {
   // ----------------------------
   // Paleta base
   // ----------------------------
@@ -124,6 +125,51 @@
       }
     }
   }
+  .btn-contato {
+  padding: 0.45rem 0.9rem !important;   // deixa maior e bonito
+  min-width: 48px !important;           // garante largura
+  font-size: 1rem !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 1.3rem;
+  }
+}
+.btn.btn-success.btn-sm.btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  height: auto !important;
+}
+.btn-roxo {
+    background: linear-gradient(90deg, #a93aff, #bf57ff);
+    color: #fff !important;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px rgba(186, 85, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-roxo:hover {
+    background: linear-gradient(90deg, #b54dff, #d47aff);
+    box-shadow: 0 0 16px rgba(200, 100, 255, 0.7);
+    transform: scale(1.04);
+}
+
+.btn-roxo:active {
+    transform: scale(0.97);
+}
+
+
 
   // ----------------------------
   // Card e tabela
@@ -369,30 +415,25 @@
         }
 
         // Estilo para Contato e Ações (sétima e oitava colunas)
-        &:nth-of-type(7),
-        &:nth-of-type(8) {
+        td:nth-of-type(7),
+        td:nth-of-type(8) {
           display: inline-block !important;
-          width: 48% !important;
+          width: calc(50% - 2px) !important;  // bem maior
           padding-left: 0 !important;
           text-align: center;
-          margin-bottom: 0;
           float: left;
 
-          &:before {
-            display: none; // Remove os labels
-          }
+          &:before { display: none; }
         }
 
-        // Contato (WhatsApp)
-        &:nth-of-type(7) {
-          margin-right: 4%;
+        td:nth-of-type(7) {
+          margin-right: 4px !important;
         }
 
-        // Ações (Salvar)
-        &:nth-of-type(8) {
-          float: right;
-          margin-right: 0;
+        td:nth-of-type(8) {
+          margin-right: 0 !important;
         }
+
       }
 
       // Clearfix para garantir que os floats funcionem
@@ -440,7 +481,7 @@
       padding: 0.45rem 0.8rem;
       font-size: 0.9rem;
     }
-
+    
     .card {
       padding: 0.5rem;
     }
@@ -518,3 +559,50 @@
   }
 }
 
+ .page-gerenciar-solicitacoes select.status-select {
+  font-weight: 700;
+  color: #fff !important;
+  border-radius: 8px;
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+/* PENDENTE = AMARELO */
+.page-gerenciar-solicitacoes select.status-select.pendente {
+  color: #6e6e6e !important;
+}
+
+/* MARCADO = VERDE */
+.page-gerenciar-solicitacoes select.status-select.marcado {
+  color: #8031ca !important;
+}
+
+/* RECUSADO = VERMELHO */
+.page-gerenciar-solicitacoes select.status-select.recusado {
+  color: #d83232 !important;
+}
+
+.gerenciar-pendentes select.status-select {
+  font-weight: 700;
+  color: #fff !important;
+  border-radius: 8px;
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+/* PENDENTE = AMARELO */
+.gerenciar-pendentes select.status-select.pendente {
+  color: #6e6e6e !important;
+}
+
+/* MARCADO = VERDE */
+.gerenciar-pendentes select.status-select.marcado {
+  color: #8031ca !important;
+}
+
+/* RECUSADO = VERMELHO */
+.gerenciar-pendentes select.status-select.recusado {
+  color: #d83232 !important;
+}

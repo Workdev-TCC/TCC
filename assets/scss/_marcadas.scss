@@ -47,7 +47,6 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     position: relative;
-    right: 200px;
     .page-item {
       .page-link {
         background-color: transparent;
@@ -90,7 +89,6 @@
     color: #fdfdfd;
     transition: all 0.3s ease;
     position: relative;
-    right: 200px;
 
     &:hover {
       background: linear-gradient(90deg, #7a3fff, #ff4fd8);
@@ -103,7 +101,7 @@
   // ----------------------------
   // Botões principais
   // ----------------------------
-  .btn {
+    .btn {
     font-weight: 500;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -119,6 +117,49 @@
       }
     }
   }
+  .btn-contato {
+  padding: 0.45rem 0.9rem !important;   // deixa maior e bonito
+  min-width: 48px !important;           // garante largura
+  font-size: 1rem !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 1.3rem;
+  }
+}
+.btn.btn-success.btn-sm.btn-contato {
+  padding: 0.45rem 0.9rem !important;
+  min-width: 48px !important;
+  height: auto !important;
+}
+.btn-roxo {
+    background: linear-gradient(90deg, #a93aff, #bf57ff);
+    color: #fff !important;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px rgba(186, 85, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-roxo:hover {
+    background: linear-gradient(90deg, #b54dff, #d47aff);
+    box-shadow: 0 0 16px rgba(200, 100, 255, 0.7);
+    transform: scale(1.04);
+}
+
+.btn-roxo:active {
+    transform: scale(0.97);
+}
 
   // ----------------------------
   // Card e tabela
@@ -518,4 +559,28 @@
       }
     }
   }
+}
+
+.gerenciar-marcadas select.status-select {
+  font-weight: 700;
+  color: #fff !important;
+  border-radius: 8px;
+  border: none !important;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+/* PENDENTE = AMARELO */
+.gerenciar-marcadas select.status-select.pendente {
+  color: #6e6e6e !important;
+}
+
+/* MARCADO = VERDE */
+.gerenciar-marcadas select.status-select.marcado {
+  color: #8031ca !important;
+}
+
+/* RECUSADO = VERMELHO */
+.gerenciar-marcadas select.status-select.recusado {
+  color: #d83232 !important;
 }
