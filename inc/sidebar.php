@@ -18,9 +18,9 @@
         <div class="menu-section">
             <h4>Empresa</h4>
             <hr>
-            <div class="opc"><i class="fa-solid fa-circle-question"></i><a href="#">Perguntas Frequentes</a></div>
-            <div class="opc"><i class="fa-solid fa-paintbrush"></i><a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php">Serviços</a></div>
-            <div class="opc"><i class="fa-solid fa-brush"></i><a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php">Projetos</a></div>
+            <div class="opc"><a href="#">Perguntas Frequentes</a></div>
+            <div class="opc"><a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php">Serviços</a></div>
+            <div class="opc"><a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php">Projetos</a></div>
         </div>
 
         <div class="menu-section">
@@ -28,8 +28,8 @@
             <hr>
             <?php if (!empty($_SESSION['email'])): ?>
                 <?php if ($_SESSION['tipo'] == "user"): ?>
-                    <a href="#">Ver meus agendamentos</a>
-                    <a href="#">Solicitar novo agendamento</a>
+                    <a href="#">Minhas Solicitações</a>
+                    <a href="#">Nova Solicitação</a>
                 <?php else: ?>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Gerenciar Solicitações</a>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>

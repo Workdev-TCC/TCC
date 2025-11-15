@@ -6,39 +6,39 @@
     <p>
       Na <strong>ZUPINTURAS</strong>, cada parede ganha vida. Transformamos espaços com cores que inspiram, acabamentos impecáveis e cuidado em cada detalhe, valorizando seu imóvel e deixando seu ambiente único.
     </p>
-    <?php if(isset($_SESSION['email'])): ?>
-        <a href="
-        <?php if($_SESSION['tipo']=="admin"):?>
-         <?php echo RAIZ_PROJETO;?>admin/views/gerenciar_solicitacoes.php
-        <?php else:?>
-          <?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php
-        <?php endif;?>
+    <?php if (isset($_SESSION['email'])): ?>
+      <a href="
+        <?php if ($_SESSION['tipo'] == "admin"): ?>
+        <?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php
+        <?php else: ?>
+          <?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php
+        <?php endif; ?>
         " class="btn-agende btn-pulse">
-          <?php if($_SESSION['tipo']=="admin"): ?>
-            ACESSAR PAINEL
-          <?php else: ?>
-            AGENDE SUA VISITA
-            <?php endif; ?>
-             <i class="fa-regular fa-calendar-days"></i>
-        </a>
+        <?php if ($_SESSION['tipo'] == "admin"): ?>
+          ACESSAR PAINEL
+        <?php else: ?>
+          AGENDE SUA VISITA
+        <?php endif; ?>
+        <i class="fa-regular fa-calendar-days"></i>
+      </a>
     <?php else: ?>
-        <button class="btn-agende btn-pulse" id="abrirModal">
-            AGENDE SUA VISITA <i class="fa-regular fa-calendar-days"></i>
-        </button>
+      <button class="btn-agende btn-pulse" id="abrirModal">
+        AGENDE SUA VISITA <i class="fa-regular fa-calendar-days"></i>
+      </button>
     <?php endif; ?>
   </div>
 </div>
 
 <div id="modalLogin" class="modal">
-     <div class="modal-content">
-         <span class="fechar"><i class="fas fa-times"></i></span>
-          <h2>Acesso Necessário <i class="fas fa-lock fa-sm"></i></h2> 
-          <p>Entre em sua conta ou cadastre-se e descubra como é fácil transformar seu espaço com a <strong>ZUPINTURAS</strong>.</p> 
-          <div class="botoes-modal"> 
-            <a href="<?php echo RAIZ_PROJETO; ?>auth/views/login.php" class="btn-modal"> Fazer login <i class="fas fa-sign-in-alt"></i></a> 
-            <a href="<?php echo RAIZ_PROJETO; ?>auth/views/cadastro.php" class="btn-modal btn-secundario"> Cadastrar-se <i class="fas fa-user-plus"></i></a> 
-        </div> 
-    </div> 
+  <div class="modal-content">
+    <span class="fechar"><i class="fas fa-times"></i></span>
+    <h2>Acesso Necessário <i class="fas fa-lock fa-sm"></i></h2>
+    <p>Entre em sua conta ou cadastre-se e descubra como é fácil transformar seu espaço com a <strong>ZUPINTURAS</strong>.</p>
+    <div class="botoes-modal">
+      <a href="<?php echo RAIZ_PROJETO; ?>auth/views/login.php" class="btn-modal"> Fazer login <i class="fas fa-sign-in-alt"></i></a>
+      <a href="<?php echo RAIZ_PROJETO; ?>auth/views/cadastro.php" class="btn-modal btn-secundario"> Cadastrar-se <i class="fas fa-user-plus"></i></a>
+    </div>
+  </div>
 </div>
 
 <!-- SOBRE -->
@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="imagem animar fade-right">
-    <img src="<?php echo RAIZ_PROJETO;?>assets/img/ferramentas-sobre.jpg" alt="Ferramentas para Pinturas">
+    <img src="<?php echo RAIZ_PROJETO; ?>assets/img/ferramentas-sobre.jpg" alt="Ferramentas para Pinturas">
   </div>
 </section>
 
@@ -70,19 +70,19 @@
   </p>
   <div class="cards">
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/residencial-servicos.jpg" alt="Rolo com tinta Amarela">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/residencial-servicos.jpg" alt="Rolo com tinta Amarela">
       <span>Pintura Residencial</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/comercial-servicos.jpg" alt="Latas de Tinta">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/comercial-servicos.jpg" alt="Latas de Tinta">
       <span>Pintura Comercial</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/texturas-servicos.jpg" alt="Multiplas Texturas">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/texturas-servicos.jpg" alt="Multiplas Texturas">
       <span>Texturas</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/impermeabilizacao-servicos.jpg" alt="Parede Impermeabilizada">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/impermeabilizacao-servicos.jpg" alt="Parede Impermeabilizada">
       <span>Impermeabilização</span>
     </div>
   </div>
@@ -108,7 +108,7 @@
       <div class="informacoes">
         <h3>Informações</h3>
         <p>
-          Atendemos as regiões de <strong>Sorocaba</strong>, <strong>Araçoiaba da Terra</strong>, 
+          Atendemos as regiões de <strong>Sorocaba</strong>, <strong>Araçoiaba da Serra</strong>,
           <strong>Itu</strong> e <strong>Piedade</strong>.
         </p>
       </div>
@@ -126,129 +126,127 @@
   <div class="faqs-text" id="faq">
     <h1>Perguntas Frequentes</h1>
     <div class="linha"></div>
-        <div class="accordions-box">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapsetwo"
-                            aria-expanded="true"
-                            aria-controls="collapsetwo"
-                        >
-                            Do que se trata a plataforma?
-                        </button>
-                    </h2>
-                    <div
-                        id="collapsetwo"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample"
-                    > 
-                        <div class="accordion-body">
-                            Nossa plataforma tem como objetivo organizar os agendamentos de visitas dos clientes cadastrados, que recebem prioridade, além de apresentar de forma clara todos os nossos serviços.
-                        </div>
-                    </div>
-                </div>
+    <div class="accordions-box">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsetwo"
+              aria-expanded="true"
+              aria-controls="collapsetwo">
+              Do que se trata a plataforma?
+            </button>
+          </h2>
+          <div
+            id="collapsetwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Nossa plataforma tem como objetivo organizar os agendamentos de visitas dos clientes cadastrados, que recebem prioridade, além de apresentar de forma clara todos os nossos serviços.
             </div>
-
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapsethree"
-                            aria-expanded="true"
-                            aria-controls="collapsethree"
-                        >
-                            Qual é a média de preço para uma pintura residencial?
-                        </button>
-                    </h2>
-                    <div
-                        id="collapsethree"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample"
-                    >
-                        <div class="accordion-body">
-                            Não existe um valor médio fixo, pois o preço varia conforme as condições da obra, como presença de móveis, escolha do material (do cliente ou fornecido por nós) e outras especificações. A visita técnica, que em Sorocaba e região é gratuita, permite fornecer um orçamento preciso.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapsefour"
-                            aria-expanded="true"
-                            aria-controls="collapsefour"
-                        >
-                            É seguro fazer login e usar a plataforma para agendar visitas?
-                        </button>
-                    </h2>
-                    <div
-                        id="collapsefour"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                    >
-                        <div class="accordion-body">
-                            Sim! Nossa plataforma utiliza tecnologias de criptografia que garantem a proteção de todos os seus dados pessoais e informações de agendamento.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapsefive"
-                            aria-expanded="true"
-                            aria-controls="collapsefive"
-                        >
-                            Quais são as vantagens de usar a plataforma em vez do WhatsApp para agendar visitas?
-                        </button>
-                    </h2>
-                    <div
-                        id="collapsefive"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFour"
-                        data-bs-parent="#accordionExample"
-                    >
-                        <div class="accordion-body">
-                            A plataforma oferece uma organização completa dos agendamentos, garantindo que cada cliente tenha prioridade e que o processo seja mais ágil, prático e eficiente no dia da visita, diferente do WhatsApp, que pode gerar mensagens perdidas ou confusão nos horários.
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsethree"
+              aria-expanded="true"
+              aria-controls="collapsethree">
+              Qual é a média de preço para uma pintura residencial?
+            </button>
+          </h2>
+          <div
+            id="collapsethree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Não existe um valor médio fixo, pois o preço varia conforme as condições da obra, como presença de móveis, escolha do material (do cliente ou fornecido por nós) e outras especificações. A visita técnica, que em Sorocaba e região é gratuita, permite fornecer um orçamento preciso.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsefour"
+              aria-expanded="true"
+              aria-controls="collapsefour">
+              É seguro fazer login e usar a plataforma para agendar visitas?
+            </button>
+          </h2>
+          <div
+            id="collapsefour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Sim! Nossa plataforma utiliza tecnologias de criptografia que garantem a proteção de todos os seus dados pessoais e informações de agendamento.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsefive"
+              aria-expanded="true"
+              aria-controls="collapsefive">
+              Quais são as vantagens de usar a plataforma em vez do WhatsApp para agendar visitas?
+            </button>
+          </h2>
+          <div
+            id="collapsefive"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              A plataforma oferece uma organização completa dos agendamentos, garantindo que cada cliente tenha prioridade e que o processo seja mais ágil, prático e eficiente no dia da visita, diferente do WhatsApp, que pode gerar mensagens perdidas ou confusão nos horários.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-         const modal = document.getElementById("modalLogin"); 
-         const abrir = document.getElementById("abrirModal"); 
-         const fechar = document.querySelector(".fechar"); 
-         if (abrir) { abrir.addEventListener("click", () => modal.classList.add("ativo")); } 
-         if (fechar) { fechar.addEventListener("click", () => modal.classList.remove("ativo")); } 
-         window.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("ativo"); });
+  document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modalLogin");
+    const abrir = document.getElementById("abrirModal");
+    const fechar = document.querySelector(".fechar");
+    if (abrir) {
+      abrir.addEventListener("click", () => modal.classList.add("ativo"));
+    }
+    if (fechar) {
+      fechar.addEventListener("click", () => modal.classList.remove("ativo"));
+    }
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("ativo");
     });
-    window.addEventListener('load', () => {
+  });
+  window.addEventListener('load', () => {
 
     const popText = document.querySelector('.pop');
     const waveTitle = document.querySelector('.wave-hover');
@@ -257,9 +255,9 @@
     const projetos = document.querySelectorAll('.projeto');
 
     if (popText) {
-        const letters = popText.textContent.split('');
-        popText.textContent = '';
-        letters.forEach((letter, i) => {
+      const letters = popText.textContent.split('');
+      popText.textContent = '';
+      letters.forEach((letter, i) => {
         const span = document.createElement('span');
         span.textContent = letter;
         span.style.opacity = 0;
@@ -268,22 +266,22 @@
         span.style.transition = 'all 0.9s ease';
         popText.appendChild(span);
         setTimeout(() => {
-            span.style.opacity = 1;
-            span.style.transform = 'translateY(0)';
+          span.style.opacity = 1;
+          span.style.transform = 'translateY(0)';
         }, i * 100);
-        });
+      });
     }
 
     function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
     }
 
     function animateParagraph(p) {
-        const text = p.textContent.trim();
-        const sentences = text.split(/(?<=[.!?])\s+/);
-        p.textContent = '';
-        sentences.forEach((sentence, i) => {
+      const text = p.textContent.trim();
+      const sentences = text.split(/(?<=[.!?])\s+/);
+      p.textContent = '';
+      sentences.forEach((sentence, i) => {
         const span = document.createElement('span');
         span.textContent = sentence + ' ';
         span.style.opacity = 0;
@@ -292,32 +290,32 @@
         span.style.transition = 'all 0.6s ease';
         p.appendChild(span);
         setTimeout(() => {
-            span.style.opacity = 1;
-            span.style.transform = 'translateY(0)';
+          span.style.opacity = 1;
+          span.style.transform = 'translateY(0)';
         }, i * 500);
-        });
+      });
     }
 
     function checkWave() {
-        if (waveTitle && linha && isInViewport(waveTitle)) {
+      if (waveTitle && linha && isInViewport(waveTitle)) {
         waveTitle.classList.add('active');
         linha.classList.add('active');
-        }
+      }
 
-        if (aboutText && isInViewport(aboutText) && !aboutText.classList.contains('active')) {
+      if (aboutText && isInViewport(aboutText) && !aboutText.classList.contains('active')) {
         aboutText.classList.add('active');
         animateParagraph(aboutText);
-        }
+      }
     }
 
     function animateProjetos() {
-        projetos.forEach((projeto, i) => {
+      projetos.forEach((projeto, i) => {
         if (isInViewport(projeto) && !projeto.classList.contains('animate')) {
-            setTimeout(() => {
+          setTimeout(() => {
             projeto.classList.add('animate');
-            }, i * 200);
+          }, i * 200);
         }
-        });
+      });
     }
 
     checkWave();
@@ -326,22 +324,24 @@
     window.addEventListener('load', animateProjetos);
 
     const observador = new IntersectionObserver((entradas) => {
-        entradas.forEach((entrada) => {
+      entradas.forEach((entrada) => {
         if (entrada.isIntersecting) {
-            const elemento = entrada.target;
-            elemento.classList.add("ativo");
+          const elemento = entrada.target;
+          elemento.classList.add("ativo");
 
-            if (elemento.classList.contains("cards")) {
+          if (elemento.classList.contains("cards")) {
             const filhos = elemento.querySelectorAll(".card");
             filhos.forEach((filho, i) => {
-                setTimeout(() => filho.classList.add("ativo"), i * 150);
+              setTimeout(() => filho.classList.add("ativo"), i * 150);
             });
-            }
+          }
         }
-        });
-    }, { threshold: 0.2 });
+      });
+    }, {
+      threshold: 0.2
+    });
 
     document.querySelectorAll(".animar, .cards").forEach((el) => observador.observe(el));
 
-    });
+  });
 </script>

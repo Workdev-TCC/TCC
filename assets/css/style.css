@@ -424,15 +424,17 @@ header .nav-desktop .div-login-user {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
     color: var(--roxo);
     font-size: 25px;
   }
   header .logo-mobile {
     display: inline;
+    margin-top: 8px;
+    margin-right: 10px;
   }
   header .logo-mobile img {
-    width: 80px;
+    width: 75px;
     height: auto;
   }
   header .nav-desktop {
@@ -858,7 +860,6 @@ header .nav-desktop .div-login-user {
 .localizacao h2 {
   font-size: 28px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 .localizacao .linha {
   width: 400px;
@@ -1094,19 +1095,23 @@ header .nav-desktop .div-login-user {
 }
 @media (max-width: 550px) {
   .hero {
-    height: 400px;
+    height: 440px;
+    margin-bottom: -100px;
   }
   .hero .hero-text {
-    width: 100%;
+    margin-top: 80px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
   }
   .hero .hero-text h1 {
-    font-size: 20px;
+    font-size: 8vw;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20px;
   }
   .hero .hero-text p {
-    font-size: 16px;
-    max-width: 90%;
+    color: white;
+    font-size: 3vw;
   }
   .servicos {
     align-items: center;
@@ -1194,6 +1199,10 @@ header .nav-desktop .div-login-user {
   }
   .faqs {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .faqs .faqs-text {
     align-items: center;
@@ -5754,13 +5763,14 @@ p a:hover {
     gap: 10px;
     width: 100%;
     padding: 10px 20px;
+    font-family: "Hammersmith One", sans-serif;
   }
   .intocavel .sidebar .menu-section .opc {
     display: inline-block;
     font-size: 1.1rem;
     color: var(--text);
-    font-family: "Open Sans", sans-serif;
-    letter-spacing: 0.1rem;
+    font-family: "Hammersmith One", sans-serif;
+    letter-spacing: 0.05rem;
   }
   .intocavel .sidebar .menu-section hr {
     width: 80%;
@@ -5789,6 +5799,7 @@ p a:hover {
     gap: 10px;
     width: 100%;
     padding: 10px 20px;
+    font-family: "Hammersmith One", sans-serif;
   }
   .intocavel .sidebar .menu-section-1 span a {
     color: var(--rosa);

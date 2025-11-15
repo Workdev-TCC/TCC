@@ -52,6 +52,7 @@ $animation-duration: 0.5s;
     url("../img/inicio-hero.jpg") center/cover no-repeat;
   margin-bottom: -80px;
   top: -100px;
+  
 
   .hero-text {
     width: 1000px;
@@ -448,7 +449,6 @@ $animation-duration: 0.5s;
   h2 {
     font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
   }
 
   .linha {
@@ -735,20 +735,24 @@ $animation-duration: 0.5s;
 // Mobile
 @media (max-width: 550px) {
   .hero {
-    height: 400px;
+    height: 440px;
+    margin-bottom: -100px;
 
     .hero-text {
-      width: 100%;
+      margin-top: 80px;
+      padding: 10px;
       justify-content: center;
       align-items: center;
 
       h1 {
-        font-size: 20px;
+        font-size: 8vw;
+        letter-spacing: 0.05rem;
+        margin-bottom: 20px;
       }
 
       p {
-        font-size: 16px;
-        max-width: 90%;
+        color: white;
+        font-size: 3vw;
       }
     }
   }
@@ -856,7 +860,10 @@ $animation-duration: 0.5s;
 
   .faqs {
     margin-bottom: 50px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .faqs-text {
       align-items: center;
       margin: 10px;
