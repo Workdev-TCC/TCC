@@ -20,28 +20,29 @@
 
 <div class="solicitar-visita-page">
   <h1>Solicitar Visita</h1>
+  <div class="linha"></div>
   <form action="<?php echo RAIZ_PROJETO;?>usuarios/solicitar_visita.php" method="post" class="container mt-4">
     <div class="row g-3">
 
       <!-- 🔹 CEP agora é OPCIONAL -->
       <div class="col-md-4">
-        <label for="cep" class="form-label">CEP (opcional)</label>
-        <input type="text" class="form-control" id="cep" name="cep" maxlength="9" placeholder="Digite o CEP">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" name="cep" maxlength="9" placeholder="Digite o seu CEP...">
       </div>
   
       <div class="col-md-4">
         <label for="cidade" class="form-label">Cidade</label>
-        <input type="text" class="form-control" id="cidade" name="cidade" readonly>
+        <input type="text" class="form-control" placeholder="Digite a cidade..." id="cidade" name="cidade" readonly>
       </div>
   
       <div class="col-md-4">
         <label for="bairro" class="form-label">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" readonly>
+        <input type="text" class="form-control" placeholder="Digite o bairro..." id="bairro" name="bairro" readonly>
       </div>
   
       <div class="col-md-8">
         <label for="rua" class="form-label">Rua</label>
-        <input type="text" class="form-control" id="rua" name="rua" readonly>
+        <input type="text" class="form-control" placeholder="Digite a rua..." name="rua" readonly>
       </div>
   
       <div class="col-md-4">
@@ -51,7 +52,7 @@
   
       <div class="col-md-3">
         <label for="numero" class="form-label">Número do Imóvel</label>
-        <input type="text" class="form-control" id="numero" name="numero" maxlength="5">
+        <input type="text" class="form-control" placeholder="Número" id="numero" name="numero" maxlength="5">
       </div>
   
       <div class="col-md-9">
@@ -66,7 +67,7 @@
   <div id="servicos-container">
     <div class="input-group mb-2 servico-item">
       <select name="tipo_servico[]" class="form-control" required>
-        <option value="">Selecione um tipo de serviço</option>
+        <option value="">Selecione um tipo de serviço...</option>
         <option value="pintura interna">Pintura Interna</option>
         <option value="pintura de fachada">Pintura de Fachada</option>
         <option value="pintura de portoes">Pintura de Portões</option>
@@ -83,9 +84,9 @@
   </button>
 </div>
 
-      <div class="col-12 text-end mt-3">
-        <button type="submit" class="btn btn-info px-4">Enviar</button>
-        <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php" class="btn btn-info px-4">Voltar</a>
+      <div class="col-12 text-end mt-3 mb-2">
+        <button type="submit" class="btn btn-info px-4">Enviar <i class="fa-regular fa-floppy-disk"></i></button>
+        <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/gerenciar_solicitacoes.php" class="btn btn-info px-4">Voltar <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </form>

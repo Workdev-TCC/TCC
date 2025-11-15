@@ -40,6 +40,7 @@
 <?php endif; ?>
 <div class="minhas-solicitacoes-page">
     <h2 class="mb-2">Minhas Solicitações</h2>
+    <div class="linha"></div>
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
         <div class="flex-grow-1 me-3">
@@ -107,7 +108,7 @@
                                     <?php endif; ?>
                                     <!-- Botão WhatsApp -->
                                     <td class="text-center">
-                                        <a href="https://wa.me/5515999999999" target="_blank" class="btn btn-success btn-sm">
+                                        <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" target="_blank" class="btn btn-success btn-sm">
                                             <i class="fa-brands fa-whatsapp fa-2x"></i>
                                         </a>
                                     </td>
