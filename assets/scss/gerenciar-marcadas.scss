@@ -289,6 +289,22 @@
       }
     }
   }
+.status-cell {
+  font-weight: 700;
+  text-transform: capitalize;
+
+  &.status-pendente {
+    color: #ffc107 !important; // amarelo
+  }
+
+  &.status-marcado {
+    color: #25d366 !important; // verde
+  }
+
+  &.status-recusado {
+    color: #ff4f6f !important; // vermelho
+  }
+}
 
   // ----------------------------
   // Modal Estilizado

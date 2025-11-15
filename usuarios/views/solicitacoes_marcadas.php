@@ -178,6 +178,89 @@ try {
     
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    
+    // --- COLORIR STATUS NA TABELA ---
+    document.querySelectorAll("td.status-cell").forEach(td => {
+        const txt = td.textContent.trim().toLowerCase();
+
+        td.classList.remove("status-pendente", "status-marcado", "status-recusado");
+
+        if (txt === "pendente") {
+            td.classList.add("status-pendente");
+        } 
+        else if (txt === "marcado") {
+            td.classList.add("status-marcado");
+        } 
+        else if (txt === "recusado") {
+            td.classList.add("status-recusado");
+        }
+    });
+
+
+    const verMaisBtns = document.querySelectorAll(".ver-mais-btn");
+    const modalServicosContainer = document.getElementById("modal-servicos");
+
+    verMaisBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            // Dados básicos
+            const endereco = this.getAttribute("data-endereco") || "—";
+            const complemento = this.getAttribute("data-complemento") || "—";
+            const descricao = this.getAttribute("data-descricao") || "—";
+            const data = this.getAttribute("data-data") || "—";
+            const status = this.getAttribute("data-status") || "";
+            const observacao = this.getAttribute("data-observacao") || "—";
+
+            // Dados do modal
+            document.getElementById("modal-endereco").textContent = endereco;
+            document.getElementById("modal-complemento").textContent = complemento || "Não informado";
+            document.getElementById("modal-descricao").textContent = descricao || "Sem descrição";
+            document.getElementById("modal-data").textContent = data;
+
+            // === A MÁGICA ACONTECE AQUI (VERSÃO COM BADGES ROXAS) ===
+            const servicosJson = this.getAttribute("data-servicos-json");
+            let servicosHtml = '';
+
+            try {
+                const servicos = JSON.parse(servicosJson || '[]');
+
+                if (Array.isArray(servicos) && servicos.length > 0) {
+                    servicos.forEach(servico => {
+                        // transforma "pintura interna" ou "aplicação_de_texturas" em "Pintura Interna" etc.
+                        const nomeBonito = String(servico)
+                            .replace(/_/g, ' ')
+                            .replace(/\b\w/g, l => l.toUpperCase());
+
+                        servicosHtml += `
+                            <span class="badge servico-badge me-2 mb-2 fs-6 px-3 py-2">
+                                <i class="fas fa-paint-brush me-1"></i> ${nomeBonito}
+                            </span>`;
+                    });
+                } else {
+                    servicosHtml = '<span class="text-muted">Nenhum serviço selecionado</span>';
+                }
+            } catch (e) {
+                servicosHtml = '<span class="text-danger">Erro ao carregar serviços</span>';
+            }
+
+            modalServicosContainer.innerHTML = servicosHtml;
+
+
+            // Mostra motivo da recusa se existir
+            const motivoRecusaDiv = document.getElementById("motivo-recusa");
+            const motivoTexto = document.getElementById("modal-observacao");
+            if (status.toLowerCase() === "recusado" && observacao !== "—") {
+                motivoTexto.textContent = observacao;
+                motivoRecusaDiv.style.display = "block";
+            } else {
+                motivoRecusaDiv.style.display = "none";
+            }
+        });
+    });
+});
+</script>
 <?php
     include SIDEBAR;
     include USERBAR;

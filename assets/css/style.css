@@ -3875,6 +3875,19 @@ body {
 .gerenciar-marcadas-user .table td:nth-child(3):contains("recusado") {
   color: #ff4f6f;
 }
+.gerenciar-marcadas-user .status-cell {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.gerenciar-marcadas-user .status-cell.status-pendente {
+  color: #ffc107 !important;
+}
+.gerenciar-marcadas-user .status-cell.status-marcado {
+  color: #25d366 !important;
+}
+.gerenciar-marcadas-user .status-cell.status-recusado {
+  color: #ff4f6f !important;
+}
 .gerenciar-marcadas-user .modal-content {
   background: #16161d;
   border: 1px solid rgba(255, 255, 255, 0.1);
