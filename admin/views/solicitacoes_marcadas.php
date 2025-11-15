@@ -38,7 +38,7 @@ try {
     <div class="container mt-5">
         <!-- Cabeçalho e navegação -->
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
-            <h2 class="mb-3 mb-md-0 text-center text-md-start">Solicitações Marcadas</h2>
+
     
             <div class="d-flex flex-column flex-sm-row align-items-center gap-2 w-100 w-md-auto justify-content-center justify-content-md-end">
                 <nav aria-label="Navegação de solicitações" class="flex-shrink-0">

@@ -20,11 +20,8 @@
   // ----------------------------
   .container {
     max-width: 1400px;
-    width: 95%;
     padding-top: 3rem;
-    margin: 0 auto;
-    min-height: 450px;
-    height: 600px;
+    height: auto;
   }
 
   // ----------------------------
@@ -32,12 +29,13 @@
   // ----------------------------
   h2 {
     font-weight: 600;
-    background: $primary-gradient;
+    background: linear-gradient(90deg, #7a3fff, #ff4fd8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
   }
 
   // ----------------------------
@@ -48,7 +46,8 @@
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-
+    position: relative;
+    right: 200px;
     .page-item {
       .page-link {
         background-color: transparent;
@@ -90,6 +89,8 @@
     border-image: linear-gradient(90deg, #7a3fff, #ff4fd8) 1;
     color: #fdfdfd;
     transition: all 0.3s ease;
+    position: relative;
+    right: 200px;
 
     &:hover {
       background: linear-gradient(90deg, #7a3fff, #ff4fd8);
@@ -123,10 +124,12 @@
   // Card e tabela
   // ----------------------------
   .card {
-    background-color: $bg-card;
-    border: 1px solid $border-color;
+    background-color: #16161d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 1100px; // LARGURA FIXA MÁXIMA
     padding: 1rem;
 
     .card-body {
@@ -141,6 +144,7 @@
     font-size: 0.95rem;
     table-layout: fixed;
     width: 100%;
+    margin: 0 auto;
 
     thead {
       background: $primary-gradient;
@@ -258,6 +262,16 @@
     .container {
       padding-top: 1rem;
       width: 100%;
+      height: auto;
+      .pagination{
+        right: 0;
+      }
+      .btn-outline-primary{
+        right: 0;
+      }
+    }
+    .footer{
+      display: none;
     }
 
     h2 {

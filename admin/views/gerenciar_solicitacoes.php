@@ -33,7 +33,7 @@ try {
 <div class="container mt-4 px-3">
     <!-- Cabeçalho e navegação -->
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
-        <h2 class="mb-0 text-center text-md-start w-100">Gerenciar Solicitações</h2>
+
 
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
             <nav aria-label="Navegação de solicitações">

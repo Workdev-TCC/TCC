@@ -10,7 +10,7 @@
 
 
 <div class="container table-container">
-    <h2 class="text-center mb-4">Solicitações Pendentes</h2>
+
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
             <nav aria-label="Navegação de solicitações">
                 <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">

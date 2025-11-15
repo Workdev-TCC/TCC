@@ -26,17 +26,22 @@
     }
 ?>
 <?php if (!empty($_SESSION['message'])) : ?>
-	<div class="message-<?php echo $_SESSION['type']; ?>">
-		<?php if ($_SESSION['type'] === "success") : ?>
-			<i class="fas fa-check-circle icon-message"></i>
-		<?php else : ?>
-			<i class="fas fa-times-circle icon-message"></i>
-		<?php endif; ?>
-		<span><?php echo $_SESSION['message']; ?></span>
-		<i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
-	</div>
-	<?php unset($_SESSION['message']); unset($_SESSION['type']); ?>
-	<?php clear_messages(); ?>
+    <div class="message-<?php echo $_SESSION['type']; ?>">
+        <?php if ($_SESSION['type'] === "success") : ?>
+            <i class="fas fa-check-circle icon-message"></i>
+        <?php else : ?>
+            <i class="fas fa-times-circle icon-message"></i>
+        <?php endif; ?>
+
+        <span><?php echo $_SESSION['message']; ?></span>
+
+        <i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
+    </div>
+
+    <?php 
+        unset($_SESSION['message']); 
+        unset($_SESSION['type']); 
+    ?>
 <?php endif; ?>
 <div class="minhas-solicitacoes-page">
     <h2 class="mb-2">Minhas Solicitações</h2>
@@ -98,7 +103,7 @@
                                 <tr>
                                     <td class="text-center"><?= htmlspecialchars($mys['id']); ?></td>
                                     <td><?= htmlspecialchars($mys['cep']); ?></td>
-                                    <td><?= htmlspecialchars($mys['status']); ?></td>
+                                     <td class="status-cell"><?= htmlspecialchars($mys['status']); ?></td>
                                     <?php if($mys['status']!=="pendente" && $mys['status']!=="recusado"):?>
                                         <td><?= !empty($mys['data_visita']) ? htmlspecialchars(date('d/m/Y', strtotime($mys['data_visita']))) : '--/--/----'; ?></td>
                                         <td><?= !empty($mys['hora_visita']) ? htmlspecialchars($mys['hora_visita']) : '--:--'; ?></td>
@@ -188,7 +193,27 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+
+    
+    // --- COLORIR STATUS NA TABELA ---
+    document.querySelectorAll("td.status-cell").forEach(td => {
+        const txt = td.textContent.trim().toLowerCase();
+
+        td.classList.remove("status-pendente", "status-marcado", "status-recusado");
+
+        if (txt === "pendente") {
+            td.classList.add("status-pendente");
+        } 
+        else if (txt === "marcado") {
+            td.classList.add("status-marcado");
+        } 
+        else if (txt === "recusado") {
+            td.classList.add("status-recusado");
+        }
+    });
+
+
     const verMaisBtns = document.querySelectorAll(".ver-mais-btn");
     const modalServicosContainer = document.getElementById("modal-servicos");
 
@@ -208,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("modal-descricao").textContent = descricao || "Sem descrição";
             document.getElementById("modal-data").textContent = data;
 
-            // === A MÁGICA ACONTECE AQUI ===
+            // === A MÁGICA ACONTECE AQUI (VERSÃO COM BADGES ROXAS) ===
             const servicosJson = this.getAttribute("data-servicos-json");
             let servicosHtml = '';
 
@@ -217,12 +242,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (Array.isArray(servicos) && servicos.length > 0) {
                     servicos.forEach(servico => {
-                        const nomeBonito = servico
+                        // transforma "pintura interna" ou "aplicação_de_texturas" em "Pintura Interna" etc.
+                        const nomeBonito = String(servico)
                             .replace(/_/g, ' ')
-                            .replace(/\b\w/g, l => l.toUpperCase()); // Capitaliza palavras
+                            .replace(/\b\w/g, l => l.toUpperCase());
 
                         servicosHtml += `
-                            <span class="badge bg-primary text-white me-2 mb-2 fs-6 px-3 py-2">
+                            <span class="badge servico-badge me-2 mb-2 fs-6 px-3 py-2">
                                 <i class="fas fa-paint-brush me-1"></i> ${nomeBonito}
                             </span>`;
                     });
@@ -234,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             modalServicosContainer.innerHTML = servicosHtml;
+
 
             // Mostra motivo da recusa se existir
             const motivoRecusaDiv = document.getElementById("motivo-recusa");

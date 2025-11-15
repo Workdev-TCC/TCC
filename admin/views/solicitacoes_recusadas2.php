@@ -36,7 +36,7 @@ try {
     
     <div class="container mt-5">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
-        <h2 class="mb-3 mb-md-0 text-center text-md-start">Solicitações recusadas</h2>
+
     
         <div class="d-flex flex-column flex-sm-row align-items-center gap-2 w-100 w-md-auto justify-content-center justify-content-md-end">
             <!-- Paginação -->
