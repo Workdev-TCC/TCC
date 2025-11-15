@@ -5801,6 +5801,10 @@ p a:hover {
     padding: 10px 20px;
     font-family: "Hammersmith One", sans-serif;
   }
+  .intocavel .sidebar .menu-section-1 .div-login-user img {
+    width: 27px;
+    height: 27px;
+  }
   .intocavel .sidebar .menu-section-1 span a {
     color: var(--rosa);
   }

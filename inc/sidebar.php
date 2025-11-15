@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="header-sidebar">
             <div class="empresa">
-                <!-- <img src="<?php echo RAIZ_PROJETO;?>assets/img/logo.png" width="70px" alt="Logo"> -->
+                <!-- <img src="<?php echo RAIZ_PROJETO; ?>assets/img/logo.png" width="70px" alt="Logo"> -->
                 <h1><span class="zu">ZU</span>PINTURAS</h1>
             </div>
             <button id="fecharMenu" class="close-button"><i class="fas fa-times"></i></button>
@@ -12,6 +12,15 @@
             <span><a href="<?php echo RAIZ_PROJETO; ?>"><i class="fas fa-home"></i> Home</a></span>
             <?php if (empty($_SESSION['email'])): ?>
                 <a href="<?php echo RAIZ_PROJETO; ?>auth/views/login.php"><i class="fas fa-user"></i> Login</a>
+            <?php endif; ?>
+            <?php if (!empty($_SESSION['email'])): ?>
+                <a id="abrirUserbar" href="#">
+                    <div class="div-login-user">
+                        <img src="<?php echo RAIZ_PROJETO; ?>usuarios/img/<?php echo $_SESSION['foto']; ?>"
+                            alt="foto do usuario" class="rounded-circle profile-img">
+                        Meu Perfil
+                    </div>
+                </a>
             <?php endif; ?>
         </div>
 

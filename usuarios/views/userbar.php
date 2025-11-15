@@ -5,13 +5,13 @@
             <?php if(empty($_SESSION['foto'])):?>
                 <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/semimagem.jpg" alt="imagem">
             <?php else:?>
-                 <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>" alt="imagem">
+                <img src="<?php echo RAIZ_PROJETO;?>usuarios/img/<?php echo $_SESSION['foto'];?>" alt="imagem">
             <?php endif;?>
             <h2><?php echo $_SESSION['nome'];?></h2>
                 <div class="header">
         <button id="fecharUserbar" class="close-button"><i class="fas fa-times"></i></button>
     </div>
-           
+    
         </div>
         <div class="links-userbar">
             <div class="icon">
