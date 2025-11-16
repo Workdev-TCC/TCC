@@ -14,7 +14,7 @@
                 <a href="<?php echo RAIZ_PROJETO; ?>auth/views/login.php"><i class="fas fa-user"></i> Login</a>
             <?php endif; ?>
             <?php if (!empty($_SESSION['email'])): ?>
-                <a id="abrirUserbar" href="#">
+                <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_conta.php">
                     <div class="div-login-user">
                         <img src="<?php echo RAIZ_PROJETO; ?>usuarios/img/<?php echo $_SESSION['foto']; ?>"
                             alt="foto do usuario" class="rounded-circle profile-img">
@@ -37,8 +37,8 @@
             <hr>
             <?php if (!empty($_SESSION['email'])): ?>
                 <?php if ($_SESSION['tipo'] == "user"): ?>
-                    <a href="#">Minhas Solicitações</a>
-                    <a href="#">Nova Solicitação</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">Minhas Solicitações</a>
+                    <a href="usuarios/views/solicitar_visita.php">Nova Solicitação</a>
                 <?php else: ?>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Gerenciar Solicitações</a>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>

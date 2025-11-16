@@ -365,6 +365,9 @@ header .nav-desktop .nav-links {
 header .nav-desktop .nav-links li {
   margin-left: 40px;
 }
+header .nav-desktop .nav-links li ul.dropdown-menu li {
+  margin-left: 5px !important;
+}
 header .nav-desktop .nav-links li a {
   background: linear-gradient(90deg, var(--rosa), var(--azul));
   background-size: 150%;
@@ -376,7 +379,6 @@ header .nav-desktop .nav-links li a {
 }
 header .nav-desktop .nav-links li a:hover {
   -webkit-text-fill-color: transparent;
-  color: transparent;
 }
 header .nav-desktop .nav-links a.active {
   background: none;
@@ -2036,14 +2038,15 @@ header .nav-desktop .div-login-user {
 }
 .fundo-gerenciar-conta {
   width: 100%;
-  min-height: calc(100vh - 80px);
-  background: #121212;
+  min-height: calc(100vhd - 80px);
   color: #f5f5f5;
   padding: 0;
   display: flex;
   justify-content: center;
 }
 .fundo-gerenciar-conta .box {
+  background-color: var(--bg);
+  font-family: "Hammersmith One", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2051,21 +2054,24 @@ header .nav-desktop .div-login-user {
   text-align: center;
   gap: 1.5rem;
   padding: 2rem;
-  background: #1e1e1e;
   border-radius: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   width: 100%;
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
 .fundo-gerenciar-conta .box .imgbox {
   width: 300px;
   height: 300px;
-  border-radius: 50%;
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  padding: 3px;
   cursor: pointer;
 }
 .fundo-gerenciar-conta .box .imgbox:hover {
@@ -2075,6 +2081,7 @@ header .nav-desktop .div-login-user {
 .fundo-gerenciar-conta .box .imgbox img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2148,10 +2155,10 @@ header .nav-desktop .div-login-user {
     height: 130px;
   }
   .fundo-gerenciar-conta .box h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .fundo-gerenciar-conta .box .linksbox a {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 body {
@@ -5869,8 +5876,10 @@ p a:hover {
   flex-direction: column;
   background-color: var(--bg-light);
   height: 290px;
-  margin-top: -120px;
+  margin-top: -90px;
   width: 100%;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 19px;
 }
 .userbar .body .links-userbar .icon a:hover {
   background-color: var(--bg-morelighter);
@@ -5879,6 +5888,9 @@ p a:hover {
 }
 .userbar .body .links-userbar .icon a:hover strong {
   color: white;
+}
+.userbar .body .links-userbar .icon a:hover strong .deleta {
+  color: rgb(231, 117, 220);
 }
 .userbar .body .links-userbar a {
   display: flex;
@@ -5890,12 +5902,14 @@ p a:hover {
   text-decoration: none;
   color: var(--text);
   text-align: start;
+  letter-spacing: 0.02rem;
 }
 .userbar .body .links-userbar strong {
   color: rgb(227, 146, 219);
 }
 .userbar .body .links-userbar #icon1 {
-  display: flex; /* inline mas com flex para centralizar */
+  display: flex;
+  /* inline mas com flex para centralizar */
   flex-direction: row;
   align-items: center;
   width: 17px;
@@ -5908,7 +5922,8 @@ p a:hover {
 }
 .userbar .body .links-userbar #icon2 {
   display: flex;
-  flex-direction: row; /* inline mas com flex para centralizar */
+  flex-direction: row;
+  /* inline mas com flex para centralizar */
   margin-left: auto;
   flex-shrink: 0;
   font-size: 20px;
@@ -5922,24 +5937,34 @@ p a:hover {
 .userbar .body .img-userbar {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
-  order: -1; /* manda a imagem para cima */
+  align-items: center;
+  order: -1;
+  /* manda a imagem para cima */
   margin-top: -60px;
   margin-left: 3%;
   padding: 10px;
   gap: 15px;
 }
 .userbar .body .img-userbar img {
-  width: 50px;
+  width: 60px;
+  height: 58px;
   -o-object-fit: cover;
-     object-fit: cover; /* garante que a imagem não distorça */
+     object-fit: cover;
+  /* garante que a imagem não distorça */
   border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
 }
 .userbar .body .img-userbar h2 {
+  margin: 0;
   color: var(--text);
-  font-size: 21px;
+  font-size: 20px;
   align-items: center;
   padding-top: 10px;
+  font-family: "Hammersmith One", sans-serif;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
 }
 .userbar .body .img-userbar button {
   display: flex;
@@ -5948,14 +5973,15 @@ p a:hover {
   border: none;
   font-size: 32px;
   color: var(--text);
+  margin-top: -10px;
+  margin-left: auto;
 }
 .userbar .body .img-userbar button :hover {
   transition: 0.2s ease-out;
   color: rgb(227, 146, 219);
 }
 .userbar .body .img-userbar button {
-  position: relative;
-  margin-left: 80px;
+  margin-left: auto;
 }
 .userbar .footer {
   background-color: var(--bg-light);
@@ -5963,7 +5989,8 @@ p a:hover {
   width: 100%;
   padding: 15px;
   border-radius: 20px;
-  margin-top: -55px;
+  margin-top: -40px;
+  font-size: 15px;
 }
 
 @media (max-width: 500px) {

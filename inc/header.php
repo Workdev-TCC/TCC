@@ -77,11 +77,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                AGENDAMENTOS
+                                    SOLICITAÇÕES
                             </a>
                             <ul class="dropdown-menu bg-dark" aria-labelledby="servicosDropdown">
-                                <li><a class="dropdown-item" href="<?php echo  RAIZ_PROJETO; ?>usuarios/views/solicitar_visita.php"><i class="fa-solid fa-calendar-plus"></i> Novo Agendamento</a></li>
-                                <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php"><i class="fa-solid fa-calendar-days"></i> Meus Agendamentos</a></li>
+                                <li><a class="dropdown-item" href="<?php echo  RAIZ_PROJETO; ?>usuarios/views/solicitar_visita.php"><i class="fa-solid fa-calendar-plus"></i> Nova Solicitação</a></li>
+                                <li><a class="dropdown-item" href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php"><i class="fa-solid fa-calendar-days"></i> Minhas Solicitações</a></li>
                             </ul>
                         </li>
                     <?php else: ?>
