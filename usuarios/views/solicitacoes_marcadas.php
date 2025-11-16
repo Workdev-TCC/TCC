@@ -49,7 +49,7 @@ try {
 	<?php clear_messages(); ?>
 <?php endif; ?>
 <div class="gerenciar-marcadas-user">
-     <h2 class="mb-2">Solicitações Marcadas</h2>
+     <h1 class="linha">Solicitações Marcadas</h1>
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
         <div class="flex-grow-1 me-3">

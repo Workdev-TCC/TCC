@@ -29,12 +29,12 @@
     <form action="<?php echo RAIZ_PROJETO; ?>usuarios/edit.php" method="post" enctype="multipart/form-data">
       <div class="input-grupo">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($_SESSION['nome']); ?>" required>
+        <input type="text" id="nome" name="nome" maxlength="50" value="<?php echo htmlspecialchars($_SESSION['nome']); ?>" required>
       </div>
 
       <div class="input-grupo">
         <label for="tel">Telefone</label>
-        <input type="text" name="telefone" id="tel" value="<?php echo htmlspecialchars($_SESSION['telefone']); ?>" placeholder="(00) 00000-0000" required>
+        <input type="text" name="telefone" id="tel" maxlength="15" value="<?php echo htmlspecialchars($_SESSION['telefone']); ?>" placeholder="(00) 00000-0000" required>
       </div>
 
       <div class="input-grupo">

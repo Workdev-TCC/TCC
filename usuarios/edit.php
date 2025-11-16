@@ -34,6 +34,9 @@
                 if(limparDir($db)){
                     // echo "limpou";
                     // die();
+                    $_SESSION['message'] = "Perfil atualizado com sucesso!";
+                    $_SESSION['type'] = "success";
+                    
                     header("Location: " . RAIZ_PROJETO);
                     exit();
                 }

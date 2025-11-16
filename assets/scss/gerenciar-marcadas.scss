@@ -64,12 +64,14 @@
   // Cabeçalho da Página
   // ----------------------------
   h2 {
-    background: $primary-gradient;
+      color: $text-strong;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    font-family: "Hammersmith One", sans-serif !important;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0 !important;  
   }
 
   // ----------------------------
@@ -362,109 +364,61 @@
   // ----------------------------
   // Layout do Header
   // ----------------------------
-  .d-flex.justify-content-between {
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: stretch !important;
-      
-      .flex-grow-1 {
-        margin-bottom: 1.5rem;
-      }
-      
-      .d-flex.gap-2 {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
-  }
+  // Correção de estouro no mobile
+@media (max-width: 768px) {
 
-  // ----------------------------
-  // Responsividade
-  // ----------------------------
-  @media (max-width: 768px) {
+  .gerenciar-marcadas-user {
+
+    // container ocupando 100% sem margem lateral gigante
     .container {
-      margin: 1rem auto;
-      padding: 0 0.5rem;
+      max-width: 100% !important;
+      padding: 0 0.8rem !important;
     }
-    
-    .card .card-body {
-      padding: 1rem;
-    }
-    
-    .table {
-      font-size: 0.9rem;
-      
-      thead {
-        display: none;
-      }
-      
-      tbody, tr, td {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-      
-      tr {
-        margin-bottom: 1rem;
-        border: 1px solid $border-color;
-        border-radius: 10px;
-        padding: 1rem;
-        background: rgba(22, 22, 29, 0.8);
-        
-        &:hover {
-          transform: none;
-          background: rgba(122, 63, 255, 0.1);
-        }
-        
-        td {
-          padding: 0.5rem 0;
-          position: relative;
-          padding-left: 45%;
-          
-          &:before {
-            content: attr(data-label);
-            position: absolute;
-            left: 0.5rem;
-            width: 40%;
-            font-weight: 600;
-            color: $text-muted;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-          }
-          
-          &.text-center {
-            text-align: left;
-            padding-left: 45%;
-          }
-        }
-      }
-    }
-    
-    .input-group {
+
+    // card responsivo sem largura fixa
+    .card {
+      max-width: 100% !important;
       width: 100% !important;
+      margin: 0 auto;
     }
-    
+
+    // tabela sem estourar pro lado
+    .table {
+      width: 100% !important;
+      display: block;
+      overflow-x: hidden !important;
+    }
+
+    // linhas da tabela nunca ultrapassam a tela
+    .table tr,
+    .table td {
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    // botões responsivos
     .btn {
-      width: 100%;
-      margin-bottom: 0.5rem;
+      width: 100% !important;
+      padding: 0.9rem !important;
+      font-size: 1rem;
     }
+  }
+}
+
+// Para telas muito pequenas (tipo 320px)
+@media (max-width: 480px) {
+  .gerenciar-marcadas-user h2 {
+    font-size: 1.3rem !important;
   }
 
-  @media (max-width: 576px) {
-    h2 {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-    
-    .table tr td {
-      padding-left: 50%;
-      
-      &:before {
-        width: 45%;
-        font-size: 0.75rem;
-      }
-    }
+  .table td {
+    padding-left: 40% !important;
   }
+}
+
 
   // ----------------------------
   // Animações

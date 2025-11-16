@@ -63,15 +63,27 @@
   // ----------------------------
   // Cabeçalho da Página
   // ----------------------------
-  h2 {
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  h1 {
+    color: white !important;
     font-weight: 700;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    font-family: "Hammersmith One", sans-serif;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0 !important; 
+  
   }
 
+  .linha {
+    width: 48%;
+    height: 3px;
+    margin: 0 auto 0 auto;
+    background: linear-gradient(90deg, var(--azul), var(--rosa));
+    border-radius: 2px;
+
+    &.active {
+      width: 300px;
+    }
+  }
   // ----------------------------
   // Barra de Pesquisa
   // ----------------------------
@@ -375,7 +387,6 @@
     flex-direction: row !important;        // ficam lado a lado
     align-items: center !important;
     flex-wrap: wrap;                        // permite quebra
-
     .flex-grow-1 {
       margin-bottom: 0;                    // remove espaço extra
       margin-right: 1rem;                  // separação horizontal
@@ -426,6 +437,7 @@
     justify-content: space-between !important;
   }
 
+  .linha{ width: 80%;}
   /* Campo de pesquisa = metade da linha */
   .minhas-solicitacoes-page .flex-grow-1 {
     flex: 1 1 48% !important;

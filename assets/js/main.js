@@ -195,6 +195,45 @@ $(document).ready(function () {
   });
 });
 
+// telefone
+  $("#tel").on("input", function () {
+    let val = $(this).val();
+    let digits = val.replace(/\D/g, "");
+
+    if (digits.length > 11) digits = digits.slice(0, 11);
+
+    let formatted = "";
+
+    if (digits.length === 0) {
+      formatted = "";
+    } else if (digits.length <= 2) {
+      formatted = "(" + digits;
+    } else if (digits.length <= 6) {
+      formatted = "(" + digits.slice(0, 2) + ") " + digits.slice(2);
+    } else if (digits.length <= 10) {
+      formatted =
+        "(" + digits.slice(0, 2) + ") " + digits.slice(2, 6) + "-" + digits.slice(6);
+    } else {
+      formatted =
+        "(" +
+        digits.slice(0, 2) +
+        ") " +
+        digits.slice(2, 7) +
+        "-" +
+        digits.slice(7, 11);
+    }
+
+    $(this).val(formatted);
+
+    const erroTelefone = $("#erro-telefone");
+    if (digits.length < 10) {
+      erroTelefone.show();
+    } else {
+      erroTelefone.hide();
+    }
+});
+
+
 window.onload = () => {
     const loading = document.getElementById("loading");
     const conteudo = document.getElementById("conteudo");

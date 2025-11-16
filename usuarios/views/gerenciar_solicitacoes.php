@@ -44,7 +44,7 @@
     ?>
 <?php endif; ?>
 <div class="minhas-solicitacoes-page">
-    <h2 class="mb-2">Minhas Solicitações</h2>
+    <h1>Minhas Solicitações</h1>
     <div class="linha"></div>
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
@@ -94,7 +94,7 @@
                                 <th>Status</th>
                                 <th>Data</th>
                                 <th>Hora</th>
-                                <th>Contato do Adm</th>
+                                <th>Contato ZuPinturas</th>
                                 <th>Ver Mais</th>
                             </tr>
                         </thead>
@@ -126,7 +126,7 @@
                                     <td data-label="Hora">--:--</td>
                                 <?php endif; ?>
 
-                                <td data-label="Contato do Adm" class="text-center">
+                                <td data-label="Contato ZuPinturas" class="text-center">
                                     <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" 
                                     target="_blank" class="btn btn-success btn-sm">
                                         <i class="fa-brands fa-whatsapp fa-2x"></i>

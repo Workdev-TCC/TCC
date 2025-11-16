@@ -53,7 +53,7 @@ try {
         $_SESSION['senha']          = $senha;
 
         if(!empty($_SESSION['id'])){
-            $_SESSION['message']       = "Bem vindo " . $nome;
+            $_SESSION['message']       = "Bem vindo(a) " . $nome . "!";
             $_SESSION['type']          = "success";
             header("Location: " . RAIZ_PROJETO);
             exit();

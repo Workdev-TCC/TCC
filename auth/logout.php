@@ -4,7 +4,7 @@
         session_start();//acessa a sesão existente
         session_destroy();//destroy a sessao
         session_start();//acessa a sesão existente
-        $_SESSION['message'] ="Você saiu da conta";
+        $_SESSION['message'] ="Desconectado com sucesso!";
 		$_SESSION['type'] = 'success';
         header("Location: ".RAIZ_PROJETO."index.php");
     }catch(Exception $e){
