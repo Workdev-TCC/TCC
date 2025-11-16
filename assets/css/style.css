@@ -6282,8 +6282,10 @@ p a:hover {
     right: 0;
   }
   .intocavel .sidebar {
+    display: flex;
+    flex-direction: column;
     width: 300px;
-    height: 100vh;
+    height: 100dvh;
     background: linear-gradient(to top, #111, #1a1a1a);
     border-right: 1px solid #1a1717;
     position: fixed;
@@ -6339,7 +6341,7 @@ p a:hover {
     right: 0;
     border: none;
     padding: 0;
-    font-size: 33px;
+    font-size: 27px;
     background-color: var(--bg);
     color: var(--branco);
   }
@@ -6348,14 +6350,16 @@ p a:hover {
     flex-direction: column;
     align-items: start;
     gap: 10px;
-    font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px 20px;
+    font-family: "Hammersmith One", sans-serif;
   }
   .intocavel .sidebar .menu-section .opc {
     display: inline-block;
     font-size: 1.1rem;
     color: var(--text);
+    font-family: "Hammersmith One", sans-serif;
+    letter-spacing: 0.05rem;
   }
   .intocavel .sidebar .menu-section hr {
     width: 80%;
@@ -6382,9 +6386,13 @@ p a:hover {
     flex-direction: column;
     align-items: start;
     gap: 10px;
-    font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px 20px;
+    font-family: "Hammersmith One", sans-serif;
+  }
+  .intocavel .sidebar .menu-section-1 .div-login-user img {
+    width: 27px;
+    height: 27px;
   }
   .intocavel .sidebar .menu-section-1 span a {
     color: var(--rosa);
@@ -6400,15 +6408,13 @@ p a:hover {
   .intocavel .sidebar .rodape {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-top: var(--bg-lighter) 1px solid;
+    gap: 5px;
+    margin-top: auto;
   }
   .intocavel .sidebar .rodape .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    width: 100%;
+    border-top: var(--bg-lighter) 1px solid;
+    padding: 10px;
   }
   .intocavel .sidebar .rodape .logo p {
     margin: 0;
@@ -6452,8 +6458,10 @@ p a:hover {
   flex-direction: column;
   background-color: var(--bg-light);
   height: 290px;
-  margin-top: -120px;
+  margin-top: -90px;
   width: 100%;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 19px;
 }
 .userbar .body .links-userbar .icon a:hover {
   background-color: var(--bg-morelighter);
@@ -6462,6 +6470,9 @@ p a:hover {
 }
 .userbar .body .links-userbar .icon a:hover strong {
   color: white;
+}
+.userbar .body .links-userbar .icon a:hover strong .deleta {
+  color: rgb(231, 117, 220);
 }
 .userbar .body .links-userbar a {
   display: flex;
@@ -6473,12 +6484,14 @@ p a:hover {
   text-decoration: none;
   color: var(--text);
   text-align: start;
+  letter-spacing: 0.02rem;
 }
 .userbar .body .links-userbar strong {
   color: rgb(227, 146, 219);
 }
 .userbar .body .links-userbar #icon1 {
-  display: flex; /* inline mas com flex para centralizar */
+  display: flex;
+  /* inline mas com flex para centralizar */
   flex-direction: row;
   align-items: center;
   width: 17px;
@@ -6491,7 +6504,8 @@ p a:hover {
 }
 .userbar .body .links-userbar #icon2 {
   display: flex;
-  flex-direction: row; /* inline mas com flex para centralizar */
+  flex-direction: row;
+  /* inline mas com flex para centralizar */
   margin-left: auto;
   flex-shrink: 0;
   font-size: 20px;
@@ -6505,24 +6519,34 @@ p a:hover {
 .userbar .body .img-userbar {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
-  order: -1; /* manda a imagem para cima */
+  align-items: center;
+  order: -1;
+  /* manda a imagem para cima */
   margin-top: -60px;
   margin-left: 3%;
   padding: 10px;
   gap: 15px;
 }
 .userbar .body .img-userbar img {
-  width: 50px;
+  width: 60px;
+  height: 58px;
   -o-object-fit: cover;
-     object-fit: cover; /* garante que a imagem não distorça */
+     object-fit: cover;
+  /* garante que a imagem não distorça */
   border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
 }
 .userbar .body .img-userbar h2 {
+  margin: 0;
   color: var(--text);
-  font-size: 21px;
+  font-size: 20px;
   align-items: center;
   padding-top: 10px;
+  font-family: "Hammersmith One", sans-serif;
+  text-align: center;
+  width: 200px;
+  max-width: 200px;
 }
 .userbar .body .img-userbar button {
   display: flex;
@@ -6531,14 +6555,15 @@ p a:hover {
   border: none;
   font-size: 32px;
   color: var(--text);
+  margin-top: -10px;
+  margin-left: auto;
 }
 .userbar .body .img-userbar button :hover {
   transition: 0.2s ease-out;
   color: rgb(227, 146, 219);
 }
 .userbar .body .img-userbar button {
-  position: relative;
-  margin-left: 80px;
+  margin-left: auto;
 }
 .userbar .footer {
   background-color: var(--bg-light);
@@ -6546,7 +6571,8 @@ p a:hover {
   width: 100%;
   padding: 15px;
   border-radius: 20px;
-  margin-top: -55px;
+  margin-top: -40px;
+  font-size: 15px;
 }
 
 @media (max-width: 500px) {
