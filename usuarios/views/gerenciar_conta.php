@@ -16,17 +16,17 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 
 <?php if (!empty($_SESSION['message'])) : ?>
-	<div class="message-<?php echo $_SESSION['type']; ?>">
-		<?php if ($_SESSION['type'] === "success") : ?>
-			<i class="fas fa-check-circle icon-message"></i>
-		<?php else : ?>
-			<i class="fas fa-times-circle icon-message"></i>
-		<?php endif; ?>
-		<span><?php echo $_SESSION['message']; ?></span>
-		<i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
-	</div>
-	<?php unset($_SESSION['message']); unset($_SESSION['type']); ?>
-	<?php clear_messages(); ?>
+  <div class="message-<?php echo $_SESSION['type']; ?>">
+      <?php if ($_SESSION['type'] === "success") : ?>
+          <i class="fas fa-check-circle icon-message"></i>
+      <?php else : ?>
+          <i class="fas fa-times-circle icon-message"></i>
+      <?php endif; ?>
+      <span><?php echo $_SESSION['message']; ?></span>
+      <i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
+  </div>
+<?php unset($_SESSION['message']); unset($_SESSION['type']); ?>
+<!-- <?php clear_messages(); ?> -->
 <?php endif; ?>
 
 <div class="fundo-gerenciar-conta">
@@ -41,11 +41,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <!-- Links -->
         <div class="linksbox">
-            <a href="<?php echo RAIZ_PROJETO; ?>auth/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            <a href="<?php echo RAIZ_PROJETO; ?>auth/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sair da Conta</a>
             <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/edit.php"><i class="fa-solid fa-user-pen"></i> Editar Dados</a>
             <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/editar_senha.php"><i class="fa-solid fa-key"></i> Editar Senha</a>
-            <a href="#"><i class="fa-solid fa-file-contract"></i> Termos de uso</a>
-            <a href="#"><i class="fa-solid fa-shield-halved"></i> Política de privacidade</a>
+            
             <a href="#"><i class="fa-solid fa-trash text-danger"></i> <strong>Deletar conta</strong></a>
         </div>
     </div>
@@ -61,7 +60,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
       <div class="modal-body">
         <img src="<?php echo RAIZ_PROJETO; ?>usuarios/img/<?php echo $_SESSION['foto'] ?: 'semimagem.jpg'; ?>" 
-             alt="foto ampliada" class="img-fluid rounded shadow" style="max-width:300px;">
+            alt="foto ampliada" class="img-fluid rounded shadow" style="max-width:300px;">
       </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
