@@ -52,8 +52,14 @@ header {
     .nav-links {
       display: flex;
       flex-direction: row;
+
       li{
         margin-left: 40px;
+        
+        ul.dropdown-menu li{
+          margin-left: 5px !important;
+        }
+        
         a{
           background: linear-gradient(90deg, var(--rosa), var(--azul));
           background-size: 150%;
@@ -65,7 +71,7 @@ header {
         }
         a:hover {
           -webkit-text-fill-color: transparent;
-          color: transparent;
+          // color: transparent;
         }
       }
       a.active {
@@ -96,7 +102,8 @@ header {
   header {
     .nav-desktop {
       justify-content: space-between;
-      margin-top: 0;
+      margin-top: 10px;
+      font-size: 15px;
       .logo-desktop {
         img {
           width: 70px;
@@ -129,14 +136,16 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      padding: 15px;
       color: var(--roxo);
       font-size: 25px;
     }
     .logo-mobile {
       display: inline;
+      margin-top: 8px;
+      margin-right: 10px;
       img {
-        width: 80px;
+        width: 75px;
         height: auto;
       }
     }
