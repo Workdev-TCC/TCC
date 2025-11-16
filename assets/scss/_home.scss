@@ -53,6 +53,7 @@ $animation-duration: 0.5s;
   margin-bottom: -80px;
   top: -100px;
 
+
   .hero-text {
     width: 1000px;
     display: flex;
@@ -90,7 +91,7 @@ $animation-duration: 0.5s;
 
     p {
       color: white;
-      font-size: 1.2vw;
+      font-size: 1.6vw;
       letter-spacing: 0.1rem;
       font-family: "Roboto", sans-serif;
       max-width: 850px;
@@ -304,7 +305,6 @@ $animation-duration: 0.5s;
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: 1fr;
     text-align: center;
 
     .imagem {
@@ -448,7 +448,6 @@ $animation-duration: 0.5s;
   h2 {
     font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
   }
 
   .linha {
@@ -547,6 +546,7 @@ $animation-duration: 0.5s;
       text-align: left;
 
       .contatos {
+        margin-left: 0;
         align-self: flex-start;
         text-align: left;
       }
@@ -681,19 +681,52 @@ $animation-duration: 0.5s;
     }
   }
 }
+/* iPads (até o Pro 12.9”) */
+@media (max-width: 1024px) {
+  .sobre {
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    .imagem {
+      margin: 0 auto;
+      margin-top: 20px;
+    }
 
+  }
+  .servicos{
+    .cards{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; 
+      gap: 20px
+    }
+    .card {
+    width: 280px; /* ajuste como preferir */
+    text-align: center;
+  }
+  }
+}
 // Tablets e Ipads
 @media (max-width: 800px) {
-  body {
-    //medidas fundamentais
-    max-width: 800px;
-    height: 100vh;
-    font-size: 12px;
-    //--------------------
-  }
-
   .hero {
-    height: 460px;
+    .hero-text {
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 6vw;
+        letter-spacing: 0.05rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: white;
+        font-size: 2.5vw;
+      }
+    }
   }
 
   .servicos {
@@ -713,21 +746,113 @@ $animation-duration: 0.5s;
 
   .sobre {
     max-width: 800px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
     border-width: 2px;
     border-style: solid;
+    margin: 10px;
 
-    .sobre-img {
-      width: 100%;
-      height: 300px;
+    .imagem {
+      margin: 0 auto;
+      margin-top: 20px;
 
       img {
-        width: 100%;
+        width: 85%;
+        max-width: 450px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 90%;
+        height: calc(100% + 10px);
+        background: linear-gradient(110deg, var(--azul), var(--rosa));
+        border-radius: 5px;
+        z-index: 1;
+        left: 12px;
       }
     }
+  }
+
+  .localizacao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 600px;
+    gap: 0px;
+
+    h1 {
+      background-color: #e1e1e1;
+      font-size: 25px;
+      margin-left: 0;
+    }
+
+    .linha {
+      background-color: #1e1e1e;
+    }
+
+    .linha::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--azul), var(--rosa));
+      margin-left: 0px;
+    }
+
+
+    .conteudo {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+
+      p {
+        width: 100%;
+        margin: 0;
+      }
+
+      h3 {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start !important;
+        text-align: left;
+      }
+
+      .mapa {
+        width: 100%;
+
+        iframe {
+          width: 90%;
+          transition: transform 0.5s ease;
+          border: 2px solid;
+        }
+      }
+
+      .info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+        height: auto;
+
+        .contatos {
+          align-self: flex-start;
+          text-align: left;
+          width: 100%;
+
+        }
+      }
+
+    }
+  }
+  .faqs{
+    margin-bottom: 50px;
   }
 
 }
@@ -735,34 +860,39 @@ $animation-duration: 0.5s;
 // Mobile
 @media (max-width: 550px) {
   .hero {
-    height: 400px;
+    height: 440px;
+    margin-bottom: -100px;
 
     .hero-text {
-      width: 100%;
+      margin-top: 80px;
+      padding: 10px;
       justify-content: center;
       align-items: center;
 
       h1 {
-        font-size: 20px;
+        font-size: 8vw;
+        letter-spacing: 0.05rem;
+        margin-bottom: 20px;
       }
 
       p {
-        font-size: 16px;
-        max-width: 90%;
+        color: white;
+        font-size: 3vw;
       }
     }
   }
 
   .servicos {
-   align-items: center;
+    align-items: center;
+
     .linha {
       width: 100%;
     }
 
     .linha::after {
-     
+
       width: 100%;
-    
+
     }
   }
 
@@ -772,24 +902,25 @@ $animation-duration: 0.5s;
     align-items: center;
     height: auto;
     width: 90%;
-    margin: 0;
     flex-direction: column;
 
-    .sobre-img {
-      display: none;
-    }
+    .imagem {
+      margin-top: 20px;
 
-    .sobre-text {
-      width: 100%;
-      max-width: 100%;
-      align-items: start;
-      justify-content: start;
+      img {
+        width: 85%;
+        max-width: 450px;
+      }
 
-      p {
-        font-size: 17px;
-        width: 100%;
-        margin: 10px;
-        text-align: left;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 90%;
+        height: calc(100% + 10px);
+        background: linear-gradient(110deg, var(--azul), var(--rosa));
+        border-radius: 5px;
+        z-index: 1;
       }
     }
 
@@ -836,6 +967,7 @@ $animation-duration: 0.5s;
 
       .mapa {
         flex: 1;
+
         iframe {
           transition: transform 0.5s ease;
           border: 2px solid;
@@ -847,18 +979,22 @@ $animation-duration: 0.5s;
         font-size: 28px;
         text-align: center;
       }
+
       .info {
         .contatos {
           display: none;
         }
-    }
+      }
 
     }
   }
 
   .faqs {
     margin-bottom: 50px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     .faqs-text {
       align-items: center;

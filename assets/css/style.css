@@ -539,7 +539,7 @@ header .nav-desktop .div-login-user {
 }
 .hero .hero-text p {
   color: white;
-  font-size: 1.2vw;
+  font-size: 1.6vw;
   letter-spacing: 0.1rem;
   font-family: "Roboto", sans-serif;
   max-width: 850px;
@@ -729,7 +729,6 @@ header .nav-desktop .div-login-user {
 }
 @media (max-width: 900px) {
   .sobre {
-    grid-template-columns: 1fr;
     text-align: center;
   }
   .sobre .imagem {
@@ -863,7 +862,6 @@ header .nav-desktop .div-login-user {
 .localizacao h2 {
   font-size: 28px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 .localizacao .linha {
   width: 400px;
@@ -946,6 +944,7 @@ header .nav-desktop .div-login-user {
     text-align: left;
   }
   .localizacao .info .contatos {
+    margin-left: 0;
     align-self: flex-start;
     text-align: left;
   }
@@ -1063,14 +1062,44 @@ header .nav-desktop .div-login-user {
   line-height: 1.6;
 }
 
-@media (max-width: 800px) {
-  body {
+/* iPads (até o Pro 12.9”) */
+@media (max-width: 1024px) {
+  .sobre {
     max-width: 800px;
-    height: 100vh;
-    font-size: 12px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
   }
-  .hero {
-    height: 460px;
+  .sobre .imagem {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .servicos .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .servicos .card {
+    width: 280px; /* ajuste como preferir */
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .hero .hero-text {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .hero-text h1 {
+    font-size: 6vw;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20px;
+  }
+  .hero .hero-text p {
+    color: white;
+    font-size: 2.5vw;
   }
   .servicos .img img {
     -o-object-position: right;
@@ -1081,37 +1110,118 @@ header .nav-desktop .div-login-user {
   }
   .sobre {
     max-width: 800px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     -o-border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
        border-image: linear-gradient(to right, var(--rosa), var(--azul)) 1;
     border-width: 2px;
     border-style: solid;
+    margin: 10px;
   }
-  .sobre .sobre-img {
-    width: 100%;
-    height: 300px;
+  .sobre .imagem {
+    margin: 0 auto;
+    margin-top: 20px;
   }
-  .sobre .sobre-img img {
+  .sobre .imagem img {
+    width: 85%;
+    max-width: 450px;
+  }
+  .sobre .imagem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: calc(100% + 10px);
+    background: linear-gradient(110deg, var(--azul), var(--rosa));
+    border-radius: 5px;
+    z-index: 1;
+    left: 12px;
+  }
+  .localizacao {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: 600px;
+    gap: 0px;
+  }
+  .localizacao h1 {
+    background-color: #e1e1e1;
+    font-size: 25px;
+    margin-left: 0;
+  }
+  .localizacao .linha {
+    background-color: #1e1e1e;
+  }
+  .localizacao .linha::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--azul), var(--rosa));
+    margin-left: 0px;
+  }
+  .localizacao .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .localizacao .conteudo p {
+    width: 100%;
+    margin: 0;
+  }
+  .localizacao .conteudo h3 {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+  .localizacao .conteudo .mapa {
+    width: 100%;
+  }
+  .localizacao .conteudo .mapa iframe {
+    width: 90%;
+    transition: transform 0.5s ease;
+    border: 2px solid;
+  }
+  .localizacao .conteudo .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    height: auto;
+  }
+  .localizacao .conteudo .info .contatos {
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+  .faqs {
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 550px) {
   .hero {
-    height: 400px;
+    height: 440px;
+    margin-bottom: -100px;
   }
   .hero .hero-text {
-    width: 100%;
+    margin-top: 80px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
   }
   .hero .hero-text h1 {
-    font-size: 20px;
+    font-size: 8vw;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20px;
   }
   .hero .hero-text p {
-    font-size: 16px;
-    max-width: 90%;
+    color: white;
+    font-size: 3vw;
   }
   .servicos {
     align-items: center;
@@ -1128,23 +1238,24 @@ header .nav-desktop .div-login-user {
     align-items: center;
     height: auto;
     width: 90%;
-    margin: 0;
     flex-direction: column;
   }
-  .sobre .sobre-img {
-    display: none;
+  .sobre .imagem {
+    margin-top: 20px;
   }
-  .sobre .sobre-text {
-    width: 100%;
-    max-width: 100%;
-    align-items: start;
-    justify-content: start;
+  .sobre .imagem img {
+    width: 85%;
+    max-width: 450px;
   }
-  .sobre .sobre-text p {
-    font-size: 17px;
-    width: 100%;
-    margin: 10px;
-    text-align: left;
+  .sobre .imagem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: calc(100% + 10px);
+    background: linear-gradient(110deg, var(--azul), var(--rosa));
+    border-radius: 5px;
+    z-index: 1;
   }
   .localizacao {
     display: flex;
@@ -1198,6 +1309,10 @@ header .nav-desktop .div-login-user {
   }
   .faqs {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .faqs .faqs-text {
     align-items: center;
