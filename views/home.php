@@ -1,9 +1,9 @@
-<div id="loading">
+<!-- <div id="loading">
   <div class="loader-content">
     <img src="<?php RAIZ_PROJETO;?>assets/img/logo.png" class="loading-img" alt="Logo">
     <div class="spinner"></div>
   </div>
-</div>
+</div> -->
 
 
 <div class="hero">
@@ -25,13 +25,13 @@
         <?php if ($_SESSION['tipo'] == "admin"): ?>
           ACESSAR PAINEL
         <?php else: ?>
-          AGENDE SUA VISITA
+          SOLICITE SUA VISITA
         <?php endif; ?>
         <i class="fa-regular fa-calendar-days"></i>
       </a>
     <?php else: ?>
       <button class="btn-agende btn-pulse" id="abrirModal">
-        AGENDE SUA VISITA <i class="fa-regular fa-calendar-days"></i>
+        SOLICITE SUA VISITA <i class="fa-regular fa-calendar-days"></i>
       </button>
     <?php endif; ?>
   </div>
