@@ -123,13 +123,13 @@ $animation-duration: 0.5s;
       &::before {
         content: "";
         position: absolute;
-        inset: -6px;
+        inset: 0; // NÃO ultrapassa o container
         border: 2px solid;
         border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
         filter: blur(4px);
         opacity: 0.8;
         z-index: -1;
-        border-radius: 12px;
+        border-radius: inherit;
         animation: pulse 2.5s infinite ease-in-out;
       }
     }
@@ -249,7 +249,8 @@ $animation-duration: 0.5s;
       content: "";
       position: absolute;
       top: 15px;
-      right: -15px;
+      right: 0;
+      transform: translateX(15px);
       width: 95%;
       height: 100%;
       background: linear-gradient(110deg, var(--azul), var(--rosa));

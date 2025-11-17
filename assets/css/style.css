@@ -27,11 +27,16 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   color: white;
   font-family: "Open Sans", sans-serif;
   text-align: center;
   background-color: var(--bg);
+  overflow-x: hidden;
 }
 
 main {
@@ -95,8 +100,7 @@ main {
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
-  width: 700px;
-  max-width: 90%;
+  width: min(700px, 90%);
   padding: 18px 22px;
   display: flex;
   align-items: center;
@@ -575,14 +579,14 @@ header .nav-desktop .div-login-user {
 .hero .hero-text .btn-agende::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: 0;
   border: 2px solid;
   -o-border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
      border-image: linear-gradient(to right, var(--azul), var(--rosa)) 1;
   filter: blur(4px);
   opacity: 0.8;
   z-index: -1;
-  border-radius: 12px;
+  border-radius: inherit;
   animation: pulse 2.5s infinite ease-in-out;
 }
 
@@ -688,7 +692,8 @@ header .nav-desktop .div-login-user {
   content: "";
   position: absolute;
   top: 15px;
-  right: -15px;
+  right: 0;
+  transform: translateX(15px);
   width: 95%;
   height: 100%;
   background: linear-gradient(110deg, var(--azul), var(--rosa));
