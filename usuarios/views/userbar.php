@@ -18,7 +18,9 @@
                 <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/editar_senha.php"><i class="fa-solid fa-key" id="icon1"></i>Alterar senha<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
                 <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/edit.php"><i class="fa-solid fa-image" id="icon1"></i>Alterar dados<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
                 <a href="<?php echo RAIZ_PROJETO; ?>auth/logout.php"><i class="fa-solid fa-arrow-right-from-bracket" id="icon1"></i>Sair<i class="fa-solid fa-arrow-right" id="icon2"></i></a>
-                <a href="#"><i class="fa-solid fa-trash" id="icon1"></i><strong><span class="deleta">Deletar conta</span></strong><i class="fa-solid fa-arrow-right" id="icon2"></i></a>
+                <?php if($_SESSION['tipo']!="admin"):?>
+                <a href="<?php echo RAIZ_PROJETO;?>usuarios/deletar.php"><i class="fa-solid fa-trash"id="icon1"></i><strong>Deletar conta</strong><i class="fa-solid fa-arrow-right" id="icon2"></i></a>
+            <?php endif;?>   
             </div>
         </div>
     </div>

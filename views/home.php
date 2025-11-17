@@ -19,7 +19,7 @@
         <?php if ($_SESSION['tipo'] == "admin"): ?>
         <?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php
         <?php else: ?>
-          <?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php
+          <?php echo RAIZ_PROJETO; ?>usuarios/views/solicitar_visita.php
         <?php endif; ?>
         " class="btn-agende btn-pulse">
         <?php if ($_SESSION['tipo'] == "admin"): ?>

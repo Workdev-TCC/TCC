@@ -7,11 +7,20 @@
     background-position: 200% 0%;
   }
 }
-
+@keyframes waveZap {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.15;
+  }
+}
 .whatsapp-fixo {
   position: fixed;
-  top: 85%; 
-  right: 2%; 
+  top: 85%;
+  right: 2%;
   background: linear-gradient(145deg, #25d366, #20ba5a);
   color: white;
   border-radius: 50%;
@@ -20,21 +29,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: 40px !important;
   z-index: 9999;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #25d366;
+    animation: waveZap 2.2s infinite ease-out;
+    z-index: -1;
+  }
+
   i {
     transition: transform 0.3s ease;
   }
 
   &:hover {
     transform: scale(1.2);
-    background: linear-gradient(145deg, #20ba5a, #25d366);
     color: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-
     i {
       transform: rotate(-20deg) scale(1.1);
     }

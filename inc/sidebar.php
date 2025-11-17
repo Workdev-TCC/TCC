@@ -27,7 +27,6 @@
         <div class="menu-section">
             <h4>Empresa</h4>
             <hr>
-            <div class="opc"><a href="#">Perguntas Frequentes</a></div>
             <div class="opc"><a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php">Serviços</a></div>
             <div class="opc"><a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php">Projetos</a></div>
         </div>
@@ -38,7 +37,7 @@
             <?php if (!empty($_SESSION['email'])): ?>
                 <?php if ($_SESSION['tipo'] == "user"): ?>
                     <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/gerenciar_solicitacoes.php">Minhas Solicitações</a>
-                    <a href="usuarios/views/solicitar_visita.php">Nova Solicitação</a>
+                    <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/solicitar_visita.php">Nova Solicitação</a>
                 <?php else: ?>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/gerenciar_solicitacoes.php">Gerenciar Solicitações</a>
                     <a href="<?php echo RAIZ_PROJETO; ?>admin/views/listar_usuarios.php">Gerenciar Usuarios</a>

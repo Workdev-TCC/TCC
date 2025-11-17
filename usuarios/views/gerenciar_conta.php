@@ -44,8 +44,9 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="<?php echo RAIZ_PROJETO; ?>auth/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sair da Conta</a>
             <a href="<?php echo RAIZ_PROJETO; ?>usuarios/views/edit.php"><i class="fa-solid fa-user-pen"></i> Editar Dados</a>
             <a href="<?php echo RAIZ_PROJETO;?>usuarios/views/editar_senha.php"><i class="fa-solid fa-key"></i> Editar Senha</a>
-            
-            <a href="#"><i class="fa-solid fa-trash text-danger"></i> <strong>Deletar conta</strong></a>
+            <?php if($_SESSION['tipo']!="admin"):?>
+            <a href="<?php echo RAIZ_PROJETO;?>usuarios/deletar.php"><i class="fa-solid fa-trash text-danger"></i> <strong>Deletar conta</strong></a>
+            <?php endif;?>
         </div>
     </div>
 </div>
