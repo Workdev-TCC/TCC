@@ -105,31 +105,57 @@ try {
                         </thead>
                         <tbody>
                             <?php foreach ($my_solicitacoes as $mys): ?>
-                                <tr>
-                                    <td class="text-center"><?= htmlspecialchars($mys['id']); ?></td>
-                                    <td><?= htmlspecialchars($mys['cep']); ?></td>
-                                    <td class="text-center"><?= htmlspecialchars($mys['status']); ?></td>
-                                    <td class="text-center"><?= date('d/m/Y', strtotime($mys['data_visita'])); ?></td>
-                                    <td class="text-center"><?= date('H:i', strtotime($mys['hora_visita'])); ?></td>
-                                    <td class="text-center">
-                                        <a href="https://wa.me/5515999999999" target="_blank" class="btn btn-success btn-sm">
-                                            <i class="fa-brands fa-whatsapp fa-2x"></i>
-                                        </a>
+                                                <tr>
+                                <td data-label="ID da Solicitação" class="text-center">
+                                    <?= htmlspecialchars($mys['id']); ?>
+                                </td>
+
+                                <td data-label="CEP">
+                                    <?= htmlspecialchars($mys['cep']); ?>
+                                </td>
+
+                                <td data-label="Status" class="status-cell">
+                                    <?= htmlspecialchars($mys['status']); ?>
+                                </td>
+
+                                <?php if($mys['status']!=="pendente" && $mys['status']!=="recusado"): ?>
+                                    <td data-label="Data">
+                                        <?= !empty($mys['data_visita']) ? htmlspecialchars(date('d/m/Y', strtotime($mys['data_visita']))) : '--/--/----'; ?>
                                     </td>
-                                    <td class="text-center">
-                                        <?php $dataFormatada = date('d/m/Y H:i', strtotime($mys['data_solicitacao'])); ?>
-                                        <button
-                                            class="btn btn-info btn-sm ver-mais-btn"
-                                            data-endereco="<?= htmlspecialchars($mys['endereco'], ENT_QUOTES); ?>"
-                                            data-complemento="<?= htmlspecialchars($mys['complemento'], ENT_QUOTES); ?>"
-                                            data-descricao="<?= htmlspecialchars($mys['descricao'], ENT_QUOTES); ?>"
-                                            data-data="<?= $dataFormatada; ?>"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#verMaisModal">
-                                            <i class="fa fa-eye"></i> Ver mais
-                                        </button>
+
+                                    <td data-label="Hora">
+                                        <?= !empty($mys['hora_visita']) ? htmlspecialchars($mys['hora_visita']) : '--:--'; ?>
                                     </td>
-                                </tr>
+                                <?php else: ?>
+                                    <td data-label="Data">--/--/----</td>
+                                    <td data-label="Hora">--:--</td>
+                                <?php endif; ?>
+
+                                <td data-label="Contato do Adm" class="text-center">
+                                    <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" 
+                                    target="_blank" class="btn btn-success btn-sm">
+                                        <i class="fa-brands fa-whatsapp fa-2x"></i>
+                                    </a>
+                                </td>
+
+                                <td data-label="Ver Mais" class="text-center">
+                                    <?php $dataFormatada = date('d/m/Y H:i', strtotime($mys['data_solicitacao'])); ?>
+
+                                    <button
+                                        class="btn btn-info btn-sm ver-mais-btn"
+                                        data-endereco="<?= htmlspecialchars($mys['endereco'], ENT_QUOTES); ?>"
+                                        data-complemento="<?= htmlspecialchars($mys['complemento'] ?? '', ENT_QUOTES); ?>"
+                                        data-descricao="<?= htmlspecialchars($mys['descricao'] ?? '', ENT_QUOTES); ?>"
+                                        data-servicos-json="<?= htmlspecialchars($mys['tipo_servico'], ENT_QUOTES); ?>"  
+                                        data-data="<?= $dataFormatada; ?>"
+                                        data-status="<?= htmlspecialchars($mys['status'], ENT_QUOTES); ?>"
+                                        data-observacao="<?= htmlspecialchars($mys['observacao_admin'] ?? '—', ENT_QUOTES); ?>"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#verMaisModal">
+                                        <i class="fa fa-eye"></i> Ver mais
+                                    </button>
+                                </td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -139,7 +165,6 @@ try {
             </div>
         </div>
     </div>
-    <!-- Modal Dark -->
     <div class="modal fade" id="verMaisModal" tabindex="-1" aria-labelledby="verMaisModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-light rounded-3 shadow-lg border-0">
@@ -166,6 +191,15 @@ try {
               <strong>Data da Solicitação:</strong>
               <p id="modal-data" class="mb-2 text-muted"></p>
             </div>
+                <div class="mb-3" id="motivo-recusa" style="display:none;">
+                    <strong>Motivo da Recusa:</strong>
+                    <p id="modal-observacao" class="mb-2 text-danger"></p>
+                </div>
+
+        <div class="mb-3">
+        <strong>Tipo(s) de Serviço(s):</strong>
+        <p id="modal-servicos" class="mb-2 text-muted"></p>
+        </div>
           </div>
           <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">
@@ -175,8 +209,8 @@ try {
         </div>
       </div>
     </div>
-    
 </div>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -261,6 +295,7 @@ try {
     });
 });
 </script>
+
 <?php
     include SIDEBAR;
     include USERBAR;

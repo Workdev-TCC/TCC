@@ -398,3 +398,9 @@
     }
   }
 }
+
+@media (max-width: 800px){
+  .footer-desktop{
+    display: none;
+  }
+}
