@@ -1,9 +1,9 @@
-<!-- <div id="loading">
+<div id="loading">
   <div class="loader-content">
     <img src="<?php RAIZ_PROJETO;?>assets/img/logo.png" class="loading-img" alt="Logo">
     <div class="spinner"></div>
   </div>
-</div> -->
+</div>
 
 
 <div class="hero">
