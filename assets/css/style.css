@@ -4186,30 +4186,16 @@ body {
   }
   .gerenciar-marcadas-user .input-group {
     width: 100% !important;
-    margin: 0 auto;
   }
-  .gerenciar-marcadas-user .gerenciar-marcadas-user .table {
-    width: 100% !important;
-    display: block;
-    overflow-x: hidden !important;
-  }
-  .gerenciar-marcadas-user .gerenciar-marcadas-user .table tr,
-  .gerenciar-marcadas-user .gerenciar-marcadas-user .table td {
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-  }
-  .gerenciar-marcadas-user .gerenciar-marcadas-user .btn {
-    width: 100% !important;
-    padding: 0.9rem !important;
-    font-size: 1rem;
+  .gerenciar-marcadas-user .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 }
-@media (max-width: 480px) {
-  .gerenciar-marcadas-user .gerenciar-marcadas-user h2 {
-    font-size: 1.3rem !important;
+@media (max-width: 576px) {
+  .gerenciar-marcadas-user h2 {
+    font-size: 1.5rem;
+    text-align: center;
   }
   .gerenciar-marcadas-user .table tr td {
     padding-left: 0 !important;
@@ -6727,17 +6713,6 @@ p a:hover {
     background-position: 200% 0%;
   }
 }
-/* Onda que sai do botão */
-@keyframes waveZap {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.15;
-  }
-}
 .whatsapp-fixo {
   position: fixed;
   top: 85%;
@@ -6750,27 +6725,19 @@ p a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px !important;
+  font-size: 40px;
   z-index: 9999;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-}
-.whatsapp-fixo::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid #25d366;
-  animation: waveZap 2.2s infinite ease-out;
-  z-index: -1;
 }
 .whatsapp-fixo i {
   transition: transform 0.3s ease;
 }
 .whatsapp-fixo:hover {
   transform: scale(1.2);
+  background: linear-gradient(145deg, #20ba5a, #25d366);
   color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 .whatsapp-fixo:hover i {
   transform: rotate(-20deg) scale(1.1);
@@ -6784,7 +6751,6 @@ p a:hover {
   width: 100%;
   min-height: 220px;
   padding: 30px 50px;
-  margin-top: auto;
   background: linear-gradient(to top, #111, #1a1a1a);
   color: #f5f5f5;
   font-family: "Open Sans", sans-serif;
@@ -7032,10 +6998,5 @@ p a:hover {
   }
   .footer-desktop .footer-right .footer-links2 .termos {
     font-size: 0.85rem;
-  }
-}
-@media (max-width: 800px) {
-  .footer-desktop {
-    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
