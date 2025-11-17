@@ -12,12 +12,12 @@
   $primary-gradient: linear-gradient(90deg, #7a3fff, #ff4fd8);
   $border-color: rgba(255, 255, 255, 0.1);
   $success: #25d367;
-
   // ----------------------------
   // Container Principal
   // ----------------------------
   .container {
     max-width: 1400px;
+    margin-top: 200px;
     margin: 2rem auto;
     padding: 0 1rem;
     height: auto;
@@ -213,8 +213,7 @@
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    width: 100%;
-    max-width: 1300px; // LARGURA FIXA MÁXIMA
+
     .card-body {
       padding: 2rem;
     }
@@ -230,7 +229,7 @@
     margin-bottom: 0;
     color: white !important;
     --bs-table-striped-color: #ffffff !important;
-
+    
     thead {
       background: $primary-gradient;
       
@@ -245,6 +244,7 @@
     }
     
     tbody {
+
       tr {
         transition: all 0.3s ease;
         border-bottom: 1px solid $border-color;
@@ -272,23 +272,8 @@
     }
     
     // Status com cores diferentes
-    td:nth-child(3) {
-      font-weight: 600;
-      text-transform: capitalize;
-      
-      &:contains("pendente") {
-        color: #ffc107;
-      }
-      
-      &:contains("marcado") {
-        color: #25d366;
-      }
-      
-      &:contains("recusado") {
-        color: #ff4f6f;
-      }
-    }
   }
+// STATUS COLORS
 .status-cell {
   font-weight: 700;
   text-transform: capitalize;
@@ -358,113 +343,201 @@
       padding: 1rem 1.5rem;
     }
   }
+  // Badge de serviço — paleta roxa / gradiente do site
+.servico-badge {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8) !important;
+  color: #ffffff !important;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
 
-  // ----------------------------
-  // Layout do Header
-  // ----------------------------
-  .d-flex.justify-content-between {
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: stretch !important;
-      
-      .flex-grow-1 {
-        margin-bottom: 1.5rem;
-      }
-      
-      .d-flex.gap-2 {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
+  i {
+    color: white !important;
+    font-size: 0.95em;
   }
 
-  // ----------------------------
-  // Responsividade
-  // ----------------------------
+  transition: transform .15s ease, box-shadow .15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(122, 63, 255, 0.2);
+  }
+}
+// ----------------------------
+// Layout do Header
+// ----------------------------
+.d-flex.justify-content-between {
   @media (max-width: 768px) {
-    .container {
-      margin: 1rem auto;
-      padding: 0 0.5rem;
+    flex-direction: row !important;        // ficam lado a lado
+    align-items: center !important;
+    flex-wrap: wrap;                        // permite quebra
+
+    .flex-grow-1 {
+      margin-bottom: 0;                    // remove espaço extra
+      margin-right: 1rem;                  // separação horizontal
+      flex: 1 1 auto;
     }
-    
-    .card .card-body {
-      padding: 1rem;
+
+    .d-flex.gap-2 {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;                          // espaçamento dos botões
     }
-    
-    .table {
-      font-size: 0.9rem;
-      
-      thead {
-        display: none;
-      }
-      
-      tbody, tr, td {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-      
-      tr {
-        margin-bottom: 1rem;
-        border: 1px solid $border-color;
-        border-radius: 10px;
-        padding: 1rem;
-        background: rgba(22, 22, 29, 0.8);
-        
-        &:hover {
-          transform: none;
-          background: rgba(122, 63, 255, 0.1);
-        }
-        
-        td {
-          padding: 0.5rem 0;
-          position: relative;
-          padding-left: 45%;
-          
-          &:before {
-            content: attr(data-label);
-            position: absolute;
-            left: 0.5rem;
-            width: 40%;
-            font-weight: 600;
-            color: $text-muted;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-          }
-          
-          &.text-center {
-            text-align: left;
-            padding-left: 45%;
-          }
-        }
-      }
+  }
+}
+
+// ----------------------------
+// Layout do Header
+// ----------------------------
+.d-flex.justify-content-between {
+  @media (max-width: 768px) {
+    flex-direction: row !important;        // ficam lado a lado
+    align-items: center !important;
+    flex-wrap: wrap;                        // permite quebra
+
+    .flex-grow-1 {
+      margin-bottom: 0;                    // remove espaço extra
+      margin-right: 1rem;                  // separação horizontal
+      flex: 1 1 auto;
     }
-    
-    .input-group {
-      width: 100% !important;
+
+    .d-flex.gap-2 {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;                          // espaçamento dos botões
     }
-    
-    .btn {
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
+  }
+}
+
+// ----------------------------
+// Responsividade
+// ----------------------------
+@media (max-width: 768px) {
+
+  /* Header da página */
+  .minhas-solicitacoes-page .d-flex.justify-content-between {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 
-  @media (max-width: 576px) {
-    h2 {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-    
-    .table tr td {
-      padding-left: 50%;
-      
-      &:before {
-        width: 45%;
-        font-size: 0.75rem;
-      }
+  /* Campo de pesquisa = metade da linha */
+  .minhas-solicitacoes-page .flex-grow-1 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+  }
+
+  /* Botões = metade da linha */
+  .minhas-solicitacoes-page .d-flex.gap-2 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+    justify-content: end !important;
+  }
+
+  /* Input ocupa toda a largura dentro do container */
+  .minhas-solicitacoes-page .input-group {
+    width: 100% !important;
+  }
+
+  .container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+    height: auto;
+  }
+
+  .card .card-body {
+    padding: 1rem;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    background: #0e0d14;
+    padding: 1.2rem;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  /* ============================
+     CORREÇÃO DO BUG DOS TÍTULOS
+     ============================ */
+  td {
+    padding-left: 0 !important;
+    padding-top: 28px !important;      // espaço p/ o título
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    border: none !important;
+    position: relative;
+    font-size: 0.95rem;
+    color: #e4e4e4;
+    word-break: break-word;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #bbb;
+    font-size: 0.75rem;
+    width: calc(100% - 24px);
+    line-height: 1.1;
+    white-space: normal;
+  }
+  /* ============================ */
+
+  td .btn,
+  td a {
+    margin-top: 6px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .input-group {
+    width: 100% !important;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 576px) {
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .table tr td {
+    padding-left: 0 !important;
+
+    &:before {
+      width: 45%;
+      font-size: 0.75rem;
     }
   }
+}
 
   // ----------------------------
   // Animações

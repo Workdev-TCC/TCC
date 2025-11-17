@@ -3661,8 +3661,12 @@ body {
   color: #d83232 !important;
 }
 
+.gerenciar-marcadas-user {
+  /* Telas muito pequenas */
+}
 .gerenciar-marcadas-user .container {
   max-width: 1400px;
+  margin-top: 200px;
   margin: 2rem auto;
   padding: 0 1rem;
   height: auto;
@@ -3817,8 +3821,6 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  width: 100%;
-  max-width: 1300px;
 }
 .gerenciar-marcadas-user .card .card-body {
   padding: 2rem;
@@ -3861,19 +3863,6 @@ body {
 }
 .gerenciar-marcadas-user .table tbody tr td.text-center {
   text-align: center;
-}
-.gerenciar-marcadas-user .table td:nth-child(3) {
-  font-weight: 600;
-  text-transform: capitalize;
-}
-.gerenciar-marcadas-user .table td:nth-child(3):contains("pendente") {
-  color: #ffc107;
-}
-.gerenciar-marcadas-user .table td:nth-child(3):contains("marcado") {
-  color: #25d366;
-}
-.gerenciar-marcadas-user .table td:nth-child(3):contains("recusado") {
-  color: #ff4f6f;
 }
 .gerenciar-marcadas-user .status-cell {
   font-weight: 700;
@@ -3929,67 +3918,143 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 1.5rem;
 }
+.gerenciar-marcadas-user .servico-badge {
+  background: linear-gradient(90deg, #7a3fff, #ff4fd8) !important;
+  color: #ffffff !important;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.gerenciar-marcadas-user .servico-badge i {
+  color: white !important;
+  font-size: 0.95em;
+}
+.gerenciar-marcadas-user .servico-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(122, 63, 255, 0.2);
+}
 @media (max-width: 768px) {
   .gerenciar-marcadas-user .d-flex.justify-content-between {
-    flex-direction: column;
-    align-items: stretch !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
   }
   .gerenciar-marcadas-user .d-flex.justify-content-between .flex-grow-1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    margin-right: 1rem;
+    flex: 1 1 auto;
   }
   .gerenciar-marcadas-user .d-flex.justify-content-between .d-flex.gap-2 {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
 @media (max-width: 768px) {
+  .gerenciar-marcadas-user .d-flex.justify-content-between {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+  }
+  .gerenciar-marcadas-user .d-flex.justify-content-between .flex-grow-1 {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    flex: 1 1 auto;
+  }
+  .gerenciar-marcadas-user .d-flex.justify-content-between .d-flex.gap-2 {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .gerenciar-marcadas-user {
+    /* Header da página */
+    /* Campo de pesquisa = metade da linha */
+    /* Botões = metade da linha */
+    /* Input ocupa toda a largura dentro do container */
+    /* ============================
+       CORREÇÃO DO BUG DOS TÍTULOS
+       ============================ */
+    /* ============================ */
+  }
+  .gerenciar-marcadas-user .minhas-solicitacoes-page .d-flex.justify-content-between {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .gerenciar-marcadas-user .minhas-solicitacoes-page .flex-grow-1 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+  }
+  .gerenciar-marcadas-user .minhas-solicitacoes-page .d-flex.gap-2 {
+    flex: 1 1 48% !important;
+    margin: 0 !important;
+    justify-content: end !important;
+  }
+  .gerenciar-marcadas-user .minhas-solicitacoes-page .input-group {
+    width: 100% !important;
+  }
   .gerenciar-marcadas-user .container {
     margin: 1rem auto;
     padding: 0 0.5rem;
+    height: auto;
   }
   .gerenciar-marcadas-user .card .card-body {
     padding: 1rem;
   }
-  .gerenciar-marcadas-user .table {
-    font-size: 0.9rem;
-  }
-  .gerenciar-marcadas-user .table thead {
+  .gerenciar-marcadas-user table thead {
     display: none;
   }
-  .gerenciar-marcadas-user .table tbody, .gerenciar-marcadas-user .table tr, .gerenciar-marcadas-user .table td {
+  .gerenciar-marcadas-user table,
+  .gerenciar-marcadas-user tbody,
+  .gerenciar-marcadas-user tr,
+  .gerenciar-marcadas-user td {
     display: block;
     width: 100%;
-    text-align: left;
   }
-  .gerenciar-marcadas-user .table tr {
+  .gerenciar-marcadas-user tr {
     margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    background: rgba(22, 22, 29, 0.8);
-  }
-  .gerenciar-marcadas-user .table tr:hover {
-    transform: none;
-    background: rgba(122, 63, 255, 0.1);
-  }
-  .gerenciar-marcadas-user .table tr td {
-    padding: 0.5rem 0;
+    background: #0e0d14;
+    padding: 1.2rem;
+    border-radius: 12px;
     position: relative;
-    padding-left: 45%;
   }
-  .gerenciar-marcadas-user .table tr td:before {
+  .gerenciar-marcadas-user td {
+    padding-left: 0 !important;
+    padding-top: 28px !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    border: none !important;
+    position: relative;
+    font-size: 0.95rem;
+    color: #e4e4e4;
+    word-break: break-word;
+  }
+  .gerenciar-marcadas-user td::before {
     content: attr(data-label);
     position: absolute;
-    left: 0.5rem;
-    width: 40%;
-    font-weight: 600;
-    color: #c0c0c0;
+    top: 5px;
+    left: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    color: #bbb;
+    font-size: 0.75rem;
+    width: calc(100% - 24px);
+    line-height: 1.1;
+    white-space: normal;
   }
-  .gerenciar-marcadas-user .table tr td.text-center {
-    text-align: left;
-    padding-left: 45%;
+  .gerenciar-marcadas-user td .btn,
+  .gerenciar-marcadas-user td a {
+    margin-top: 6px;
+    width: 100%;
+    justify-content: center;
   }
   .gerenciar-marcadas-user .input-group {
     width: 100% !important;
@@ -4005,7 +4070,7 @@ body {
     text-align: center;
   }
   .gerenciar-marcadas-user .table tr td {
-    padding-left: 50%;
+    padding-left: 0 !important;
   }
   .gerenciar-marcadas-user .table tr td:before {
     width: 45%;
@@ -4863,6 +4928,15 @@ body {
     font-size: 0.95rem;
   }
 }
+.minhas-solicitacoes-page, .gerenciar-marcadas-user {
+  padding: 100px;
+}
+@media (max-width: 768px) {
+  .minhas-solicitacoes-page, .gerenciar-marcadas-user {
+    padding: 10px;
+  }
+}
+
 .minhas-solicitacoes-page {
   /* Telas muito pequenas */
 }
@@ -6763,5 +6837,10 @@ p a:hover {
   }
   .footer-desktop .footer-right .footer-links2 .termos {
     font-size: 0.85rem;
+  }
+}
+@media (max-width: 800px) {
+  .footer-desktop {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
