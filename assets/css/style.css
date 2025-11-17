@@ -33,7 +33,6 @@ html {
 
 body {
   color: white;
-  font-family: "Open Sans", sans-serif;
   text-align: center;
   background-color: var(--bg);
   overflow-x: hidden;
@@ -6549,6 +6548,7 @@ p a:hover {
   .intocavel .sidebar .rodape .logo p {
     margin: 0;
     padding: 0;
+    font-size: 13px !important;
   }
 }
 .userbar {
@@ -6871,7 +6871,7 @@ p a:hover {
   background: linear-gradient(90deg, var(--azul), var(--rosa));
 }
 .footer-desktop .footer-right .footer-links ul li a {
-  font-size: 0.95rem;
+  font-size: 0.95rem !important;
   font-weight: 500;
   position: relative;
   text-transform: uppercase;
@@ -7001,7 +7001,7 @@ p a:hover {
   .footer-desktop .footer-right .footer-links2 {
     order: 2;
   }
-  .footer-desktop .footer-right .footer-links2 .termos {
-    font-size: 0.85rem;
+  .footer-desktop .footer-right .footer-links2 .termos a {
+    font-size: 0.85rem !important;
   }
 }/*# sourceMappingURL=style.css.map */

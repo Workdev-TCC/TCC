@@ -190,7 +190,7 @@
         }
 
         li a {
-          font-size: 0.95rem;
+          font-size: 0.95rem !important;
           font-weight: 500;
           position: relative;
           text-transform: uppercase;
@@ -269,6 +269,7 @@
 
             &.v-mobile {
               display: inline;
+              
             }
           }
         }
@@ -369,8 +370,8 @@
       .footer-links2 {
         order: 2;
 
-        .termos {
-          font-size: 0.85rem;
+        .termos a{
+          font-size: 0.85rem !important;
         }
       }
     }

@@ -8,7 +8,8 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
 <footer>
-   <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
+    
+    <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
         class="whatsapp-fixo"
         target="_blank"
         aria-label="Fale conosco no WhatsApp">
