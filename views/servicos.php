@@ -35,27 +35,27 @@
   <!-- === GALERIA DESKTOP === -->
   <div class="servicos-galeria">
     <div class="galeria-card large">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-interna.jpg" alt="Pintura Interna">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-interna.webp" alt="Pintura Interna">
       <div class="overlay"><h3>Pintura Interna</h3></div>
     </div>
     <div class="galeria-card wide">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-casa.jpg" alt="Pintura da Fachadas">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-casa.webp" alt="Pintura da Fachadas">
       <div class="overlay"><h3>Pintura da Fachada</h3></div>
     </div>
     <div class="galeria-card">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-portao.jpg" alt=">Pintura Portão">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-portao.webp" alt=">Pintura Portão">
       <div class="overlay"><h3>Pintura de Portões, Janelas e Grades</h3></div>
     </div>
     <div class="galeria-card">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-decorativa.jpg" alt="Pintura Decorativa">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-decorativa.webp" alt="Pintura Decorativa">
       <div class="overlay"><h3>Pintura Decorativa</h3></div>
     </div>
     <div class="galeria-card small">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/textura-grafiato.png" alt="Aplicação de Texturas">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/textura-grafiato.webp" alt="Aplicação de Texturas">
       <div class="overlay"><h3>Aplicação de Texturas</h3></div>
     </div>
     <div class="galeria-card wide">
-      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-predio.jpg" alt="Pintura Predial">
+      <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-predio.webp" alt="Pintura Predial">
       <div class="overlay"><h3>Pintura Predial</h3></div>
     </div>
   </div>

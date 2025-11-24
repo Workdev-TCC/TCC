@@ -47,4 +47,12 @@ CREATE TABLE `visitas_agendadas` (
   CONSTRAINT `fk_visita_solicitacao` FOREIGN KEY (`solicitacao_id`) REFERENCES `solicitacoes`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE projetos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    descricao TEXT,
+    imagem VARCHAR(255),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- senha dos 2 é: 12345

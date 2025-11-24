@@ -11,7 +11,7 @@
     width: 50%;
     height: 100vh;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.438)),
-      url("../img/login-fundo.jpg");
+      url("../img/login-fundo.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,6 +64,17 @@
         transform: translateX(-50%) scale(1.03);
       }
     }
+  }
+
+  .icon-eye, .icon-eye-confirmar{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.2rem;
   }
 
   .login-content {
@@ -148,17 +159,6 @@
             background: linear-gradient(to right, var(--azul), var(--rosa));
             z-index: 1;
           }
-        }
-        
-        .icon-eye {
-          position: absolute;
-          right: 10px;
-          top: 50%;
-          z-index: 10;
-          transform: translateY(-50%);
-          color: #aaa;
-          cursor: pointer;
-          font-size: 1.2rem;
         }
 
         .icon{
@@ -324,7 +324,7 @@ p {
       height: 40vh;
       display: flex;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-        url("../img/login-fundo.jpg") center/cover no-repeat;
+        url("../img/login-fundo.webp") center/cover no-repeat;
       position: relative;
 
       .titulo-img {

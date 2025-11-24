@@ -49,12 +49,22 @@
                         class="nav-link <?php echo ($paginaAtual == 'index.php') ? 'active' : ''; ?>">
                         INÍCIO</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php"
+                <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] === "admin"): ?>
+                    <li class="nav-item">
+                        <a href="<?php echo RAIZ_PROJETO; ?>admin/views/projetos_add.php"
+                        class="nav-link <?php echo ($paginaAtual == 'projetos_add.php') ? 'active' : ''; ?>">
+                        ADICIONAR PROJETOS
+                        </a>
+                    </li>
+                    <?php else: ?>
+                    <li class="nav-item">
+                        <a href="<?php echo RAIZ_PROJETO; ?>views/projetos.php"
                         class="nav-link <?php echo ($paginaAtual == 'projetos.php') ? 'active' : ''; ?>">
                         PROJETOS
-                    </a>
-                </li>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item">
                     <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php"
                         class="nav-link <?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">

@@ -61,24 +61,39 @@ $(document).ready(function () {
   }
   autoHideMessages(3500);
 
-  // Mostrar ou ocultar senha
- // Alternar visibilidade da senha
-      $(".icon-eye").on("click", function () {
-                const inputId = $(this).data("input");
-                const $input = $("#" + inputId);
-                const $icon = $(this).find("i");
+  //password system front-end
+  $(".icon-eye").click(function () {
+    var inputId = $(this).data("input");
+    $("#" + inputId).focus();
+    var icone=$("#eye");
+    if(icone.hasClass("fa-eye")){
+      icone.removeClass("fa-eye");
+      icone.addClass("fa-eye-slash");
+      $("#senha").attr("type","text");
 
-                if ($input.attr("type") === "password") {
-                    $input.attr("type", "text");
-                    $icon.removeClass("fa-eye-slash").addClass("fa-eye");
-                } else {
-                    $input.attr("type", "password");
-                    $icon.removeClass("fa-eye").addClass("fa-eye-slash");
-                }
+    }else{
+      icone.removeClass("fa-eye-slash");
+      icone.addClass("fa-eye");
+      $("#senha").attr("type", "password");
+      
+    }
+      
+  });
 
-                // Mantém o foco no input
-                $input.trigger("focus");
-            });
+  $(".icon-eye-confirmar").click(function () {
+    let input = $("#senha_atual");
+    let icon = $("#eye-confirmar");
+
+    if (input.attr("type") === "password") {
+      input.attr("type", "text");
+      icon.removeClass("fa-eye-slash").addClass("fa-eye");
+    } else {
+      input.attr("type", "password");
+      icon.removeClass("fa-eye").addClass("fa-eye-slash");
+    }
+  }); 
+  
+
 
   // email
   document.querySelector('.cadastro-form')?.addEventListener('submit', function(e) {

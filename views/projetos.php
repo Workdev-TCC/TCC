@@ -1,9 +1,19 @@
 <?php
     include("../config.php");
+    include("../inc/Banco.php");
     include HEADER_TEMPLATE;
     include DBAPI;
     include_once UTEIS;
+
+    $bd = new Banco();
+    $projetos = $bd->select("projetos", "*");
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
 ?>
+
     <?php if (!empty($_SESSION['message'])) : ?>
         <div class="message-<?php echo $_SESSION['type']; ?>">
             <?php if ($_SESSION['type'] === "success") : ?>
@@ -38,52 +48,22 @@
 
     <div class="projetos">
         <div class="grade-projetos">
-            <div class="projeto">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/casa-residencial.jpeg" alt="Pintura Residencial Premium">
-                <div class="overlay">
-                    <h2>Pintura Residencial Premium</h2>
-                    <p>Transformamos a sua casa com um toque de sofisticação: pintura completa de paredes internas e externas, escolha personalizada de cores, aplicação de verniz protetor e detalhes decorativos que valorizam cada ambiente, criando um lar moderno e acolhedor.</p>
-                </div>
-            </div>
-            <div class="projeto">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-comercial.jpg" alt="Renovação Comercial de Alto Impacto">
-                <div class="overlay">
-                    <h2>Renovação Comercial de Alto Impacto</h2>
-                    <p>Revitalizamos fachadas e interiores de empresas com pintura resistente e cores que reforçam a identidade visual do seu negócio. Incluímos acabamentos de qualidade, rodapés e detalhes que causam excelente impressão aos clientes.</p>
-                </div>
-            </div>
-            <div class="projeto">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-predial.jpg" alt="Pintura Industrial e Predial Profissional">
-                <div class="overlay">
-                    <h2>Pintura Industrial e Predial Profissional</h2>
-                    <p>Garantimos durabilidade e funcionalidade em espaços industriais e prediais, aplicando pintura epóxi em pisos, sinalização de segurança e acabamento resistente. Protegemos fachadas e paredes internas, unindo estética e segurança em cada projeto.</p>
-                </div>
-            </div>
-            <div class="projeto alto">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/texturas.jpg" alt="Projeto Decorativo Exclusivo">
-                <div class="overlay">
-                    <h2>Projeto Decorativo Exclusivo</h2>
-                    <p>Elevamos ambientes com técnicas de pintura artística: texturas sofisticadas, marmorizados, spatulados e efeitos personalizados que tornam cada espaço único. Cada detalhe é pensado para encantar e valorizar o local.</p>
-                </div>
-            </div>
-            <div class="projeto baixo">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-fachada.jpg" alt="Reforma Completa de Fachadas">
-                <div class="overlay">
-                    <h2>Reforma Completa de Fachadas</h2>
-                    <p>Transformamos fachadas desgastadas em vitrines de beleza e proteção. Corrigimos imperfeições, aplicamos pintura impermeável de alta durabilidade e realizamos acabamentos detalhados, garantindo estética moderna e resistência ao tempo.</p>
-                </div>
-            </div>
-            <div class="projeto">
-                <img src="<?php echo RAIZ_PROJETO;?>assets/img/pintura-interiores.jpg" alt="Pintura e Acabamento de Interiores Sofisticados">
-                <div class="overlay">
-                    <h2>Pintura e Acabamento de Interiores Sofisticados</h2>
-                    <p>Deixamos interiores modernos e acolhedores com pintura impecável, acabamento liso ou texturizado, nivelamento de superfícies e detalhes decorativos. Cada ambiente é planejado para combinar estética, conforto e personalidade.</p>
-                </div>
-            </div>
+            <?php if (!empty($projetos)) : ?>
+                <?php foreach($projetos as $p): ?>
+                    <div class="projeto">
+                        <img src="<?php echo RAIZ_PROJETO . 'assets/admin/img/' . $p['imagem']; ?>">
+                        <div class="overlay">
+                            <h2><?php echo $p['titulo']; ?></h2>
+                            <p><?php echo $p['descricao']; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="nenhum-projeto">Nenhum projeto encontrado.</p>
+            <?php endif; ?>
         </div>
     </div>
-</div>
-
+    
 <script>
     window.addEventListener('load', () => {
 

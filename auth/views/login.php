@@ -58,10 +58,8 @@
                 </div>
                 <div class="input-wrapper">
                     <div class="icon"><i class="fa-solid fa-key"></i></div>
-                    <input class="login-input-eye" type="password" placeholder="Senha" name="senha" id="senha">
-                    <div class="icon-eye" data-input="senha">
-                        <i class="fas fa-eye"></i> <!-- Começa com olho cortado -->
-                    </div>
+                    <input class="login-input" type="password" placeholder="Senha" name="senha" id="senha">
+                    <div class="icon-eye" data-input="senha"><i id="eye" class="fas fa-eye-slash"></i></div>
                 </div>
                 <button class="login-button" type="submit">ENTRAR</button>
             </form>

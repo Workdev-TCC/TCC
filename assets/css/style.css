@@ -483,12 +483,12 @@ header .nav-desktop .div-login-user {
 .hero {
   max-width: 1920px;
   width: 100%;
-  height: 620px;
+  height: 680px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/inicio-hero.jpg") center/cover no-repeat;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/inicio-hero.webp") center/cover no-repeat;
   margin-bottom: -80px;
   top: -100px;
 }
@@ -1464,7 +1464,7 @@ header .nav-desktop .div-login-user {
   z-index: 0;
   margin-bottom: -80px;
   top: -100px;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/projetos-hero.jpg");
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/projetos-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1839,7 +1839,7 @@ header .nav-desktop .div-login-user {
   z-index: 0;
   margin-bottom: -80px;
   top: -100px;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/servicos-hero.jpg");
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)), url("../img/servicos-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5858,6 +5858,16 @@ body {
   background: linear-gradient(90deg, var(--azul), var(--rosa));
   border-radius: 2px;
 }
+.container-edit-senha .icon-eye, .container-edit-senha .icon-eye-confirmar, .container-senha .icon-eye, .container-senha .icon-eye-confirmar {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
 .container-edit-senha form, .container-senha form {
   background-color: #1c1c1c;
   padding: 30px 35px;
@@ -5890,16 +5900,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   padding: 10px;
-}
-.container-edit-senha form .input-grupo .icon-eye, .container-senha form .input-grupo .icon-eye {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  z-index: 10;
-  transform: translateY(-50%);
-  color: #aaa;
-  cursor: pointer;
-  font-size: 1.2rem;
 }
 .container-edit-senha form label, .container-senha form label {
   color: #ccc;
@@ -6003,7 +6003,7 @@ body {
 .login-container .login-img {
   width: 50%;
   height: 100vh;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.438)), url("../img/login-fundo.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.438)), url("../img/login-fundo.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -6051,6 +6051,16 @@ body {
 .login-container .login-img a.btn-voltar:hover {
   opacity: 0.9;
   transform: translateX(-50%) scale(1.03);
+}
+.login-container .icon-eye, .login-container .icon-eye-confirmar {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 .login-container .login-content {
   width: 50%;
@@ -6128,16 +6138,6 @@ body {
   height: 2px;
   background: linear-gradient(to right, var(--azul), var(--rosa));
   z-index: 1;
-}
-.login-container .login-content .login-box .login-form .icon-eye {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  z-index: 10;
-  transform: translateY(-50%);
-  color: #aaa;
-  cursor: pointer;
-  font-size: 1.2rem;
 }
 .login-container .login-content .login-box .login-form .icon {
   position: absolute;
@@ -6280,7 +6280,7 @@ p a:hover {
     width: 100%;
     height: 40vh;
     display: flex;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../img/login-fundo.jpg") center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../img/login-fundo.webp") center/cover no-repeat;
     position: relative;
   }
   .login-container .login-img .titulo-img {

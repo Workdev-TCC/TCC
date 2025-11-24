@@ -43,13 +43,13 @@ $animation-duration: 0.5s;
 .hero {
   max-width: 1920px;
   width: 100%;
-  height: 620px;
+  height: 680px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   background: radial-gradient(rgba(0, 0, 0, 0.5), var(--bg)),
-    url("../img/inicio-hero.jpg") center/cover no-repeat;
+    url("../img/inicio-hero.webp") center/cover no-repeat;
   margin-bottom: -80px;
   top: -100px;
 

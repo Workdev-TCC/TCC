@@ -54,10 +54,8 @@
     <form action="<?php echo RAIZ_PROJETO; ?>usuarios/views/editar_senha.php" method="post">
         <div class="input-grupo">
             <input type="password" placeholder="Digite a sua senha atual..." name="senha_atual" id="senha_atual" required>
-            <div class="icon-eyes" data-input="senha">
-                <i class="fas fa-eye"></i>
-            </div>
-        </div>
+            <div class="icon-eye-confirmar" data-input="senha_atual"><i class="fas fa-eye-slash" id="eye-confirmar"></i></div>
+        </div> 
         <button type="submit" class="botao-verificar">Verificar</button>
     </form>
 </section>
@@ -69,28 +67,25 @@
     <div class="linha"></div>
     <form method="post" action="<?php echo RAIZ_PROJETO; ?>usuarios/salvar_senha_nova.php">
         <div class="input-grupo">
-            <input name="senha_nova" 
-       placeholder="Digite a sua nova senha..." 
-       type="password" 
-       id="senha" 
-       required 
-       minlength="8" 
-       maxlength="32">
-            <div class="icon-eye" data-input="senha">
-                <i class="fas fa-eye"></i>
-            </div>
+            <input 
+            name="senha_nova" 
+            placeholder="Digite a sua nova senha..." 
+            type="password" 
+            id="senha" 
+            required 
+            minlength="8" 
+            maxlength="32">
+            <div class="icon-eye" data-input="senha"><i class="fas fa-eye-slash" id="eye"></i></div>
         </div>
         <div class="input-grupo">
             <input name="confirma_senha" 
-       placeholder="Confirme a sua nova senha..." 
-       type="password" 
-       id="confirmar_senha" 
-       required 
-       minlength="8" 
-       maxlength="32">
-            <div class="icon-eye" data-input="senha">
-                <i class="fas fa-eye"></i>
-            </div>
+                placeholder="Confirme a sua nova senha..." 
+                type="password" 
+                id="senha_atual" 
+                required 
+                minlength="8" 
+                maxlength="32">
+            <div class="icon-eye-confirmar" data-input="senha_atual"><i class="fas fa-eye-slash" id="eye-confirmar"></i></div>
         </div>
         <button type="submit" class="botao-salvar">Salvar nova senha <i class="fa-regular fa-floppy-disk"></i></button>
     </form>

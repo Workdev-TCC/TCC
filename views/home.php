@@ -65,7 +65,7 @@
     </div>
   </div>
   <div class="imagem animar fade-right">
-    <img src="<?php echo RAIZ_PROJETO; ?>assets/img/ferramentas-sobre.jpg" alt="Ferramentas para Pinturas">
+    <img src="<?php echo RAIZ_PROJETO; ?>assets/img/ferramentas-sobre.webp" alt="Ferramentas para Pinturas">
   </div>
 </section>
 
@@ -78,19 +78,19 @@
   </p>
   <div class="cards">
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/residencial-servicos.jpg" alt="Rolo com tinta Amarela">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/residencial-servicos.webp" alt="Rolo com tinta Amarela">
       <span>Pintura Residencial</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/comercial-servicos.jpg" alt="Latas de Tinta">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/comercial-servicos.webp" alt="Latas de Tinta">
       <span>Pintura Comercial</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/texturas-servicos.jpg" alt="Multiplas Texturas">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/texturas-servicos.webp" alt="Multiplas Texturas">
       <span>Texturas</span>
     </div>
     <div class="card animar zoom-in">
-      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/impermeabilizacao-servicos.jpg" alt="Parede Impermeabilizada">
+      <img src="<?php echo RAIZ_PROJETO; ?>assets/img/impermeabilizacao-servicos.webp" alt="Parede Impermeabilizada">
       <span>Impermeabilização</span>
     </div>
   </div>
