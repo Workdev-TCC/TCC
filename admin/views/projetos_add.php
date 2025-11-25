@@ -11,15 +11,15 @@
 
     $bd = new Banco();
     $editMode = false;
-    $projetoEdit = null;
     $projeto = null;
 
     if (!empty($_GET['edit'])) {
         $id = (int) $_GET['edit'];
-        $projetoEdit = $bd->select("projetos", "*", ["id" => $id], false, 1);
-        if ($projetoEdit) {
+        $result = $bd->select("projetos", "*", ["id" => $id], true, 1);
+
+        if (!empty($result)) {
+            $projeto = $result[0];
             $editMode = true;
-            $projeto = $projetoEdit;
         } else {
             $_SESSION['message'] = "Projeto não encontrado.";
             $_SESSION['type'] = "danger";
@@ -30,14 +30,12 @@
         try {
             $id = (int) $_GET['delete'];
             $bd->delete("projetos", ["id" => $id]);
-
             $_SESSION['message'] = "Projeto excluído!";
             $_SESSION['type'] = "success";
         } catch (Exception $e) {
             $_SESSION['message'] = "Erro ao excluir: " . $e->getMessage();
             $_SESSION['type'] = "danger";
         }
-
         header("Location: projetos_add.php");
         exit;
     }
@@ -50,7 +48,7 @@
 
             if (empty($_POST['id'])) {
                 $img = uploadImg($_FILES['imagem'], $pasta);
-                if (!$img) throw new Exception("Erro ao enviar imagem.");
+                if (!$img) throw new Exception("Erro: Envie apenas imagens nos formatos PNG, JPG ou JPEG.");
 
                 $bd->save("projetos", [
                     "titulo" => $titulo,
@@ -61,10 +59,12 @@
                 $_SESSION['message'] = "Projeto cadastrado!";
                 $_SESSION['type'] = "success";
             } else {
-                $id = $_POST['id'];
-                $projetoAtual = $bd->select("projetos", "*", ["id" => $id], false, 1);
 
-                if (!$projetoAtual) throw new Exception("Projeto não encontrado.");
+                $id = (int) $_POST['id'];
+                $result = $bd->select("projetos", "*", ["id" => $id], true, 1);
+                if (!$result) throw new Exception("Projeto não encontrado.");
+
+                $projetoAtual = $result[0];
 
                 if (!empty($_FILES['imagem']['name'])) {
                     $img = uploadImg($_FILES['imagem'], $pasta);
@@ -91,95 +91,115 @@
             $_SESSION['type'] = "danger";
         }
     }
-    $lista = $bd->select("projetos", "*", null, true);
+
+    $lista = $bd->select("projetos", "*", [], true);
     include HEADER_TEMPLATE;
 ?>
 
-    <?php if (!empty($_SESSION['message'])) : ?>
-        <div class="message-<?php echo htmlspecialchars($_SESSION['type']); ?>">
-            <span><?php echo htmlspecialchars($_SESSION['message']); ?></span>
-            <i class="fas fa-times btn-close" onclick="this.parentElement.remove()"></i>
-        </div>
-        <?php unset($_SESSION['message'], $_SESSION['type']); ?>
-    <?php endif; ?>
-
-    <div class="container mt-4">
-        <h2>
-            <?php
-                if ($editMode) {
-                    echo "Editar o projeto " . (!empty($p['titulo']) ? htmlspecialchars($p['titulo']) . "." : ".");
-                } else {
-                    echo "Cadastrar novo projeto";
-                }
-            ?>
-        </h2>
-
-        <form method="POST" enctype="multipart/form-data" class="mt-4">
-            <?php if (!empty($projeto['id'])): ?>
-                <input type="hidden" name="id" value="<?= htmlspecialchars((string)$projeto['id']) ?>">
-            <?php endif; ?>
-
-
-            <label>Título</label>
-            <input type="text" name="titulo" value="<?php echo isset($projeto['titulo']) ? htmlspecialchars($projeto['titulo']) : '' ?>" required>
-
-            <label class="mt-3">Descrição</label>
-            <textarea name="descricao" required><?php echo isset($projeto['descricao']) ? htmlspecialchars($projeto['descricao']) : '' ?></textarea>
-
-            <label class="mt-3">Imagem <?php echo $editMode ? "(enviar nova = opcional)" : ""; ?></label>
-            <input type="file" name="imagem" class="form-control" accept="image/*" <?php echo $editMode ? "" : "required"; ?>>
-
-            <?php if ($editMode): ?>
-                <p class="mt-2">Imagem atual:</p>
-                <?php if (!empty($projeto['imagem'])): ?>
-                    <img src="<?php echo htmlspecialchars(RAIZ_PROJETO . 'assets/admin/img/' . $projeto['imagem']); ?>" width="120" alt="Imagem do projeto">
-                <?php else: ?>
-                    <p>Nenhuma imagem cadastrada.</p>
-                <?php endif; ?>
-            <?php endif; ?>
-
-            <button type="submit" class="btn btn-primary mt-4">
-                <?php echo $editMode ? "Salvar alterações" : "Cadastrar"; ?>
-            </button>
-
-            <?php if ($editMode): ?>
-                <a href="projetos_add.php" class="btn btn-secondary mt-4">Cancelar edição</a>
-            <?php endif; ?>
-        </form>
-
-        <h2 class="mt-5">Projetos cadastrados</h2>
-        <div class="row mt-4">
-            <?php if (!empty($lista)): ?>
-                <?php foreach ($lista as $p): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo htmlspecialchars(RAIZ_PROJETO . 'assets/admin/img/' . $p['imagem']);  ?>" 
-                                class="card-img-top" 
-                                style="height: 200px; object-fit: cover;"
-                                alt="<?php echo htmlspecialchars($p['titulo']); ?>">
-
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($p['titulo']); ?></h5>
-                                <p class="card-text"><?php echo htmlspecialchars(substr($p['descricao'], 0, 120)) . "..."; ?></p>
-
-                                <div class="d-flex justify-content-between">
-                                    <a href="?edit=<?php echo htmlspecialchars($p['id']); ?>" class="btn btn-warning btn-sm">
-                                        Editar
-                                    </a>
-
-                                    <a href="?delete=<?php echo htmlspecialchars($p['id']); ?>"
-                                    class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Excluir este projeto?')">
-                                        Excluir
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p class="mt-3">Nenhum projeto encontrado.</p>
-            <?php endif; ?>
-        </div>
+<?php if (!empty($_SESSION['message'])): ?>
+    <div class="alert-message message-<?php echo $_SESSION['type']; ?>">
+        <span><?php echo $_SESSION['message']; ?></span>
+        <i class="fas fa-times close-btn" onclick="this.parentElement.remove()"></i>
     </div>
+    <?php unset($_SESSION['message'], $_SESSION['type']); ?>
+<?php endif; ?>
+
+<section class="container-projetos">
+    <div class="card-projetos">
+        <div class="cabecalho">
+            <h2><?php echo $editMode ? "Editar Projeto" : "Cadastrar Projeto"; ?></h2>
+            <div class="linha"></div>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            <?php if ($editMode): ?>
+                <input type="hidden" name="id" value="<?= htmlspecialchars($projeto['id']); ?>">
+            <?php endif; ?>
+
+            <div class="input-grupo">
+                <label>Título</label>
+                <input type="text" name="titulo" required
+                value="<?php echo $editMode ? htmlspecialchars($projeto['titulo']) : ""; ?>">
+            </div>
+
+            <div class="input-grupo">
+                <label>Descrição</label>
+                <textarea name="descricao" required><?php echo $editMode ? htmlspecialchars($projeto['descricao']) : ""; ?></textarea>
+            </div>
+
+            <div class="input-grupo">
+                <label>Imagem <?php echo $editMode ? "(opcional)" : ""; ?></label>
+                <div class="custom-file-upload">
+                    <label class="btn-file" for="foto">Escolher imagem</label>
+                    <span id="fileName">Nenhum arquivo selecionado</span>
+                    <input type="file" name="imagem" id="foto" <?php echo $editMode ? "" : "required"; ?>>
+                </div>
+            </div>
+
+            <?php if ($editMode): ?>
+                <div class="preview-img">
+                    <p>Imagem atual:</p>
+                    <img id="imgPreview" 
+                        src="<?php echo $editMode ? RAIZ_PROJETO . 'assets/admin/img/' . $projeto['imagem'] : ''; ?>" 
+                        alt="">
+                </div>
+            <?php endif; ?>
+
+            <div class="botoes">
+                <button type="submit">
+                    <?php echo $editMode ? "Salvar" : "Cadastrar"; ?>
+                </button>
+
+                <?php if ($editMode): ?>
+                    <a href="projetos_add.php">Cancelar</a>
+                <?php endif; ?>
+            </div>
+        </form>
+    </div>
+    <div class="titulo-lista">
+        <h2>Projetos cadastrados</h2>
+        <div class="linha"></div>
+    </div>
+    <div class="lista-projetos">
+        <?php if (!empty($lista)): ?>
+            <?php foreach ($lista as $p): ?>
+            <div class="item-projeto">
+                <img src="<?php echo RAIZ_PROJETO . 'assets/admin/img/' . $p['imagem']; ?>" alt="">
+                <h3><?php echo htmlspecialchars($p['titulo']); ?></h3>
+                <p><?php echo htmlspecialchars(substr($p['descricao'], 0, 120)); ?>...</p>
+
+                <div class="acoes">
+                    <a href="?edit=<?php echo $p['id']; ?>" class="edit">Editar</a>
+                    <a href="?delete=<?php echo $p['id']; ?>" onclick="return confirm('Deseja exluir?')" class="delete">Excluir</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Nenhum projeto encontrado.</p>
+        <?php endif; ?>
+    </div>
+</section>
+
+<script>
+  const fotoInput = document.getElementById("foto");
+    const fileName = document.getElementById("fileName");
+    const preview = document.getElementById("imgPreview");
+
+    fotoInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+            fileName.textContent = file.name;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            fileName.textContent = "Nenhum arquivo selecionado";
+            preview.src = "";
+        }
+    });
+
+</script>
 <?php include FOOTER_TEMPLATE; ?>

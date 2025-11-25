@@ -9,7 +9,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
 
 <footer>
     
-    <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
+    <a href="https://wa.me/5515996298263?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
         class="whatsapp-fixo"
         target="_blank"
         aria-label="Fale conosco no WhatsApp">
@@ -21,9 +21,9 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
             <h1><span class="zu">ZU</span>PINTURAS</h1>
             <p>©2025 Todos os direitos reservados para ZuPinturas</p>
             <div class="footer-icons">
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/pinturas.pereira_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/exuperio.pereira.52" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/5515996298263?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
         <div class="footer-right">

@@ -63,7 +63,6 @@
             <?php endif; ?>
         </div>
     </div>
-    
 <script>
     window.addEventListener('load', () => {
 
@@ -138,6 +137,7 @@
     window.addEventListener('scroll', animateProjetos);
     window.addEventListener('load', animateProjetos);
 });
+
 </script>
 
 <?php

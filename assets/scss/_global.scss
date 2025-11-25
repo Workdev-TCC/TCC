@@ -66,6 +66,37 @@ main {
   z-index: 100 !important;
 }
 
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  animation: zoomIn .3s ease;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* ===========================
       MENSAGENS
 =========================== */
@@ -145,6 +176,11 @@ main {
     opacity: 1;
     transform: translate(-50%, 0);
   }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
 /* ANIMAÇÃO PARA SUMIR (apenas ALERTAS) */

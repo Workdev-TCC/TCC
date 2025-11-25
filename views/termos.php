@@ -6,17 +6,16 @@
 ?>
 
 <section class="termos-container">
-    <div class="termos-conteudo">
-      <h1>TERMOS DE USO</h1>
-      <h2>Zupinturas</h2>
-
-<p>
-  Bem-vindo(a) ao site da <strong>ZUPINTURAS</strong>. Ao acessar e utilizar nossos serviços,
-  você concorda integralmente com os termos e condições apresentados a seguir. Recomendamos que
-  leia atentamente todas as informações, pois elas estabelecem direitos, responsabilidades e regras
-  importantes para o uso correto de nossos serviços e conteúdo. Caso não concorde com qualquer
-  parte destes termos, solicitamos que não utilize este site.
-</p>
+  <div class="termos-conteudo">
+    <h1>TERMOS DE USO</h1>
+    <div class="linha"></div>
+    <p>
+      Bem-vindo(a) ao site da <strong>ZUPINTURAS</strong>. Ao acessar e utilizar nossos serviços,
+      você concorda integralmente com os termos e condições apresentados a seguir. Recomendamos que
+      leia atentamente todas as informações, pois elas estabelecem direitos, responsabilidades e regras
+      importantes para o uso correto de nossos serviços e conteúdo. Caso não concorde com qualquer
+      parte destes termos, solicitamos que não utilize este site.
+    </p>
 
 <h3>1. Uso do Site</h3>
 <p>

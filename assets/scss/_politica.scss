@@ -1,7 +1,7 @@
 // Paleta e tipografia inspiradas no estilo da Zupinturas (modo escuro refinado)
 $cor-fundo: #0d0d0d;
 $cor-texto: #e0e0e0;
-$cor-destaque: #c77dff; // lilás vibrante
+$cor-destaque: #ff26b7; // lilás vibrante
 $cor-secundaria: #999;
 $fonte-principal: 'Poppins', 'Inter', sans-serif;
 
@@ -21,28 +21,21 @@ body {
   min-height: 100vh;
 
   h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  font-family: "Hammersmith One", sans-serif;
-  color: white;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: "Hammersmith One", sans-serif;
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
 
-h2 {
-  font-size: 1.8rem;
-  color: $cor-destaque;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-h3 {
-  color: $cor-destaque;
-  font-size: 1.4rem;
-  margin-top: 2.5rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-}
+  h3 {
+    color: $cor-destaque;
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
 
 p {
   font-size: 1.15rem;

@@ -8,7 +8,7 @@
   <section class="termos-container">
     <div class="termos-conteudo">
       <h1>POLÍTICA DE PRIVACIDADE</h1>
-      <h2>Zupinturas</h2>
+      <div class="linha"></div>
 
      <p>
   A <strong>ZUPINTURAS</strong> valoriza profundamente a transparência, a confiança e o respeito à privacidade

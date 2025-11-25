@@ -60,6 +60,11 @@
     </div>
   </div>
 
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+  </div>
+
  <script>
   window.addEventListener('load', () => {
     const popText = document.querySelector('.pop');
@@ -139,7 +144,31 @@
       animateGaleria();
     });
   });
+
+  // === LIGHTBOX DE IMAGENS ===
+  document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".galeria-card img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    cards.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.style.display = "none";
+    });
+  });
 </script>
+
 
 
 <?php

@@ -1,6 +1,10 @@
 <?php 
     include "../../config.php";
     include DBAPI;
+
+      if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 ?>
 <html lang="pt-br">
 <head>
