@@ -135,7 +135,7 @@ try {
                                     <?php endif; ?>
 
                                     <td data-label="Contato ZuPinturas" class="text-center">
-                                        <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
+                                        <a href="https://wa.me/5515996298263?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
                                             target="_blank" class="btn btn-success btn-sm">
                                             <i class="fa-brands fa-whatsapp fa-2x"></i>
                                         </a>

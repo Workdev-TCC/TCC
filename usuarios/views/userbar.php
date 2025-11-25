@@ -1,6 +1,5 @@
 <div id="userbar" class="userbar">
     <div class="body">
-
         <div class="img-userbar">
             <?php if (empty($_SESSION['foto'])): ?>
                 <img src="<?php echo RAIZ_PROJETO; ?>usuarios/img/semimagem.jpg" alt="imagem">

@@ -12,7 +12,6 @@ try {
     $bd = new Banco;
     $usuarioId = $_SESSION['id'];
 
-    // 🔍 Buscar apenas solicitações que possuem data e hora marcadas
    $my_solicitacoes = $bd->select(
     'solicitacoes s 
     INNER JOIN visitas_agendadas v ON s.id = v.solicitacao_id',
@@ -24,7 +23,6 @@ try {
 ) ?? []; // <- se for null, vira array vazio automaticamente
 
 
-    // Filtrar no PHP apenas as que têm data/hora válidas (caso existam registros nulos)
     $my_solicitacoes = array_filter($my_solicitacoes, function($s) {
         return !empty($s['data_visita']) && !empty($s['hora_visita']);
     });
@@ -99,7 +97,7 @@ try {
                                 <th>Status</th>
                                 <th>Data da Visita</th>
                                 <th>Hora da Visita</th>
-                                <th>Contato do Adm</th>
+                                <th>Contato ZuPinturas</th>
                                 <th>Ver Mais</th>
                             </tr>
                         </thead>
@@ -131,8 +129,8 @@ try {
                                     <td data-label="Hora">--:--</td>
                                 <?php endif; ?>
 
-                                <td data-label="Contato do Adm" class="text-center">
-                                    <a href="https://wa.me/5515996298363?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" 
+                                <td data-label="Contato ZuPinturas" class="text-center">
+                                    <a href="https://wa.me/5515996298263?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!" 
                                     target="_blank" class="btn btn-success btn-sm">
                                         <i class="fa-brands fa-whatsapp fa-2x"></i>
                                     </a>

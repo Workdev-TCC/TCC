@@ -65,12 +65,15 @@
                     </li>
                 <?php endif; ?>
 
-                <li class="nav-item">
-                    <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php"
-                        class="nav-link <?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">
-                        SERVIÇOS
-                    </a>
-                </li>
+                <?php if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== "admin"): ?>
+                    <li class="nav-item">
+                        <a href="<?php echo RAIZ_PROJETO; ?>views/servicos.php"
+                            class="nav-link <?php echo ($paginaAtual == 'servicos.php') ? 'active' : ''; ?>">
+                            SERVIÇOS
+                        </a>
+                    </li>
+                <?php endif; ?>
+
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
