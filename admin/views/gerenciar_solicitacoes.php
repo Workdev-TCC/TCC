@@ -1,8 +1,14 @@
 <?php 
+// arquivo: admin/views/gerenciar_solicitacoes.php
 include("../../config.php");
 include HEADER_TEMPLATE;
 include "../../inc/Banco.php";
 include_once UTEIS;
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(empty($_SESSION['tipo'])){
     header("Location:".RAIZ_PROJETO);
     exit;
@@ -33,8 +39,6 @@ try {
 <div class="container mt-4 px-3">
     <!-- Cabeçalho e navegação -->
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
-
-
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 w-100 w-md-auto">
             <nav aria-label="Navegação de solicitações">
                 <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center">
@@ -68,6 +72,7 @@ try {
     <table class="table table-bordered table-striped align-middle text-center mb-0">
         <thead class="table-dark">
             <tr>
+                <th style="width:70px;">Ação</th> <!-- botão excluir -->
                 <th>ID</th>
                 <th>Usuário</th>
                 <th>CEP</th>
@@ -81,6 +86,13 @@ try {
         <tbody>
             <?php foreach ($solicitacoes as $s): ?>
                 <tr data-id="<?= $s['id'] ?>">
+                    <!-- BOTÃO EXCLUIR -->
+                    <td>
+                        <button class="btn btn-danger btn-sm excluir-btn" title="Excluir solicitação">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+
                     <td><?= $s['id'] ?></td>
                     <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
                     <td><?= htmlspecialchars($s['cep']) ?></td>
@@ -137,31 +149,51 @@ try {
     </div>
   </div>
 </div>
+
+<!-- Modal de Exclusão -->
+<div class="modal fade" id="modalExcluir" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Solicitação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja excluir esta solicitação permanentemente?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-danger" id="confirmarExclusao">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-            function aplicarCorStatusSelect() {
-            document.querySelectorAll("select.status-select").forEach(sel => {
-                sel.classList.remove("pendente", "marcado", "recusado");
-                sel.classList.add(sel.value);
-            });
-        }
-
-        // Aplica ao carregar
-        aplicarCorStatusSelect();
-
-        // Aplica quando o usuário troca o valor
-        document.addEventListener("change", e => {
-            if (e.target.classList.contains("status-select")) {
-                aplicarCorStatusSelect();
-            }
+    function aplicarCorStatusSelect() {
+        document.querySelectorAll("select.status-select").forEach(sel => {
+            sel.classList.remove("pendente", "marcado", "recusado");
+            sel.classList.add(sel.value);
         });
+    }
 
-    
+    // Aplica ao carregar
+    aplicarCorStatusSelect();
+
+    // Aplica quando o usuário troca o valor
+    document.addEventListener("change", e => {
+        if (e.target.classList.contains("status-select")) {
+            aplicarCorStatusSelect();
+        }
+    });
+
     const justificativaModal = new bootstrap.Modal(document.getElementById("modalJustificativa"));
+    const modalExcluir = new bootstrap.Modal(document.getElementById("modalExcluir"));
     let solicitacaoSelecionada = null;
+    let idParaExcluir = null;
 
     // Configura os botões salvar - busca dentro da página específica
     function setupSaveButtons() {
@@ -196,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Configura inicialmente
+    // Inicial configura
     setupSaveButtons();
 
     document.getElementById("confirmarRecusa")?.addEventListener("click", () => {
@@ -230,6 +262,55 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => alert("Erro: " + err));
     }
 
+    // =========================
+    //     EXCLUSÃO
+    // =========================
+
+    // Detecta clique no botão excluir (delegation)
+    document.addEventListener("click", e => {
+        const btn = e.target.closest(".excluir-btn");
+        if (btn) {
+            const tr = btn.closest("tr");
+            idParaExcluir = tr ? tr.dataset.id : null;
+            modalExcluir.show();
+        }
+    });
+
+// Confirma exclusão — versão que recarrega a página automaticamente
+document.getElementById("confirmarExclusao").addEventListener("click", () => {
+    if (!idParaExcluir) {
+        alert("ID inválido.");
+        modalExcluir.hide();
+        return;
+    }
+
+    fetch("../../admin/scripts/excluir_solicitacao.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ id: idParaExcluir })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Erro: " + response.status);
+        return response.json();
+    })
+    .then(res => {
+        alert(res.message);
+
+        if (res.success) {
+            // Atualiza a página inteira automaticamente:
+            location.reload();
+        }
+    })
+    .catch(err => {
+        alert("Erro ao excluir: " + err.message);
+    })
+    .finally(() => {
+        modalExcluir.hide();
+        idParaExcluir = null;
+    });
+});
+
+
     // Adaptação mobile APENAS para esta página
     function adaptTableForMobile() {
         const pageContainer = document.querySelector('.page-gerenciar-solicitacoes');
@@ -248,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     
                     // Apenas para a célula do usuário (segunda coluna)
-                    if (index === 1 && !cell.classList.contains('mobile-adapted')) {
+                    if (index === 2 && !cell.classList.contains('mobile-adapted')) {
                         const usuarioText = cell.textContent.trim();
                         const originalId = row.dataset.id;
                         
@@ -268,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cells.forEach((cell, index) => {
                     cell.removeAttribute('data-label');
                     
-                    if (index === 1 && cell.classList.contains('mobile-adapted')) {
+                    if (index === 2 && cell.classList.contains('mobile-adapted')) {
                         const nomeUsuario = cell.querySelector('.nome-usuario');
                         if (nomeUsuario) {
                             cell.textContent = nomeUsuario.textContent;
@@ -289,7 +370,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Executa no redimensionamento da tela
     window.addEventListener('resize', adaptTableForMobile);
 });
-
 </script>
 
 <?php

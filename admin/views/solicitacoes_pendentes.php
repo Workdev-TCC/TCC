@@ -70,6 +70,7 @@ try {
                         <table class="table table-bordered table-striped align-middle text-center mb-0">
                             <thead class="table-dark">
                                 <tr>
+                                    <th style="width:70px;">Ação</th> <!-- botão excluir -->
                                     <th>ID</th>
                                     <th>Usuário</th>
                                     <th>CEP</th>
@@ -83,6 +84,12 @@ try {
                             <tbody>
                                 <?php foreach ($solicitacoes as $s): ?>
                                     <tr data-id="<?= $s['id'] ?>">
+                                       <!-- BOTÃO EXCLUIR -->
+                                        <td>
+                                            <button class="btn btn-danger btn-sm excluir-btn" title="Excluir solicitação">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
                                         <td><?= $s['id'] ?></td>
                                         <td><?= htmlspecialchars($s['nome_usuario']) ?></td>
                                         <td><?= htmlspecialchars($s['cep']) ?></td>
@@ -140,7 +147,26 @@ try {
         </div>
       </div>
     </div>
-</div>  
+
+    <!-- Modal de Exclusão -->
+<div class="modal fade" id="modalExcluir" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Solicitação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja excluir esta solicitação permanentemente?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-danger" id="confirmarExclusao">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -186,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
+    
     document.getElementById("confirmarRecusa").addEventListener("click", () => {
         const justificativa = document.getElementById("justificativaTexto").value.trim();
         if (justificativa === "") {
@@ -217,6 +243,56 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => alert("Erro: " + err));
     }
+    // =========================
+//     EXCLUSÃO
+// =========================
+
+const modalExcluir = new bootstrap.Modal(document.getElementById("modalExcluir"));
+let idParaExcluir = null;
+
+// Detecta clique no botão excluir (delegation)
+document.addEventListener("click", e => {
+    const btn = e.target.closest(".excluir-btn");
+    if (btn) {
+        const tr = btn.closest("tr");
+        idParaExcluir = tr ? tr.dataset.id : null;
+        modalExcluir.show();
+    }
+});
+
+// Confirma exclusão — recarrega a página automaticamente
+document.getElementById("confirmarExclusao").addEventListener("click", () => {
+    if (!idParaExcluir) {
+        alert("ID inválido.");
+        modalExcluir.hide();
+        return;
+    }
+
+    fetch("../../admin/scripts/excluir_solicitacao.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ id: idParaExcluir })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Erro: " + response.status);
+        return response.json();
+    })
+    .then(res => {
+        alert(res.message);
+
+        if (res.success) {
+            location.reload();
+        }
+    })
+    .catch(err => {
+        alert("Erro ao excluir: " + err.message);
+    })
+    .finally(() => {
+        modalExcluir.hide();
+        idParaExcluir = null;
+    });
+});
+
 
         // Adaptação mobile APENAS para esta página
     function adaptTableForMobile() {
