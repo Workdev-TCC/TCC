@@ -103,6 +103,7 @@ try {
                                 <th>Data</th>
                                 <th>Hora</th>
                                 <th>Contato ZuPinturas</th>
+                                <th class="text-center">Excluir</th>
                                 <th>Ver Mais</th>
                             </tr>
                         </thead>
@@ -138,6 +139,15 @@ try {
                                         <a href="https://wa.me/5515996298263?text=Olá! Vim do site ZuPinturas e gostaria de solicitar um orçamento!"
                                             target="_blank" class="btn btn-success btn-sm">
                                             <i class="fa-brands fa-whatsapp fa-2x"></i>
+                                        </a>
+                                    </td>
+
+                                    <!-- BOTÃO EXCLUIR -->
+                                    <td data-label="Excluir" class="text-center">
+                                        <a href="<?php echo RAIZ_PROJETO; ?>usuarios/actions/excluir_solicitacao.php?id=<?= $mys['id']; ?>"
+                                        class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Tem certeza que deseja excluir esta solicitação?');">
+                                            <i class="fa fa-trash"></i> Excluir
                                         </a>
                                     </td>
 

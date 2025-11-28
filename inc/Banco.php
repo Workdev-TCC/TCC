@@ -167,38 +167,42 @@
             ];
         }
 
-       public function delete($table, $where) {
+        public function delete($table, $where)
+        {
             $db = $this->open_db();
-            $placeholders = [];
-            $condicoes = [];
 
-            // Monta as condições WHERE
+            $condicoes = [];
+            $placeholders = [];
+
             foreach ($where as $campo => $valor) {
                 $campo = trim($campo, "'");
-                $ph = ":{$campo}";
+                $ph = ":" . $campo;
                 $condicoes[] = "{$campo} = {$ph}";
                 $placeholders[$ph] = $valor;
             }
 
             $sql = "DELETE FROM {$table} WHERE " . implode(" AND ", $condicoes);
-            
-            $stmt = $db->prepare($sql);
 
-            // Bind dos parâmetros
-            foreach ($placeholders as $ph => $value) {
-                $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
-                $stmt->bindValue($ph, $value, $type);
-            }
+            try {
+                $stmt = $db->prepare($sql);
 
-            $executado = $stmt->execute();
-            if ($executado) {
-                return true;
-            } else {
-                return false;
+                foreach ($placeholders as $ph => $value) {
+                    $stmt->bindValue($ph, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
+                }
+
+                $stmt->execute();
+
+                $_SESSION['message'] = "Registro excluído com sucesso.";
+                $_SESSION['type'] = "success";
+
+            } catch (Exception $e) {
+                $_SESSION['message'] = $e->getMessage();
+                $_SESSION['type'] = "danger";
             }
 
             $this->close_db();
         }
+
 
     }
 ?>
