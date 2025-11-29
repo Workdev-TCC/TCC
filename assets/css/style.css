@@ -2993,24 +2993,43 @@ body {
   .page-gerenciar-solicitacoes .table td:nth-of-type(3), .gerenciar-pendentes .table td:nth-of-type(3) {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(7),
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(8), .gerenciar-pendentes .table td td:nth-of-type(7),
-  .gerenciar-pendentes .table td td:nth-of-type(8) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7), .gerenciar-pendentes .table td:nth-of-type(7) {
+    padding-left: 45%;
+    display: block !important;
+  }
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7):before, .gerenciar-pendentes .table td:nth-of-type(7):before {
+    content: "hora:";
+  }
+  .page-gerenciar-solicitacoes .table td:nth-of-type(7) .hora-visita, .gerenciar-pendentes .table td:nth-of-type(7) .hora-visita {
+    width: 100% !important;
+    min-width: 140px !important;
+    max-width: 180px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.95rem !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    background: #1e1e27 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    height: auto !important;
+    margin: 0.25rem 0 !important;
+  }
+  .page-gerenciar-solicitacoes .table td:nth-of-type(8), .page-gerenciar-solicitacoes .table td:nth-of-type(9), .gerenciar-pendentes .table td:nth-of-type(8), .gerenciar-pendentes .table td:nth-of-type(9) {
     display: inline-block !important;
     width: calc(50% - 2px) !important;
     padding-left: 0 !important;
     text-align: center;
     float: left;
+    margin-bottom: 0.5rem;
   }
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(7):before,
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(8):before, .gerenciar-pendentes .table td td:nth-of-type(7):before,
-  .gerenciar-pendentes .table td td:nth-of-type(8):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(8):before, .page-gerenciar-solicitacoes .table td:nth-of-type(9):before, .gerenciar-pendentes .table td:nth-of-type(8):before, .gerenciar-pendentes .table td:nth-of-type(9):before {
     display: none;
   }
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(7), .gerenciar-pendentes .table td td:nth-of-type(7) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(8), .gerenciar-pendentes .table td:nth-of-type(8) {
     margin-right: 4px !important;
   }
-  .page-gerenciar-solicitacoes .table td td:nth-of-type(8), .gerenciar-pendentes .table td td:nth-of-type(8) {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(9), .gerenciar-pendentes .table td:nth-of-type(9) {
     margin-right: 0 !important;
   }
   .page-gerenciar-solicitacoes .table tr:after, .gerenciar-pendentes .table tr:after {
@@ -3027,29 +3046,80 @@ body {
   .page-gerenciar-solicitacoes .table td:nth-of-type(3):before, .gerenciar-pendentes .table td:nth-of-type(3):before {
     content: "CEP:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(4):before, .gerenciar-pendentes .table td:nth-of-type(4):before {
+  .page-gerenciar-solicitacoes .table td:nth-of-type(5):before, .gerenciar-pendentes .table td:nth-of-type(5):before {
     content: "Status:";
   }
-  .page-gerenciar-solicitacoes .table td:nth-of-type(5):before, .gerenciar-pendentes .table td:nth-of-type(5):before {
-    content: "Data Visita:";
+  .page-gerenciar-solicitacoes .table td:nth-of-type(4):before, .gerenciar-pendentes .table td:nth-of-type(4):before {
+    content: "CEP:";
   }
   .page-gerenciar-solicitacoes .table td:nth-of-type(6):before, .gerenciar-pendentes .table td:nth-of-type(6):before {
-    content: "Hora:";
+    content: "data:";
   }
   .page-gerenciar-solicitacoes .table td:nth-of-type(7):before, .gerenciar-pendentes .table td:nth-of-type(7):before {
-    content: "Contato:";
+    content: "hora:";
   }
   .page-gerenciar-solicitacoes .table td:nth-of-type(8):before, .gerenciar-pendentes .table td:nth-of-type(8):before {
+    content: "Contato:";
+  }
+  .page-gerenciar-solicitacoes .table td:nth-of-type(9):before, .gerenciar-pendentes .table td:nth-of-type(9):before {
     content: "Ações:";
   }
-  .page-gerenciar-solicitacoes .table .form-select, .page-gerenciar-solicitacoes .table .form-control, .gerenciar-pendentes .table .form-select, .gerenciar-pendentes .table .form-control {
+  .page-gerenciar-solicitacoes .table .btn-excluir-mobile, .gerenciar-pendentes .table .btn-excluir-mobile {
+    display: block !important;
     width: 100%;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .page-gerenciar-solicitacoes .table .btn, .gerenciar-pendentes .table .btn {
+  .page-gerenciar-solicitacoes .table .btn-excluir-mobile .excluir-btn, .gerenciar-pendentes .table .btn-excluir-mobile .excluir-btn {
+    background: linear-gradient(90deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .page-gerenciar-solicitacoes .table .btn-excluir-mobile .excluir-btn:hover, .gerenciar-pendentes .table .btn-excluir-mobile .excluir-btn:hover {
+    background: linear-gradient(90deg, #c82333, #bd2130);
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.5);
+    transform: scale(1.02);
+  }
+  .page-gerenciar-solicitacoes .form-select, .page-gerenciar-solicitacoes .form-control, .gerenciar-pendentes .form-select, .gerenciar-pendentes .form-control {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.95rem !important;
+    height: auto !important;
+    min-height: 42px !important;
+  }
+  .page-gerenciar-solicitacoes .hora-visita, .gerenciar-pendentes .hora-visita {
+    min-width: 140px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
+  .page-gerenciar-solicitacoes .data-visita, .gerenciar-pendentes .data-visita {
+    min-width: 140px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
+  .page-gerenciar-solicitacoes .btn, .gerenciar-pendentes .btn {
     width: 100%;
     margin-bottom: 0;
     white-space: nowrap;
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.95rem !important;
+    min-height: 42px !important;
   }
   .page-gerenciar-solicitacoes .pagination, .gerenciar-pendentes .pagination {
     gap: 0.3rem;

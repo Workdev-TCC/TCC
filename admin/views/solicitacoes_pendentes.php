@@ -294,58 +294,78 @@ document.getElementById("confirmarExclusao").addEventListener("click", () => {
 });
 
 
-        // Adaptação mobile APENAS para esta página
-    function adaptTableForMobile() {
-        const pageContainer = document.querySelector('gerenciar-pendentes');
-        if (!pageContainer) return; // Se não encontrar a página, sai
-        
-        if (window.innerWidth <= 768) {
-            const tableRows = pageContainer.querySelectorAll('tbody tr');
-            const headers = pageContainer.querySelectorAll('thead th');
-            
-            tableRows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                
-                cells.forEach((cell, index) => {
-                    if (headers[index]) {
-                        cell.setAttribute('data-label', headers[index].textContent.trim());
-                    }
-                    
-                    // Apenas para a célula do usuário (segunda coluna)
-                    if (index === 1 && !cell.classList.contains('mobile-adapted')) {
-                        const usuarioText = cell.textContent.trim();
-                        const originalId = row.dataset.id;
-                        
-                        cell.classList.add('mobile-adapted');
-                        cell.innerHTML = `
-                            <div class="nome-usuario">${usuarioText}</div>
-                            <div class="info-adicional">Solicitação #${originalId}</div>
-                        `;
-                    }
-                });
-            });
-        } else {
-            // Restaura para desktop
-            const tableRows = pageContainer.querySelectorAll('tbody tr');
-            tableRows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                cells.forEach((cell, index) => {
-                    cell.removeAttribute('data-label');
-                    
-                    if (index === 1 && cell.classList.contains('mobile-adapted')) {
-                        const nomeUsuario = cell.querySelector('.nome-usuario');
-                        if (nomeUsuario) {
-                            cell.textContent = nomeUsuario.textContent;
-                        }
-                        cell.classList.remove('mobile-adapted');
-                    }
-                });
-            });
+// Adaptação mobile APENAS para esta página
+function adaptTableForMobile() {
+  const pageContainer = document.querySelector('.gerenciar-pendentes');
+  if (!pageContainer) return; // Se não encontrar a página, sai
+
+  if (window.innerWidth <= 768) {
+    const tableRows = pageContainer.querySelectorAll('tbody tr');
+    const headers = pageContainer.querySelectorAll('thead th');
+    
+    tableRows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      
+      // Remove botão excluir mobile existente se houver
+      const existingExcluirMobile = row.querySelector('.btn-excluir-mobile');
+      if (existingExcluirMobile) {
+        existingExcluirMobile.remove();
+      }
+      
+      cells.forEach((cell, index) => {
+        if (headers[index]) {
+          cell.setAttribute('data-label', headers[index].textContent.trim());
         }
-        
-        // Re-configura os botões após modificar o DOM
-        setTimeout(setupSaveButtons, 100);
-    }
+
+        // Apenas para a célula do usuário (segunda coluna)
+        if (index === 2 && !cell.classList.contains('mobile-adapted')) {
+          const usuarioText = cell.textContent.trim();
+          const originalId = row.dataset.id;
+          cell.classList.add('mobile-adapted');
+          cell.innerHTML = `
+            <div class="nome-usuario">${usuarioText}</div>
+            <div class="info-adicional">Solicitação #${originalId}</div>
+          `;
+        }
+      });
+      
+      // Adiciona o botão excluir no final do card
+      const excluirBtn = cells[0].querySelector('.excluir-btn');
+      if (excluirBtn) {
+        const excluirContainer = document.createElement('div');
+        excluirContainer.className = 'btn-excluir-mobile';
+        excluirContainer.innerHTML = excluirBtn.outerHTML;
+        row.appendChild(excluirContainer);
+      }
+    });
+  } else {
+    // Restaura para desktop
+    const tableRows = pageContainer.querySelectorAll('tbody tr');
+    tableRows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      
+      // Remove botão excluir mobile se existir
+      const excluirMobile = row.querySelector('.btn-excluir-mobile');
+      if (excluirMobile) {
+        excluirMobile.remove();
+      }
+      
+      cells.forEach((cell, index) => {
+        cell.removeAttribute('data-label');
+        if (index === 2 && cell.classList.contains('mobile-adapted')) {
+          const nomeUsuario = cell.querySelector('.nome-usuario');
+          if (nomeUsuario) {
+            cell.textContent = nomeUsuario.textContent;
+          }
+          cell.classList.remove('mobile-adapted');
+        }
+      });
+    });
+  }
+
+  // Re-configura os botões após modificar o DOM
+  setTimeout(setupSaveButtons, 100);
+}
     
     // Executa na carga inicial
     adaptTableForMobile();
